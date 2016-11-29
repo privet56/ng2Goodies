@@ -2,6 +2,16 @@
 
 # PersistentRouterOutlet.ts for ng2 version 2.2.4
 	(allows to switch between routes without reloading already loaded routes)
+	use this way:
+	@NgModule({
+	providers: [
+		{provide: RouterOutlet, useClass: PersistentRouterOutlet }
+	]
+	})
+	export class MyRoutingModule
+	{
+		...
+
 
 # SanitizerPipe.ts
 	(allows inserting HTML into the DOM)
