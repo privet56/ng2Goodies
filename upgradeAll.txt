@@ -1,0 +1,18 @@
+## FORCED upgrade (ATTENTION: no backward-compatibility):
+	$ npm install -g npm-check-updates		//only ONCE
+	0 MAKE BACKUP 							//and remove node_modules
+	$ ncu.cmd --upgradeAll					//possibly you need to paste the absolute path
+	$ npm install							//'ng serve' & VSCode should NOT run
+	$ npm outdated							//check if succeeded
+
+## styling:
+1) edit styles.css with the hints on http://www.primefaces.org/primeng/#/theming
+	or
+2)  use the themeroller:
+	2.1) create a style on https://jqueryui.com/themeroller/
+	2.2) copy jquery-ui.min.css + jquery-ui.theme.min.css + /images/
+			into /css/
+	2.3) insert into angular-cli.json directly above 'styles.css':  
+        "css/jquery-ui.css",
+        "css/jquery-ui.theme.css",
+		... and the css will be minimized & packed with webpack -> cool! 
