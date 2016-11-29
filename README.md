@@ -1,6 +1,6 @@
 ## TypeScript & Angular 2 Goodies:
 
-# PersistentRouterOutlet.ts for ng2 version 2.2.4
+# PersistentRouterOutlet.ts for ng2 (Angular 2 version 2.2.3)
 	(allows to switch between routes without reloading already loaded routes)
 	use this way:
 	@NgModule({
@@ -17,9 +17,10 @@
 	(allows inserting HTML into the DOM)
 	
 # truncatePipe.ts
+	{{ value | truncate:99 }}
 
 # uHtmlUtil.ts
-	(handeles recursive replacement in arbitrary objects and allows the generation of XML objects)
+	(handeles recursive string-replacement in arbitrary objects and allows the generation of XML objects)
 	
 # ValueEmitter.ts
 	(unites value holder variable with EventEmitter)
@@ -34,5 +35,9 @@
 	-- [yourapp]
 
 # soap/*
-	supports accessing XML SOAP WebServices from Angular 2 apps and maps the response to native TypeScript objects
+	supports accessing XML SOAP WebServices from Angular 2 apps
+	and
+	maps the response to native TypeScript objects
+	(based on https://github.com/autopulous/angular2-soap)
+
 
