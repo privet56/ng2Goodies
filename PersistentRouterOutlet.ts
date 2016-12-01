@@ -12,65 +12,73 @@ import { ActivatedRoute } from '@angular/router/src/router_state';
 import { UrlSerializer, UrlTree } from '@angular/router/src/url_tree';
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
-interface CacheItem {
+interface CacheItem
+{
     componentRef: ComponentRef<any>;
     reusedRoute: PageRoute;
     outletMap: RouterOutletMap;
     loaderRef?: ComponentRef<any>;
 }
-
-export class PageRoute {
+export class PageRoute
+{
     activatedRoute: BehaviorSubject<ActivatedRoute>;
-    constructor(startRoute: ActivatedRoute) {
+    constructor(startRoute: ActivatedRoute)
+    {
         this.activatedRoute = new BehaviorSubject(startRoute);
     }
 }
-
-/**
- * Reference Cache
- */
-class RefCache {
+class RefCache
+{
     private cache: Array<CacheItem> = new Array<CacheItem>();
-
     public push(
         componentRef: ComponentRef<any>,
         reusedRoute: PageRoute,
         outletMap: RouterOutletMap,
-        loaderRef: ComponentRef<any>) {
-        this.cache.push({ componentRef, reusedRoute, outletMap, loaderRef });
+        loaderRef: ComponentRef<any>)
+        {
+            this.cache.push({ componentRef, reusedRoute, outletMap, loaderRef
+        });
     }
-
-    public pop(): CacheItem {
+    public pop(): CacheItem
+    {
         return this.cache.pop();
     }
-
-    public peek(): CacheItem {
+    public peek(): CacheItem
+    {
         return this.cache[this.cache.length - 1];
     }
-
-    public get length(): number {
+    public get length(): number
+    {
         return this.cache.length;
     }
 }
 
-//TODO: remove this class after an official ng2 persistentRouter is available!!!
+//TODO: remove this class after a better persistentRouter is available!!!
 
 @Component({
     selector: "persistent-router-outlet"
 })
 export class PersistentRouterOutlet extends RouterOutlet
 {
-  public static __LASTRESOLVEDURL : string = "__resolvedurl";
+  //public static __LASTRESOLVEDURL : string               = "__resolvedurl";
+  protected lastResolvedUrl:string      = null;
+  public static __rNOTLETTERORNUMBER    = new RegExp(/[^A-Za-z0-9]/);
+  public static __SUPERATTRIBUTE_activated : string      = "activated";
+  public static __SUPERATTRIBUTE_activatedRoute : string = "_activatedRoute";
   public static __MAX2LOG : number  = 33;  
   protected LOGGED : number         = 0;
   private cache = [];
   private location_: ViewContainerRef;
 
-  constructor(parentOutletMap: RouterOutletMap, location: ViewContainerRef, resolver: ComponentFactoryResolver, name: string,
+  constructor(parentOutletMap: RouterOutletMap,
+              location: ViewContainerRef,
+              resolver: ComponentFactoryResolver,
+              name: string,
               @Inject(Router) _parentRouter: Router)
   {
       super(parentOutletMap, location, resolver, name);
       this.location_ = location;
+
       /*
       this.activateEvents.subscribe((activatedInstance) =>
       {
@@ -90,15 +98,19 @@ export class PersistentRouterOutlet extends RouterOutlet
         if (res != null && res.length > 0)
         {
             let url: string = res[0].path;
-            activatedRoute[PersistentRouterOutlet.__LASTRESOLVEDURL] = url;
 
-            if(this.getActivatedRoute() && (url === this.getActivatedRoute()[PersistentRouterOutlet.__LASTRESOLVEDURL]))
+            if(!this.isCacheable(url))
             {
-                this.log("no change in url '"+this.getActivatedRoute()[PersistentRouterOutlet.__LASTRESOLVEDURL]+"'");
-                return;
+                this.log("not cacheable url '"+url+"'");
+                return super.activate(activatedRoute, resolver, injector, providers, outletMap);
             }
 
-            let oldActivated:any = this.getActivated();
+            if(this.lastResolvedUrl === url)
+            {
+                return this.log("no change in url '"+this.lastResolvedUrl+"'");
+            }
+            this.lastResolvedUrl = url;
+
             let newActivated:any = this.cache[url];
 
             if(!newActivated)
@@ -109,7 +121,8 @@ export class PersistentRouterOutlet extends RouterOutlet
             }
             else
             {   //detach current and attach from cache
-                if(oldActivated)
+                let oldActivated:any = this.getActivated();
+                if (oldActivated)
                 {
                     let i:number = this.location_.indexOf(oldActivated.changeDetectorRef._view.ref);
                     this.log("DEACTIVATED("+i+"): changeDetViewRef:"+oldActivated.changeDetectorRef._view.ref);
@@ -126,10 +139,25 @@ export class PersistentRouterOutlet extends RouterOutlet
         }
         else
         {
-            this.log("ERR: !url res:"+res);
+            this.log("ERR: !url res:"+res, true);
         }
     });
   }
+
+  public isCacheable(url:string) : boolean
+  {
+      if(url)
+         url = url.trim();
+      if(!url)return false;
+      let hasMoreThanSimpleChars:boolean = PersistentRouterOutlet.__rNOTLETTERORNUMBER.test(url);
+      if( hasMoreThanSimpleChars)
+      {
+          return false; //do not cache url' like search/12?filter=a
+      }
+
+      return true;  //a simple url, like 'home', 'search' ...
+  }
+
   deactivate(): void
   {
     //don't call super, because super destroy()'s
@@ -146,29 +174,51 @@ export class PersistentRouterOutlet extends RouterOutlet
     }
   }
 
+  protected checkSuper() : void     //=warn me if private members of super removed/renamed in future releases!
+  {
+    if(this[PersistentRouterOutlet.__SUPERATTRIBUTE_activated] === undefined)
+      this.log(" ERR: superVAR not found: '"+PersistentRouterOutlet.__SUPERATTRIBUTE_activated+"'", true);
+    if(this[PersistentRouterOutlet.__SUPERATTRIBUTE_activatedRoute] === undefined)
+      this.log(" ERR: superVAR not found: '"+PersistentRouterOutlet.__SUPERATTRIBUTE_activatedRoute+"'", true);
+  }
+
+/* tslint:disable */
+
   //getter/setter for private members of super
   protected getActivated()
   {
-      return this.activated;
+      this.checkSuper();
+
+      // tslint:disable-next-line
+      return this[PersistentRouterOutlet.__SUPERATTRIBUTE_activated];
+      //return this.activated;                  // 'activated' is a private member of super     // tslint:disable-line
   }
   protected setActivated(activated:any) : void
   {
-      this.activated = activated;
+      this.checkSuper();
+
+      this[PersistentRouterOutlet.__SUPERATTRIBUTE_activated] = activated; 
+      //this.activated = activated;             // 'activated' is a private member of super
   }
   protected getActivatedRoute()
   {
-      return this._activatedRoute;
+      return this[PersistentRouterOutlet.__SUPERATTRIBUTE_activatedRoute];
+      //return this._activatedRoute;            // this is a private member of super
   }
   protected setActivatedRoute(activatedRoute:any) : void
   {
-      this._activatedRoute = activatedRoute;
+      this[PersistentRouterOutlet.__SUPERATTRIBUTE_activatedRoute] = activatedRoute;
+      //this._activatedRoute = activatedRoute;  // this is a private member of super
   }
   
-  public log(s:string, o?:any) : void
+  public log(s:string, isError?:boolean) : void
   {
       if(this.LOGGED++ > PersistentRouterOutlet.__MAX2LOG)
       {
-          return;   //don't log too much, but do it at the beginning (and so 'force' to look for the official solution)
+          if(!isError)
+          {
+            return;   //don't log too much, but do it at the beginning (and so 'force' to look for a future official solution)
+          }
       }
       console.log(""+this.LOGGED+": router.activate:"+s);
   }
