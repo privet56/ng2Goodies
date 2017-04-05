@@ -1,0 +1,1883 @@
+{"data":{
+"[SOA-SALES-SERVICES mchp406a] Mongo TEST - INFO":[
+
+{	"End":"Mon Dec 15 11:15:02 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14334657, 	"Runtime":"5 hours; 40 minutes; 2 seconds", 	"Start":"Mon Dec 15 05:35:00 CET 2014"}
+,
+{	"End":"Sun Dec 14 11:13:40 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14334641, 	"Runtime":"5 hours; 38 minutes; 40 seconds", 	"Start":"Sun Dec 14 05:35:00 CET 2014"}
+,
+{	"End":"Sat Dec 13 10:21:58 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14334641, 	"Runtime":"4 hours; 46 minutes; 58 seconds", 	"Start":"Sat Dec 13 05:35:00 CET 2014"}
+,
+{	"End":"Fri Dec 12 11:24:23 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14327426, 	"Runtime":"5 hours; 49 minutes; 23 seconds", 	"Start":"Fri Dec 12 05:35:00 CET 2014"}
+,
+{	"End":"Thu Dec 11 10:09:13 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14299746, 	"Runtime":"4 hours; 34 minutes; 13 seconds", 	"Start":"Thu Dec 11 05:35:00 CET 2014"}
+,
+{	"End":"Wed Dec 10 10:50:03 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14282304, 	"Runtime":"5 hours; 15 minutes; 3 seconds", 	"Start":"Wed Dec 10 05:35:00 CET 2014"}
+,
+{	"End":"Tue Dec 09 11:13:47 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14275119, 	"Runtime":"5 hours; 38 minutes; 47 seconds", 	"Start":"Tue Dec 09 05:35:00 CET 2014"}
+,
+{	"End":"Mon Dec 08 11:11:42 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14235263, 	"Runtime":"5 hours; 36 minutes; 42 seconds", 	"Start":"Mon Dec 08 05:35:00 CET 2014"}
+,
+{	"End":"Sun Dec 07 09:34:30 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14234127, 	"Runtime":"3 hours; 59 minutes; 30 seconds", 	"Start":"Sun Dec 07 05:35:00 CET 2014"}
+,
+{	"End":"Sat Dec 06 10:14:27 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14232080, 	"Runtime":"4 hours; 39 minutes; 27 seconds", 	"Start":"Sat Dec 06 05:35:00 CET 2014"}
+,
+{	"End":"Fri Dec 05 11:08:07 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":14019987, 	"Runtime":"5 hours; 33 minutes; 7 seconds", 	"Start":"Fri Dec 05 05:35:00 CET 2014"}
+,
+{	"End":"Thu Dec 04 11:08:37 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13819210, 	"Runtime":"5 hours; 33 minutes; 37 seconds", 	"Start":"Thu Dec 04 05:35:00 CET 2014"}
+,
+{	"End":"Wed Dec 03 11:08:38 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13816182, 	"Runtime":"5 hours; 33 minutes; 38 seconds", 	"Start":"Wed Dec 03 05:35:00 CET 2014"}
+,
+{	"End":"Tue Dec 02 08:25:29 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13810914, 	"Runtime":"2 hours; 50 minutes; 29 seconds", 	"Start":"Tue Dec 02 05:35:00 CET 2014"}
+,
+{	"End":"Mon Dec 01 15:09:37 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13809675, 	"Runtime":"2 hours; 11 minutes; 45 seconds", 	"Start":"Mon Dec 01 12:57:52 CET 2014"}
+,
+{	"End":"Fri Nov 28 08:31:24 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13809604, 	"Runtime":"2 hours; 56 minutes; 24 seconds", 	"Start":"Fri Nov 28 05:35:00 CET 2014"}
+,
+{	"End":"Thu Nov 27 08:28:51 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13809101, 	"Runtime":"2 hours; 53 minutes; 51 seconds", 	"Start":"Thu Nov 27 05:35:00 CET 2014"}
+,
+{	"End":"Wed Nov 26 08:01:11 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13805839, 	"Runtime":"2 hours; 26 minutes; 11 seconds", 	"Start":"Wed Nov 26 05:35:00 CET 2014"}
+,
+{	"End":"Tue Nov 25 08:15:39 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13804019, 	"Runtime":"2 hours; 40 minutes; 39 seconds", 	"Start":"Tue Nov 25 05:35:00 CET 2014"}
+,
+{	"End":"Mon Nov 24 08:17:05 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13797728, 	"Runtime":"2 hours; 42 minutes; 5 seconds", 	"Start":"Mon Nov 24 05:35:00 CET 2014"}
+,
+{	"End":"Sun Nov 23 08:21:39 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13797726, 	"Runtime":"2 hours; 46 minutes; 39 seconds", 	"Start":"Sun Nov 23 05:35:00 CET 2014"}
+,
+{	"End":"Sat Nov 22 08:06:59 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13793073, 	"Runtime":"2 hours; 31 minutes; 59 seconds", 	"Start":"Sat Nov 22 05:35:00 CET 2014"}
+,
+{	"End":"Fri Nov 21 08:17:51 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13792054, 	"Runtime":"2 hours; 42 minutes; 51 seconds", 	"Start":"Fri Nov 21 05:35:00 CET 2014"}
+,
+{	"End":"Thu Nov 20 07:58:04 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13756008, 	"Runtime":"2 hours; 23 minutes; 4 seconds", 	"Start":"Thu Nov 20 05:35:00 CET 2014"}
+,
+{	"End":"Wed Nov 19 08:19:33 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13755852, 	"Runtime":"2 hours; 44 minutes; 33 seconds", 	"Start":"Wed Nov 19 05:35:00 CET 2014"}
+,
+{	"End":"Tue Nov 18 08:32:48 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13751430, 	"Runtime":"2 hours; 57 minutes; 48 seconds", 	"Start":"Tue Nov 18 05:35:00 CET 2014"}
+,
+{	"End":"Mon Nov 17 13:26:02 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13751386, 	"Runtime":"3 hours; 4 minutes; 45 seconds", 	"Start":"Mon Nov 17 10:21:16 CET 2014"}
+,
+{	"End":"Sat Nov 15 10:11:32 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13735600, 	"Runtime":"4 hours; 36 minutes; 32 seconds", 	"Start":"Sat Nov 15 05:35:00 CET 2014"}
+,
+{	"End":"Fri Nov 14 10:29:26 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13726057, 	"Runtime":"4 hours; 54 minutes; 26 seconds", 	"Start":"Fri Nov 14 05:35:00 CET 2014"}
+,
+{	"End":"Thu Nov 13 10:34:16 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13725808, 	"Runtime":"4 hours; 59 minutes; 16 seconds", 	"Start":"Thu Nov 13 05:35:00 CET 2014"}
+,
+{	"End":"Wed Nov 12 10:29:55 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13723730, 	"Runtime":"4 hours; 54 minutes; 55 seconds", 	"Start":"Wed Nov 12 05:35:00 CET 2014"}
+,
+{	"End":"Tue Nov 11 09:31:58 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13710766, 	"Runtime":"3 hours; 56 minutes; 58 seconds", 	"Start":"Tue Nov 11 05:35:00 CET 2014"}
+,
+{	"End":"Mon Nov 10 09:42:36 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13709755, 	"Runtime":"4 hours; 7 minutes; 36 seconds", 	"Start":"Mon Nov 10 05:35:00 CET 2014"}
+,
+{	"End":"Sun Nov 09 11:15:12 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13709741, 	"Runtime":"5 hours; 40 minutes; 12 seconds", 	"Start":"Sun Nov 09 05:35:00 CET 2014"}
+,
+{	"End":"Sat Nov 08 09:15:28 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13709741, 	"Runtime":"3 hours; 40 minutes; 28 seconds", 	"Start":"Sat Nov 08 05:35:00 CET 2014"}
+,
+{	"End":"Fri Nov 07 09:23:36 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13705488, 	"Runtime":"3 hours; 48 minutes; 36 seconds", 	"Start":"Fri Nov 07 05:35:00 CET 2014"}
+,
+{	"End":"Thu Nov 06 09:06:30 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13682164, 	"Runtime":"3 hours; 31 minutes; 30 seconds", 	"Start":"Thu Nov 06 05:35:00 CET 2014"}
+,
+{	"End":"Wed Nov 05 08:55:14 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13670701, 	"Runtime":"3 hours; 20 minutes; 14 seconds", 	"Start":"Wed Nov 05 05:35:00 CET 2014"}
+,
+{	"End":"Tue Nov 04 09:13:15 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13665921, 	"Runtime":"3 hours; 38 minutes; 15 seconds", 	"Start":"Tue Nov 04 05:35:00 CET 2014"}
+,
+{	"End":"Mon Nov 03 08:59:17 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13665860, 	"Runtime":"3 hours; 24 minutes; 17 seconds", 	"Start":"Mon Nov 03 05:35:00 CET 2014"}
+,
+{	"End":"Sun Nov 02 09:03:39 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13665860, 	"Runtime":"3 hours; 28 minutes; 39 seconds", 	"Start":"Sun Nov 02 05:35:00 CET 2014"}
+,
+{	"End":"Sat Nov 01 08:53:15 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13665420, 	"Runtime":"3 hours; 18 minutes; 15 seconds", 	"Start":"Sat Nov 01 05:35:00 CET 2014"}
+,
+{	"End":"Fri Oct 31 09:01:54 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13661621, 	"Runtime":"3 hours; 26 minutes; 54 seconds", 	"Start":"Fri Oct 31 05:35:00 CET 2014"}
+,
+{	"End":"Thu Oct 30 08:42:26 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13660121, 	"Runtime":"3 hours; 7 minutes; 26 seconds", 	"Start":"Thu Oct 30 05:35:00 CET 2014"}
+,
+{	"End":"Wed Oct 29 11:10:42 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13654632, 	"Runtime":"5 hours; 35 minutes; 42 seconds", 	"Start":"Wed Oct 29 05:35:00 CET 2014"}
+,
+{	"End":"Tue Oct 28 10:58:18 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13654478, 	"Runtime":"5 hours; 23 minutes; 18 seconds", 	"Start":"Tue Oct 28 05:35:00 CET 2014"}
+,
+{	"End":"Mon Oct 27 10:11:24 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13654217, 	"Runtime":"4 hours; 36 minutes; 24 seconds", 	"Start":"Mon Oct 27 05:35:00 CET 2014"}
+,
+{	"End":"Sun Oct 26 11:03:45 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13654217, 	"Runtime":"5 hours; 28 minutes; 45 seconds", 	"Start":"Sun Oct 26 05:35:00 CET 2014"}
+,
+{	"End":"Sat Oct 25 11:41:54 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13653070, 	"Runtime":"6 hours; 6 minutes; 54 seconds", 	"Start":"Sat Oct 25 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Oct 24 10:04:25 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13585605, 	"Runtime":"4 hours; 29 minutes; 25 seconds", 	"Start":"Fri Oct 24 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Oct 23 09:53:26 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13580894, 	"Runtime":"4 hours; 18 minutes; 26 seconds", 	"Start":"Thu Oct 23 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Oct 22 10:24:02 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13562976, 	"Runtime":"4 hours; 49 minutes; 2 seconds", 	"Start":"Wed Oct 22 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Oct 21 10:18:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13494795, 	"Runtime":"4 hours; 43 minutes; 32 seconds", 	"Start":"Tue Oct 21 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Oct 20 10:45:39 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13412249, 	"Runtime":"5 hours; 10 minutes; 39 seconds", 	"Start":"Mon Oct 20 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Oct 19 09:56:05 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13412249, 	"Runtime":"4 hours; 21 minutes; 5 seconds", 	"Start":"Sun Oct 19 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Oct 18 10:42:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13412249, 	"Runtime":"5 hours; 7 minutes; 8 seconds", 	"Start":"Sat Oct 18 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Oct 17 09:50:57 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13401420, 	"Runtime":"4 hours; 15 minutes; 57 seconds", 	"Start":"Fri Oct 17 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Oct 16 09:31:31 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13399156, 	"Runtime":"3 hours; 56 minutes; 31 seconds", 	"Start":"Thu Oct 16 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Oct 15 10:51:11 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13396848, 	"Runtime":"5 hours; 16 minutes; 11 seconds", 	"Start":"Wed Oct 15 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Oct 14 11:26:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13394471, 	"Runtime":"5 hours; 51 minutes; 8 seconds", 	"Start":"Tue Oct 14 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Oct 13 10:12:39 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13392287, 	"Runtime":"4 hours; 37 minutes; 39 seconds", 	"Start":"Mon Oct 13 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Oct 12 10:03:36 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13391242, 	"Runtime":"4 hours; 28 minutes; 36 seconds", 	"Start":"Sun Oct 12 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Oct 11 10:28:17 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13382016, 	"Runtime":"4 hours; 53 minutes; 17 seconds", 	"Start":"Sat Oct 11 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Oct 10 09:33:20 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13377682, 	"Runtime":"3 hours; 58 minutes; 20 seconds", 	"Start":"Fri Oct 10 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Oct 08 10:24:09 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13375103, 	"Runtime":"4 hours; 49 minutes; 9 seconds", 	"Start":"Wed Oct 08 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Oct 07 09:51:26 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13371028, 	"Runtime":"4 hours; 16 minutes; 26 seconds", 	"Start":"Tue Oct 07 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Oct 06 08:54:00 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13369344, 	"Runtime":"3 hours; 19 minutes; 0 seconds", 	"Start":"Mon Oct 06 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Oct 05 09:18:47 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13368895, 	"Runtime":"3 hours; 43 minutes; 47 seconds", 	"Start":"Sun Oct 05 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Oct 04 08:43:01 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13337745, 	"Runtime":"3 hours; 8 minutes; 1 seconds", 	"Start":"Sat Oct 04 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Oct 03 08:59:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13326403, 	"Runtime":"3 hours; 24 minutes; 3 seconds", 	"Start":"Fri Oct 03 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Oct 02 09:01:25 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":13042523, 	"Runtime":"3 hours; 26 minutes; 25 seconds", 	"Start":"Thu Oct 02 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Oct 01 08:43:37 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12732344, 	"Runtime":"3 hours; 8 minutes; 37 seconds", 	"Start":"Wed Oct 01 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Sep 30 08:25:27 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12728514, 	"Runtime":"2 hours; 50 minutes; 27 seconds", 	"Start":"Tue Sep 30 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Sep 29 08:31:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12728498, 	"Runtime":"2 hours; 56 minutes; 17 seconds", 	"Start":"Mon Sep 29 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Sep 28 08:19:33 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12728498, 	"Runtime":"2 hours; 44 minutes; 33 seconds", 	"Start":"Sun Sep 28 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Sep 27 08:26:01 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12728498, 	"Runtime":"2 hours; 51 minutes; 1 seconds", 	"Start":"Sat Sep 27 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Sep 26 08:18:33 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12726196, 	"Runtime":"2 hours; 43 minutes; 33 seconds", 	"Start":"Fri Sep 26 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Sep 25 08:22:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12714324, 	"Runtime":"2 hours; 47 minutes; 3 seconds", 	"Start":"Thu Sep 25 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Sep 24 08:51:29 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12714062, 	"Runtime":"3 hours; 16 minutes; 29 seconds", 	"Start":"Wed Sep 24 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Sep 23 09:26:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12713729, 	"Runtime":"3 hours; 51 minutes; 3 seconds", 	"Start":"Tue Sep 23 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Sep 21 08:17:14 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12713698, 	"Runtime":"2 hours; 42 minutes; 14 seconds", 	"Start":"Sun Sep 21 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Sep 20 08:16:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12713657, 	"Runtime":"2 hours; 41 minutes; 15 seconds", 	"Start":"Sat Sep 20 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Sep 19 07:52:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12710967, 	"Runtime":"2 hours; 17 minutes; 34 seconds", 	"Start":"Fri Sep 19 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Sep 18 08:24:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12709896, 	"Runtime":"2 hours; 49 minutes; 6 seconds", 	"Start":"Thu Sep 18 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Sep 17 07:52:52 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12647623, 	"Runtime":"2 hours; 17 minutes; 52 seconds", 	"Start":"Wed Sep 17 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Sep 16 12:08:41 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12457807, 	"Runtime":"2 hours; 37 minutes; 51 seconds", 	"Start":"Tue Sep 16 09:30:49 CEST 2014"}
+,
+{	"End":"Tue Sep 16 09:12:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12452397, 	"Runtime":"3 hours; 37 minutes; 15 seconds", 	"Start":"Tue Sep 16 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Sep 14 08:37:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12435472, 	"Runtime":"3 hours; 2 minutes; 34 seconds", 	"Start":"Sun Sep 14 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Sep 13 08:48:09 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12435472, 	"Runtime":"3 hours; 13 minutes; 9 seconds", 	"Start":"Sat Sep 13 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Sep 12 09:17:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398495, 	"Runtime":"3 hours; 42 minutes; 6 seconds", 	"Start":"Fri Sep 12 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Sep 11 08:00:26 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398492, 	"Runtime":"2 hours; 25 minutes; 26 seconds", 	"Start":"Thu Sep 11 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Sep 10 07:49:20 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398334, 	"Runtime":"2 hours; 14 minutes; 20 seconds", 	"Start":"Wed Sep 10 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Sep 09 07:57:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398329, 	"Runtime":"2 hours; 22 minutes; 6 seconds", 	"Start":"Tue Sep 09 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Sep 08 08:39:39 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398329, 	"Runtime":"3 hours; 4 minutes; 39 seconds", 	"Start":"Mon Sep 08 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Sep 07 08:12:48 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398329, 	"Runtime":"2 hours; 37 minutes; 48 seconds", 	"Start":"Sun Sep 07 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Sep 06 08:35:29 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12398329, 	"Runtime":"3 hours; 0 minutes; 29 seconds", 	"Start":"Sat Sep 06 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Sep 05 08:07:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12356566, 	"Runtime":"2 hours; 32 minutes; 34 seconds", 	"Start":"Fri Sep 05 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Sep 04 08:00:54 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12167072, 	"Runtime":"2 hours; 25 minutes; 54 seconds", 	"Start":"Thu Sep 04 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Sep 03 07:57:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12066072, 	"Runtime":"2 hours; 22 minutes; 3 seconds", 	"Start":"Wed Sep 03 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Sep 02 08:06:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12066059, 	"Runtime":"2 hours; 31 minutes; 3 seconds", 	"Start":"Tue Sep 02 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Sep 01 07:55:10 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12062514, 	"Runtime":"2 hours; 20 minutes; 10 seconds", 	"Start":"Mon Sep 01 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Aug 31 07:34:22 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12062505, 	"Runtime":"1 hours; 59 minutes; 22 seconds", 	"Start":"Sun Aug 31 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Aug 30 07:37:01 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12061667, 	"Runtime":"2 hours; 2 minutes; 1 seconds", 	"Start":"Sat Aug 30 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Aug 29 07:38:10 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12056330, 	"Runtime":"2 hours; 3 minutes; 10 seconds", 	"Start":"Fri Aug 29 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Aug 28 07:37:46 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12056316, 	"Runtime":"2 hours; 2 minutes; 46 seconds", 	"Start":"Thu Aug 28 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Aug 27 15:13:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12056255, 	"Runtime":"2 hours; 12 minutes; 41 seconds", 	"Start":"Wed Aug 27 13:01:17 CEST 2014"}
+,
+{	"End":"Sun Aug 24 07:45:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12037466, 	"Runtime":"2 hours; 10 minutes; 8 seconds", 	"Start":"Sun Aug 24 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Aug 23 07:43:42 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12037466, 	"Runtime":"2 hours; 8 minutes; 42 seconds", 	"Start":"Sat Aug 23 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Aug 22 07:42:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12037072, 	"Runtime":"2 hours; 7 minutes; 58 seconds", 	"Start":"Fri Aug 22 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Aug 21 08:10:48 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12036527, 	"Runtime":"2 hours; 35 minutes; 48 seconds", 	"Start":"Thu Aug 21 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Aug 20 07:58:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12033547, 	"Runtime":"2 hours; 23 minutes; 6 seconds", 	"Start":"Wed Aug 20 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Aug 19 11:37:52 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12025869, 	"Runtime":"2 hours; 10 minutes; 51 seconds", 	"Start":"Tue Aug 19 09:27:00 CEST 2014"}
+,
+{	"End":"Tue Aug 19 09:06:27 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":7534921, 	"Runtime":"3 hours; 31 minutes; 27 seconds", 	"Start":"Tue Aug 19 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Aug 18 06:43:18 CEST 2014", 	"FOLLOWING COLLECTIONS ARE MISSING OR ARE EMPTY":"(DB HAS NOT CHANGED!)", 	"Mongo DB":"mchp407a", 	"Number of persisted records":2259759, 	"Runtime":"1 hours; 8 minutes; 18 seconds", 	"Start":"Mon Aug 18 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Aug 17 06:45:27 CEST 2014", 	"FOLLOWING COLLECTIONS ARE MISSING OR ARE EMPTY":"(DB HAS NOT CHANGED!)", 	"Mongo DB":"mchp407a", 	"Number of persisted records":1934672, 	"Runtime":"1 hours; 10 minutes; 27 seconds", 	"Start":"Sun Aug 17 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Aug 16 09:12:56 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12025015, 	"Runtime":"3 hours; 37 minutes; 56 seconds", 	"Start":"Sat Aug 16 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Aug 15 09:32:25 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12024573, 	"Runtime":"3 hours; 57 minutes; 25 seconds", 	"Start":"Fri Aug 15 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Aug 14 09:11:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12024413, 	"Runtime":"3 hours; 36 minutes; 38 seconds", 	"Start":"Thu Aug 14 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Aug 13 08:36:59 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12023759, 	"Runtime":"3 hours; 1 minutes; 59 seconds", 	"Start":"Wed Aug 13 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Aug 12 08:36:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12020419, 	"Runtime":"3 hours; 1 minutes; 32 seconds", 	"Start":"Tue Aug 12 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Aug 11 09:58:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12020020, 	"Runtime":"4 hours; 23 minutes; 58 seconds", 	"Start":"Mon Aug 11 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Aug 10 08:42:55 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12020020, 	"Runtime":"3 hours; 7 minutes; 55 seconds", 	"Start":"Sun Aug 10 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Aug 09 09:27:31 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12011398, 	"Runtime":"3 hours; 52 minutes; 31 seconds", 	"Start":"Sat Aug 09 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Aug 08 08:58:56 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":12008594, 	"Runtime":"3 hours; 23 minutes; 56 seconds", 	"Start":"Fri Aug 08 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Aug 07 08:30:41 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11922697, 	"Runtime":"2 hours; 55 minutes; 41 seconds", 	"Start":"Thu Aug 07 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Aug 06 09:47:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11922140, 	"Runtime":"4 hours; 12 minutes; 32 seconds", 	"Start":"Wed Aug 06 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Aug 05 09:54:14 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11920912, 	"Runtime":"4 hours; 19 minutes; 14 seconds", 	"Start":"Tue Aug 05 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Aug 04 09:15:37 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11920013, 	"Runtime":"3 hours; 40 minutes; 37 seconds", 	"Start":"Mon Aug 04 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Aug 03 09:20:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11920013, 	"Runtime":"3 hours; 45 minutes; 34 seconds", 	"Start":"Sun Aug 03 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Aug 02 09:45:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11919980, 	"Runtime":"4 hours; 10 minutes; 15 seconds", 	"Start":"Sat Aug 02 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Aug 01 09:14:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11919684, 	"Runtime":"3 hours; 39 minutes; 58 seconds", 	"Start":"Fri Aug 01 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jul 31 09:28:02 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11919360, 	"Runtime":"3 hours; 53 minutes; 2 seconds", 	"Start":"Thu Jul 31 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jul 30 09:29:25 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11907991, 	"Runtime":"3 hours; 54 minutes; 24 seconds", 	"Start":"Wed Jul 30 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jul 29 09:28:39 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11693038, 	"Runtime":"3 hours; 53 minutes; 39 seconds", 	"Start":"Tue Jul 29 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jul 28 09:16:49 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11589686, 	"Runtime":"3 hours; 41 minutes; 49 seconds", 	"Start":"Mon Jul 28 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jul 27 08:05:23 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11589686, 	"Runtime":"2 hours; 30 minutes; 23 seconds", 	"Start":"Sun Jul 27 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jul 26 09:27:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11589678, 	"Runtime":"3 hours; 52 minutes; 58 seconds", 	"Start":"Sat Jul 26 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jul 25 08:33:35 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11580662, 	"Runtime":"2 hours; 58 minutes; 35 seconds", 	"Start":"Fri Jul 25 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jul 24 09:40:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11529515, 	"Runtime":"4 hours; 5 minutes; 15 seconds", 	"Start":"Thu Jul 24 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jul 23 08:46:50 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11516634, 	"Runtime":"3 hours; 11 minutes; 50 seconds", 	"Start":"Wed Jul 23 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jul 22 08:55:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11514520, 	"Runtime":"3 hours; 20 minutes; 32 seconds", 	"Start":"Tue Jul 22 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jul 21 09:29:28 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11514271, 	"Runtime":"3 hours; 54 minutes; 28 seconds", 	"Start":"Mon Jul 21 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jul 20 09:03:28 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11514271, 	"Runtime":"3 hours; 28 minutes; 28 seconds", 	"Start":"Sun Jul 20 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jul 19 08:53:35 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11514267, 	"Runtime":"3 hours; 18 minutes; 35 seconds", 	"Start":"Sat Jul 19 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jul 18 08:51:05 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11512783, 	"Runtime":"3 hours; 16 minutes; 5 seconds", 	"Start":"Fri Jul 18 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jul 17 08:56:12 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11503762, 	"Runtime":"3 hours; 21 minutes; 12 seconds", 	"Start":"Thu Jul 17 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jul 16 08:45:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11502998, 	"Runtime":"3 hours; 10 minutes; 38 seconds", 	"Start":"Wed Jul 16 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jul 15 08:18:07 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11501208, 	"Runtime":"2 hours; 43 minutes; 7 seconds", 	"Start":"Tue Jul 15 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jul 14 08:21:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11500325, 	"Runtime":"2 hours; 46 minutes; 15 seconds", 	"Start":"Mon Jul 14 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jul 13 09:37:21 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11500325, 	"Runtime":"4 hours; 2 minutes; 21 seconds", 	"Start":"Sun Jul 13 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jul 12 08:40:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11500325, 	"Runtime":"3 hours; 5 minutes; 38 seconds", 	"Start":"Sat Jul 12 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jul 11 08:37:17 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11497450, 	"Runtime":"3 hours; 2 minutes; 17 seconds", 	"Start":"Fri Jul 11 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jul 10 09:14:54 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11451602, 	"Runtime":"3 hours; 39 minutes; 54 seconds", 	"Start":"Thu Jul 10 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jul 09 09:08:16 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11431269, 	"Runtime":"3 hours; 33 minutes; 16 seconds", 	"Start":"Wed Jul 09 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jul 08 08:44:05 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11237612, 	"Runtime":"3 hours; 9 minutes; 5 seconds", 	"Start":"Tue Jul 08 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jul 07 09:40:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11171127, 	"Runtime":"4 hours; 5 minutes; 8 seconds", 	"Start":"Mon Jul 07 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jul 06 08:35:57 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11169911, 	"Runtime":"3 hours; 0 minutes; 57 seconds", 	"Start":"Sun Jul 06 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jul 05 09:24:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11169674, 	"Runtime":"3 hours; 49 minutes; 32 seconds", 	"Start":"Sat Jul 05 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jul 04 09:22:21 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11134812, 	"Runtime":"3 hours; 47 minutes; 21 seconds", 	"Start":"Fri Jul 04 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jul 03 09:13:10 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11120631, 	"Runtime":"3 hours; 38 minutes; 10 seconds", 	"Start":"Thu Jul 03 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jul 02 09:30:02 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11119637, 	"Runtime":"3 hours; 55 minutes; 2 seconds", 	"Start":"Wed Jul 02 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jul 01 09:44:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11114677, 	"Runtime":"4 hours; 9 minutes; 6 seconds", 	"Start":"Tue Jul 01 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jun 30 08:56:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11102197, 	"Runtime":"3 hours; 21 minutes; 3 seconds", 	"Start":"Mon Jun 30 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jun 29 09:13:17 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11102197, 	"Runtime":"3 hours; 38 minutes; 17 seconds", 	"Start":"Sun Jun 29 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jun 28 09:35:44 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11093863, 	"Runtime":"4 hours; 0 minutes; 44 seconds", 	"Start":"Sat Jun 28 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jun 27 09:02:19 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11032688, 	"Runtime":"3 hours; 27 minutes; 19 seconds", 	"Start":"Fri Jun 27 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jun 26 08:43:37 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11029876, 	"Runtime":"3 hours; 8 minutes; 37 seconds", 	"Start":"Thu Jun 26 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jun 25 09:05:51 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11028397, 	"Runtime":"3 hours; 30 minutes; 51 seconds", 	"Start":"Wed Jun 25 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jun 24 08:38:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11031012, 	"Runtime":"3 hours; 3 minutes; 34 seconds", 	"Start":"Tue Jun 24 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jun 23 08:48:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11030923, 	"Runtime":"3 hours; 13 minutes; 38 seconds", 	"Start":"Mon Jun 23 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jun 22 08:07:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11030923, 	"Runtime":"2 hours; 32 minutes; 8 seconds", 	"Start":"Sun Jun 22 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jun 21 08:44:40 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11030923, 	"Runtime":"3 hours; 9 minutes; 40 seconds", 	"Start":"Sat Jun 21 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jun 20 08:37:12 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11030887, 	"Runtime":"3 hours; 2 minutes; 12 seconds", 	"Start":"Fri Jun 20 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jun 19 09:43:56 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11030887, 	"Runtime":"4 hours; 8 minutes; 56 seconds", 	"Start":"Thu Jun 19 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jun 18 08:55:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11029623, 	"Runtime":"3 hours; 20 minutes; 15 seconds", 	"Start":"Wed Jun 18 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jun 17 08:14:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11028433, 	"Runtime":"2 hours; 39 minutes; 18 seconds", 	"Start":"Tue Jun 17 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jun 16 08:10:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11024684, 	"Runtime":"2 hours; 35 minutes; 32 seconds", 	"Start":"Mon Jun 16 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jun 15 08:16:27 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11024684, 	"Runtime":"2 hours; 41 minutes; 27 seconds", 	"Start":"Sun Jun 15 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jun 14 08:27:57 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11024684, 	"Runtime":"2 hours; 52 minutes; 57 seconds", 	"Start":"Sat Jun 14 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jun 13 08:20:24 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11022659, 	"Runtime":"2 hours; 45 minutes; 24 seconds", 	"Start":"Fri Jun 13 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jun 12 08:10:30 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11018764, 	"Runtime":"2 hours; 35 minutes; 30 seconds", 	"Start":"Thu Jun 12 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jun 11 07:34:36 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11014673, 	"Runtime":"1 hours; 59 minutes; 36 seconds", 	"Start":"Wed Jun 11 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jun 10 07:53:29 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11014636, 	"Runtime":"2 hours; 18 minutes; 29 seconds", 	"Start":"Tue Jun 10 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jun 09 08:00:46 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11011831, 	"Runtime":"2 hours; 25 minutes; 46 seconds", 	"Start":"Mon Jun 09 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jun 08 07:47:16 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11011831, 	"Runtime":"2 hours; 12 minutes; 16 seconds", 	"Start":"Sun Jun 08 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Jun 07 08:04:27 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11011827, 	"Runtime":"2 hours; 29 minutes; 27 seconds", 	"Start":"Sat Jun 07 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Jun 06 07:35:49 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11006113, 	"Runtime":"2 hours; 0 minutes; 49 seconds", 	"Start":"Fri Jun 06 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Jun 05 07:37:04 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":11003402, 	"Runtime":"2 hours; 2 minutes; 4 seconds", 	"Start":"Thu Jun 05 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Jun 04 07:48:55 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10953325, 	"Runtime":"2 hours; 13 minutes; 55 seconds", 	"Start":"Wed Jun 04 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Jun 03 07:34:28 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10950452, 	"Runtime":"1 hours; 59 minutes; 28 seconds", 	"Start":"Tue Jun 03 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Jun 02 07:49:37 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10948937, 	"Runtime":"2 hours; 14 minutes; 37 seconds", 	"Start":"Mon Jun 02 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Jun 01 07:50:14 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10948937, 	"Runtime":"2 hours; 15 minutes; 14 seconds", 	"Start":"Sun Jun 01 05:35:00 CEST 2014"}
+,
+{	"End":"Sat May 31 07:40:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10948928, 	"Runtime":"2 hours; 5 minutes; 32 seconds", 	"Start":"Sat May 31 05:35:00 CEST 2014"}
+,
+{	"End":"Fri May 30 07:40:23 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10948873, 	"Runtime":"2 hours; 5 minutes; 23 seconds", 	"Start":"Fri May 30 05:35:00 CEST 2014"}
+,
+{	"End":"Thu May 29 07:48:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10942843, 	"Runtime":"2 hours; 13 minutes; 38 seconds", 	"Start":"Thu May 29 05:35:00 CEST 2014"}
+,
+{	"End":"Wed May 28 07:33:15 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10941000, 	"Runtime":"1 hours; 58 minutes; 15 seconds", 	"Start":"Wed May 28 05:35:00 CEST 2014"}
+,
+{	"End":"Tue May 27 07:52:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10940169, 	"Runtime":"2 hours; 17 minutes; 58 seconds", 	"Start":"Tue May 27 05:35:00 CEST 2014"}
+,
+{	"End":"Mon May 26 07:31:33 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10939413, 	"Runtime":"1 hours; 56 minutes; 33 seconds", 	"Start":"Mon May 26 05:35:00 CEST 2014"}
+,
+{	"End":"Sun May 25 07:56:49 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10939413, 	"Runtime":"2 hours; 21 minutes; 49 seconds", 	"Start":"Sun May 25 05:35:00 CEST 2014"}
+,
+{	"End":"Sat May 24 08:14:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10939413, 	"Runtime":"2 hours; 39 minutes; 18 seconds", 	"Start":"Sat May 24 05:35:00 CEST 2014"}
+,
+{	"End":"Fri May 23 08:58:58 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10937790, 	"Runtime":"3 hours; 23 minutes; 58 seconds", 	"Start":"Fri May 23 05:35:00 CEST 2014"}
+,
+{	"End":"Thu May 22 07:32:23 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10931606, 	"Runtime":"1 hours; 57 minutes; 23 seconds", 	"Start":"Thu May 22 05:35:00 CEST 2014"}
+,
+{	"End":"Wed May 21 08:00:07 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10925334, 	"Runtime":"2 hours; 25 minutes; 7 seconds", 	"Start":"Wed May 21 05:35:00 CEST 2014"}
+,
+{	"End":"Tue May 20 12:40:27 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10924224, 	"Runtime":"3 hours; 1 minutes; 15 seconds", 	"Start":"Tue May 20 09:39:12 CEST 2014"}
+,
+{	"End":"Mon May 19 16:46:12 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10894316, 	"Runtime":"2 hours; 9 minutes; 55 seconds", 	"Start":"Mon May 19 14:36:16 CEST 2014"}
+,
+{	"End":"Sun May 18 08:11:35 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10893856, 	"Runtime":"2 hours; 36 minutes; 35 seconds", 	"Start":"Sun May 18 05:35:00 CEST 2014"}
+,
+{	"End":"Sat May 17 07:55:02 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10893541, 	"Runtime":"2 hours; 20 minutes; 2 seconds", 	"Start":"Sat May 17 05:35:00 CEST 2014"}
+,
+{	"End":"Fri May 16 07:53:40 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10890294, 	"Runtime":"2 hours; 18 minutes; 40 seconds", 	"Start":"Fri May 16 05:35:00 CEST 2014"}
+,
+{	"End":"Thu May 15 08:10:47 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10889110, 	"Runtime":"2 hours; 35 minutes; 47 seconds", 	"Start":"Thu May 15 05:35:00 CEST 2014"}
+,
+{	"End":"Wed May 14 07:53:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10888336, 	"Runtime":"2 hours; 18 minutes; 18 seconds", 	"Start":"Wed May 14 05:35:00 CEST 2014"}
+,
+{	"End":"Tue May 13 08:07:32 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10886497, 	"Runtime":"2 hours; 32 minutes; 32 seconds", 	"Start":"Tue May 13 05:35:00 CEST 2014"}
+,
+{	"End":"Mon May 12 07:46:09 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10885860, 	"Runtime":"2 hours; 11 minutes; 9 seconds", 	"Start":"Mon May 12 05:35:00 CEST 2014"}
+,
+{	"End":"Sun May 11 08:05:30 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10885860, 	"Runtime":"2 hours; 30 minutes; 30 seconds", 	"Start":"Sun May 11 05:35:00 CEST 2014"}
+,
+{	"End":"Sat May 10 07:47:52 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10885860, 	"Runtime":"2 hours; 12 minutes; 52 seconds", 	"Start":"Sat May 10 05:35:00 CEST 2014"}
+,
+{	"End":"Fri May 09 08:09:45 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10884867, 	"Runtime":"2 hours; 34 minutes; 45 seconds", 	"Start":"Fri May 09 05:35:00 CEST 2014"}
+,
+{	"End":"Thu May 08 07:53:02 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10884601, 	"Runtime":"2 hours; 18 minutes; 2 seconds", 	"Start":"Thu May 08 05:35:00 CEST 2014"}
+,
+{	"End":"Wed May 07 07:47:12 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10884517, 	"Runtime":"2 hours; 12 minutes; 12 seconds", 	"Start":"Wed May 07 05:35:00 CEST 2014"}
+,
+{	"End":"Tue May 06 07:46:53 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10881992, 	"Runtime":"2 hours; 11 minutes; 53 seconds", 	"Start":"Tue May 06 05:35:00 CEST 2014"}
+,
+{	"End":"Mon May 05 07:49:21 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10878872, 	"Runtime":"2 hours; 14 minutes; 21 seconds", 	"Start":"Mon May 05 05:35:00 CEST 2014"}
+,
+{	"End":"Sun May 04 07:41:57 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10878871, 	"Runtime":"2 hours; 6 minutes; 57 seconds", 	"Start":"Sun May 04 05:35:00 CEST 2014"}
+,
+{	"End":"Sat May 03 07:45:05 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10873249, 	"Runtime":"2 hours; 10 minutes; 5 seconds", 	"Start":"Sat May 03 05:35:00 CEST 2014"}
+,
+{	"End":"Thu May 01 08:56:13 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10870208, 	"Runtime":"3 hours; 21 minutes; 13 seconds", 	"Start":"Thu May 01 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Apr 29 09:21:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10856799, 	"Runtime":"3 hours; 46 minutes; 18 seconds", 	"Start":"Tue Apr 29 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Apr 28 09:23:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10856775, 	"Runtime":"3 hours; 48 minutes; 8 seconds", 	"Start":"Mon Apr 28 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Apr 27 09:14:06 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10856775, 	"Runtime":"3 hours; 39 minutes; 6 seconds", 	"Start":"Sun Apr 27 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Apr 26 09:04:52 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10856775, 	"Runtime":"3 hours; 29 minutes; 52 seconds", 	"Start":"Sat Apr 26 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Apr 25 09:00:30 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10856773, 	"Runtime":"3 hours; 25 minutes; 30 seconds", 	"Start":"Fri Apr 25 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Apr 24 08:32:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10854827, 	"Runtime":"2 hours; 57 minutes; 3 seconds", 	"Start":"Thu Apr 24 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Apr 23 09:05:05 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10853244, 	"Runtime":"3 hours; 30 minutes; 5 seconds", 	"Start":"Wed Apr 23 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Apr 22 09:05:44 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10850436, 	"Runtime":"3 hours; 30 minutes; 44 seconds", 	"Start":"Tue Apr 22 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Apr 21 09:05:38 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10850208, 	"Runtime":"3 hours; 30 minutes; 38 seconds", 	"Start":"Mon Apr 21 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Apr 20 09:05:03 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10850208, 	"Runtime":"3 hours; 30 minutes; 3 seconds", 	"Start":"Sun Apr 20 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Apr 19 08:43:40 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10849714, 	"Runtime":"3 hours; 8 minutes; 40 seconds", 	"Start":"Sat Apr 19 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Apr 18 09:16:04 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10847774, 	"Runtime":"3 hours; 41 minutes; 4 seconds", 	"Start":"Fri Apr 18 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Apr 17 09:41:34 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10838882, 	"Runtime":"4 hours; 6 minutes; 34 seconds", 	"Start":"Thu Apr 17 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Apr 16 09:40:54 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10838838, 	"Runtime":"4 hours; 5 minutes; 54 seconds", 	"Start":"Wed Apr 16 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Apr 15 09:04:24 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10835299, 	"Runtime":"3 hours; 29 minutes; 24 seconds", 	"Start":"Tue Apr 15 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Apr 14 09:37:36 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10835181, 	"Runtime":"4 hours; 2 minutes; 36 seconds", 	"Start":"Mon Apr 14 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Apr 13 09:21:30 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10835167, 	"Runtime":"3 hours; 46 minutes; 30 seconds", 	"Start":"Sun Apr 13 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Apr 12 08:33:30 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10835167, 	"Runtime":"2 hours; 58 minutes; 30 seconds", 	"Start":"Sat Apr 12 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Apr 11 09:37:18 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10832897, 	"Runtime":"4 hours; 2 minutes; 18 seconds", 	"Start":"Fri Apr 11 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Apr 10 08:34:08 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10829867, 	"Runtime":"2 hours; 59 minutes; 8 seconds", 	"Start":"Thu Apr 10 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Apr 09 08:58:46 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10829347, 	"Runtime":"3 hours; 23 minutes; 46 seconds", 	"Start":"Wed Apr 09 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Apr 08 09:07:50 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10824689, 	"Runtime":"3 hours; 32 minutes; 50 seconds", 	"Start":"Tue Apr 08 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Apr 07 08:21:22 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10822866, 	"Runtime":"2 hours; 46 minutes; 22 seconds", 	"Start":"Mon Apr 07 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Apr 06 09:26:48 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10822866, 	"Runtime":"3 hours; 51 minutes; 48 seconds", 	"Start":"Sun Apr 06 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Apr 05 09:23:39 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10822866, 	"Runtime":"3 hours; 48 minutes; 39 seconds", 	"Start":"Sat Apr 05 05:35:00 CEST 2014"}
+,
+{	"End":"Fri Apr 04 09:25:22 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10821296, 	"Runtime":"3 hours; 50 minutes; 22 seconds", 	"Start":"Fri Apr 04 05:35:00 CEST 2014"}
+,
+{	"End":"Thu Apr 03 08:59:51 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10820855, 	"Runtime":"3 hours; 24 minutes; 51 seconds", 	"Start":"Thu Apr 03 05:35:00 CEST 2014"}
+,
+{	"End":"Wed Apr 02 09:30:09 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10820316, 	"Runtime":"3 hours; 55 minutes; 9 seconds", 	"Start":"Wed Apr 02 05:35:00 CEST 2014"}
+,
+{	"End":"Tue Apr 01 09:26:36 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10814170, 	"Runtime":"3 hours; 51 minutes; 36 seconds", 	"Start":"Tue Apr 01 05:35:00 CEST 2014"}
+,
+{	"End":"Mon Mar 31 09:14:11 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10811804, 	"Runtime":"3 hours; 39 minutes; 11 seconds", 	"Start":"Mon Mar 31 05:35:00 CEST 2014"}
+,
+{	"End":"Sun Mar 30 09:22:09 CEST 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10811804, 	"Runtime":"3 hours; 47 minutes; 9 seconds", 	"Start":"Sun Mar 30 05:35:00 CEST 2014"}
+,
+{	"End":"Sat Mar 29 08:39:15 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10811804, 	"Runtime":"3 hours; 4 minutes; 15 seconds", 	"Start":"Sat Mar 29 05:35:00 CET 2014"}
+,
+{	"End":"Fri Mar 28 10:07:58 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10810238, 	"Runtime":"4 hours; 32 minutes; 58 seconds", 	"Start":"Fri Mar 28 05:35:00 CET 2014"}
+,
+{	"End":"Thu Mar 27 09:22:54 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10795554, 	"Runtime":"3 hours; 47 minutes; 54 seconds", 	"Start":"Thu Mar 27 05:35:00 CET 2014"}
+,
+{	"End":"Wed Mar 26 09:50:03 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10782203, 	"Runtime":"4 hours; 15 minutes; 3 seconds", 	"Start":"Wed Mar 26 05:35:00 CET 2014"}
+,
+{	"End":"Tue Mar 25 09:46:12 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10778026, 	"Runtime":"4 hours; 11 minutes; 12 seconds", 	"Start":"Tue Mar 25 05:35:00 CET 2014"}
+,
+{	"End":"Mon Mar 24 09:52:50 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10777893, 	"Runtime":"4 hours; 17 minutes; 49 seconds", 	"Start":"Mon Mar 24 05:35:00 CET 2014"}
+,
+{	"End":"Sun Mar 23 09:16:00 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10777893, 	"Runtime":"3 hours; 41 minutes; 0 seconds", 	"Start":"Sun Mar 23 05:35:00 CET 2014"}
+,
+{	"End":"Sat Mar 22 09:22:46 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10777893, 	"Runtime":"3 hours; 47 minutes; 46 seconds", 	"Start":"Sat Mar 22 05:35:00 CET 2014"}
+,
+{	"End":"Fri Mar 21 09:50:56 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10777806, 	"Runtime":"4 hours; 15 minutes; 56 seconds", 	"Start":"Fri Mar 21 05:35:00 CET 2014"}
+,
+{	"End":"Thu Mar 20 09:33:46 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10774446, 	"Runtime":"3 hours; 58 minutes; 46 seconds", 	"Start":"Thu Mar 20 05:35:00 CET 2014"}
+,
+{	"End":"Wed Mar 19 09:29:42 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10772632, 	"Runtime":"3 hours; 54 minutes; 42 seconds", 	"Start":"Wed Mar 19 05:35:00 CET 2014"}
+,
+{	"End":"Tue Mar 18 09:05:36 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10772463, 	"Runtime":"3 hours; 30 minutes; 36 seconds", 	"Start":"Tue Mar 18 05:35:00 CET 2014"}
+,
+{	"End":"Mon Mar 17 09:39:55 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10771564, 	"Runtime":"4 hours; 4 minutes; 55 seconds", 	"Start":"Mon Mar 17 05:35:00 CET 2014"}
+,
+{	"End":"Sun Mar 16 09:19:16 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10771564, 	"Runtime":"3 hours; 44 minutes; 16 seconds", 	"Start":"Sun Mar 16 05:35:00 CET 2014"}
+,
+{	"End":"Sat Mar 15 09:12:40 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10771564, 	"Runtime":"3 hours; 37 minutes; 40 seconds", 	"Start":"Sat Mar 15 05:35:00 CET 2014"}
+,
+{	"End":"Fri Mar 14 09:18:01 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10770714, 	"Runtime":"3 hours; 43 minutes; 1 seconds", 	"Start":"Fri Mar 14 05:35:00 CET 2014"}
+,
+{	"End":"Thu Mar 13 09:21:34 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10767955, 	"Runtime":"3 hours; 46 minutes; 34 seconds", 	"Start":"Thu Mar 13 05:35:00 CET 2014"}
+,
+{	"End":"Wed Mar 12 09:10:19 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10767733, 	"Runtime":"3 hours; 35 minutes; 19 seconds", 	"Start":"Wed Mar 12 05:35:00 CET 2014"}
+,
+{	"End":"Tue Mar 11 09:18:45 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10758331, 	"Runtime":"3 hours; 43 minutes; 45 seconds", 	"Start":"Tue Mar 11 05:35:00 CET 2014"}
+,
+{	"End":"Mon Mar 10 09:14:29 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10755753, 	"Runtime":"3 hours; 39 minutes; 29 seconds", 	"Start":"Mon Mar 10 05:35:00 CET 2014"}
+,
+{	"End":"Sun Mar 09 09:27:49 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10755752, 	"Runtime":"3 hours; 52 minutes; 49 seconds", 	"Start":"Sun Mar 09 05:35:00 CET 2014"}
+,
+{	"End":"Sat Mar 08 09:32:34 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10755748, 	"Runtime":"3 hours; 57 minutes; 34 seconds", 	"Start":"Sat Mar 08 05:35:00 CET 2014"}
+,
+{	"End":"Fri Mar 07 10:00:04 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10755340, 	"Runtime":"4 hours; 25 minutes; 4 seconds", 	"Start":"Fri Mar 07 05:35:00 CET 2014"}
+,
+{	"End":"Thu Mar 06 09:03:59 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10736866, 	"Runtime":"3 hours; 28 minutes; 59 seconds", 	"Start":"Thu Mar 06 05:35:00 CET 2014"}
+,
+{	"End":"Wed Mar 05 09:25:38 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10661917, 	"Runtime":"3 hours; 50 minutes; 38 seconds", 	"Start":"Wed Mar 05 05:35:00 CET 2014"}
+,
+{	"End":"Tue Mar 04 09:24:34 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10497015, 	"Runtime":"3 hours; 49 minutes; 34 seconds", 	"Start":"Tue Mar 04 05:35:00 CET 2014"}
+,
+{	"End":"Mon Mar 03 08:46:29 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10495469, 	"Runtime":"3 hours; 11 minutes; 29 seconds", 	"Start":"Mon Mar 03 05:35:00 CET 2014"}
+,
+{	"End":"Sun Mar 02 09:16:07 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10495459, 	"Runtime":"3 hours; 41 minutes; 7 seconds", 	"Start":"Sun Mar 02 05:35:00 CET 2014"}
+,
+{	"End":"Sat Mar 01 09:04:24 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10493248, 	"Runtime":"3 hours; 29 minutes; 24 seconds", 	"Start":"Sat Mar 01 05:35:00 CET 2014"}
+,
+{	"End":"Fri Feb 28 08:22:27 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10491776, 	"Runtime":"2 hours; 47 minutes; 27 seconds", 	"Start":"Fri Feb 28 05:35:00 CET 2014"}
+,
+{	"End":"Thu Feb 27 08:50:34 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10421675, 	"Runtime":"3 hours; 15 minutes; 34 seconds", 	"Start":"Thu Feb 27 05:35:00 CET 2014"}
+,
+{	"End":"Wed Feb 26 08:31:26 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10418579, 	"Runtime":"2 hours; 56 minutes; 26 seconds", 	"Start":"Wed Feb 26 05:35:00 CET 2014"}
+,
+{	"End":"Tue Feb 25 08:59:57 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10416291, 	"Runtime":"3 hours; 24 minutes; 57 seconds", 	"Start":"Tue Feb 25 05:35:00 CET 2014"}
+,
+{	"End":"Mon Feb 24 08:04:19 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10410272, 	"Runtime":"2 hours; 29 minutes; 19 seconds", 	"Start":"Mon Feb 24 05:35:00 CET 2014"}
+,
+{	"End":"Sun Feb 23 08:12:02 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10408548, 	"Runtime":"2 hours; 37 minutes; 2 seconds", 	"Start":"Sun Feb 23 05:35:00 CET 2014"}
+,
+{	"End":"Sat Feb 22 08:21:24 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10408543, 	"Runtime":"2 hours; 46 minutes; 24 seconds", 	"Start":"Sat Feb 22 05:35:00 CET 2014"}
+,
+{	"End":"Fri Feb 21 08:08:01 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10407710, 	"Runtime":"2 hours; 33 minutes; 1 seconds", 	"Start":"Fri Feb 21 05:35:00 CET 2014"}
+,
+{	"End":"Thu Feb 20 08:15:11 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10399092, 	"Runtime":"2 hours; 40 minutes; 11 seconds", 	"Start":"Thu Feb 20 05:35:00 CET 2014"}
+,
+{	"End":"Wed Feb 19 08:18:53 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10397644, 	"Runtime":"2 hours; 43 minutes; 53 seconds", 	"Start":"Wed Feb 19 05:35:00 CET 2014"}
+,
+{	"End":"Tue Feb 18 08:13:54 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10397151, 	"Runtime":"2 hours; 38 minutes; 54 seconds", 	"Start":"Tue Feb 18 05:35:00 CET 2014"}
+,
+{	"End":"Sun Feb 16 08:07:59 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10394556, 	"Runtime":"2 hours; 32 minutes; 59 seconds", 	"Start":"Sun Feb 16 05:35:00 CET 2014"}
+,
+{	"End":"Sat Feb 15 08:05:00 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10394556, 	"Runtime":"2 hours; 30 minutes; 0 seconds", 	"Start":"Sat Feb 15 05:35:00 CET 2014"}
+,
+{	"End":"Fri Feb 14 08:21:01 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10394409, 	"Runtime":"2 hours; 46 minutes; 1 seconds", 	"Start":"Fri Feb 14 05:35:00 CET 2014"}
+,
+{	"End":"Thu Feb 13 08:10:03 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10394171, 	"Runtime":"2 hours; 35 minutes; 3 seconds", 	"Start":"Thu Feb 13 05:35:00 CET 2014"}
+,
+{	"End":"Wed Feb 12 08:03:13 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10393371, 	"Runtime":"2 hours; 28 minutes; 13 seconds", 	"Start":"Wed Feb 12 05:35:00 CET 2014"}
+,
+{	"End":"Tue Feb 11 08:10:18 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10393115, 	"Runtime":"2 hours; 35 minutes; 18 seconds", 	"Start":"Tue Feb 11 05:35:00 CET 2014"}
+,
+{	"End":"Mon Feb 10 07:59:19 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 24 minutes; 19 seconds", 	"Start":"Mon Feb 10 05:35:00 CET 2014"}
+,
+{	"End":"Sun Feb 09 08:19:35 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 44 minutes; 35 seconds", 	"Start":"Sun Feb 09 05:35:00 CET 2014"}
+,
+{	"End":"Sat Feb 08 08:15:32 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 40 minutes; 32 seconds", 	"Start":"Sat Feb 08 05:35:00 CET 2014"}
+,
+{	"End":"Fri Feb 07 08:06:40 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 31 minutes; 40 seconds", 	"Start":"Fri Feb 07 05:35:00 CET 2014"}
+,
+{	"End":"Thu Feb 06 08:01:32 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10389509, 	"Runtime":"2 hours; 26 minutes; 32 seconds", 	"Start":"Thu Feb 06 05:35:00 CET 2014"}
+,
+{	"End":"Wed Feb 05 12:36:10 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10388337, 	"Runtime":"2 hours; 29 minutes; 28 seconds", 	"Start":"Wed Feb 05 10:06:42 CET 2014"}
+,
+{	"End":"Wed Feb 05 05:35:13 CET 2014", 	"FOLLOWING COLLECTIONS ARE MISSING OR ARE EMPTY":"(DB HAS NOT CHANGED!)", 	"Mongo DB":"mchp407a", 	"Number of persisted records":77, 	"Runtime":"0 hours; 0 minutes; 13 seconds", 	"Start":"Wed Feb 05 05:35:00 CET 2014"}
+,
+{	"End":"Tue Feb 04 09:14:36 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10387315, 	"Runtime":"3 hours; 39 minutes; 36 seconds", 	"Start":"Tue Feb 04 05:35:00 CET 2014"}
+,
+{	"End":"Mon Feb 03 09:21:47 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10386874, 	"Runtime":"3 hours; 46 minutes; 47 seconds", 	"Start":"Mon Feb 03 05:35:00 CET 2014"}
+,
+{	"End":"Sun Feb 02 09:46:03 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10386874, 	"Runtime":"4 hours; 11 minutes; 3 seconds", 	"Start":"Sun Feb 02 05:35:00 CET 2014"}
+,
+{	"End":"Sat Feb 01 10:02:23 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10386870, 	"Runtime":"4 hours; 27 minutes; 23 seconds", 	"Start":"Sat Feb 01 05:35:00 CET 2014"}
+,
+{	"End":"Fri Jan 31 09:08:52 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10386263, 	"Runtime":"3 hours; 33 minutes; 52 seconds", 	"Start":"Fri Jan 31 05:35:00 CET 2014"}
+,
+{	"End":"Thu Jan 30 09:17:11 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10363675, 	"Runtime":"3 hours; 42 minutes; 11 seconds", 	"Start":"Thu Jan 30 05:35:00 CET 2014"}
+,
+{	"End":"Wed Jan 29 08:39:26 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10350937, 	"Runtime":"3 hours; 4 minutes; 26 seconds", 	"Start":"Wed Jan 29 05:35:00 CET 2014"}
+,
+{	"End":"Tue Jan 28 09:11:46 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10350796, 	"Runtime":"3 hours; 36 minutes; 46 seconds", 	"Start":"Tue Jan 28 05:35:00 CET 2014"}
+,
+{	"End":"Mon Jan 27 08:56:52 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10344964, 	"Runtime":"3 hours; 21 minutes; 52 seconds", 	"Start":"Mon Jan 27 05:35:00 CET 2014"}
+,
+{	"End":"Sun Jan 26 09:37:19 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10344939, 	"Runtime":"4 hours; 2 minutes; 19 seconds", 	"Start":"Sun Jan 26 05:35:00 CET 2014"}
+,
+{	"End":"Sat Jan 25 08:46:27 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10344647, 	"Runtime":"3 hours; 11 minutes; 27 seconds", 	"Start":"Sat Jan 25 05:35:00 CET 2014"}
+,
+{	"End":"Fri Jan 24 08:35:46 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10340928, 	"Runtime":"3 hours; 0 minutes; 46 seconds", 	"Start":"Fri Jan 24 05:35:00 CET 2014"}
+,
+{	"End":"Thu Jan 23 08:22:27 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10340906, 	"Runtime":"2 hours; 47 minutes; 27 seconds", 	"Start":"Thu Jan 23 05:35:00 CET 2014"}
+,
+{	"End":"Wed Jan 22 08:18:42 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10340797, 	"Runtime":"2 hours; 43 minutes; 42 seconds", 	"Start":"Wed Jan 22 05:35:00 CET 2014"}
+,
+{	"End":"Tue Jan 21 08:36:29 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10340265, 	"Runtime":"3 hours; 1 minutes; 29 seconds", 	"Start":"Tue Jan 21 05:35:00 CET 2014"}
+,
+{	"End":"Mon Jan 20 08:02:04 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10339482, 	"Runtime":"2 hours; 27 minutes; 4 seconds", 	"Start":"Mon Jan 20 05:35:00 CET 2014"}
+,
+{	"End":"Sun Jan 19 08:14:32 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10338945, 	"Runtime":"2 hours; 39 minutes; 32 seconds", 	"Start":"Sun Jan 19 05:35:00 CET 2014"}
+,
+{	"End":"Sat Jan 18 08:22:19 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10338448, 	"Runtime":"2 hours; 47 minutes; 19 seconds", 	"Start":"Sat Jan 18 05:35:00 CET 2014"}
+,
+{	"End":"Fri Jan 17 08:27:28 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10335242, 	"Runtime":"2 hours; 52 minutes; 28 seconds", 	"Start":"Fri Jan 17 05:35:00 CET 2014"}
+,
+{	"End":"Thu Jan 16 07:58:33 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10334577, 	"Runtime":"2 hours; 23 minutes; 33 seconds", 	"Start":"Thu Jan 16 05:35:00 CET 2014"}
+,
+{	"End":"Wed Jan 15 08:02:59 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10334142, 	"Runtime":"2 hours; 27 minutes; 59 seconds", 	"Start":"Wed Jan 15 05:35:00 CET 2014"}
+,
+{	"End":"Tue Jan 14 08:13:30 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10332270, 	"Runtime":"2 hours; 38 minutes; 30 seconds", 	"Start":"Tue Jan 14 05:35:00 CET 2014"}
+,
+{	"End":"Mon Jan 13 12:55:23 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10325158, 	"Runtime":"2 hours; 27 minutes; 45 seconds", 	"Start":"Mon Jan 13 10:27:37 CET 2014"}
+,
+{	"End":"Sat Jan 11 08:16:02 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10324169, 	"Runtime":"2 hours; 41 minutes; 1 seconds", 	"Start":"Sat Jan 11 05:35:00 CET 2014"}
+,
+{	"End":"Fri Jan 10 08:04:44 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10320140, 	"Runtime":"2 hours; 29 minutes; 44 seconds", 	"Start":"Fri Jan 10 05:35:00 CET 2014"}
+,
+{	"End":"Thu Jan 09 07:58:35 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10318038, 	"Runtime":"2 hours; 23 minutes; 35 seconds", 	"Start":"Thu Jan 09 05:35:00 CET 2014"}
+,
+{	"End":"Wed Jan 08 13:40:08 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10295693, 	"Runtime":"2 hours; 7 minutes; 22 seconds", 	"Start":"Wed Jan 08 11:32:46 CET 2014"}
+,
+{	"End":"Wed Jan 08 06:39:13 CET 2014", 	"FOLLOWING COLLECTIONS ARE MISSING OR ARE EMPTY":"(DB HAS NOT CHANGED!)", 	"Mongo DB":"mchp407a", 	"Number of persisted records":1731136, 	"Runtime":"1 hours; 4 minutes; 13 seconds", 	"Start":"Wed Jan 08 05:35:00 CET 2014"}
+,
+{	"End":"Tue Jan 07 09:30:47 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10268120, 	"Runtime":"3 hours; 55 minutes; 47 seconds", 	"Start":"Tue Jan 07 05:35:00 CET 2014"}
+,
+{	"End":"Mon Jan 06 08:47:17 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10267900, 	"Runtime":"3 hours; 12 minutes; 17 seconds", 	"Start":"Mon Jan 06 05:35:00 CET 2014"}
+,
+{	"End":"Sun Jan 05 09:16:40 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10267417, 	"Runtime":"3 hours; 41 minutes; 40 seconds", 	"Start":"Sun Jan 05 05:35:00 CET 2014"}
+,
+{	"End":"Sat Jan 04 08:47:28 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10266855, 	"Runtime":"3 hours; 12 minutes; 28 seconds", 	"Start":"Sat Jan 04 05:35:00 CET 2014"}
+,
+{	"End":"Fri Jan 03 08:58:27 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10266342, 	"Runtime":"3 hours; 23 minutes; 27 seconds", 	"Start":"Fri Jan 03 05:35:00 CET 2014"}
+,
+{	"End":"Thu Jan 02 08:43:16 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10265670, 	"Runtime":"3 hours; 8 minutes; 16 seconds", 	"Start":"Thu Jan 02 05:35:00 CET 2014"}
+,
+{	"End":"Wed Jan 01 09:14:23 CET 2014", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10265187, 	"Runtime":"3 hours; 39 minutes; 23 seconds", 	"Start":"Wed Jan 01 05:35:00 CET 2014"}
+,
+{	"End":"Tue Dec 31 08:50:14 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10264533, 	"Runtime":"3 hours; 15 minutes; 14 seconds", 	"Start":"Tue Dec 31 05:35:00 CET 2013"}
+,
+{	"End":"Mon Dec 30 09:32:00 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10249722, 	"Runtime":"3 hours; 57 minutes; 0 seconds", 	"Start":"Mon Dec 30 05:35:00 CET 2013"}
+,
+{	"End":"Sun Dec 29 08:38:42 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10249239, 	"Runtime":"3 hours; 3 minutes; 42 seconds", 	"Start":"Sun Dec 29 05:35:00 CET 2013"}
+,
+{	"End":"Sat Dec 28 08:59:35 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10248720, 	"Runtime":"3 hours; 24 minutes; 35 seconds", 	"Start":"Sat Dec 28 05:35:00 CET 2013"}
+,
+{	"End":"Fri Dec 27 09:07:09 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10248237, 	"Runtime":"3 hours; 32 minutes; 9 seconds", 	"Start":"Fri Dec 27 05:35:00 CET 2013"}
+,
+{	"End":"Thu Dec 26 08:51:05 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10233696, 	"Runtime":"3 hours; 16 minutes; 5 seconds", 	"Start":"Thu Dec 26 05:35:00 CET 2013"}
+,
+{	"End":"Wed Dec 25 09:19:43 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10233184, 	"Runtime":"3 hours; 44 minutes; 43 seconds", 	"Start":"Wed Dec 25 05:35:00 CET 2013"}
+,
+{	"End":"Tue Dec 24 09:22:41 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10232699, 	"Runtime":"3 hours; 47 minutes; 41 seconds", 	"Start":"Tue Dec 24 05:35:00 CET 2013"}
+,
+{	"End":"Mon Dec 23 08:34:12 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10232216, 	"Runtime":"2 hours; 59 minutes; 12 seconds", 	"Start":"Mon Dec 23 05:35:00 CET 2013"}
+,
+{	"End":"Sun Dec 22 09:11:34 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10231733, 	"Runtime":"3 hours; 36 minutes; 34 seconds", 	"Start":"Sun Dec 22 05:35:00 CET 2013"}
+,
+{	"End":"Sat Dec 21 08:23:39 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10231131, 	"Runtime":"2 hours; 48 minutes; 39 seconds", 	"Start":"Sat Dec 21 05:35:00 CET 2013"}
+,
+{	"End":"Fri Dec 20 09:04:42 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10227201, 	"Runtime":"3 hours; 29 minutes; 42 seconds", 	"Start":"Fri Dec 20 05:35:00 CET 2013"}
+,
+{	"End":"Thu Dec 19 09:24:28 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10224852, 	"Runtime":"3 hours; 49 minutes; 28 seconds", 	"Start":"Thu Dec 19 05:35:00 CET 2013"}
+,
+{	"End":"Wed Dec 18 09:03:39 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10222185, 	"Runtime":"3 hours; 28 minutes; 39 seconds", 	"Start":"Wed Dec 18 05:35:00 CET 2013"}
+,
+{	"End":"Tue Dec 17 09:08:52 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10221287, 	"Runtime":"3 hours; 33 minutes; 52 seconds", 	"Start":"Tue Dec 17 05:35:00 CET 2013"}
+,
+{	"End":"Mon Dec 16 08:35:13 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10220179, 	"Runtime":"3 hours; 0 minutes; 13 seconds", 	"Start":"Mon Dec 16 05:35:00 CET 2013"}
+,
+{	"End":"Sun Dec 15 09:08:57 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10219737, 	"Runtime":"3 hours; 33 minutes; 57 seconds", 	"Start":"Sun Dec 15 05:35:00 CET 2013"}
+,
+{	"End":"Sat Dec 14 09:23:23 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10218000, 	"Runtime":"3 hours; 48 minutes; 23 seconds", 	"Start":"Sat Dec 14 05:35:00 CET 2013"}
+,
+{	"End":"Fri Dec 13 09:17:45 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10213233, 	"Runtime":"3 hours; 42 minutes; 45 seconds", 	"Start":"Fri Dec 13 05:35:00 CET 2013"}
+,
+{	"End":"Thu Dec 12 08:19:05 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10212478, 	"Runtime":"2 hours; 44 minutes; 5 seconds", 	"Start":"Thu Dec 12 05:35:00 CET 2013"}
+,
+{	"End":"Wed Dec 11 09:05:26 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10211348, 	"Runtime":"3 hours; 30 minutes; 26 seconds", 	"Start":"Wed Dec 11 05:35:00 CET 2013"}
+,
+{	"End":"Tue Dec 10 09:24:03 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10210294, 	"Runtime":"3 hours; 49 minutes; 3 seconds", 	"Start":"Tue Dec 10 05:35:00 CET 2013"}
+,
+{	"End":"Mon Dec 09 09:03:34 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10208243, 	"Runtime":"3 hours; 28 minutes; 34 seconds", 	"Start":"Mon Dec 09 05:35:00 CET 2013"}
+,
+{	"End":"Sun Dec 08 08:41:43 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10207806, 	"Runtime":"3 hours; 6 minutes; 43 seconds", 	"Start":"Sun Dec 08 05:35:00 CET 2013"}
+,
+{	"End":"Sat Dec 07 09:28:28 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10207369, 	"Runtime":"3 hours; 53 minutes; 28 seconds", 	"Start":"Sat Dec 07 05:35:00 CET 2013"}
+,
+{	"End":"Fri Dec 06 09:21:27 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10206105, 	"Runtime":"3 hours; 46 minutes; 27 seconds", 	"Start":"Fri Dec 06 05:35:00 CET 2013"}
+,
+{	"End":"Thu Dec 05 09:18:19 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10205154, 	"Runtime":"3 hours; 43 minutes; 19 seconds", 	"Start":"Thu Dec 05 05:35:00 CET 2013"}
+,
+{	"End":"Wed Dec 04 08:48:00 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10196971, 	"Runtime":"3 hours; 13 minutes; 0 seconds", 	"Start":"Wed Dec 04 05:35:00 CET 2013"}
+,
+{	"End":"Tue Dec 03 09:16:06 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":10000296, 	"Runtime":"3 hours; 41 minutes; 6 seconds", 	"Start":"Tue Dec 03 05:35:00 CET 2013"}
+,
+{	"End":"Mon Dec 02 09:24:58 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9986177, 	"Runtime":"3 hours; 49 minutes; 58 seconds", 	"Start":"Mon Dec 02 05:35:00 CET 2013"}
+,
+{	"End":"Sun Dec 01 09:26:17 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9986173, 	"Runtime":"3 hours; 51 minutes; 17 seconds", 	"Start":"Sun Dec 01 05:35:00 CET 2013"}
+,
+{	"End":"Sat Nov 30 09:05:40 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9985945, 	"Runtime":"3 hours; 30 minutes; 40 seconds", 	"Start":"Sat Nov 30 05:35:00 CET 2013"}
+,
+{	"End":"Fri Nov 29 09:23:53 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9985800, 	"Runtime":"3 hours; 48 minutes; 53 seconds", 	"Start":"Fri Nov 29 05:35:00 CET 2013"}
+,
+{	"End":"Thu Nov 28 08:53:54 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9985756, 	"Runtime":"3 hours; 18 minutes; 54 seconds", 	"Start":"Thu Nov 28 05:35:00 CET 2013"}
+,
+{	"End":"Wed Nov 27 08:46:13 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9985528, 	"Runtime":"3 hours; 11 minutes; 13 seconds", 	"Start":"Wed Nov 27 05:35:00 CET 2013"}
+,
+{	"End":"Tue Nov 26 09:00:29 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9985125, 	"Runtime":"3 hours; 25 minutes; 29 seconds", 	"Start":"Tue Nov 26 05:35:00 CET 2013"}
+,
+{	"End":"Mon Nov 25 08:07:54 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9978002, 	"Runtime":"2 hours; 32 minutes; 54 seconds", 	"Start":"Mon Nov 25 05:35:00 CET 2013"}
+,
+{	"End":"Sun Nov 24 09:19:31 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9974946, 	"Runtime":"3 hours; 44 minutes; 31 seconds", 	"Start":"Sun Nov 24 05:35:00 CET 2013"}
+,
+{	"End":"Sat Nov 23 08:58:21 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9972660, 	"Runtime":"3 hours; 23 minutes; 21 seconds", 	"Start":"Sat Nov 23 05:35:00 CET 2013"}
+,
+{	"End":"Fri Nov 22 08:47:53 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9971646, 	"Runtime":"3 hours; 12 minutes; 53 seconds", 	"Start":"Fri Nov 22 05:35:00 CET 2013"}
+,
+{	"End":"Thu Nov 21 08:39:01 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9971451, 	"Runtime":"3 hours; 4 minutes; 1 seconds", 	"Start":"Thu Nov 21 05:35:00 CET 2013"}
+,
+{	"End":"Wed Nov 20 09:11:46 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9969641, 	"Runtime":"3 hours; 36 minutes; 46 seconds", 	"Start":"Wed Nov 20 05:35:00 CET 2013"}
+,
+{	"End":"Tue Nov 19 08:41:32 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9892503, 	"Runtime":"3 hours; 6 minutes; 32 seconds", 	"Start":"Tue Nov 19 05:35:00 CET 2013"}
+,
+{	"End":"Mon Nov 18 08:52:06 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9883928, 	"Runtime":"3 hours; 17 minutes; 6 seconds", 	"Start":"Mon Nov 18 05:35:00 CET 2013"}
+,
+{	"End":"Sun Nov 17 09:07:19 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9879140, 	"Runtime":"3 hours; 32 minutes; 19 seconds", 	"Start":"Sun Nov 17 05:35:00 CET 2013"}
+,
+{	"End":"Sat Nov 16 09:01:35 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9870378, 	"Runtime":"3 hours; 26 minutes; 35 seconds", 	"Start":"Sat Nov 16 05:35:00 CET 2013"}
+,
+{	"End":"Fri Nov 15 09:21:56 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9751851, 	"Runtime":"3 hours; 46 minutes; 56 seconds", 	"Start":"Fri Nov 15 05:35:00 CET 2013"}
+,
+{	"End":"Thu Nov 14 09:22:47 CET 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":9744584, 	"Runtime":"3 hours; 47 minutes; 47 seconds", 	"Start":"Thu Nov 14 05:35:00 CET 2013"}
+,
+{	"End":"Sat Aug 10 07:52:17 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8553234, 	"Runtime":"2 hours; 17 minutes; 17 seconds", 	"Start":"Sat Aug 10 05:35:00 CEST 2013"}
+,
+{	"End":"Fri Aug 09 11:06:44 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8553194, 	"Runtime":"2 hours; 12 minutes; 38 seconds", 	"Start":"Fri Aug 09 08:54:06 CEST 2013"}
+,
+{	"End":"Fri Aug 09 01:47:42 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8166656, 	"Runtime":"2 hours; 12 minutes; 42 seconds", 	"Start":"Thu Aug 08 23:35:00 CEST 2013"}
+,
+{	"End":"Wed Aug 07 01:35:15 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8511067, 	"Runtime":"2 hours; 0 minutes; 15 seconds", 	"Start":"Tue Aug 06 23:35:00 CEST 2013"}
+,
+{	"End":"Sat Aug 03 01:43:16 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8505087, 	"Runtime":"2 hours; 8 minutes; 16 seconds", 	"Start":"Fri Aug 02 23:35:00 CEST 2013"}
+,
+{	"End":"Fri Jul 26 01:39:56 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8447529, 	"Runtime":"2 hours; 4 minutes; 56 seconds", 	"Start":"Thu Jul 25 23:35:00 CEST 2013"}
+,
+{	"End":"Thu Jul 25 01:30:05 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8446911, 	"Runtime":"1 hours; 55 minutes; 4 seconds", 	"Start":"Wed Jul 24 23:35:00 CEST 2013"}
+,
+{	"End":"Wed Jul 24 01:29:15 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8446614, 	"Runtime":"1 hours; 54 minutes; 15 seconds", 	"Start":"Tue Jul 23 23:35:00 CEST 2013"}
+,
+{	"End":"Tue Jul 23 11:35:38 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8446482, 	"Runtime":"1 hours; 53 minutes; 43 seconds", 	"Start":"Tue Jul 23 09:41:54 CEST 2013"}
+,
+{	"End":"Tue Jul 23 01:57:46 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8443052, 	"Runtime":"2 hours; 22 minutes; 46 seconds", 	"Start":"Mon Jul 22 23:35:00 CEST 2013"}
+,
+{	"End":"Tue Jul 16 04:47:02 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8398515, 	"Runtime":"5 hours; 12 minutes; 2 seconds", 	"Start":"Mon Jul 15 23:35:00 CEST 2013"}
+,
+{	"End":"Mon Jul 15 05:28:05 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8396195, 	"Runtime":"5 hours; 53 minutes; 5 seconds", 	"Start":"Sun Jul 14 23:35:00 CEST 2013"}
+,
+{	"End":"Sun Jul 14 06:37:46 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8396186, 	"Runtime":"7 hours; 2 minutes; 46 seconds", 	"Start":"Sat Jul 13 23:35:00 CEST 2013"}
+,
+{	"End":"Sat Jul 13 04:29:24 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8395982, 	"Runtime":"4 hours; 54 minutes; 24 seconds", 	"Start":"Fri Jul 12 23:35:00 CEST 2013"}
+,
+{	"End":"Fri Jul 05 01:46:37 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8373086, 	"Runtime":"2 hours; 11 minutes; 37 seconds", 	"Start":"Thu Jul 04 23:35:00 CEST 2013"}
+]
+,"[SOA-SALES-SERVICES mchp490a] Mongo - INFO":[
+
+{	"End":"Mon Dec 15 11:05:09 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14334657, 	"Runtime":"4 hours; 5 minutes; 9 seconds", 	"Start":"Mon Dec 15 07:00:00 CET 2014"}
+,
+{	"End":"Sun Dec 14 11:42:04 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14334641, 	"Runtime":"4 hours; 42 minutes; 4 seconds", 	"Start":"Sun Dec 14 07:00:00 CET 2014"}
+,
+{	"End":"Sat Dec 13 11:04:00 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14334641, 	"Runtime":"4 hours; 4 minutes; 0 seconds", 	"Start":"Sat Dec 13 07:00:00 CET 2014"}
+,
+{	"End":"Fri Dec 12 11:40:44 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14327642, 	"Runtime":"4 hours; 40 minutes; 44 seconds", 	"Start":"Fri Dec 12 07:00:00 CET 2014"}
+,
+{	"End":"Thu Dec 11 11:02:57 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14299747, 	"Runtime":"4 hours; 2 minutes; 57 seconds", 	"Start":"Thu Dec 11 07:00:00 CET 2014"}
+,
+{	"End":"Wed Dec 10 11:29:21 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14279574, 	"Runtime":"4 hours; 29 minutes; 21 seconds", 	"Start":"Wed Dec 10 07:00:00 CET 2014"}
+,
+{	"End":"Tue Dec 09 10:58:19 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14275119, 	"Runtime":"3 hours; 58 minutes; 19 seconds", 	"Start":"Tue Dec 09 07:00:00 CET 2014"}
+,
+{	"End":"Mon Dec 08 11:00:42 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14235263, 	"Runtime":"4 hours; 0 minutes; 42 seconds", 	"Start":"Mon Dec 08 07:00:00 CET 2014"}
+,
+{	"End":"Sun Dec 07 08:59:03 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14234127, 	"Runtime":"1 hours; 59 minutes; 3 seconds", 	"Start":"Sun Dec 07 07:00:00 CET 2014"}
+,
+{	"End":"Sat Dec 06 09:40:52 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14232080, 	"Runtime":"2 hours; 40 minutes; 52 seconds", 	"Start":"Sat Dec 06 07:00:00 CET 2014"}
+,
+{	"End":"Fri Dec 05 10:49:51 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14022697, 	"Runtime":"3 hours; 49 minutes; 51 seconds", 	"Start":"Fri Dec 05 07:00:00 CET 2014"}
+,
+{	"End":"Thu Dec 04 09:57:31 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13819210, 	"Runtime":"2 hours; 57 minutes; 31 seconds", 	"Start":"Thu Dec 04 07:00:00 CET 2014"}
+,
+{	"End":"Wed Dec 03 09:33:24 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13816179, 	"Runtime":"2 hours; 33 minutes; 24 seconds", 	"Start":"Wed Dec 03 07:00:00 CET 2014"}
+,
+{	"End":"Tue Dec 02 09:54:57 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13810914, 	"Runtime":"2 hours; 54 minutes; 57 seconds", 	"Start":"Tue Dec 02 07:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 28 08:58:48 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13809512, 	"Runtime":"1 hours; 58 minutes; 48 seconds", 	"Start":"Fri Nov 28 07:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 27 08:56:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13809039, 	"Runtime":"1 hours; 56 minutes; 35 seconds", 	"Start":"Thu Nov 27 07:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 26 09:16:08 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13805747, 	"Runtime":"2 hours; 16 minutes; 8 seconds", 	"Start":"Wed Nov 26 07:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 22 09:23:33 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13793005, 	"Runtime":"2 hours; 23 minutes; 33 seconds", 	"Start":"Sat Nov 22 07:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 21 10:19:52 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13791962, 	"Runtime":"3 hours; 19 minutes; 52 seconds", 	"Start":"Fri Nov 21 07:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 20 09:36:28 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13755916, 	"Runtime":"2 hours; 36 minutes; 28 seconds", 	"Start":"Thu Nov 20 07:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 19 10:45:17 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13755766, 	"Runtime":"3 hours; 45 minutes; 17 seconds", 	"Start":"Wed Nov 19 07:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 18 10:02:09 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751340, 	"Runtime":"3 hours; 2 minutes; 9 seconds", 	"Start":"Tue Nov 18 07:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 17 09:36:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751292, 	"Runtime":"2 hours; 36 minutes; 22 seconds", 	"Start":"Mon Nov 17 07:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 16 09:44:24 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751290, 	"Runtime":"2 hours; 44 minutes; 24 seconds", 	"Start":"Sun Nov 16 07:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 15 09:58:21 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13736442, 	"Runtime":"2 hours; 58 minutes; 21 seconds", 	"Start":"Sat Nov 15 07:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 14 09:20:48 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13725965, 	"Runtime":"2 hours; 20 minutes; 48 seconds", 	"Start":"Fri Nov 14 07:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 13 10:09:58 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13725716, 	"Runtime":"3 hours; 9 minutes; 58 seconds", 	"Start":"Thu Nov 13 07:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 12 09:01:18 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13723638, 	"Runtime":"2 hours; 1 minutes; 18 seconds", 	"Start":"Wed Nov 12 07:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 11 09:55:02 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13710680, 	"Runtime":"2 hours; 55 minutes; 2 seconds", 	"Start":"Tue Nov 11 07:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 10 10:00:27 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709655, 	"Runtime":"3 hours; 0 minutes; 27 seconds", 	"Start":"Mon Nov 10 07:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 09 11:56:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709649, 	"Runtime":"4 hours; 56 minutes; 22 seconds", 	"Start":"Sun Nov 09 07:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 08 09:58:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709649, 	"Runtime":"2 hours; 58 minutes; 35 seconds", 	"Start":"Sat Nov 08 07:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 07 09:51:12 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13705691, 	"Runtime":"2 hours; 51 minutes; 12 seconds", 	"Start":"Fri Nov 07 07:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 06 09:46:09 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13682072, 	"Runtime":"2 hours; 46 minutes; 9 seconds", 	"Start":"Thu Nov 06 07:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 05 09:56:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13670609, 	"Runtime":"2 hours; 56 minutes; 56 seconds", 	"Start":"Wed Nov 05 07:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 04 10:45:09 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665831, 	"Runtime":"3 hours; 45 minutes; 9 seconds", 	"Start":"Tue Nov 04 07:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 03 09:54:50 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665768, 	"Runtime":"2 hours; 54 minutes; 50 seconds", 	"Start":"Mon Nov 03 07:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 02 09:52:01 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665768, 	"Runtime":"2 hours; 52 minutes; 1 seconds", 	"Start":"Sun Nov 02 07:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 01 10:32:42 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665578, 	"Runtime":"3 hours; 32 minutes; 42 seconds", 	"Start":"Sat Nov 01 07:00:00 CET 2014"}
+,
+{	"End":"Fri Oct 31 09:22:44 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13661529, 	"Runtime":"2 hours; 22 minutes; 44 seconds", 	"Start":"Fri Oct 31 07:00:00 CET 2014"}
+,
+{	"End":"Thu Oct 30 09:42:32 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13660029, 	"Runtime":"2 hours; 42 minutes; 32 seconds", 	"Start":"Thu Oct 30 07:00:00 CET 2014"}
+,
+{	"End":"Wed Oct 29 10:41:07 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654539, 	"Runtime":"3 hours; 41 minutes; 7 seconds", 	"Start":"Wed Oct 29 07:00:00 CET 2014"}
+,
+{	"End":"Tue Oct 28 10:39:36 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654386, 	"Runtime":"3 hours; 39 minutes; 36 seconds", 	"Start":"Tue Oct 28 07:00:00 CET 2014"}
+,
+{	"End":"Mon Oct 27 09:19:24 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654125, 	"Runtime":"2 hours; 19 minutes; 24 seconds", 	"Start":"Mon Oct 27 07:00:00 CET 2014"}
+,
+{	"End":"Sun Oct 26 11:14:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654125, 	"Runtime":"4 hours; 14 minutes; 56 seconds", 	"Start":"Sun Oct 26 07:00:00 CET 2014"}
+,
+{	"End":"Sat Oct 25 10:02:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13652851, 	"Runtime":"3 hours; 2 minutes; 22 seconds", 	"Start":"Sat Oct 25 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 24 09:18:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13585469, 	"Runtime":"2 hours; 18 minutes; 56 seconds", 	"Start":"Fri Oct 24 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 23 09:16:00 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13580831, 	"Runtime":"2 hours; 16 minutes; 0 seconds", 	"Start":"Thu Oct 23 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 22 09:42:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13564661, 	"Runtime":"2 hours; 42 minutes; 39 seconds", 	"Start":"Wed Oct 22 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 21 09:25:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13504615, 	"Runtime":"2 hours; 25 minutes; 22 seconds", 	"Start":"Tue Oct 21 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 20 09:06:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412158, 	"Runtime":"2 hours; 6 minutes; 8 seconds", 	"Start":"Mon Oct 20 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 19 09:11:30 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412158, 	"Runtime":"2 hours; 11 minutes; 30 seconds", 	"Start":"Sun Oct 19 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 18 09:31:27 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412158, 	"Runtime":"2 hours; 31 minutes; 27 seconds", 	"Start":"Sat Oct 18 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 17 09:20:35 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13401329, 	"Runtime":"2 hours; 20 minutes; 35 seconds", 	"Start":"Fri Oct 17 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 16 09:15:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13398965, 	"Runtime":"2 hours; 15 minutes; 2 seconds", 	"Start":"Thu Oct 16 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 15 09:02:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13396458, 	"Runtime":"2 hours; 2 minutes; 2 seconds", 	"Start":"Wed Oct 15 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 14 09:05:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13394380, 	"Runtime":"2 hours; 5 minutes; 1 seconds", 	"Start":"Tue Oct 14 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 13 08:54:33 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13391951, 	"Runtime":"1 hours; 54 minutes; 33 seconds", 	"Start":"Mon Oct 13 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 12 09:15:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13391151, 	"Runtime":"2 hours; 15 minutes; 52 seconds", 	"Start":"Sun Oct 12 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 11 08:50:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13381925, 	"Runtime":"1 hours; 50 minutes; 52 seconds", 	"Start":"Sat Oct 11 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 10 08:48:28 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13377591, 	"Runtime":"1 hours; 48 minutes; 28 seconds", 	"Start":"Fri Oct 10 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 09 09:59:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13375259, 	"Runtime":"2 hours; 59 minutes; 49 seconds", 	"Start":"Thu Oct 09 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 08 09:51:46 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13374999, 	"Runtime":"2 hours; 51 minutes; 46 seconds", 	"Start":"Wed Oct 08 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 07 10:22:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13371164, 	"Runtime":"3 hours; 22 minutes; 24 seconds", 	"Start":"Tue Oct 07 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 06 10:30:53 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13369253, 	"Runtime":"3 hours; 30 minutes; 53 seconds", 	"Start":"Mon Oct 06 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 05 10:47:44 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13368988, 	"Runtime":"3 hours; 47 minutes; 44 seconds", 	"Start":"Sun Oct 05 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 04 11:25:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13338542, 	"Runtime":"4 hours; 25 minutes; 49 seconds", 	"Start":"Sat Oct 04 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 03 11:53:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13326312, 	"Runtime":"4 hours; 53 minutes; 39 seconds", 	"Start":"Fri Oct 03 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 02 10:21:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13033262, 	"Runtime":"3 hours; 21 minutes; 26 seconds", 	"Start":"Thu Oct 02 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 01 10:46:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12732733, 	"Runtime":"3 hours; 46 minutes; 56 seconds", 	"Start":"Wed Oct 01 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 30 09:58:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728423, 	"Runtime":"2 hours; 58 minutes; 32 seconds", 	"Start":"Tue Sep 30 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 29 08:58:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728407, 	"Runtime":"1 hours; 58 minutes; 39 seconds", 	"Start":"Mon Sep 29 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 28 09:23:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728407, 	"Runtime":"2 hours; 23 minutes; 56 seconds", 	"Start":"Sun Sep 28 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 27 09:59:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728407, 	"Runtime":"2 hours; 59 minutes; 40 seconds", 	"Start":"Sat Sep 27 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 26 09:18:11 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12726108, 	"Runtime":"2 hours; 18 minutes; 11 seconds", 	"Start":"Fri Sep 26 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 25 09:14:17 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12714233, 	"Runtime":"2 hours; 14 minutes; 17 seconds", 	"Start":"Thu Sep 25 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 24 08:59:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713971, 	"Runtime":"1 hours; 59 minutes; 18 seconds", 	"Start":"Wed Sep 24 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 23 09:16:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713729, 	"Runtime":"2 hours; 16 minutes; 24 seconds", 	"Start":"Tue Sep 23 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 22 09:09:21 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713698, 	"Runtime":"2 hours; 9 minutes; 21 seconds", 	"Start":"Mon Sep 22 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 21 08:47:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713698, 	"Runtime":"1 hours; 47 minutes; 26 seconds", 	"Start":"Sun Sep 21 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 20 08:54:20 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713674, 	"Runtime":"1 hours; 54 minutes; 20 seconds", 	"Start":"Sat Sep 20 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 19 08:42:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12710967, 	"Runtime":"1 hours; 42 minutes; 43 seconds", 	"Start":"Fri Sep 19 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 18 09:07:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12709896, 	"Runtime":"2 hours; 7 minutes; 3 seconds", 	"Start":"Thu Sep 18 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 17 08:54:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12663529, 	"Runtime":"1 hours; 54 minutes; 43 seconds", 	"Start":"Wed Sep 17 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 16 09:38:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12452029, 	"Runtime":"2 hours; 38 minutes; 1 seconds", 	"Start":"Tue Sep 16 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 15 09:34:28 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435472, 	"Runtime":"2 hours; 34 minutes; 28 seconds", 	"Start":"Mon Sep 15 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 14 09:08:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435472, 	"Runtime":"2 hours; 8 minutes; 17 seconds", 	"Start":"Sun Sep 14 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 13 09:35:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435472, 	"Runtime":"2 hours; 35 minutes; 18 seconds", 	"Start":"Sat Sep 13 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 12 10:03:45 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398495, 	"Runtime":"3 hours; 3 minutes; 45 seconds", 	"Start":"Fri Sep 12 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 11 09:45:00 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398492, 	"Runtime":"2 hours; 45 minutes; 0 seconds", 	"Start":"Thu Sep 11 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 10 10:09:33 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398334, 	"Runtime":"3 hours; 9 minutes; 33 seconds", 	"Start":"Wed Sep 10 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 09 09:00:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"2 hours; 0 minutes; 8 seconds", 	"Start":"Tue Sep 09 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 08 09:38:46 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"2 hours; 38 minutes; 46 seconds", 	"Start":"Mon Sep 08 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 07 09:51:59 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"2 hours; 51 minutes; 59 seconds", 	"Start":"Sun Sep 07 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 06 08:38:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"1 hours; 38 minutes; 18 seconds", 	"Start":"Sat Sep 06 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 05 09:01:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12365274, 	"Runtime":"2 hours; 1 minutes; 8 seconds", 	"Start":"Fri Sep 05 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 04 08:54:53 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12179094, 	"Runtime":"1 hours; 54 minutes; 53 seconds", 	"Start":"Thu Sep 04 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 03 08:32:05 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12066081, 	"Runtime":"1 hours; 32 minutes; 5 seconds", 	"Start":"Wed Sep 03 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 02 08:33:59 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12066059, 	"Runtime":"1 hours; 33 minutes; 59 seconds", 	"Start":"Tue Sep 02 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 01 08:31:28 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12062514, 	"Runtime":"1 hours; 31 minutes; 28 seconds", 	"Start":"Mon Sep 01 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 31 08:30:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12062505, 	"Runtime":"1 hours; 30 minutes; 22 seconds", 	"Start":"Sun Aug 31 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 30 08:39:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12061836, 	"Runtime":"1 hours; 39 minutes; 32 seconds", 	"Start":"Sat Aug 30 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 29 08:37:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12056430, 	"Runtime":"1 hours; 37 minutes; 42 seconds", 	"Start":"Fri Aug 29 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 28 08:48:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12056316, 	"Runtime":"1 hours; 48 minutes; 55 seconds", 	"Start":"Thu Aug 28 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 27 08:33:34 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12056070, 	"Runtime":"1 hours; 33 minutes; 34 seconds", 	"Start":"Wed Aug 27 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 25 08:44:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037466, 	"Runtime":"1 hours; 44 minutes; 3 seconds", 	"Start":"Mon Aug 25 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 23 08:51:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037466, 	"Runtime":"1 hours; 51 minutes; 1 seconds", 	"Start":"Sat Aug 23 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 22 08:52:23 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037075, 	"Runtime":"1 hours; 52 minutes; 23 seconds", 	"Start":"Fri Aug 22 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 21 08:35:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12036527, 	"Runtime":"1 hours; 35 minutes; 2 seconds", 	"Start":"Thu Aug 21 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 20 08:48:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12034061, 	"Runtime":"1 hours; 48 minutes; 22 seconds", 	"Start":"Wed Aug 20 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 19 09:25:27 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025479, 	"Runtime":"2 hours; 25 minutes; 27 seconds", 	"Start":"Tue Aug 19 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 18 09:56:38 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"2 hours; 56 minutes; 38 seconds", 	"Start":"Mon Aug 18 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 17 09:37:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"2 hours; 37 minutes; 43 seconds", 	"Start":"Sun Aug 17 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 16 09:29:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"2 hours; 29 minutes; 54 seconds", 	"Start":"Sat Aug 16 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 15 09:36:19 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12024805, 	"Runtime":"2 hours; 36 minutes; 19 seconds", 	"Start":"Fri Aug 15 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 14 09:57:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12024416, 	"Runtime":"2 hours; 57 minutes; 43 seconds", 	"Start":"Thu Aug 14 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 13 10:04:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12023759, 	"Runtime":"3 hours; 4 minutes; 32 seconds", 	"Start":"Wed Aug 13 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 12 10:01:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12020419, 	"Runtime":"3 hours; 1 minutes; 26 seconds", 	"Start":"Tue Aug 12 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 11 10:26:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12020020, 	"Runtime":"3 hours; 26 minutes; 3 seconds", 	"Start":"Mon Aug 11 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 10 09:25:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12020020, 	"Runtime":"2 hours; 25 minutes; 42 seconds", 	"Start":"Sun Aug 10 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 09 08:51:34 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12011398, 	"Runtime":"1 hours; 51 minutes; 34 seconds", 	"Start":"Sat Aug 09 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 08 09:46:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12008594, 	"Runtime":"2 hours; 46 minutes; 1 seconds", 	"Start":"Fri Aug 08 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 07 09:13:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11922697, 	"Runtime":"2 hours; 13 minutes; 22 seconds", 	"Start":"Thu Aug 07 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 06 09:37:31 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11922140, 	"Runtime":"2 hours; 37 minutes; 30 seconds", 	"Start":"Wed Aug 06 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 05 09:39:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11920912, 	"Runtime":"2 hours; 39 minutes; 54 seconds", 	"Start":"Tue Aug 05 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 04 10:21:46 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11919012, 	"Runtime":"3 hours; 21 minutes; 46 seconds", 	"Start":"Mon Aug 04 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 03 10:16:00 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11920013, 	"Runtime":"3 hours; 16 minutes; 0 seconds", 	"Start":"Sun Aug 03 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 02 09:29:45 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11919980, 	"Runtime":"2 hours; 29 minutes; 45 seconds", 	"Start":"Sat Aug 02 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jul 31 09:02:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11919462, 	"Runtime":"2 hours; 2 minutes; 49 seconds", 	"Start":"Thu Jul 31 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jul 30 09:25:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11908022, 	"Runtime":"2 hours; 25 minutes; 1 seconds", 	"Start":"Wed Jul 30 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jul 29 09:30:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11685779, 	"Runtime":"2 hours; 30 minutes; 32 seconds", 	"Start":"Tue Jul 29 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jul 28 08:56:10 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11589686, 	"Runtime":"1 hours; 56 minutes; 10 seconds", 	"Start":"Mon Jul 28 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jul 27 09:20:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11589686, 	"Runtime":"2 hours; 20 minutes; 56 seconds", 	"Start":"Sun Jul 27 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jul 26 09:13:14 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11589678, 	"Runtime":"2 hours; 13 minutes; 14 seconds", 	"Start":"Sat Jul 26 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jul 25 09:24:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11580783, 	"Runtime":"2 hours; 24 minutes; 55 seconds", 	"Start":"Fri Jul 25 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jul 24 09:10:45 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11529515, 	"Runtime":"2 hours; 10 minutes; 45 seconds", 	"Start":"Thu Jul 24 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jul 23 09:09:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11516634, 	"Runtime":"2 hours; 9 minutes; 24 seconds", 	"Start":"Wed Jul 23 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jul 22 09:14:19 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11514520, 	"Runtime":"2 hours; 14 minutes; 19 seconds", 	"Start":"Tue Jul 22 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jul 21 09:07:06 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11514271, 	"Runtime":"2 hours; 7 minutes; 6 seconds", 	"Start":"Mon Jul 21 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jul 20 09:30:36 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11514271, 	"Runtime":"2 hours; 30 minutes; 36 seconds", 	"Start":"Sun Jul 20 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jul 19 10:44:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11514267, 	"Runtime":"3 hours; 44 minutes; 40 seconds", 	"Start":"Sat Jul 19 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jul 18 10:46:14 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11512876, 	"Runtime":"3 hours; 46 minutes; 14 seconds", 	"Start":"Fri Jul 18 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jul 17 09:35:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11503762, 	"Runtime":"2 hours; 35 minutes; 56 seconds", 	"Start":"Thu Jul 17 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jul 16 09:25:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11503213, 	"Runtime":"2 hours; 25 minutes; 55 seconds", 	"Start":"Wed Jul 16 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jul 15 09:29:17 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11501208, 	"Runtime":"2 hours; 29 minutes; 17 seconds", 	"Start":"Tue Jul 15 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jul 14 10:06:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11500463, 	"Runtime":"3 hours; 6 minutes; 56 seconds", 	"Start":"Mon Jul 14 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jul 13 10:27:15 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11500325, 	"Runtime":"3 hours; 27 minutes; 15 seconds", 	"Start":"Sun Jul 13 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jul 12 09:37:28 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11500325, 	"Runtime":"2 hours; 37 minutes; 28 seconds", 	"Start":"Sat Jul 12 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jul 11 09:39:50 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11497450, 	"Runtime":"2 hours; 39 minutes; 49 seconds", 	"Start":"Fri Jul 11 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jul 10 10:01:59 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11451602, 	"Runtime":"3 hours; 1 minutes; 59 seconds", 	"Start":"Thu Jul 10 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jul 09 09:08:16 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11434568, 	"Runtime":"2 hours; 8 minutes; 16 seconds", 	"Start":"Wed Jul 09 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jul 08 09:23:36 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11249453, 	"Runtime":"2 hours; 23 minutes; 36 seconds", 	"Start":"Tue Jul 08 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jul 07 09:45:10 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11169911, 	"Runtime":"2 hours; 45 minutes; 10 seconds", 	"Start":"Mon Jul 07 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jul 06 09:09:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11169911, 	"Runtime":"2 hours; 9 minutes; 22 seconds", 	"Start":"Sun Jul 06 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jul 05 09:28:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11169674, 	"Runtime":"2 hours; 28 minutes; 39 seconds", 	"Start":"Sat Jul 05 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jul 04 09:35:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11134812, 	"Runtime":"2 hours; 35 minutes; 2 seconds", 	"Start":"Fri Jul 04 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jul 03 09:11:07 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11120701, 	"Runtime":"2 hours; 11 minutes; 7 seconds", 	"Start":"Thu Jul 03 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jul 02 09:25:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11119669, 	"Runtime":"2 hours; 25 minutes; 18 seconds", 	"Start":"Wed Jul 02 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jul 01 08:25:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11114677, 	"Runtime":"1 hours; 25 minutes; 52 seconds", 	"Start":"Tue Jul 01 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jun 30 08:43:53 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11102204, 	"Runtime":"1 hours; 43 minutes; 53 seconds", 	"Start":"Mon Jun 30 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jun 29 08:30:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11102197, 	"Runtime":"1 hours; 30 minutes; 25 seconds", 	"Start":"Sun Jun 29 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jun 28 08:43:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11093863, 	"Runtime":"1 hours; 43 minutes; 48 seconds", 	"Start":"Sat Jun 28 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jun 27 08:42:16 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11032688, 	"Runtime":"1 hours; 42 minutes; 16 seconds", 	"Start":"Fri Jun 27 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jun 26 08:41:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11029927, 	"Runtime":"1 hours; 41 minutes; 26 seconds", 	"Start":"Thu Jun 26 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jun 25 08:44:50 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11028397, 	"Runtime":"1 hours; 44 minutes; 50 seconds", 	"Start":"Wed Jun 25 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jun 24 08:39:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11031012, 	"Runtime":"1 hours; 39 minutes; 1 seconds", 	"Start":"Tue Jun 24 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jun 23 08:27:19 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11030923, 	"Runtime":"1 hours; 27 minutes; 19 seconds", 	"Start":"Mon Jun 23 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jun 22 08:42:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11030923, 	"Runtime":"1 hours; 42 minutes; 3 seconds", 	"Start":"Sun Jun 22 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jun 21 08:36:47 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11030923, 	"Runtime":"1 hours; 36 minutes; 47 seconds", 	"Start":"Sat Jun 21 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jun 20 09:14:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11030887, 	"Runtime":"2 hours; 14 minutes; 9 seconds", 	"Start":"Fri Jun 20 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jun 19 08:32:57 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11030887, 	"Runtime":"1 hours; 32 minutes; 57 seconds", 	"Start":"Thu Jun 19 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jun 18 11:57:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11029623, 	"Runtime":"1 hours; 39 minutes; 39 seconds", 	"Start":"Wed Jun 18 10:18:01 CEST 2014"}
+,
+{	"End":"Tue Jun 17 09:00:04 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11028433, 	"Runtime":"2 hours; 0 minutes; 4 seconds", 	"Start":"Tue Jun 17 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jun 15 10:39:12 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11024684, 	"Runtime":"3 hours; 39 minutes; 12 seconds", 	"Start":"Sun Jun 15 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jun 14 09:48:56 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11024684, 	"Runtime":"2 hours; 48 minutes; 56 seconds", 	"Start":"Sat Jun 14 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jun 13 08:42:29 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11022659, 	"Runtime":"1 hours; 42 minutes; 29 seconds", 	"Start":"Fri Jun 13 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jun 12 09:00:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11018700, 	"Runtime":"2 hours; 0 minutes; 13 seconds", 	"Start":"Thu Jun 12 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jun 11 09:27:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11014676, 	"Runtime":"2 hours; 27 minutes; 42 seconds", 	"Start":"Wed Jun 11 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jun 10 09:21:37 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11014636, 	"Runtime":"2 hours; 21 minutes; 37 seconds", 	"Start":"Tue Jun 10 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jun 09 09:33:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11011831, 	"Runtime":"2 hours; 33 minutes; 40 seconds", 	"Start":"Mon Jun 09 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jun 08 09:31:17 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11011831, 	"Runtime":"2 hours; 31 minutes; 17 seconds", 	"Start":"Sun Jun 08 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Jun 07 09:27:31 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11011827, 	"Runtime":"2 hours; 27 minutes; 31 seconds", 	"Start":"Sat Jun 07 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Jun 06 09:15:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11007276, 	"Runtime":"2 hours; 15 minutes; 25 seconds", 	"Start":"Fri Jun 06 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Jun 05 08:45:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11004847, 	"Runtime":"1 hours; 45 minutes; 41 seconds", 	"Start":"Thu Jun 05 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Jun 04 08:36:31 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10953325, 	"Runtime":"1 hours; 36 minutes; 31 seconds", 	"Start":"Wed Jun 04 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Jun 03 08:47:50 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10950452, 	"Runtime":"1 hours; 47 minutes; 50 seconds", 	"Start":"Tue Jun 03 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Jun 02 08:48:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10948937, 	"Runtime":"1 hours; 48 minutes; 9 seconds", 	"Start":"Mon Jun 02 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Jun 01 08:31:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10948937, 	"Runtime":"1 hours; 31 minutes; 1 seconds", 	"Start":"Sun Jun 01 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 31 08:33:10 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10948928, 	"Runtime":"1 hours; 33 minutes; 10 seconds", 	"Start":"Sat May 31 07:00:00 CEST 2014"}
+,
+{	"End":"Fri May 30 08:24:48 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10948873, 	"Runtime":"1 hours; 24 minutes; 48 seconds", 	"Start":"Fri May 30 07:00:00 CEST 2014"}
+,
+{	"End":"Thu May 29 08:32:36 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10942843, 	"Runtime":"1 hours; 32 minutes; 36 seconds", 	"Start":"Thu May 29 07:00:00 CEST 2014"}
+,
+{	"End":"Wed May 28 08:49:10 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10941018, 	"Runtime":"1 hours; 49 minutes; 10 seconds", 	"Start":"Wed May 28 07:00:00 CEST 2014"}
+,
+{	"End":"Tue May 27 08:48:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10940169, 	"Runtime":"1 hours; 48 minutes; 1 seconds", 	"Start":"Tue May 27 07:00:00 CEST 2014"}
+,
+{	"End":"Mon May 26 11:35:35 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"1 hours; 20 minutes; 7 seconds", 	"Start":"Mon May 26 10:15:28 CEST 2014"}
+,
+{	"End":"Sun May 25 09:39:30 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"2 hours; 39 minutes; 30 seconds", 	"Start":"Sun May 25 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 24 09:32:05 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"2 hours; 32 minutes; 5 seconds", 	"Start":"Sat May 24 07:00:00 CEST 2014"}
+,
+{	"End":"Fri May 23 08:30:57 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10937790, 	"Runtime":"1 hours; 30 minutes; 57 seconds", 	"Start":"Fri May 23 07:00:00 CEST 2014"}
+,
+{	"End":"Thu May 22 08:51:38 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10932088, 	"Runtime":"1 hours; 51 minutes; 38 seconds", 	"Start":"Thu May 22 07:00:00 CEST 2014"}
+,
+{	"End":"Wed May 21 09:13:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10925334, 	"Runtime":"2 hours; 13 minutes; 18 seconds", 	"Start":"Wed May 21 07:00:00 CEST 2014"}
+,
+{	"End":"Tue May 20 08:44:07 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10924210, 	"Runtime":"1 hours; 44 minutes; 7 seconds", 	"Start":"Tue May 20 07:00:00 CEST 2014"}
+,
+{	"End":"Mon May 19 08:39:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10893856, 	"Runtime":"1 hours; 39 minutes; 55 seconds", 	"Start":"Mon May 19 07:00:00 CEST 2014"}
+,
+{	"End":"Sun May 18 08:37:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10893856, 	"Runtime":"1 hours; 37 minutes; 1 seconds", 	"Start":"Sun May 18 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 17 08:32:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10893695, 	"Runtime":"1 hours; 32 minutes; 43 seconds", 	"Start":"Sat May 17 07:00:00 CEST 2014"}
+,
+{	"End":"Fri May 16 08:30:34 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10890294, 	"Runtime":"1 hours; 30 minutes; 34 seconds", 	"Start":"Fri May 16 07:00:00 CEST 2014"}
+,
+{	"End":"Thu May 15 08:51:30 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10889112, 	"Runtime":"1 hours; 51 minutes; 30 seconds", 	"Start":"Thu May 15 07:00:00 CEST 2014"}
+,
+{	"End":"Wed May 14 08:47:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10888336, 	"Runtime":"1 hours; 47 minutes; 9 seconds", 	"Start":"Wed May 14 07:00:00 CEST 2014"}
+,
+{	"End":"Tue May 13 08:54:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10886788, 	"Runtime":"1 hours; 54 minutes; 42 seconds", 	"Start":"Tue May 13 07:00:00 CEST 2014"}
+,
+{	"End":"Mon May 12 08:31:15 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10885860, 	"Runtime":"1 hours; 31 minutes; 15 seconds", 	"Start":"Mon May 12 07:00:00 CEST 2014"}
+,
+{	"End":"Sun May 11 08:38:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10885860, 	"Runtime":"1 hours; 38 minutes; 39 seconds", 	"Start":"Sun May 11 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 10 09:01:04 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10885860, 	"Runtime":"2 hours; 1 minutes; 4 seconds", 	"Start":"Sat May 10 07:00:00 CEST 2014"}
+,
+{	"End":"Fri May 09 08:48:21 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10884867, 	"Runtime":"1 hours; 48 minutes; 21 seconds", 	"Start":"Fri May 09 07:00:00 CEST 2014"}
+,
+{	"End":"Thu May 08 09:01:47 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10884601, 	"Runtime":"2 hours; 1 minutes; 47 seconds", 	"Start":"Thu May 08 07:00:00 CEST 2014"}
+,
+{	"End":"Wed May 07 17:32:45 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10884529, 	"Runtime":"1 hours; 27 minutes; 48 seconds", 	"Start":"Wed May 07 16:04:56 CEST 2014"}
+,
+{	"End":"Mon May 05 09:02:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10879371, 	"Runtime":"2 hours; 2 minutes; 43 seconds", 	"Start":"Mon May 05 07:00:00 CEST 2014"}
+,
+{	"End":"Sun May 04 09:00:29 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10878871, 	"Runtime":"2 hours; 0 minutes; 29 seconds", 	"Start":"Sun May 04 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 03 09:15:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10873374, 	"Runtime":"2 hours; 15 minutes; 3 seconds", 	"Start":"Sat May 03 07:00:00 CEST 2014"}
+,
+{	"End":"Fri May 02 08:54:35 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10870208, 	"Runtime":"1 hours; 54 minutes; 35 seconds", 	"Start":"Fri May 02 07:00:00 CEST 2014"}
+,
+{	"End":"Thu May 01 09:04:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10870208, 	"Runtime":"2 hours; 4 minutes; 9 seconds", 	"Start":"Thu May 01 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Apr 30 08:55:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10857749, 	"Runtime":"1 hours; 55 minutes; 9 seconds", 	"Start":"Wed Apr 30 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Apr 29 08:53:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10856799, 	"Runtime":"1 hours; 53 minutes; 2 seconds", 	"Start":"Tue Apr 29 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Apr 28 08:58:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10856775, 	"Runtime":"1 hours; 58 minutes; 22 seconds", 	"Start":"Mon Apr 28 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Apr 26 09:44:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10856775, 	"Runtime":"2 hours; 44 minutes; 25 seconds", 	"Start":"Sat Apr 26 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Apr 25 10:42:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10856773, 	"Runtime":"3 hours; 42 minutes; 41 seconds", 	"Start":"Fri Apr 25 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Apr 24 10:40:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10854929, 	"Runtime":"3 hours; 40 minutes; 55 seconds", 	"Start":"Thu Apr 24 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Apr 23 10:50:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10853244, 	"Runtime":"3 hours; 50 minutes; 55 seconds", 	"Start":"Wed Apr 23 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Apr 22 10:18:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10850436, 	"Runtime":"3 hours; 18 minutes; 54 seconds", 	"Start":"Tue Apr 22 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Apr 21 10:25:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10850208, 	"Runtime":"3 hours; 25 minutes; 22 seconds", 	"Start":"Mon Apr 21 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Apr 20 10:42:15 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10850208, 	"Runtime":"3 hours; 42 minutes; 15 seconds", 	"Start":"Sun Apr 20 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Apr 19 10:47:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10849714, 	"Runtime":"3 hours; 47 minutes; 40 seconds", 	"Start":"Sat Apr 19 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Apr 18 10:43:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10848055, 	"Runtime":"3 hours; 43 minutes; 49 seconds", 	"Start":"Fri Apr 18 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Apr 17 10:11:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10838882, 	"Runtime":"3 hours; 11 minutes; 41 seconds", 	"Start":"Thu Apr 17 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Apr 16 11:05:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10838838, 	"Runtime":"4 hours; 5 minutes; 55 seconds", 	"Start":"Wed Apr 16 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Apr 15 09:19:12 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10835299, 	"Runtime":"2 hours; 19 minutes; 12 seconds", 	"Start":"Tue Apr 15 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Apr 14 09:58:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10835181, 	"Runtime":"2 hours; 58 minutes; 43 seconds", 	"Start":"Mon Apr 14 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Apr 13 10:38:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10835167, 	"Runtime":"3 hours; 38 minutes; 13 seconds", 	"Start":"Sun Apr 13 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Apr 12 10:01:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10835167, 	"Runtime":"3 hours; 1 minutes; 1 seconds", 	"Start":"Sat Apr 12 07:00:00 CEST 2014"}
+,
+{	"End":"Fri Apr 11 09:50:33 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10830220, 	"Runtime":"2 hours; 50 minutes; 33 seconds", 	"Start":"Fri Apr 11 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Apr 10 09:47:15 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10829867, 	"Runtime":"2 hours; 47 minutes; 15 seconds", 	"Start":"Thu Apr 10 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Apr 09 10:22:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10829347, 	"Runtime":"3 hours; 22 minutes; 24 seconds", 	"Start":"Wed Apr 09 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Apr 08 10:32:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10824972, 	"Runtime":"3 hours; 32 minutes; 54 seconds", 	"Start":"Tue Apr 08 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Apr 07 10:46:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10822866, 	"Runtime":"3 hours; 46 minutes; 41 seconds", 	"Start":"Mon Apr 07 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Apr 06 09:53:53 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10822866, 	"Runtime":"2 hours; 53 minutes; 53 seconds", 	"Start":"Sun Apr 06 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Apr 05 09:57:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10822866, 	"Runtime":"2 hours; 57 minutes; 32 seconds", 	"Start":"Sat Apr 05 07:00:00 CEST 2014"}
+,
+{	"End":"Thu Apr 03 10:19:36 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10821041, 	"Runtime":"3 hours; 19 minutes; 36 seconds", 	"Start":"Thu Apr 03 07:00:00 CEST 2014"}
+,
+{	"End":"Wed Apr 02 10:55:15 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10820347, 	"Runtime":"3 hours; 55 minutes; 15 seconds", 	"Start":"Wed Apr 02 07:00:00 CEST 2014"}
+,
+{	"End":"Tue Apr 01 10:29:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10814579, 	"Runtime":"3 hours; 29 minutes; 1 seconds", 	"Start":"Tue Apr 01 07:00:00 CEST 2014"}
+,
+{	"End":"Mon Mar 31 10:06:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10813236, 	"Runtime":"3 hours; 6 minutes; 9 seconds", 	"Start":"Mon Mar 31 07:00:00 CEST 2014"}
+,
+{	"End":"Sun Mar 30 10:03:30 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10811804, 	"Runtime":"3 hours; 3 minutes; 30 seconds", 	"Start":"Sun Mar 30 07:00:00 CEST 2014"}
+,
+{	"End":"Sat Mar 29 11:07:28 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10811804, 	"Runtime":"4 hours; 7 minutes; 28 seconds", 	"Start":"Sat Mar 29 07:00:00 CET 2014"}
+,
+{	"End":"Fri Mar 28 10:33:42 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10810197, 	"Runtime":"3 hours; 33 minutes; 42 seconds", 	"Start":"Fri Mar 28 07:00:00 CET 2014"}
+,
+{	"End":"Thu Mar 27 09:56:52 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10790989, 	"Runtime":"2 hours; 56 minutes; 52 seconds", 	"Start":"Thu Mar 27 07:00:00 CET 2014"}
+,
+{	"End":"Wed Mar 26 10:57:50 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10782223, 	"Runtime":"3 hours; 57 minutes; 50 seconds", 	"Start":"Wed Mar 26 07:00:00 CET 2014"}
+,
+{	"End":"Tue Mar 25 11:05:11 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10778188, 	"Runtime":"4 hours; 5 minutes; 11 seconds", 	"Start":"Tue Mar 25 07:00:00 CET 2014"}
+,
+{	"End":"Mon Mar 24 10:35:25 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10777893, 	"Runtime":"3 hours; 35 minutes; 25 seconds", 	"Start":"Mon Mar 24 07:00:00 CET 2014"}
+,
+{	"End":"Sun Mar 23 10:40:33 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10777893, 	"Runtime":"3 hours; 40 minutes; 33 seconds", 	"Start":"Sun Mar 23 07:00:00 CET 2014"}
+,
+{	"End":"Sat Mar 22 10:44:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10777893, 	"Runtime":"3 hours; 44 minutes; 22 seconds", 	"Start":"Sat Mar 22 07:00:00 CET 2014"}
+,
+{	"End":"Fri Mar 21 10:58:33 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10777806, 	"Runtime":"3 hours; 58 minutes; 33 seconds", 	"Start":"Fri Mar 21 07:00:00 CET 2014"}
+,
+{	"End":"Wed Mar 19 11:00:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10772637, 	"Runtime":"4 hours; 0 minutes; 47 seconds", 	"Start":"Wed Mar 19 07:00:00 CET 2014"}
+,
+{	"End":"Tue Mar 18 10:27:36 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10772463, 	"Runtime":"3 hours; 27 minutes; 36 seconds", 	"Start":"Tue Mar 18 07:00:00 CET 2014"}
+,
+{	"End":"Mon Mar 17 10:48:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10771564, 	"Runtime":"3 hours; 48 minutes; 47 seconds", 	"Start":"Mon Mar 17 07:00:00 CET 2014"}
+,
+{	"End":"Sun Mar 16 11:17:26 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10771564, 	"Runtime":"4 hours; 17 minutes; 26 seconds", 	"Start":"Sun Mar 16 07:00:00 CET 2014"}
+,
+{	"End":"Sat Mar 15 10:44:37 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10771564, 	"Runtime":"3 hours; 44 minutes; 37 seconds", 	"Start":"Sat Mar 15 07:00:00 CET 2014"}
+,
+{	"End":"Fri Mar 14 10:21:45 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10770714, 	"Runtime":"3 hours; 21 minutes; 45 seconds", 	"Start":"Fri Mar 14 07:00:00 CET 2014"}
+,
+{	"End":"Thu Mar 13 10:22:57 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10767955, 	"Runtime":"3 hours; 22 minutes; 57 seconds", 	"Start":"Thu Mar 13 07:00:00 CET 2014"}
+,
+{	"End":"Wed Mar 12 10:36:27 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10767751, 	"Runtime":"3 hours; 36 minutes; 27 seconds", 	"Start":"Wed Mar 12 07:00:00 CET 2014"}
+,
+{	"End":"Tue Mar 11 11:14:13 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10759134, 	"Runtime":"4 hours; 14 minutes; 13 seconds", 	"Start":"Tue Mar 11 07:00:00 CET 2014"}
+,
+{	"End":"Mon Mar 10 11:09:49 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10756352, 	"Runtime":"4 hours; 9 minutes; 49 seconds", 	"Start":"Mon Mar 10 07:00:00 CET 2014"}
+,
+{	"End":"Sun Mar 09 10:33:04 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10755752, 	"Runtime":"3 hours; 33 minutes; 4 seconds", 	"Start":"Sun Mar 09 07:00:00 CET 2014"}
+,
+{	"End":"Sat Mar 08 10:38:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10755748, 	"Runtime":"3 hours; 38 minutes; 56 seconds", 	"Start":"Sat Mar 08 07:00:00 CET 2014"}
+,
+{	"End":"Fri Mar 07 11:01:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10755340, 	"Runtime":"4 hours; 1 minutes; 55 seconds", 	"Start":"Fri Mar 07 07:00:00 CET 2014"}
+,
+{	"End":"Thu Mar 06 10:22:40 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10751585, 	"Runtime":"3 hours; 22 minutes; 40 seconds", 	"Start":"Thu Mar 06 07:00:00 CET 2014"}
+,
+{	"End":"Wed Mar 05 10:48:55 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10666296, 	"Runtime":"3 hours; 48 minutes; 55 seconds", 	"Start":"Wed Mar 05 07:00:00 CET 2014"}
+,
+{	"End":"Tue Mar 04 10:50:51 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10497022, 	"Runtime":"3 hours; 50 minutes; 51 seconds", 	"Start":"Tue Mar 04 07:00:00 CET 2014"}
+,
+{	"End":"Mon Mar 03 10:41:04 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10495485, 	"Runtime":"3 hours; 41 minutes; 4 seconds", 	"Start":"Mon Mar 03 07:00:00 CET 2014"}
+,
+{	"End":"Sun Mar 02 11:20:41 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10495459, 	"Runtime":"4 hours; 20 minutes; 41 seconds", 	"Start":"Sun Mar 02 07:00:00 CET 2014"}
+,
+{	"End":"Sat Mar 01 11:15:29 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10493988, 	"Runtime":"4 hours; 15 minutes; 29 seconds", 	"Start":"Sat Mar 01 07:00:00 CET 2014"}
+,
+{	"End":"Fri Feb 28 10:44:17 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10491776, 	"Runtime":"3 hours; 44 minutes; 17 seconds", 	"Start":"Fri Feb 28 07:00:00 CET 2014"}
+,
+{	"End":"Thu Feb 27 09:58:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10421887, 	"Runtime":"2 hours; 58 minutes; 22 seconds", 	"Start":"Thu Feb 27 07:00:00 CET 2014"}
+,
+{	"End":"Wed Feb 26 10:03:08 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10418983, 	"Runtime":"3 hours; 3 minutes; 8 seconds", 	"Start":"Wed Feb 26 07:00:00 CET 2014"}
+,
+{	"End":"Tue Feb 25 09:40:27 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10416291, 	"Runtime":"2 hours; 40 minutes; 27 seconds", 	"Start":"Tue Feb 25 07:00:00 CET 2014"}
+,
+{	"End":"Mon Feb 24 09:49:46 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10410272, 	"Runtime":"2 hours; 49 minutes; 46 seconds", 	"Start":"Mon Feb 24 07:00:00 CET 2014"}
+,
+{	"End":"Sun Feb 23 10:51:05 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10408548, 	"Runtime":"3 hours; 51 minutes; 5 seconds", 	"Start":"Sun Feb 23 07:00:00 CET 2014"}
+,
+{	"End":"Sat Feb 22 10:32:26 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10408543, 	"Runtime":"3 hours; 32 minutes; 26 seconds", 	"Start":"Sat Feb 22 07:00:00 CET 2014"}
+,
+{	"End":"Fri Feb 21 09:57:08 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10407710, 	"Runtime":"2 hours; 57 minutes; 7 seconds", 	"Start":"Fri Feb 21 07:00:00 CET 2014"}
+,
+{	"End":"Thu Feb 20 09:50:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10401922, 	"Runtime":"2 hours; 50 minutes; 47 seconds", 	"Start":"Thu Feb 20 07:00:00 CET 2014"}
+,
+{	"End":"Wed Feb 19 10:01:38 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10397644, 	"Runtime":"3 hours; 1 minutes; 38 seconds", 	"Start":"Wed Feb 19 07:00:00 CET 2014"}
+,
+{	"End":"Tue Feb 18 10:05:26 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10397151, 	"Runtime":"3 hours; 5 minutes; 25 seconds", 	"Start":"Tue Feb 18 07:00:00 CET 2014"}
+,
+{	"End":"Mon Feb 17 09:38:31 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10394556, 	"Runtime":"2 hours; 38 minutes; 31 seconds", 	"Start":"Mon Feb 17 07:00:00 CET 2014"}
+,
+{	"End":"Sun Feb 16 09:33:11 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10394556, 	"Runtime":"2 hours; 33 minutes; 11 seconds", 	"Start":"Sun Feb 16 07:00:00 CET 2014"}
+,
+{	"End":"Sat Feb 15 09:47:44 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10394556, 	"Runtime":"2 hours; 47 minutes; 44 seconds", 	"Start":"Sat Feb 15 07:00:00 CET 2014"}
+,
+{	"End":"Fri Feb 14 09:45:28 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10394409, 	"Runtime":"2 hours; 45 minutes; 28 seconds", 	"Start":"Fri Feb 14 07:00:00 CET 2014"}
+,
+{	"End":"Thu Feb 13 09:33:04 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10394211, 	"Runtime":"2 hours; 33 minutes; 4 seconds", 	"Start":"Thu Feb 13 07:00:00 CET 2014"}
+,
+{	"End":"Wed Feb 12 09:52:50 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10393371, 	"Runtime":"2 hours; 52 minutes; 50 seconds", 	"Start":"Wed Feb 12 07:00:00 CET 2014"}
+,
+{	"End":"Tue Feb 11 09:17:40 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10393115, 	"Runtime":"2 hours; 17 minutes; 40 seconds", 	"Start":"Tue Feb 11 07:00:00 CET 2014"}
+,
+{	"End":"Mon Feb 10 09:23:42 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 23 minutes; 42 seconds", 	"Start":"Mon Feb 10 07:00:00 CET 2014"}
+,
+{	"End":"Sun Feb 09 09:14:07 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 14 minutes; 7 seconds", 	"Start":"Sun Feb 09 07:00:00 CET 2014"}
+,
+{	"End":"Sat Feb 08 09:28:30 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 28 minutes; 30 seconds", 	"Start":"Sat Feb 08 07:00:00 CET 2014"}
+,
+{	"End":"Fri Feb 07 09:22:20 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10390509, 	"Runtime":"2 hours; 22 minutes; 20 seconds", 	"Start":"Fri Feb 07 07:00:00 CET 2014"}
+,
+{	"End":"Thu Feb 06 09:33:31 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10389676, 	"Runtime":"2 hours; 33 minutes; 31 seconds", 	"Start":"Thu Feb 06 07:00:00 CET 2014"}
+,
+{	"End":"Wed Feb 05 09:26:57 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10388333, 	"Runtime":"2 hours; 26 minutes; 57 seconds", 	"Start":"Wed Feb 05 07:00:00 CET 2014"}
+,
+{	"End":"Tue Feb 04 09:35:21 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10387315, 	"Runtime":"2 hours; 35 minutes; 20 seconds", 	"Start":"Tue Feb 04 07:00:00 CET 2014"}
+,
+{	"End":"Sun Feb 02 10:13:38 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10386874, 	"Runtime":"3 hours; 13 minutes; 38 seconds", 	"Start":"Sun Feb 02 07:00:00 CET 2014"}
+,
+{	"End":"Sat Feb 01 10:21:31 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10386870, 	"Runtime":"3 hours; 21 minutes; 30 seconds", 	"Start":"Sat Feb 01 07:00:00 CET 2014"}
+,
+{	"End":"Fri Jan 31 10:21:39 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10386275, 	"Runtime":"3 hours; 21 minutes; 39 seconds", 	"Start":"Fri Jan 31 07:00:00 CET 2014"}
+,
+{	"End":"Thu Jan 30 09:38:40 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10364333, 	"Runtime":"2 hours; 38 minutes; 40 seconds", 	"Start":"Thu Jan 30 07:00:00 CET 2014"}
+,
+{	"End":"Wed Jan 29 09:33:40 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10350939, 	"Runtime":"2 hours; 33 minutes; 40 seconds", 	"Start":"Wed Jan 29 07:00:00 CET 2014"}
+,
+{	"End":"Tue Jan 28 09:41:13 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10350796, 	"Runtime":"2 hours; 41 minutes; 13 seconds", 	"Start":"Tue Jan 28 07:00:00 CET 2014"}
+,
+{	"End":"Mon Jan 27 09:37:30 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10345335, 	"Runtime":"2 hours; 37 minutes; 30 seconds", 	"Start":"Mon Jan 27 07:00:00 CET 2014"}
+,
+{	"End":"Sun Jan 26 09:37:05 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10344939, 	"Runtime":"2 hours; 37 minutes; 5 seconds", 	"Start":"Sun Jan 26 07:00:00 CET 2014"}
+,
+{	"End":"Sat Jan 25 09:41:24 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10344858, 	"Runtime":"2 hours; 41 minutes; 24 seconds", 	"Start":"Sat Jan 25 07:00:00 CET 2014"}
+,
+{	"End":"Fri Jan 24 09:52:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10341167, 	"Runtime":"2 hours; 52 minutes; 35 seconds", 	"Start":"Fri Jan 24 07:00:00 CET 2014"}
+,
+{	"End":"Thu Jan 23 10:05:03 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10340906, 	"Runtime":"3 hours; 5 minutes; 3 seconds", 	"Start":"Thu Jan 23 07:00:00 CET 2014"}
+,
+{	"End":"Wed Jan 22 09:56:05 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10340797, 	"Runtime":"2 hours; 56 minutes; 5 seconds", 	"Start":"Wed Jan 22 07:00:00 CET 2014"}
+,
+{	"End":"Tue Jan 21 10:47:45 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10340268, 	"Runtime":"3 hours; 47 minutes; 45 seconds", 	"Start":"Tue Jan 21 07:00:00 CET 2014"}
+,
+{	"End":"Mon Jan 20 10:04:05 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10339482, 	"Runtime":"3 hours; 4 minutes; 5 seconds", 	"Start":"Mon Jan 20 07:00:00 CET 2014"}
+,
+{	"End":"Sun Jan 19 10:01:02 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10338945, 	"Runtime":"3 hours; 1 minutes; 2 seconds", 	"Start":"Sun Jan 19 07:00:00 CET 2014"}
+,
+{	"End":"Sat Jan 18 10:06:07 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10338448, 	"Runtime":"3 hours; 6 minutes; 7 seconds", 	"Start":"Sat Jan 18 07:00:00 CET 2014"}
+,
+{	"End":"Fri Jan 17 10:30:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10335641, 	"Runtime":"3 hours; 30 minutes; 22 seconds", 	"Start":"Fri Jan 17 07:00:00 CET 2014"}
+,
+{	"End":"Thu Jan 16 09:53:12 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10334634, 	"Runtime":"2 hours; 53 minutes; 12 seconds", 	"Start":"Thu Jan 16 07:00:00 CET 2014"}
+,
+{	"End":"Wed Jan 15 10:21:33 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10334143, 	"Runtime":"3 hours; 21 minutes; 33 seconds", 	"Start":"Wed Jan 15 07:00:00 CET 2014"}
+,
+{	"End":"Tue Jan 14 10:25:44 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10332877, 	"Runtime":"3 hours; 25 minutes; 44 seconds", 	"Start":"Tue Jan 14 07:00:00 CET 2014"}
+,
+{	"End":"Mon Jan 13 11:00:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10325154, 	"Runtime":"4 hours; 0 minutes; 22 seconds", 	"Start":"Mon Jan 13 07:00:00 CET 2014"}
+,
+{	"End":"Sun Jan 12 10:20:51 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10324670, 	"Runtime":"3 hours; 20 minutes; 51 seconds", 	"Start":"Sun Jan 12 07:00:00 CET 2014"}
+,
+{	"End":"Sat Jan 11 09:50:33 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10324169, 	"Runtime":"2 hours; 50 minutes; 33 seconds", 	"Start":"Sat Jan 11 07:00:00 CET 2014"}
+,
+{	"End":"Fri Jan 10 10:44:31 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10320526, 	"Runtime":"3 hours; 44 minutes; 31 seconds", 	"Start":"Fri Jan 10 07:00:00 CET 2014"}
+,
+{	"End":"Thu Jan 09 09:44:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10318038, 	"Runtime":"2 hours; 44 minutes; 47 seconds", 	"Start":"Thu Jan 09 07:00:00 CET 2014"}
+,
+{	"End":"Wed Jan 08 10:22:28 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10270211, 	"Runtime":"3 hours; 22 minutes; 28 seconds", 	"Start":"Wed Jan 08 07:00:00 CET 2014"}
+,
+{	"End":"Tue Jan 07 09:51:15 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10268120, 	"Runtime":"2 hours; 51 minutes; 15 seconds", 	"Start":"Tue Jan 07 07:00:00 CET 2014"}
+,
+{	"End":"Mon Jan 06 10:27:08 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10267900, 	"Runtime":"3 hours; 27 minutes; 8 seconds", 	"Start":"Mon Jan 06 07:00:00 CET 2014"}
+,
+{	"End":"Sun Jan 05 10:39:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10267417, 	"Runtime":"3 hours; 39 minutes; 47 seconds", 	"Start":"Sun Jan 05 07:00:00 CET 2014"}
+,
+{	"End":"Sat Jan 04 10:11:20 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10266855, 	"Runtime":"3 hours; 11 minutes; 20 seconds", 	"Start":"Sat Jan 04 07:00:00 CET 2014"}
+,
+{	"End":"Fri Jan 03 11:16:06 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10266342, 	"Runtime":"4 hours; 16 minutes; 6 seconds", 	"Start":"Fri Jan 03 07:00:00 CET 2014"}
+,
+{	"End":"Thu Jan 02 10:16:19 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10265670, 	"Runtime":"3 hours; 16 minutes; 19 seconds", 	"Start":"Thu Jan 02 07:00:00 CET 2014"}
+,
+{	"End":"Wed Jan 01 09:40:43 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10265187, 	"Runtime":"2 hours; 40 minutes; 43 seconds", 	"Start":"Wed Jan 01 07:00:00 CET 2014"}
+,
+{	"End":"Tue Dec 31 09:47:51 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10264533, 	"Runtime":"2 hours; 47 minutes; 51 seconds", 	"Start":"Tue Dec 31 07:00:00 CET 2013"}
+,
+{	"End":"Mon Dec 30 10:27:27 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10249722, 	"Runtime":"3 hours; 27 minutes; 27 seconds", 	"Start":"Mon Dec 30 07:00:00 CET 2013"}
+,
+{	"End":"Sun Dec 29 10:31:14 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10249239, 	"Runtime":"3 hours; 31 minutes; 14 seconds", 	"Start":"Sun Dec 29 07:00:00 CET 2013"}
+,
+{	"End":"Sat Dec 28 09:25:36 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10248720, 	"Runtime":"2 hours; 25 minutes; 36 seconds", 	"Start":"Sat Dec 28 07:00:00 CET 2013"}
+,
+{	"End":"Fri Dec 27 09:32:17 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10248237, 	"Runtime":"2 hours; 32 minutes; 17 seconds", 	"Start":"Fri Dec 27 07:00:00 CET 2013"}
+,
+{	"End":"Thu Dec 26 10:19:42 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10233696, 	"Runtime":"3 hours; 19 minutes; 42 seconds", 	"Start":"Thu Dec 26 07:00:00 CET 2013"}
+,
+{	"End":"Wed Dec 25 09:55:56 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10233184, 	"Runtime":"2 hours; 55 minutes; 56 seconds", 	"Start":"Wed Dec 25 07:00:00 CET 2013"}
+,
+{	"End":"Tue Dec 24 09:39:00 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10232699, 	"Runtime":"2 hours; 39 minutes; 0 seconds", 	"Start":"Tue Dec 24 07:00:00 CET 2013"}
+,
+{	"End":"Mon Dec 23 09:45:22 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10232216, 	"Runtime":"2 hours; 45 minutes; 22 seconds", 	"Start":"Mon Dec 23 07:00:00 CET 2013"}
+,
+{	"End":"Sun Dec 22 09:46:45 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10231733, 	"Runtime":"2 hours; 46 minutes; 45 seconds", 	"Start":"Sun Dec 22 07:00:00 CET 2013"}
+,
+{	"End":"Sat Dec 21 09:32:31 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10231131, 	"Runtime":"2 hours; 32 minutes; 31 seconds", 	"Start":"Sat Dec 21 07:00:00 CET 2013"}
+,
+{	"End":"Fri Dec 20 09:42:13 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10227488, 	"Runtime":"2 hours; 42 minutes; 13 seconds", 	"Start":"Fri Dec 20 07:00:00 CET 2013"}
+,
+{	"End":"Thu Dec 19 09:37:21 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10224852, 	"Runtime":"2 hours; 37 minutes; 21 seconds", 	"Start":"Thu Dec 19 07:00:00 CET 2013"}
+,
+{	"End":"Wed Dec 18 10:24:04 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10222388, 	"Runtime":"3 hours; 24 minutes; 4 seconds", 	"Start":"Wed Dec 18 07:00:00 CET 2013"}
+,
+{	"End":"Tue Dec 17 10:05:59 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10221287, 	"Runtime":"3 hours; 5 minutes; 59 seconds", 	"Start":"Tue Dec 17 07:00:00 CET 2013"}
+,
+{	"End":"Mon Dec 16 10:51:31 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10220179, 	"Runtime":"3 hours; 51 minutes; 31 seconds", 	"Start":"Mon Dec 16 07:00:00 CET 2013"}
+,
+{	"End":"Sun Dec 15 09:43:01 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10219737, 	"Runtime":"2 hours; 43 minutes; 1 seconds", 	"Start":"Sun Dec 15 07:00:00 CET 2013"}
+,
+{	"End":"Sat Dec 14 10:58:41 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10218059, 	"Runtime":"3 hours; 58 minutes; 41 seconds", 	"Start":"Sat Dec 14 07:00:00 CET 2013"}
+,
+{	"End":"Fri Dec 13 10:27:58 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10214324, 	"Runtime":"3 hours; 27 minutes; 58 seconds", 	"Start":"Fri Dec 13 07:00:00 CET 2013"}
+,
+{	"End":"Thu Dec 12 10:10:52 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10212478, 	"Runtime":"3 hours; 10 minutes; 52 seconds", 	"Start":"Thu Dec 12 07:00:00 CET 2013"}
+,
+{	"End":"Wed Dec 11 10:29:54 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10211348, 	"Runtime":"3 hours; 29 minutes; 54 seconds", 	"Start":"Wed Dec 11 07:00:00 CET 2013"}
+,
+{	"End":"Tue Dec 10 10:16:35 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10210294, 	"Runtime":"3 hours; 16 minutes; 35 seconds", 	"Start":"Tue Dec 10 07:00:00 CET 2013"}
+,
+{	"End":"Mon Dec 09 10:08:55 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10208243, 	"Runtime":"3 hours; 8 minutes; 55 seconds", 	"Start":"Mon Dec 09 07:00:00 CET 2013"}
+,
+{	"End":"Sun Dec 08 09:58:15 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10207806, 	"Runtime":"2 hours; 58 minutes; 15 seconds", 	"Start":"Sun Dec 08 07:00:00 CET 2013"}
+,
+{	"End":"Sat Dec 07 09:51:11 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10207369, 	"Runtime":"2 hours; 51 minutes; 11 seconds", 	"Start":"Sat Dec 07 07:00:00 CET 2013"}
+,
+{	"End":"Fri Dec 06 09:58:34 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10206105, 	"Runtime":"2 hours; 58 minutes; 34 seconds", 	"Start":"Fri Dec 06 07:00:00 CET 2013"}
+,
+{	"End":"Thu Dec 05 10:00:34 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10205154, 	"Runtime":"3 hours; 0 minutes; 34 seconds", 	"Start":"Thu Dec 05 07:00:00 CET 2013"}
+,
+{	"End":"Wed Dec 04 10:03:24 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10197236, 	"Runtime":"3 hours; 3 minutes; 24 seconds", 	"Start":"Wed Dec 04 07:00:00 CET 2013"}
+,
+{	"End":"Tue Dec 03 10:03:49 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10013548, 	"Runtime":"3 hours; 3 minutes; 49 seconds", 	"Start":"Tue Dec 03 07:00:00 CET 2013"}
+,
+{	"End":"Mon Dec 02 10:14:00 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9986232, 	"Runtime":"3 hours; 14 minutes; 0 seconds", 	"Start":"Mon Dec 02 07:00:00 CET 2013"}
+,
+{	"End":"Sun Dec 01 09:41:28 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9986173, 	"Runtime":"2 hours; 41 minutes; 28 seconds", 	"Start":"Sun Dec 01 07:00:00 CET 2013"}
+,
+{	"End":"Sat Nov 30 10:30:18 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9985945, 	"Runtime":"3 hours; 30 minutes; 18 seconds", 	"Start":"Sat Nov 30 07:00:00 CET 2013"}
+,
+{	"End":"Fri Nov 29 10:19:55 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9985802, 	"Runtime":"3 hours; 19 minutes; 55 seconds", 	"Start":"Fri Nov 29 07:00:00 CET 2013"}
+,
+{	"End":"Thu Nov 28 10:29:19 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9985756, 	"Runtime":"3 hours; 29 minutes; 19 seconds", 	"Start":"Thu Nov 28 07:00:00 CET 2013"}
+,
+{	"End":"Wed Nov 27 10:29:34 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9985528, 	"Runtime":"3 hours; 29 minutes; 34 seconds", 	"Start":"Wed Nov 27 07:00:00 CET 2013"}
+,
+{	"End":"Tue Nov 26 10:18:50 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9985125, 	"Runtime":"3 hours; 18 minutes; 50 seconds", 	"Start":"Tue Nov 26 07:00:00 CET 2013"}
+,
+{	"End":"Mon Nov 25 10:30:18 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9978002, 	"Runtime":"3 hours; 30 minutes; 18 seconds", 	"Start":"Mon Nov 25 07:00:00 CET 2013"}
+,
+{	"End":"Sun Nov 24 10:36:10 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9975986, 	"Runtime":"3 hours; 36 minutes; 10 seconds", 	"Start":"Sun Nov 24 07:00:00 CET 2013"}
+,
+{	"End":"Sat Nov 23 10:16:19 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9972732, 	"Runtime":"3 hours; 16 minutes; 19 seconds", 	"Start":"Sat Nov 23 07:00:00 CET 2013"}
+,
+{	"End":"Fri Nov 22 10:59:00 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9971646, 	"Runtime":"3 hours; 59 minutes; 0 seconds", 	"Start":"Fri Nov 22 07:00:00 CET 2013"}
+,
+{	"End":"Thu Nov 21 09:46:05 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9971451, 	"Runtime":"2 hours; 46 minutes; 5 seconds", 	"Start":"Thu Nov 21 07:00:00 CET 2013"}
+,
+{	"End":"Wed Nov 20 10:29:29 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9969657, 	"Runtime":"3 hours; 29 minutes; 28 seconds", 	"Start":"Wed Nov 20 07:00:00 CET 2013"}
+,
+{	"End":"Tue Nov 19 09:45:38 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9892812, 	"Runtime":"2 hours; 45 minutes; 38 seconds", 	"Start":"Tue Nov 19 07:00:00 CET 2013"}
+,
+{	"End":"Mon Nov 18 09:44:46 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9884013, 	"Runtime":"2 hours; 44 minutes; 46 seconds", 	"Start":"Mon Nov 18 07:00:00 CET 2013"}
+,
+{	"End":"Sun Nov 17 10:12:05 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9879140, 	"Runtime":"3 hours; 12 minutes; 5 seconds", 	"Start":"Sun Nov 17 07:00:00 CET 2013"}
+,
+{	"End":"Sat Nov 16 10:01:44 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9875276, 	"Runtime":"3 hours; 1 minutes; 44 seconds", 	"Start":"Sat Nov 16 07:00:00 CET 2013"}
+,
+{	"End":"Fri Nov 15 10:35:35 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9756965, 	"Runtime":"3 hours; 35 minutes; 35 seconds", 	"Start":"Fri Nov 15 07:00:00 CET 2013"}
+,
+{	"End":"Thu Nov 14 09:55:47 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9744911, 	"Runtime":"2 hours; 55 minutes; 47 seconds", 	"Start":"Thu Nov 14 07:00:00 CET 2013"}
+,
+{	"End":"Wed Nov 13 10:13:34 CET 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":9742321, 	"Runtime":"3 hours; 13 minutes; 34 seconds", 	"Start":"Wed Nov 13 07:00:00 CET 2013"}
+,
+{	"End":"Sat Aug 10 09:02:46 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8162756, 	"Runtime":"2 hours; 2 minutes; 46 seconds", 	"Start":"Sat Aug 10 07:00:00 CEST 2013"}
+,
+{	"End":"Thu Aug 08 08:07:51 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8513649, 	"Runtime":"3 hours; 7 minutes; 51 seconds", 	"Start":"Thu Aug 08 05:00:00 CEST 2013"}
+,
+{	"End":"Mon Aug 05 18:28:40 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8505109, 	"Runtime":"7 hours; 35 minutes; 30 seconds", 	"Start":"Mon Aug 05 10:53:09 CEST 2013"}
+,
+{	"End":"Sat Aug 03 06:57:27 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8505097, 	"Runtime":"1 hours; 57 minutes; 27 seconds", 	"Start":"Sat Aug 03 05:00:00 CEST 2013"}
+,
+{	"End":"Wed Jul 24 07:00:45 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8446614, 	"Runtime":"2 hours; 0 minutes; 45 seconds", 	"Start":"Wed Jul 24 05:00:00 CEST 2013"}
+,
+{	"End":"Tue Jul 23 07:00:10 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8444828, 	"Runtime":"2 hours; 0 minutes; 10 seconds", 	"Start":"Tue Jul 23 05:00:00 CEST 2013"}
+,
+{	"End":"Fri Jul 19 07:03:00 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8435105, 	"Runtime":"2 hours; 3 minutes; 0 seconds", 	"Start":"Fri Jul 19 05:00:00 CEST 2013"}
+,
+{	"End":"Tue Jul 16 07:01:49 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8400371, 	"Runtime":"2 hours; 1 minutes; 49 seconds", 	"Start":"Tue Jul 16 05:00:00 CEST 2013"}
+,
+{	"End":"Mon Jul 15 06:58:36 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8396195, 	"Runtime":"1 hours; 58 minutes; 36 seconds", 	"Start":"Mon Jul 15 05:00:00 CEST 2013"}
+,
+{	"End":"Sun Jul 14 06:58:05 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8396195, 	"Runtime":"1 hours; 58 minutes; 5 seconds", 	"Start":"Sun Jul 14 05:00:00 CEST 2013"}
+,
+{	"End":"Sat Jul 13 06:56:34 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8396059, 	"Runtime":"1 hours; 56 minutes; 34 seconds", 	"Start":"Sat Jul 13 05:00:00 CEST 2013"}
+,
+{	"End":"Fri Jul 05 06:56:42 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8374191, 	"Runtime":"1 hours; 56 minutes; 42 seconds", 	"Start":"Fri Jul 05 05:00:00 CEST 2013"}
+,
+{	"End":"Thu Jul 04 07:01:40 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8370786, 	"Runtime":"2 hours; 1 minutes; 40 seconds", 	"Start":"Thu Jul 04 05:00:00 CEST 2013"}
+,
+{	"End":"Tue Jun 25 06:53:36 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8293929, 	"Runtime":"1 hours; 53 minutes; 36 seconds", 	"Start":"Tue Jun 25 05:00:00 CEST 2013"}
+,
+{	"End":"Mon Jun 24 06:56:11 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8293845, 	"Runtime":"1 hours; 56 minutes; 11 seconds", 	"Start":"Mon Jun 24 05:00:00 CEST 2013"}
+,
+{	"End":"Sun Jun 23 06:54:37 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8293845, 	"Runtime":"1 hours; 54 minutes; 37 seconds", 	"Start":"Sun Jun 23 05:00:00 CEST 2013"}
+,
+{	"End":"Sat Jun 22 06:57:30 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8293845, 	"Runtime":"1 hours; 57 minutes; 30 seconds", 	"Start":"Sat Jun 22 05:00:00 CEST 2013"}
+,
+{	"End":"Fri Jun 21 06:59:56 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8293206, 	"Runtime":"1 hours; 59 minutes; 56 seconds", 	"Start":"Fri Jun 21 05:00:00 CEST 2013"}
+,
+{	"End":"Wed Jun 19 12:53:34 CEST 2013", 	"Mongo DB":"mchp407a", 	"Number of persisted records":8284947, 	"Runtime":"1 hours; 55 minutes; 10 seconds", 	"Start":"Wed Jun 19 10:58:24 CEST 2013"}
+,
+{	"End":"Wed Jun 19 07:06:46 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8281765, 	"Runtime":"2 hours; 6 minutes; 46 seconds", 	"Start":"Wed Jun 19 05:00:00 CEST 2013"}
+,
+{	"End":"Tue Jun 18 06:53:58 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8278309, 	"Runtime":"1 hours; 53 minutes; 58 seconds", 	"Start":"Tue Jun 18 05:00:00 CEST 2013"}
+,
+{	"End":"Mon Jun 17 06:49:20 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8274636, 	"Runtime":"1 hours; 49 minutes; 20 seconds", 	"Start":"Mon Jun 17 05:00:00 CEST 2013"}
+,
+{	"End":"Sun Jun 16 06:51:54 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8274636, 	"Runtime":"1 hours; 51 minutes; 54 seconds", 	"Start":"Sun Jun 16 05:00:00 CEST 2013"}
+,
+{	"End":"Sat Jun 15 06:57:39 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8274632, 	"Runtime":"1 hours; 57 minutes; 39 seconds", 	"Start":"Sat Jun 15 05:00:00 CEST 2013"}
+,
+{	"End":"Fri Jun 14 06:57:39 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8273768, 	"Runtime":"1 hours; 57 minutes; 39 seconds", 	"Start":"Fri Jun 14 05:00:00 CEST 2013"}
+,
+{	"End":"Wed Jun 12 06:55:55 CEST 2013", 	"Mongo DB":"mchp363a", 	"Number of persisted records":8272167, 	"Runtime":"1 hours; 55 minutes; 55 seconds", 	"Start":"Wed Jun 12 05:00:00 CEST 2013"}
+]
+,"[SOA-SALES-SERVICES mchp490a] Mongo - clusterb] - INFO":[
+
+{	"End":"Sun Dec 14 16:14:29 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14334641, 	"Runtime":"5 hours; 14 minutes; 29 seconds", 	"Start":"Sun Dec 14 11:00:00 CET 2014"}
+,
+{	"End":"Sat Dec 13 16:11:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14334641, 	"Runtime":"5 hours; 11 minutes; 35 seconds", 	"Start":"Sat Dec 13 11:00:00 CET 2014"}
+,
+{	"End":"Fri Dec 12 15:13:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14328956, 	"Runtime":"4 hours; 13 minutes; 56 seconds", 	"Start":"Fri Dec 12 11:00:00 CET 2014"}
+,
+{	"End":"Thu Dec 11 14:58:52 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14300932, 	"Runtime":"3 hours; 58 minutes; 52 seconds", 	"Start":"Thu Dec 11 11:00:00 CET 2014"}
+,
+{	"End":"Wed Dec 10 15:29:38 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14290319, 	"Runtime":"4 hours; 29 minutes; 38 seconds", 	"Start":"Wed Dec 10 11:00:00 CET 2014"}
+,
+{	"End":"Tue Dec 09 15:29:49 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14278787, 	"Runtime":"4 hours; 29 minutes; 49 seconds", 	"Start":"Tue Dec 09 11:00:00 CET 2014"}
+,
+{	"End":"Mon Dec 08 14:51:43 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14274880, 	"Runtime":"3 hours; 51 minutes; 43 seconds", 	"Start":"Mon Dec 08 11:00:00 CET 2014"}
+,
+{	"End":"Sun Dec 07 16:16:05 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14234127, 	"Runtime":"5 hours; 16 minutes; 5 seconds", 	"Start":"Sun Dec 07 11:00:00 CET 2014"}
+,
+{	"End":"Sat Dec 06 15:19:20 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14232080, 	"Runtime":"4 hours; 19 minutes; 20 seconds", 	"Start":"Sat Dec 06 11:00:00 CET 2014"}
+,
+{	"End":"Fri Dec 05 14:01:49 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":14157116, 	"Runtime":"3 hours; 1 minutes; 49 seconds", 	"Start":"Fri Dec 05 11:00:00 CET 2014"}
+,
+{	"End":"Thu Dec 04 12:40:11 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13819224, 	"Runtime":"1 hours; 40 minutes; 11 seconds", 	"Start":"Thu Dec 04 11:00:00 CET 2014"}
+,
+{	"End":"Wed Dec 03 12:31:22 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13811241, 	"Runtime":"1 hours; 31 minutes; 22 seconds", 	"Start":"Wed Dec 03 11:00:00 CET 2014"}
+,
+{	"End":"Tue Dec 02 13:28:39 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13810914, 	"Runtime":"2 hours; 28 minutes; 39 seconds", 	"Start":"Tue Dec 02 11:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 22 13:11:36 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13793507, 	"Runtime":"2 hours; 11 minutes; 35 seconds", 	"Start":"Sat Nov 22 11:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 21 13:17:26 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13791963, 	"Runtime":"2 hours; 17 minutes; 26 seconds", 	"Start":"Fri Nov 21 11:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 20 13:14:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13755924, 	"Runtime":"2 hours; 14 minutes; 35 seconds", 	"Start":"Thu Nov 20 11:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 19 14:02:30 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13755789, 	"Runtime":"3 hours; 2 minutes; 30 seconds", 	"Start":"Wed Nov 19 11:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 18 13:10:09 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751555, 	"Runtime":"2 hours; 10 minutes; 9 seconds", 	"Start":"Tue Nov 18 11:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 17 13:07:21 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751308, 	"Runtime":"2 hours; 7 minutes; 21 seconds", 	"Start":"Mon Nov 17 11:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 16 13:00:41 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13751290, 	"Runtime":"2 hours; 0 minutes; 41 seconds", 	"Start":"Sun Nov 16 11:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 15 13:43:07 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13745694, 	"Runtime":"2 hours; 43 minutes; 7 seconds", 	"Start":"Sat Nov 15 11:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 14 14:16:17 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13725965, 	"Runtime":"3 hours; 16 minutes; 17 seconds", 	"Start":"Fri Nov 14 11:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 13 14:09:18 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13725734, 	"Runtime":"3 hours; 9 minutes; 18 seconds", 	"Start":"Thu Nov 13 11:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 12 13:28:57 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13723644, 	"Runtime":"2 hours; 28 minutes; 57 seconds", 	"Start":"Wed Nov 12 11:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 11 13:42:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13717736, 	"Runtime":"2 hours; 42 minutes; 56 seconds", 	"Start":"Tue Nov 11 11:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 10 14:28:56 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709672, 	"Runtime":"3 hours; 28 minutes; 56 seconds", 	"Start":"Mon Nov 10 11:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 09 14:30:47 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709649, 	"Runtime":"3 hours; 30 minutes; 47 seconds", 	"Start":"Sun Nov 09 11:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 08 13:48:17 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13709649, 	"Runtime":"2 hours; 48 minutes; 17 seconds", 	"Start":"Sat Nov 08 11:00:00 CET 2014"}
+,
+{	"End":"Fri Nov 07 14:07:01 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13706297, 	"Runtime":"3 hours; 7 minutes; 1 seconds", 	"Start":"Fri Nov 07 11:00:00 CET 2014"}
+,
+{	"End":"Thu Nov 06 12:53:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13683330, 	"Runtime":"1 hours; 53 minutes; 35 seconds", 	"Start":"Thu Nov 06 11:00:00 CET 2014"}
+,
+{	"End":"Wed Nov 05 13:13:11 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13671213, 	"Runtime":"2 hours; 13 minutes; 11 seconds", 	"Start":"Wed Nov 05 11:00:00 CET 2014"}
+,
+{	"End":"Tue Nov 04 13:55:35 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665963, 	"Runtime":"2 hours; 55 minutes; 35 seconds", 	"Start":"Tue Nov 04 11:00:00 CET 2014"}
+,
+{	"End":"Mon Nov 03 14:40:52 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665785, 	"Runtime":"3 hours; 40 minutes; 52 seconds", 	"Start":"Mon Nov 03 11:00:00 CET 2014"}
+,
+{	"End":"Sun Nov 02 13:41:40 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665768, 	"Runtime":"2 hours; 41 minutes; 40 seconds", 	"Start":"Sun Nov 02 11:00:00 CET 2014"}
+,
+{	"End":"Sat Nov 01 13:38:24 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13665768, 	"Runtime":"2 hours; 38 minutes; 24 seconds", 	"Start":"Sat Nov 01 11:00:00 CET 2014"}
+,
+{	"End":"Fri Oct 31 13:59:48 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13661529, 	"Runtime":"2 hours; 59 minutes; 48 seconds", 	"Start":"Fri Oct 31 11:00:00 CET 2014"}
+,
+{	"End":"Thu Oct 30 13:48:29 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13660029, 	"Runtime":"2 hours; 48 minutes; 29 seconds", 	"Start":"Thu Oct 30 11:00:00 CET 2014"}
+,
+{	"End":"Wed Oct 29 12:58:54 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13659764, 	"Runtime":"1 hours; 58 minutes; 54 seconds", 	"Start":"Wed Oct 29 11:00:00 CET 2014"}
+,
+{	"End":"Tue Oct 28 12:47:51 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654438, 	"Runtime":"1 hours; 47 minutes; 51 seconds", 	"Start":"Tue Oct 28 11:00:00 CET 2014"}
+,
+{	"End":"Mon Oct 27 13:06:38 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654127, 	"Runtime":"2 hours; 6 minutes; 38 seconds", 	"Start":"Mon Oct 27 11:00:00 CET 2014"}
+,
+{	"End":"Sun Oct 26 13:44:03 CET 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13654125, 	"Runtime":"2 hours; 44 minutes; 3 seconds", 	"Start":"Sun Oct 26 11:00:00 CET 2014"}
+,
+{	"End":"Sat Oct 25 13:10:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13653576, 	"Runtime":"2 hours; 10 minutes; 8 seconds", 	"Start":"Sat Oct 25 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 24 14:07:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13586112, 	"Runtime":"3 hours; 7 minutes; 8 seconds", 	"Start":"Fri Oct 24 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 23 13:46:32 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13581845, 	"Runtime":"2 hours; 46 minutes; 32 seconds", 	"Start":"Thu Oct 23 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 22 14:01:51 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13575277, 	"Runtime":"3 hours; 1 minutes; 51 seconds", 	"Start":"Wed Oct 22 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 21 13:45:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13529443, 	"Runtime":"2 hours; 45 minutes; 52 seconds", 	"Start":"Tue Oct 21 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 20 14:02:57 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412176, 	"Runtime":"3 hours; 2 minutes; 57 seconds", 	"Start":"Mon Oct 20 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 19 13:07:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412158, 	"Runtime":"2 hours; 7 minutes; 3 seconds", 	"Start":"Sun Oct 19 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 18 13:47:51 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13412158, 	"Runtime":"2 hours; 47 minutes; 51 seconds", 	"Start":"Sat Oct 18 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 16 14:08:07 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13399743, 	"Runtime":"3 hours; 8 minutes; 7 seconds", 	"Start":"Thu Oct 16 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 15 13:56:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13397917, 	"Runtime":"2 hours; 56 minutes; 3 seconds", 	"Start":"Wed Oct 15 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 14 14:04:53 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13394381, 	"Runtime":"3 hours; 4 minutes; 53 seconds", 	"Start":"Tue Oct 14 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 13 14:10:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13393068, 	"Runtime":"3 hours; 10 minutes; 13 seconds", 	"Start":"Mon Oct 13 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 12 13:07:35 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13391151, 	"Runtime":"2 hours; 7 minutes; 34 seconds", 	"Start":"Sun Oct 12 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 11 13:12:50 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13383535, 	"Runtime":"2 hours; 12 minutes; 50 seconds", 	"Start":"Sat Oct 11 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 10 13:11:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13378666, 	"Runtime":"2 hours; 11 minutes; 40 seconds", 	"Start":"Fri Oct 10 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 09 14:49:21 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13375501, 	"Runtime":"3 hours; 49 minutes; 21 seconds", 	"Start":"Thu Oct 09 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 08 12:55:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13375115, 	"Runtime":"1 hours; 55 minutes; 2 seconds", 	"Start":"Wed Oct 08 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Oct 07 13:38:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13371164, 	"Runtime":"2 hours; 38 minutes; 52 seconds", 	"Start":"Tue Oct 07 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Oct 06 12:41:58 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13370063, 	"Runtime":"1 hours; 41 minutes; 58 seconds", 	"Start":"Mon Oct 06 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Oct 05 12:48:27 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13369253, 	"Runtime":"1 hours; 48 minutes; 27 seconds", 	"Start":"Sun Oct 05 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Oct 04 13:11:34 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13341436, 	"Runtime":"2 hours; 11 minutes; 34 seconds", 	"Start":"Sat Oct 04 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Oct 03 13:18:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13326312, 	"Runtime":"2 hours; 18 minutes; 13 seconds", 	"Start":"Fri Oct 03 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Oct 02 13:01:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":13145273, 	"Runtime":"2 hours; 1 minutes; 25 seconds", 	"Start":"Thu Oct 02 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Oct 01 12:55:20 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12733175, 	"Runtime":"1 hours; 55 minutes; 20 seconds", 	"Start":"Wed Oct 01 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 30 13:23:09 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728841, 	"Runtime":"2 hours; 23 minutes; 9 seconds", 	"Start":"Tue Sep 30 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 29 12:35:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728418, 	"Runtime":"1 hours; 35 minutes; 42 seconds", 	"Start":"Mon Sep 29 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 28 13:08:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728407, 	"Runtime":"2 hours; 8 minutes; 13 seconds", 	"Start":"Sun Sep 28 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 27 12:36:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12728407, 	"Runtime":"1 hours; 36 minutes; 25 seconds", 	"Start":"Sat Sep 27 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 26 12:41:17 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12726109, 	"Runtime":"1 hours; 41 minutes; 17 seconds", 	"Start":"Fri Sep 26 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 25 12:42:03 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12715030, 	"Runtime":"1 hours; 42 minutes; 3 seconds", 	"Start":"Thu Sep 25 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 24 13:06:27 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713971, 	"Runtime":"2 hours; 6 minutes; 27 seconds", 	"Start":"Wed Sep 24 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 23 13:10:29 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713737, 	"Runtime":"2 hours; 10 minutes; 29 seconds", 	"Start":"Tue Sep 23 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 22 12:54:52 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713698, 	"Runtime":"1 hours; 54 minutes; 52 seconds", 	"Start":"Mon Sep 22 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 21 12:33:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713698, 	"Runtime":"1 hours; 33 minutes; 26 seconds", 	"Start":"Sun Sep 21 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 20 12:58:40 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12713674, 	"Runtime":"1 hours; 58 minutes; 40 seconds", 	"Start":"Sat Sep 20 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 19 12:33:13 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12710967, 	"Runtime":"1 hours; 33 minutes; 13 seconds", 	"Start":"Fri Sep 19 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 18 12:47:10 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12710496, 	"Runtime":"1 hours; 47 minutes; 10 seconds", 	"Start":"Thu Sep 18 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 17 12:52:08 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12684780, 	"Runtime":"1 hours; 52 minutes; 8 seconds", 	"Start":"Wed Sep 17 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 15 12:41:12 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435710, 	"Runtime":"1 hours; 41 minutes; 12 seconds", 	"Start":"Mon Sep 15 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 14 12:35:16 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435472, 	"Runtime":"1 hours; 35 minutes; 16 seconds", 	"Start":"Sun Sep 14 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 13 12:46:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12435472, 	"Runtime":"1 hours; 46 minutes; 22 seconds", 	"Start":"Sat Sep 13 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 12 12:36:29 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398495, 	"Runtime":"1 hours; 36 minutes; 29 seconds", 	"Start":"Fri Sep 12 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 11 12:35:57 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398492, 	"Runtime":"1 hours; 35 minutes; 57 seconds", 	"Start":"Thu Sep 11 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 10 12:43:39 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398346, 	"Runtime":"1 hours; 43 minutes; 39 seconds", 	"Start":"Wed Sep 10 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 09 12:26:47 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"1 hours; 26 minutes; 47 seconds", 	"Start":"Tue Sep 09 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 08 12:39:57 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"1 hours; 39 minutes; 57 seconds", 	"Start":"Mon Sep 08 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Sep 07 12:53:51 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"1 hours; 53 minutes; 51 seconds", 	"Start":"Sun Sep 07 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Sep 06 12:48:22 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12398329, 	"Runtime":"1 hours; 48 minutes; 22 seconds", 	"Start":"Sat Sep 06 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Sep 05 12:56:38 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12380201, 	"Runtime":"1 hours; 56 minutes; 38 seconds", 	"Start":"Fri Sep 05 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Sep 04 12:35:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12205427, 	"Runtime":"1 hours; 35 minutes; 54 seconds", 	"Start":"Thu Sep 04 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Sep 03 12:28:27 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12066164, 	"Runtime":"1 hours; 28 minutes; 27 seconds", 	"Start":"Wed Sep 03 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Sep 02 12:47:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12066070, 	"Runtime":"1 hours; 47 minutes; 41 seconds", 	"Start":"Tue Sep 02 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Sep 01 12:44:37 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12062515, 	"Runtime":"1 hours; 44 minutes; 37 seconds", 	"Start":"Mon Sep 01 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 31 12:28:41 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12062505, 	"Runtime":"1 hours; 28 minutes; 41 seconds", 	"Start":"Sun Aug 31 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 30 12:26:46 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12061866, 	"Runtime":"1 hours; 26 minutes; 46 seconds", 	"Start":"Sat Aug 30 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 29 12:40:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12056979, 	"Runtime":"1 hours; 40 minutes; 43 seconds", 	"Start":"Fri Aug 29 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 28 12:47:42 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12056319, 	"Runtime":"1 hours; 47 minutes; 42 seconds", 	"Start":"Thu Aug 28 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 25 12:40:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037476, 	"Runtime":"1 hours; 40 minutes; 24 seconds", 	"Start":"Mon Aug 25 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 24 12:23:06 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037466, 	"Runtime":"1 hours; 23 minutes; 6 seconds", 	"Start":"Sun Aug 24 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 23 12:23:25 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037466, 	"Runtime":"1 hours; 23 minutes; 25 seconds", 	"Start":"Sat Aug 23 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 22 12:27:44 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12037075, 	"Runtime":"1 hours; 27 minutes; 44 seconds", 	"Start":"Fri Aug 22 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 21 12:43:37 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12036605, 	"Runtime":"1 hours; 43 minutes; 37 seconds", 	"Start":"Thu Aug 21 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 20 12:36:18 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12034661, 	"Runtime":"1 hours; 36 minutes; 18 seconds", 	"Start":"Wed Aug 20 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 19 12:50:45 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025764, 	"Runtime":"1 hours; 50 minutes; 45 seconds", 	"Start":"Tue Aug 19 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 18 12:25:28 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"1 hours; 25 minutes; 28 seconds", 	"Start":"Mon Aug 18 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 17 12:37:29 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"1 hours; 37 minutes; 29 seconds", 	"Start":"Sun Aug 17 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 16 12:34:36 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12025015, 	"Runtime":"1 hours; 34 minutes; 36 seconds", 	"Start":"Sat Aug 16 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 15 12:49:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12024820, 	"Runtime":"1 hours; 49 minutes; 26 seconds", 	"Start":"Fri Aug 15 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 14 12:37:04 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12024422, 	"Runtime":"1 hours; 37 minutes; 4 seconds", 	"Start":"Thu Aug 14 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 13 12:48:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12024014, 	"Runtime":"1 hours; 48 minutes; 43 seconds", 	"Start":"Wed Aug 13 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 12 13:04:26 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12023735, 	"Runtime":"2 hours; 4 minutes; 26 seconds", 	"Start":"Tue Aug 12 11:00:00 CEST 2014"}
+,
+{	"End":"Mon Aug 11 12:26:24 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12020340, 	"Runtime":"1 hours; 26 minutes; 24 seconds", 	"Start":"Mon Aug 11 11:00:00 CEST 2014"}
+,
+{	"End":"Sun Aug 10 12:48:58 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12020020, 	"Runtime":"1 hours; 48 minutes; 58 seconds", 	"Start":"Sun Aug 10 11:00:00 CEST 2014"}
+,
+{	"End":"Sat Aug 09 12:47:58 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12011398, 	"Runtime":"1 hours; 47 minutes; 58 seconds", 	"Start":"Sat Aug 09 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 08 12:41:02 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":12008970, 	"Runtime":"1 hours; 41 minutes; 2 seconds", 	"Start":"Fri Aug 08 11:00:00 CEST 2014"}
+,
+{	"End":"Thu Aug 07 12:46:58 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11925374, 	"Runtime":"1 hours; 46 minutes; 58 seconds", 	"Start":"Thu Aug 07 11:00:00 CEST 2014"}
+,
+{	"End":"Wed Aug 06 12:42:58 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11922140, 	"Runtime":"1 hours; 42 minutes; 58 seconds", 	"Start":"Wed Aug 06 11:00:00 CEST 2014"}
+,
+{	"End":"Tue Aug 05 12:40:54 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11920917, 	"Runtime":"1 hours; 40 minutes; 54 seconds", 	"Start":"Tue Aug 05 11:00:00 CEST 2014"}
+,
+{	"End":"Fri Aug 01 19:03:49 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":11919908, 	"Runtime":"1 hours; 47 minutes; 56 seconds", 	"Start":"Fri Aug 01 17:15:52 CEST 2014"}
+,
+{	"End":"Mon May 26 08:35:50 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"1 hours; 35 minutes; 50 seconds", 	"Start":"Mon May 26 07:00:00 CEST 2014"}
+,
+{	"End":"Sun May 25 08:54:01 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"1 hours; 54 minutes; 0 seconds", 	"Start":"Sun May 25 07:00:00 CEST 2014"}
+,
+{	"End":"Sat May 24 08:55:43 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10939413, 	"Runtime":"1 hours; 55 minutes; 43 seconds", 	"Start":"Sat May 24 07:00:00 CEST 2014"}
+,
+{	"End":"Mon May 12 22:39:55 CEST 2014", 	"Mongo DB":"mchp363a", 	"Number of persisted records":10885924, 	"Runtime":"1 hours; 58 minutes; 8 seconds", 	"Start":"Mon May 12 20:41:47 CEST 2014"}
+]
+
+}}

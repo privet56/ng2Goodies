@@ -1,0 +1,131 @@
+td
+{
+	vertical-align:top;
+	margin:10px;
+	padding:0px;
+}
+tr
+{
+	vertical-align:top;
+	margin:0px;
+	padding:0px;
+}
+table
+{
+	vertical-align:top;
+	margin:0px;
+	padding:0px;
+	border:none;
+}
+tbody
+{
+	vertical-align:top;
+	margin:0px;
+	padding:0px;
+	border:none;
+}
+a
+{
+	white-space:nowrap;
+	font-weight:bold;
+	padding:9px;
+	text-decoration:none;
+}
+pre.prettyprint
+{
+	background-color:#EEEEEE;
+	height:100%;
+	width:100%;
+	overflow:scroll;
+	padding:0;
+	margin:0;
+}
+.esbuilink
+{
+	width:400px;
+	margin:9px;
+}
+sel_ect
+{
+	height:24px;
+	width:450px;
+	font-size:12pt;
+	background-image:url(./img/button_center.png);
+	
+	display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    border:none;
+    outline:none;
+	
+	margin-top: -.1em;
+	
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+		
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -webkit-box-shadow: 0 3px 0 #62AA17, 0 -1px #93C63E inset;
+    -moz-box-shadow: 0 3px 0 #62AA17, 0 -1px #93C63E inset;
+    box-shadow: 0 3px 0 #62AA17, 0 -1px #93C63E inset;
+}
+option
+{
+	text-align:middle;
+	background-image:url(./img/button_center.png);
+}
+.adminbom
+{
+	color:blue;
+}
+td.ui-widget-header
+{
+	text-align:center;
+	vertical-align:middle;
+	font-size:16px;
+}
+h1.ui-widget-header
+{
+	text-align:center;
+	vertical-align:middle;
+	font-size:16px;
+}
+.ui-state-active
+{
+	background:#C0C0C0;
+}
+.ui-menu
+{
+	background-color: #FFFFFF;
+}
+.form-control
+{
+	border: 0;
+	background-color: #93C63E;
+	white-space:nowrap;
+}
+ul.fancytree-container
+{
+	border:none;
+}
+.speech-bubble
+{
+	position: relative;
+	margin-bottom:11px;
+}
+.speech-bubble:after
+{
+	position: absolute;
+	top:100%;
+	left:9px;
+	content:'';
+	width:0;
+	height:0;
+	border-width:11px;
+	border-style:solid;
+	border-color:#93C63E transparent transparent transparent;
+}

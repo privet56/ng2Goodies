@@ -1,0 +1,1 @@
+$.fn.bootstrapBtn = $.fn.button.noConflict();

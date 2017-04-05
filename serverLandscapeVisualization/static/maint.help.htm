@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="../css/maint.html.css" />
+	<title>ESB UI Portal - Maintenance Pages - Help</title>
+</head>
+<body style="margin:13px;">
+	<h2>Maintenance Page Handler - Help</h2><br />
+	<div class="well">
+		<strong>Pre-condition on the server:</strong><br>
+		The two files<br>
+		<span style="color:red;">/app/www/apache2/htdocs/maintenance/site-maintenance-page/maintenance.html</span><br>
+		<span style="color:red;">/app/apache2-8080/htdocs/maintenance/site-maintenance-page/maintenance.html</span><br>
+		and their folder-structure should be writable by the linux user running the Apache WebServer.<br />
+		In case of errors, an error message appears, like<br />
+		<div style="text-align:center;"><img class="img-rounded img-thumbnail img-circle" src="maint.help.errmsg.png" ></div><br />
+		<div>In case such error is received, please ensure that the access rights on the specified folder &amp; the specified file must be corrected.</div>    
+	</div>
+	<div class="well">
+		The current Production cluster is marked on the page with the text "<span style="color:red;">PROD ENVIRONMENT</span>":<br />
+		<div style="text-align:center;"><img class="img-rounded img-thumbnail img-circle" src="maint.help.prod.png" ></div>
+	</div>	
+	<div class="well">
+		<strong>Additional details about Cluster A:</strong><br>
+		The maintenance page on CLUSTER A will be activated, <span style="color:red;">only</span> if the file<br>   
+		<span style="color:red;">/app/www/apache2/htdocs/maintenance/site-maintenance-page/maintenance.html</span><br>
+		exists on the server mchp486a.<br>
+		<br>
+		The activate/deactivate button of CLUSTER A renames the above file (places or removes '_' at the beginning of the file name)
+	</div>
+	<div class="well">
+		<strong>Additional details about Cluster B:</strong><br>
+		The maintenance page on CLUSTER B will be activated, <span style="color:red;">only</span> if the file<br>   
+		<span style="color:red;">/app/apache2-8080/htdocs/maintenance/site-maintenance-page/maintenance.html</span><br>
+		exists on the server mchp486a.<br>
+		<br>
+		The activate/deactivate button of CLUSTER B renames the above file (places or removes '_' at the beginning of the file name)   
+	</div>
+	<div class="well">
+		<strong>Manual activation/deactivation of the Maintenance Pages:</strong><br>
+		You can rename manually the above files on the linux command line on the server mchp486a
+		to activate / deactivate the maintenance page(s)<br />(if your user rights are sufficient for this operation):<br />
+		- If you place the _ character on the beginning of the file name, the maintenance page will be deactivated.<br />
+		- If you remove the _ character from the beginning of the file name, the maintenance page will be activated.<br />
+	</div>	
+</body>
+</html>

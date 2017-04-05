@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" ng-controller="ctrl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon_unify.ico" />
+	
+	<link rel="stylesheet" type='text/css' href="css/smoothness/jquery-ui-1.10.4.custom.css" />
+<!-- build:css css/o2m.htm.css -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet4html.css" />
+
+	<link rel='stylesheet' type='text/css' href='css/de.sc.css' />
+	<link rel="stylesheet" type="text/css" href="css/de.sc.portal.css" />
+	
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+<!-- endbuild -->
+
+<!-- build:js js/o2m.htm.js -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/de.sc.bootstrap2jquery.js"></script>
+	<!-- script>$.fn.bootstrapBtn = $.fn.button.noConflict();</script -- does't work with minify/uglify   -->
+	<script src="js/jquery-ui-1.11.0.min.js"></script>
+	
+	<!-- angular.min.js 1.3.x cannot with ie8 => use legacy 1.2.x -->
+	<!-- place it after jquery to avoid using jqLite -->
+	<script src="js/angular.min.js"></script>
+
+	<script src="js/raphael-min.js"></script>
+	<script src="js/graffle.js"></script>
+
+	<script src="js/de.sc.js"></script>
+	<script src="js/de.sc.a.js"></script>
+	<script src="js/de.sc.portal.js"></script>
+	<script src="js/de.sc.portal.nav.js"></script>
+	<script src="js/de.sc.portal.o2m.js"></script>
+	<script src="js/de.sc.portal.env.js"></script>
+	<script src="js/de.sc.portal.env.dlg.js"></script>
+<!-- endbuild -->
+	<script>
+	jQuery(document).ready(function()
+	{
+		$("#appTitleTest").hide();	//PROD, also on 8080
+		$("#smoenvlink").hide();
+		
+		de.sc.portal.o2m.start();
+		
+		$('#resizable1').resizable({/*animate: true/*, animateEasing: "easeOutBounce"*/ alsoResize:"resizable2", handles: "e"});
+		$("#tabs").tabs();
+	});
+	</script>
+	<style>
+		.selecteditemdetailsentry
+		{
+			color:blue;
+		}
+	</style>
+	<title>ESB UI Portal - {{ title }}</title>
+</head>
+<body>
+<div ng-include="'fragment_header.htm'"> </div>
+
+<div na-messages="" style="position:absolute;top:99px;text-align:center;width:100%;" id="msgs"> </div>
+
+<div class="well" style="height:100%;width:100;background-color:red;">
+	<span style="color:blue;font-weight:bold;"> Oracle2Mongo CronJob Setup - 2015.04.01    &nbsp;    &nbsp;    &nbsp;    &nbsp;	</span>
+	<span style="color:red;font-weight:bold;">
+	<script>
+	if(document.all)document.write("Best viewed with up-to-date browser!");
+	</script>
+	</span>
+</div>
+<table style="width:100%;border:solid 1px;" border="1">
+	<tr>
+		<td style="white-space:now_rap;width:233px;" id="resizable1">
+			<div style="white-space:normal;width:233px;margin-left:3px;">
+				<strong>Selected item:</strong><br />
+			</div>
+			<div style="margin:6px;height:100%;" id="resizable2">
+				<div class='selecteditemdetailsentry'>&nbsp;</div>
+				<div id="selecteditemdetails">
+					no selected item
+				</div>
+			</div>
+		</td>
+		<td id="containertd">
+			<div style="" id='tabs'>
+				<ul>
+					<li><a href="#tab-0"><img src='./img/mongo_small.png' /> SSS Environment </a></li>
+					<li><a href="#tab-1"><img src='./img/mongo_small.png' /> SE Environment </a></li>
+				</ul>
+				<div id="tab-0" style='min-height:500px' class="tab">
+					<div id="container-sss">
+					</div>
+				</div>
+				<div id="tab-1" style='min-height:500px' class="tab">
+					<div id="container-se">
+					</div>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>
+
+<div ng-include="'fragment_footer.htm'"> </div>
+
+</body>
+</html>

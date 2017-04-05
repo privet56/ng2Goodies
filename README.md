@@ -65,3 +65,12 @@
 
 ## Docker: a short introduction to its application in practice
 	docker/docker.pptx
+
+## outlookEmailSender: MFC Visual Studio project to send Email through Outlook (COM)
+	outlookEmailSender/sender.vcproj
+
+## nagios_dyn_check_http: perl script to be called by NAGIOS to check if the HTTP connection is alive
+	nagios_dyn_check_http/check_http.pl
+
+## serverLandscapeVisualization: visualize server landscape with data flow, graphs and plots 
+	used technologies: jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )

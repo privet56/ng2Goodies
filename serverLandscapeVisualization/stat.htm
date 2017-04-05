@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" ng-controller="ctrl">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<!--[if IE]><script>if(!document.all)document.all=document.getElementById;</script><![endif]-->
+	
+	<link rel="shortcut icon" type="image/x-icon" href="img/favicon_unify.ico" />
+	
+	<link rel="stylesheet" type='text/css' href="css/smoothness/jquery-ui-1.10.4.custom.min.css" />
+	
+<!-- build:css css/stat.htm.css -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet4html.css" />
+
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-theme.css" rel="stylesheet" />
+
+	<link rel='stylesheet' type='text/css' href='css/de.sc.css' />
+	<link rel="stylesheet" type="text/css" href="css/de.sc.portal.css" />
+	
+	<link rel="stylesheet" type="text/css" href="css/jquery.jqplot.min.css" />
+<!-- endbuild -->
+
+	<!-- jqplot + ie8 -->
+	<!--[if lt IE 9]><script type="text/javascript" src="./js/excanvas.min.js"></script><![endif]-->
+	
+<!-- build:js js/stat.htm.js -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery-ui-1.11.0.min.js"></script>
+	
+	<!-- angular.min.js 1.3.x cannot with ie8 => use legacy 1.2.x -->
+	<!-- place it after jquery to avoid using jqLite -->
+	<script src="js/angular.min.js"></script>
+
+	<script src="js/de.sc.js"></script>
+	<script src="js/de.sc.portal.js"></script>
+	<script src="js/de.sc.portal.nav.js"></script>
+	<script src="js/de.sc.portal.stat.js"></script>
+	
+<!-- charts begin -->
+	<script src="js/jquery.jqplot.min.js"></script>
+	<script src="js/plugins/jqplot.barRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.canvasOverlay.min.js"></script>
+	<script src="js/plugins/jqplot.canvasTextRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.cursor.min.js"></script>
+	<script src="js/plugins/jqplot.dateAxisRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.dragable.min.js"></script>
+	<script src="js/plugins/jqplot.enhancedLegendRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.highlighter.min.js"></script>
+	<script src="js/plugins/jqplot.logAxisRenderer.min.js"></script>
+	<script src="js/plugins/jqplot.pointLabels.min.js"></script>
+	<script src="js/plugins/jqplot.trendline.min.js"></script>
+<!-- endbuild -->
+	<!-- script src="js/plugins/jqplot.BezierCurveRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.blockRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.bubbleRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.ciParser.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.donutRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.funnelRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.json2.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.meterGaugeRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.ohlcRenderer.min.js"></script -->
+	<!-- script src="js/plugins/jqplot.pieRenderer.min.js"></script -->
+<!-- charts end -->
+
+	<style>
+		.form-control2
+		{
+			border-radius: 4px;
+		    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		    color: #555555;
+		    display: block;
+		    font-size: 14px;
+		    line-height: 1.42857;
+		    padding: 6px 12px;
+		    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+		    vertical-align: middle;
+
+			border: 0;
+			background-color: #93C63E;
+			white-space:nowrap;
+		}
+		.jqplot-title
+		{
+	  		text-align: left;
+		}
+	</style>
+
+	<script>
+	var app = angular.module("app", []).controller("ctrl", ['$scope', '$http', '$interval', '$timeout', '$log', function ($scope, $http, $interval, $timeout, $log)
+	{
+		$scope.data = {};
+		$scope.title = "Statistics";
+		var start = new Date();
+//mongo
+		$http.get("./maildata/mongo_maildata.json").success(function(data)
+		{
+			$scope.data.maildata = data;
+			$.jqplot.config.enablePlugins = true;
+			$('#accordion .accordion-header').first().click();
+		})
+		.error(function (error)
+		{
+			$scope.data.error = error;
+		})
+		.then(function()
+		{
+			var end = new Date();
+			$scope.data.loadTime = "(mongo json data load time: " + (end - start) +" ms)";
+		});
+//esb
+		$http.get("./maildata/esb_maildata.json").success(function(data)
+		{
+			$scope.data.esbMaildata = data;
+			$.jqplot.config.enablePlugins = true;
+			{
+				var statEsbFilterEnvs 		= new Array();
+				var statEsbFilterServices 	= new Array();
+				var statEsbFilterCallTypes 	= new Array();
+				
+				var _data = $scope.data.esbMaildata["data"];
+				var bFirstEnv = true;
+				for(var key in _data)
+				{
+					var l = $.trim(key.replace("[", " ").replace("]", " ").replace("SOA-SALES-SERVICES", " "));
+					statEsbFilterEnvs.push({id:key, label:l});
+					if(bFirstEnv)
+					{
+						bFirstEnv = false;
+						var a = _data[key];
+						var e = a[0];
+						var bFirstaa = true;
+						for(var key2 in e)
+						{
+							var aa = e[key2];
+							if(angular.isArray(aa))
+							{
+								var l = key2;
+								l = l.replace(/\(.*?\)/gi, " / Business");
+								statEsbFilterCallTypes.push({id:key2, label:l, hint:key2});
+							}
+							if(bFirstaa)
+							{
+								bFirstaa = false;
+								for(var i=0;i<aa.length;i++)
+								{
+									var o = aa[i];
+									o["ServiceTypeAndMethod"] = o["Service Type"] + " - " + o["Method"];
+									statEsbFilterServices.push({id:o["ServiceTypeAndMethod"], label:o["ServiceTypeAndMethod"], "Service Type:":o["Service Type"], Method:o["Method"]});
+								}
+							}
+						}
+					}
+				}
+				$scope.envs 		= statEsbFilterEnvs;
+				$scope.services 	= statEsbFilterServices;
+				$scope.callTypes 	= statEsbFilterCallTypes;
+			}
+		})
+		.error(function (error)
+		{
+			$scope.data.esbError = error;
+		})
+		.then(function()
+		{
+			var end = new Date();
+			$scope.data.esbLoadTime = "(esb json data load time: " + (end - start) +" ms)";
+		});
+		$scope.filter = function(sId)
+		{
+			alert("NOT IMPLEMENTED\n"+sId);
+		};
+		$scope.onOpen = function(sId)
+		{
+			if(!$scope.data[sId+"_loaded"])
+			{
+				de.sc.portal.stat[sId]($scope.data.maildata, $scope.data.esbMaildata, $log);
+			}
+			$scope.data[sId+"_loaded"] = true;
+		};
+		$scope.$on('$includeContentLoaded', function()
+		{
+    		de.sc.portal.nav.onReady($log, $scope.title);
+		});
+	}]);
+
+	jQuery(document).ready(function()
+	{
+		if(de.sc.isempty(""+window.location.port) || (""+window.location.port == "80"))
+		{
+			//PROD
+			$("#appTitleTest").html("   (PROD Version) ");
+			$("#smoenvlink").hide();
+		}
+		else
+		{	//TEST
+			$("#appTitleTest").html("   (TEST Version) ");
+			$("#smoenvlink").show();
+		}
+		$('#accordion .ui-accordion-content').hide();
+		$('#accordion .accordion-header').click(function()
+		{
+		    var panel = $(this).next();
+		    var isOpen = panel.is(':visible');
+		    panel[isOpen? 'slideUp': 'slideDown'](999).trigger(isOpen? 'hide': 'show');
+		    if(!isOpen)	//=will be now opened
+		    {
+		    	$(this).children().first().removeClass('ui-icon-triangle-1-e').addClass('ui-icon-triangle-1-s');
+		    	angular.element(panel).scope().onOpen(panel.attr('id'));
+		    }
+		    else
+		    {
+		    	$(this).children().first().removeClass('ui-icon-triangle-1-s').addClass('ui-icon-triangle-1-e');
+		    }
+		    return false;// stop the link from causing a pagescroll
+		});
+	});
+	</script>
+	<title>ESB UI Portal - {{ title }}</title>
+</head>
+<body>
+<div ng-include="'fragment_header.htm'"> </div>
+<div class="well">
+	<strong>oracle2Mongo cronjob Statistics</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<span> {{ data.error }} </span> <span> {{ data.esbError }} </span> <span> {{ data.loadTime }} </span><span> {{ data.esbLoadTime }} </span>
+	<span> {{ data.renderTime }} </span> 
+</div>
+<div id="accordion" class="ui-accordion ui-widget ui-helper-reset">
+	
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"> </span> Copied data amount and its increase
+    </h3>
+    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="statMongo1">
+        <p>
+			<div style="width:100%;overflow-x:scroll;">
+				<div id="mongochart" style="height:300px;width:630px;"> </div>
+				<input type="button" value="reset zoom"  id="statMongo1ResetZoom" />
+			</div>
+        </p>
+    </div>
+    
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"> </span> Runtimes of the daily copy jobs
+        <!-- &nbsp; &nbsp; &nbsp;<font style="font-size:small;color:blue;">(</font><sub><input type="checkbox" id="statMongo2AsBar" checked="checked" style="margin:0;color:blue;" onclick="return false;"></sub><span style="font-size:small;color:blue;"> as Bar Chart)</font -->
+    </h3>
+    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="statMongo2">
+        <p>    
+			<div style="width:100%;overflow-x:scroll;">
+				<div id="mongochart2" style="height:300px;width:630px;"> </div>
+				<input type="button" value="reset zoom"  id="statMongo2ResetZoom" />
+			</div>
+        </p>
+    </div>
+    
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"> </span> ESB
+    </h3>
+    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="statESB">
+        <p>
+        	<table><tr>
+        		<td>
+		        	<div class="form-control2" style="float:left;">
+		        		<div style="float:left;font-size:11px;">
+		        			<select id="statEsbFilter1Envs" ng-model="statEsbFilter1EnvSelected" ng-options="e.id as e.label for e in envs" | orderBy:'label'> </select>
+		        		</div>
+			        	<div style="float:left;margin-left:6px;margin-right:6px;margin-top:4px;">
+			        		+
+			       		</div>
+		        		<div id="statEsbFilter1Services" style="float:left;border:1px solid #999;padding-left:3px;padding-right:3px;margin-left:3px;margin-right:3px;font-size:11px;">
+							<div stye="float:left;font-size:11px;" ng-repeat="service in services | orderBy:'label'">
+								<input type="checkbox" ng-model="service.selected"> {{service.label}}
+								<br ng-show="$index%5 == 0" />
+							</div>
+		        		</div>
+		        		<input type="button" value="Show!"  id="statEsbFilterApply1" style="font-size:12px;" class="btn btn-primary btn-sm btn-warning" ng-click="filter('statEsbFilterApply1');" />
+		        	</div>
+	        	</td>
+	        	<td>
+		        	<div style="float:left;margin-left:19px;margin-right:19px;">
+		        		... or ...
+		       		</div>
+	       		</td>
+	       		<td>
+		        	<div class="form-control2" style="float:left;font-size:11px;">
+		        		<div id="statEsbFilter2Envs" style="float:left;border:1px solid #999;padding-left:3px;padding-right:3px;margin-left:3px;margin-right:3px;font-size:11px;">
+							<div ng-repeat= "env in envs | orderBy:'label'" style="font-size:11px;">
+								<input type="checkbox" ng-model="env.selected"> {{env.label}} <br />
+							</div>
+		        		</div>
+			        	<div style="float:left;margin-left:6px;margin-right:6px;margin-top:4px;">
+			        		+
+			       		</div>
+		        		<div style="float:left;font-size:11px;margin-right:4px;margin-left:4px;">
+		        			<select id="statEsbFilter2Services" ng-model="statEsbFilter1ServiceSelected" ng-options="e.id as e.label for e in services | orderBy:'label'"> </select>
+		        			<div style="border:1px solid #999;padding-left:3px;padding-right:3px;margin-left:3px;margin-top:4px;margin-right:3px;font-size:11px;">
+								<div ng-repeat= "callType in callTypes | orderBy:'label'" style="font-size:11px;">
+									<input type="checkbox" ng-model="callType.selected" title="{{callType.hint}}"><span title="{{callType.hint}}" style="font-size:11px;"> {{callType.label}} </span><br />
+								</div>
+							</div>
+		        		</div>
+		        		<input type="button" value="Show!"  id="statEsbFilterApply2" style="font-size:12px;" class="btn btn-primary btn-sm btn-warning" ng-click="filter('statEsbFilterApply2');" />
+		        	</div>
+	        	</td>
+        	</tr></table>
+			<div style="width:100%;overflow-x:scroll;">
+				<div style="height:30px;"> </div>
+				<div id="esbchart" style="height:300px;width:630px;"> </div>
+				<input type="button" value="reset zoom"  id="statEsbResetZoom" />
+			</div>
+        </p>
+    </div>
+    
+    <h3 class="accordion-header ui-accordion-header ui-helper-reset ui-state-default ui-accordion-icons ui-corner-all">
+        <span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"> </span> Server health (from Nagios)
+    </h3>
+    <div class="ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" id="statNagios">
+        <p>    
+			<div style="width:100%;overflow-x:scroll;">
+				TODO
+			</div>
+        </p>
+    </div>
+
+</div>
+<!-- div ng-include="'fragment_footer.htm'"> </div -->
+</body>
+</html>
