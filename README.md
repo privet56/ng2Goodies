@@ -1,4 +1,4 @@
-# TypeScript & Angular 2 Goodies:
+# TypeScript, Perl, JS, C# & Angular 2+ Goodies:
 
 ## PersistentRouterOutlet.ts for ng2 (Angular 2 version 2.2.3)
 	(allows to switch between routes without reloading already loaded routes)
