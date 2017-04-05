@@ -41,7 +41,7 @@
 	maps the response to native TypeScript objects
 	(based on https://github.com/autopulous/angular2-soap)
 
-## LINQ Extension: LinqExtensions.cs
+## LINQ Extension
 	Do you need to use a linq-based environment to call a stored procedure with unknown/unpredictable return structures?
 	You can use linq/LinqExtensions.cs
 	(as a simple 'dynamic' keyword does not lead to the expected result)
@@ -63,14 +63,20 @@
 		return null;
 	}
 
-## Docker: a short introduction to its application in practice
+## Docker
+	A short presentation & introduction to its application in practice.
 	docker/docker.pptx
 
-## outlookEmailSender: MFC Visual Studio project to send Email through Outlook (COM)
+## Outlook Email Sender
+	MFC Visual Studio project to send Email through Outlook (COM)
 	outlookEmailSender/sender.vcproj
 
-## nagios_dyn_check_http: perl script to be called by NAGIOS to check if the HTTP connection is alive
+## NAGIOS check implementation in Perl:
+	nagios_dyn_check_http.pl
+	Perl script to be called by NAGIOS to check if the HTTP connection is alive
 	nagios_dyn_check_http/check_http.pl
 
-## serverLandscapeVisualization: visualize server landscape with data flow, graphs and plots 
-	used technologies: jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
+## Server Landscape Visualization
+	Create a dynamic server landscape visualization with data flow, graphs and plots 
+	Used technologies:
+	jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
