@@ -41,3 +41,25 @@
 	maps the response to native TypeScript objects
 	(based on https://github.com/autopulous/angular2-soap)
 
+## LINQ Extension: LinqExtensions.cs
+	Do you need to use a linq-based environment to call a stored procedure with unknown/unpredictable return structures?
+	You can use linq/LinqExtensions.cs
+	(as a simple 'dynamic' keyword does not lead to the expected result)
+	
+	Example:
+
+	public string getProcReturnAttribute(DataContext dataContext, string sAttrName)
+	{
+		string query = "EXEC [dbo].[SPO_GetData] {0}, {1}, {2}";
+		query = string.Format(query, “name”, anEmail == null ? "NULL" : "'" + anEmail + "'", anID);
+		var datas = LinqExtensions.ExecuteQuery(dataContext, query);
+		foreach(var data in datas)
+		{
+			//data.getAllAttrs();
+			string sAttrVal = data.getAttr(sAttrName);
+			if(ILikeThisAttrVal(sAttrVal))
+				return sAttrVal;
+		}
+		return null;
+	}
+
