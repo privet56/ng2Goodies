@@ -96,7 +96,7 @@
 	(e.g. cfg, logging, trim, ...)
 	pllib/pllib.pl
 
-## iIOS: objC Lib
+## iOS: objC Lib
 	Objective C Library with project independent useful functions
 	(e.g. XML parser, HTML parser, ZIP, ...)
 	iIOS_objc_lib/*
