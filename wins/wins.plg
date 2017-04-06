@@ -1,0 +1,107 @@
+<html>
+<body>
+<pre>
+<h1>Erstellungsprotokoll</h1>
+<h3>
+--------------------Konfiguration: wins - Win32 Release--------------------
+</h3>
+<h3>Befehlszeilen</h3>
+Erstellen der temporären Datei  "C:\temp\RSPC51.tmp" mit Inhalten
+[
+/nologo /Zp1 /MT /W3 /GX /O2 /I "D:\_Projekt.lfd\shi\infopilot\IPView\shivlib" /I "D:\_Projekt.lfd\shi\infopilot\IPLib" /I "D:\_Projekt.lfd\shi\SHIGuiLib\\" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/wins.pch" /Yu"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\_Projekt.lfd\__testprojects\wins\AllProcCtrl.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\CpuUsage.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\DlgEfficiency.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\DlgFlash.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\DlgProcesses.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\DlgWindows.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\HyperLink.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\IPProcTree.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\ModulVer.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\OScopeCtrl.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\RenameDlg.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\SystemTray.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\wins.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\winsDlg.cpp"
+"D:\_Projekt.lfd\__testprojects\wins\WinsListCtrl.cpp"
+]
+Creating command line "cl.exe @C:\temp\RSPC51.tmp" 
+Erstellen der temporären Datei  "C:\temp\RSPC52.tmp" mit Inhalten
+[
+/nologo /Zp1 /MT /W3 /GX /O2 /I "D:\_Projekt.lfd\shi\infopilot\IPView\shivlib" /I "D:\_Projekt.lfd\shi\infopilot\IPLib" /I "D:\_Projekt.lfd\shi\SHIGuiLib\\" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /FR"Release/" /Fp"Release/wins.pch" /Yc"stdafx.h" /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\_Projekt.lfd\__testprojects\wins\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\temp\RSPC52.tmp" 
+Erstellen der temporären Datei  "C:\temp\RSPC53.tmp" mit Inhalten
+[
+infopilotlibrary.lib shivlib.lib imagehlp.lib SHIGuiLib.lib /nologo /subsystem:windows /incremental:yes /pdb:"Release/wins.pdb" /machine:I386 /out:"Release/wins.exe" /libpath:"D:\_Projekt.lfd\shi\infopilot\IPLib\Release" /libpath:"D:\_Projekt.lfd\shi\infopilot\IPView\shivlib\Release" /libpath:"D:\_Projekt.lfd\shi\SHIGuiLib\Release\\" 
+.\Release\AllProcCtrl.obj
+.\Release\CpuUsage.obj
+.\Release\DlgEfficiency.obj
+.\Release\DlgFlash.obj
+.\Release\DlgProcesses.obj
+.\Release\DlgWindows.obj
+.\Release\HyperLink.obj
+.\Release\IPProcTree.obj
+.\Release\ModulVer.obj
+.\Release\OScopeCtrl.obj
+.\Release\RenameDlg.obj
+.\Release\StdAfx.obj
+.\Release\SystemTray.obj
+.\Release\wins.obj
+.\Release\winsDlg.obj
+.\Release\WinsListCtrl.obj
+.\Release\wins.res
+]
+Erstellen der Befehlzeile "link.exe @C:\temp\RSPC53.tmp"
+<h3>Ausgabefenster</h3>
+Kompilierung läuft...
+StdAfx.cpp
+Kompilierung läuft...
+AllProcCtrl.cpp
+CpuUsage.cpp
+DlgEfficiency.cpp
+DlgFlash.cpp
+DlgProcesses.cpp
+DlgWindows.cpp
+HyperLink.cpp
+IPProcTree.cpp
+ModulVer.cpp
+OScopeCtrl.cpp
+RenameDlg.cpp
+SystemTray.cpp
+wins.cpp
+winsDlg.cpp
+WinsListCtrl.cpp
+Generieren von Code...
+Linker-Vorgang läuft...
+Erstellen der temporären Datei  "C:\temp\RSPC57.tmp" mit Inhalten
+[
+/nologo /o"Release/wins.bsc" 
+.\Release\StdAfx.sbr
+.\Release\AllProcCtrl.sbr
+.\Release\CpuUsage.sbr
+.\Release\DlgEfficiency.sbr
+.\Release\DlgFlash.sbr
+.\Release\DlgProcesses.sbr
+.\Release\DlgWindows.sbr
+.\Release\HyperLink.sbr
+.\Release\IPProcTree.sbr
+.\Release\ModulVer.sbr
+.\Release\OScopeCtrl.sbr
+.\Release\RenameDlg.sbr
+.\Release\SystemTray.sbr
+.\Release\wins.sbr
+.\Release\winsDlg.sbr
+.\Release\WinsListCtrl.sbr]
+Erstellen der Befehlzeile "bscmake.exe @C:\temp\RSPC57.tmp"
+Browse-Informationsdatei wird erstellt...
+<h3>Ausgabefenster</h3>
+
+
+
+<h3>Ergebnisse</h3>
+wins.exe - 0 Fehler, 0 Warnung(en)
+</pre>
+</body>
+</html>

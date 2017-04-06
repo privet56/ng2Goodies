@@ -1,0 +1,219 @@
+/*
+ * Copyright (c) 2003 Andy Polyakov <appro@fy.chalmers.se>
+ *
+ * Build with:
+ *
+ * cl -Ox -GD -GF -Zl -MD -LD LogNtCreateFile.c kernel32.lib
+ *
+ * See http://fy.chalmers.se/~appro/nt/DLL_PRELOAD/ for further details.
+ *
+ */
+#ifndef _DLL
+#error "_DLL is not defined."
+#endif
+
+#ifdef _WIN64
+#pragma comment(linker,"/entry:DllMain")
+#pragma comment(linker,"/merge:.rdata=.text")
+#else
+#pragma comment(linker,"/entry:DllMain@12")
+#pragma comment(linker,"/section:.text,erw")
+#pragma comment(linker,"/merge:.rdata=.text")
+#pragma comment(linker,"/merge:.data=.text")
+#endif
+
+#define UNICODE
+#define _UNICODE
+
+#if defined(WIN32) && !defined(_WIN32)
+#define _WIN32
+#endif
+
+#define _WIN32_WINNT 0x0500
+
+#include <windows.h>
+#include <winbase.h>
+#include <winnt.h>
+#ifdef _WIN64
+/* October 2002 Platform SDK is screwed up */
+#define _RUNTIME_FUNCTION _RUNTIME_FUNCTION_
+#define RUNTIME_FUNCTION  RUNTIME_FUNCTION_
+#define PRUNTIME_FUNCTION PRUNTIME_FUNCTION_
+#endif
+#include <winternl.h>
+#include <tchar.h>
+
+typedef NTSTATUS (WINAPI *NtCreateFile_T) (
+    OUT PHANDLE FileHandle,
+    IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes,
+    OUT PIO_STATUS_BLOCK IoStatusBlock,
+    IN PLARGE_INTEGER AllocationSize OPTIONAL,
+    IN ULONG FileAttributes,
+    IN ULONG ShareAccess,
+    IN ULONG CreateDisposition,
+    IN ULONG CreateOptions,
+    IN PVOID EaBuffer OPTIONAL,
+    IN ULONG EaLength
+    );
+
+static NtCreateFile_T _NtCreateFile=NULL,*__NtCreateFile=NULL;
+
+static NTSTATUS WINAPI NtCreateFile_ (
+    OUT PHANDLE FileHandle,
+    IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes,
+    OUT PIO_STATUS_BLOCK IoStatusBlock,
+    IN PLARGE_INTEGER AllocationSize OPTIONAL,
+    IN ULONG FileAttributes,
+    IN ULONG ShareAccess,
+    IN ULONG CreateDisposition,
+    IN ULONG CreateOptions,
+    IN PVOID EaBuffer OPTIONAL,
+    IN ULONG EaLength
+    )
+{
+    OutputDebugStringW(ObjectAttributes->ObjectName->Buffer);
+
+  return (*_NtCreateFile)(
+            FileHandle,
+            DesiredAccess,
+            ObjectAttributes,
+            IoStatusBlock,
+            AllocationSize,
+            FileAttributes,
+            ShareAccess,
+            CreateDisposition,
+            CreateOptions,
+            EaBuffer,
+            EaLength);
+}
+
+typedef NTSTATUS (WINAPI *NtOpenFile_T) (
+    OUT PHANDLE FileHandle,
+    IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes,
+    OUT PIO_STATUS_BLOCK IoStatusBlock,
+    IN ULONG ShareAccess,
+    IN ULONG OpenOptions
+    );
+
+static NtOpenFile_T _NtOpenFile=NULL,*__NtOpenFile=NULL;
+
+static NTSTATUS WINAPI NtOpenFile_ (
+    OUT PHANDLE FileHandle,
+    IN ACCESS_MASK DesiredAccess,
+    IN POBJECT_ATTRIBUTES ObjectAttributes,
+    OUT PIO_STATUS_BLOCK IoStatusBlock,
+    IN ULONG ShareAccess,
+    IN ULONG OpenOptions
+    )
+{
+    OutputDebugStringW(ObjectAttributes->ObjectName->Buffer);
+
+  return (*_NtOpenFile)(
+            FileHandle,
+            DesiredAccess,
+            ObjectAttributes,
+            IoStatusBlock,
+            ShareAccess,
+            OpenOptions);
+}
+
+static int _lstricmp(const char *s1, const char *s2)
+{ char c1,c2;
+  int  ret;
+
+    while (c1=*s1, c2=*s2, c1&&c2)
+    {   c1|=0x20, c2|=0x20; /* lower the case */
+        if (ret=c1-c2) return ret;
+        s1++, s2++;
+    }
+
+  return c1-c2;
+}
+
+BOOL WINAPI DllMain (HINSTANCE h, DWORD reason, LPVOID junk)
+{ DWORD                     acc;
+  HMODULE                   hmod;
+  IMAGE_DOS_HEADER         *dos_header;
+  IMAGE_NT_HEADERS         *nt_headers;
+  IMAGE_DATA_DIRECTORY     *dir;
+  IMAGE_IMPORT_DESCRIPTOR  *idesc;
+  IMAGE_THUNK_DATA         *thunk;
+  static void              *page;
+  static size_t             plen;
+
+    switch (reason)
+    { case DLL_PROCESS_ATTACH:
+
+        DisableThreadLibraryCalls(h);
+
+        if (!(hmod=GetModuleHandle(_T("NTDLL.DLL"))))
+        {   OutputDebugString(_T("NTDLL.DLL not found?"));
+            return FALSE;
+        }
+
+        _NtCreateFile=(NtCreateFile_T)GetProcAddress(hmod,"NtCreateFile"),
+        _NtOpenFile=(NtOpenFile_T)GetProcAddress(hmod,"NtOpenFile");
+
+        if (!(hmod=GetModuleHandle(_T("KERNEL32.DLL"))))
+        {   OutputDebugString(_T("KERNEL32.DLL not found?"));
+            return FALSE;
+        }
+
+        dos_header = (IMAGE_DOS_HEADER *)hmod;
+        nt_headers = (IMAGE_NT_HEADERS *)((char *)hmod + dos_header->e_lfanew);
+
+        dir=&nt_headers->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT];
+
+        idesc=(IMAGE_IMPORT_DESCRIPTOR *)((char *)hmod + dir->VirtualAddress);
+        while (idesc->Name)
+        {   if (!_lstricmp((char *)hmod+idesc->Name,"NTDLL.DLL")) break;
+            idesc++;
+        }
+
+        if (!idesc->Name)
+        {   OutputDebugString(_T("Can't locate NTDLL.DLL import descriptor"));
+            return FALSE;
+        }
+
+        for (thunk=(IMAGE_THUNK_DATA *)((char *)hmod+idesc->FirstThunk);
+             thunk->u1.Function && thunk->u1.Function!=(ULONG_PTR)_NtCreateFile;
+             thunk++) ;
+        __NtCreateFile=(NtCreateFile_T *)thunk;
+
+        for (thunk=(IMAGE_THUNK_DATA *)((char *)hmod+idesc->FirstThunk);
+             thunk->u1.Function && thunk->u1.Function!=(ULONG_PTR)_NtOpenFile;
+             thunk++) ;
+        __NtOpenFile=(NtOpenFile_T *)thunk;
+
+        if ((void *)__NtOpenFile > (void *)__NtCreateFile)
+            page=__NtCreateFile,
+            plen=(size_t)__NtOpenFile-(size_t)page+sizeof(void(*)());
+        else
+            page=__NtOpenFile,
+            plen=(size_t)__NtCreateFile-(size_t)page+sizeof(void(*)());
+
+        if (!VirtualProtect (page,plen,PAGE_EXECUTE_READWRITE,&acc))
+        {   OutputDebugString(_T("Unable to unlock Thunk Table"));
+            return FALSE;
+        }
+        *__NtOpenFile=NtOpenFile_;
+        *__NtCreateFile=NtCreateFile_;
+        VirtualProtect (page,plen,acc,&acc);
+
+        break;
+
+      case DLL_PROCESS_DETACH:
+
+        VirtualProtect (page,plen,PAGE_EXECUTE_READWRITE,&acc);
+        *__NtOpenFile=_NtOpenFile;
+        *__NtCreateFile=_NtCreateFile;
+        VirtualProtect (page,plen,acc,&acc);
+
+        break;
+    }
+
+  return TRUE;
+}

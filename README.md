@@ -66,6 +66,8 @@
 ## Docker
 	A short presentation & introduction to its application in practice.
 	docker/docker.pptx
+	
+![docker.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/docker/docker.png)
 
 ## Outlook Email Sender
 	MFC Visual Studio project to send Email through Outlook (COM)
@@ -81,5 +83,75 @@
 	Used technologies:
 	jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
 	
-![p1](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/environment.overview.with.raphael.png)
-![p2](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/render.times.ff.ie8.diff.png)
+![environment.overview.with.raphael.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/environment.overview.with.raphael.png)
+![render.times.ff.ie8.diff.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/render.times.ff.ie8.diff.png)
+
+## Win Manager
+	MFC Visual Studio project
+	
+![wins.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/wins/Release/wins.png)
+
+## PL Lib
+	Perl library with project independent useful functions
+	(e.g. cfg, logging, trim, ...)
+	pllib/pllib.pl
+
+## iIOS: objC Lib
+	Objective C Library with project independent useful functions
+	(e.g. XML parser, HTML parser, ZIP, ...)
+	iIOS_objc_lib/*
+
+## C++ Lib
+	HTML parser, Progress-Dialog,
+	OLE Automation to convert HTML to RTF with Word (COM)
+	Example:
+	void ConverttoRTF()
+	{
+		COLEWordAutomation _word;
+		if(FAILED(_word.m_hr))
+			return;
+
+		_word.OpenDocument(m_sInputFile);
+
+		//while(_word.Search("^g"))_word.Delete();	//don't remove pics!!!
+
+		CString sExt = ".rtf";
+		int iSaveAsType = RTF;
+
+		{	//DOC begin
+			CString soutputfile(m_sOutputFile+":");soutputfile.MakeLower();
+			if(soutputfile.Find(".doc:") > 1)
+			{
+				sExt = ".doc";
+				iSaveAsType = DOC;
+
+				{
+					CComPtr<IDispatch> pDispDocs;
+					pDispDocs.Attach(_word.m_pDispActiveDoc);
+					_word.EmbedPictures(pDispDocs);
+					pDispDocs.Detach();
+				}
+				_word.SaveAs(m_sOutputFile, iSaveAsType);
+				_word.CloseDocument();
+				_word.CloseWord();
+				return;
+			}
+		}	//DOC end
+
+		_word.SaveAs(m_sOutputFile+sExt, iSaveAsType);
+		_word.CloseDocument();
+		_word.OpenDocument(m_sOutputFile+sExt);
+
+		{
+			CComPtr<IDispatch> pDispDocs;
+			pDispDocs.Attach(_word.m_pDispActiveDoc);
+			_word.EmbedPictures(pDispDocs);
+			pDispDocs.Detach();
+		}
+		_word.SaveAs(m_sOutputFile, iSaveAsType);
+		_word.CloseDocument();
+		::DeleteFile(m_sOutputFile+sExt);
+
+		_word.CloseWord();
+	}
+

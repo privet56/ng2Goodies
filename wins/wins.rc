@@ -1,0 +1,366 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\wins.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\wins.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 203, 97
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "WINS"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,9,6,21,20
+    LTEXT           "wins Version 1.0",IDC_STATIC,40,5,82,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2002",IDC_STATIC,40,15,95,8
+    DEFPUSHBUTTON   "OK",IDOK,146,7,50,14,BS_FLAT | WS_GROUP
+    LTEXT           "by herczeg3725@hotmail.com",IDC_STATIC,38,25,119,8
+    LTEXT           "1. the program is freeware\n2. for sources send and e-mail to\n\therczeg3725@hotmail.com (5 Euro/Dollar)\n3. send description of bugs to herczeg3725@hotmail.com",
+                    IDC_STATIC,7,37,189,36,0,WS_EX_STATICEDGE
+    CTEXT           "herczeg3725@hotmail.com",IDC_EMAIL_ST,7,75,189,17,
+                    SS_NOTIFY
+END
+
+IDD_WINS_DIALOG DIALOGEX 0, 0, 331, 180
+STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "win manager by herczeg3725@hotmail.com"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "show!",ID_SHOW_B,290,126,29,14
+    DEFPUSHBUTTON   "hide!",ID_HIDE_B,290,110,29,14
+    CONTROL         "List2",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_ALIGNLEFT | 
+                    WS_BORDER | WS_TABSTOP,0,0,276,180
+    RTEXT           "Info",IDC_INFO_ST,295,37,14,10,SS_NOTIFY
+    DEFPUSHBUTTON   "refresh",ID_REFRESH_B,290,78,29,14
+    DEFPUSHBUTTON   "rename",ID_RENAME_B,290,94,29,14
+    DEFPUSHBUTTON   "Exit",ID_EXIT_B,290,164,29,14
+    DEFPUSHBUTTON   "Close",ID_CLOSEAPP_B,290,61,29,14
+    GROUPBOX        "Do",IDC_RAHMEN_ST,283,51,41,110
+    CONTROL         "Tree1",IDC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | NOT WS_VISIBLE | WS_TABSTOP,275,1,49,
+                    36
+    CONTROL         "Baum",IDC_TREE_CHK,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,291,143,27,15
+END
+
+IDD_RENAME_DLG DIALOG DISCARDABLE  0, 0, 102, 41
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+CAPTION "change the caption"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,30,24,31,14
+    PUSHBUTTON      "Cancel",IDCANCEL,64,24,31,14
+    EDITTEXT        IDC_EDIT,7,7,88,14,ES_AUTOHSCROLL
+END
+
+IDD_PROCESSES_DLG DIALOGEX 0, 0, 254, 254
+STYLE WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Processes"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Tree1",IDC_PROC_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | TVS_INFOTIP | TVS_NONEVENHEIGHT | 
+                    WS_BORDER | WS_TABSTOP,7,7,240,240,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+END
+
+IDD_WINDOWS_DLG DIALOGEX 0, 0, 254, 254
+STYLE DS_3DLOOK | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU | 
+    WS_THICKFRAME
+CAPTION "Windows"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Tree1",IDC_WIN_TREE,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_LINESATROOT | TVS_DISABLEDRAGDROP | 
+                    TVS_SHOWSELALWAYS | TVS_INFOTIP | TVS_NONEVENHEIGHT | 
+                    WS_BORDER | WS_TABSTOP,0,0,254,254,WS_EX_CLIENTEDGE | 
+                    WS_EX_STATICEDGE
+END
+
+IDD_FLASHDLG DIALOG DISCARDABLE  0, 0, 188, 143
+STYLE WS_POPUP | WS_BORDER
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         136,IDC_TOP_B,"Static",SS_BITMAP | SS_REALSIZEIMAGE,83,4,
+                    7,7
+    CONTROL         136,IDC_LEFT_B,"Static",SS_BITMAP | WS_DISABLED,5,64,6,6
+    CONTROL         136,IDC_BOTTOM_B,"Static",SS_BITMAP | WS_DISABLED,86,134,
+                    6,6
+    CONTROL         136,IDC_RIGHT_B,"Static",SS_BITMAP | WS_DISABLED,177,70,
+                    6,6
+END
+
+IDD_EFFICIENCY_DLG DIALOGEX 0, 0, 329, 129
+STYLE DS_3DLOOK | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+EXSTYLE WS_EX_CLIENTEDGE | WS_EX_STATICEDGE
+CAPTION "Efficiency"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Abbrechen",IDCANCEL,272,108,50,14
+    LTEXT           "Static",IDC_SCOPE_D,7,7,315,98,0,WS_EX_TRANSPARENT
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "wins\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "wins\0"
+            VALUE "LegalCopyright", "Copyright (C) 2002 by herczeg3725@hotmail.com\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "wins.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "Anwendung wins\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 196
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 92
+    END
+
+    IDD_WINS_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 324
+    END
+
+    IDD_RENAME_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 95
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 38
+    END
+
+    IDD_PROCESSES_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 247
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 247
+    END
+
+    IDD_EFFICIENCY_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 322
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 122
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_IMGLIST             BITMAP  DISCARDABLE     "res\\bitmap1.bmp"
+IDB_IMGLIST1            BITMAP  DISCARDABLE     "res\\imglist1.bmp"
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\bmp00001.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_TASKBARMENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Refresh list",                ID__REFRESHLIST_M
+        MENUITEM "Hide",                        ID__HIDESHOW_M
+        MENUITEM "Exit",                        ID_EXIT_M
+        MENUITEM SEPARATOR
+        MENUITEM "Cancel",                      ID__CANCEL
+    END
+END
+
+IDR_LISTMENU MENU DISCARDABLE 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "Close",                       ID_CLOSEAPP_B
+        MENUITEM "Hide",                        ID__HIDESHOWAPP_M
+        MENUITEM "set TopMost",                 ID__TOPMOST
+        MENUITEM "change win color",            ID__CHANGEWINCOLOR
+        MENUITEM "Windows",                     ID__WINDOWS_M
+        MENUITEM "Processes",                   ID_PROCESSES_B
+        MENUITEM "Rename",                      ID_RENAME_B
+        MENUITEM "Efficiency",                  ID__EFFICIENCY
+        MENUITEM SEPARATOR
+        MENUITEM "Cancel",                      ID__CANCEL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "Inf&o über wins..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_EXIT_M               "Exit Application"
+    ID__REFRESHLIST_M       "Refresh list"
+    ID__CANCEL              "cancel popup menu"
+    ID__HIDESHOW_M          "Hide / Show selected Application"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    ID_RENAME_B             "Rename selected Application"
+    ID_CLOSEAPP_B           "Close selected Application"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\wins.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

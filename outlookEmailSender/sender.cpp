@@ -122,7 +122,7 @@ BOOL _send()
    
 	// Prepare a new mail message
 	_MailItem olMail(olApp.CreateItem(0));
-	olMail.SetTo("george.herczeg@softcon.de");
+	olMail.SetTo("bla@blu.de");
 	olMail.SetSubject("subject");
 #ifdef SEND_TEXT_EMAIL
 	olMail.SetBody("body");
