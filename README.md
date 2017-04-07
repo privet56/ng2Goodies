@@ -41,7 +41,9 @@
 	maps the response to native TypeScript objects
 	(based on https://github.com/autopulous/angular2-soap)
 
-## LINQ Extension
+## .NET C# Lib: net_csharp_lib/*.cs
+	with LDAP helper, table column helper, Excel support, Templater, Logging, Utils, and
+	LINQ Extension:
 	Do you need to use a linq-based environment to call a stored procedure with unknown/unpredictable return structures?
 	You can use linq/LinqExtensions.cs
 	(as a simple 'dynamic' keyword does not lead to the expected result)
