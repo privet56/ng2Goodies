@@ -28,6 +28,7 @@
 
 ## startNgProject.bat
 	starts all necessary apps for ng2 development: node, vscode, browser and 'ng serve'
+	(see comments for setting the necessary content of npmrc)
 	necessary directory structure:
 	-- devenv
 	---- git
