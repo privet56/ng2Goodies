@@ -72,6 +72,8 @@
 	
 ![docker.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/docker/docker.png)
 
+![docker4OracleOnWindows.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/docker/docker4OracleOnWindows.png)
+
 ## Outlook Email Sender
 	MFC Visual Studio project to send Email through Outlook (COM)
 	outlookEmailSender/sender.vcproj
@@ -99,6 +101,11 @@
 	(e.g. cfg, logging, trim, ...)
 	pllib/pllib.pl
 
+## SQL Lib
+	Oracle DB search all Tables
+	Procedure with Bulk and Cursor operation
+	sql/*.sql
+	
 ## iOS: objC Lib
 	Objective C Library with project independent useful functions
 	(e.g. XML parser, HTML parser, ZIP, ...)
