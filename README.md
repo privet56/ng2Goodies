@@ -87,11 +87,12 @@
 	Create a dynamic server landscape visualization with data flow, graphs and plots 
 	Used technologies:
 	jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
-	
-	with Dynamic Documentation: client side PDF- and CSV- generation and also 3D button.
+	With Dynamic Documentation: client side Screenshot-, PDF- and CSV- generation and also 3D Button.
 	
 ![environment.overview.with.raphael.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/environment.overview.with.raphael.png)
 ![render.times.ff.ie8.diff.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/render.times.ff.ie8.diff.png)
+
+![3dbutton.gif](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/dynadocu/3dbutton.gif)
 
 ## Win Manager
 	MFC Visual Studio project
