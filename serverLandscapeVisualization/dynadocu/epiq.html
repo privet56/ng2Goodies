@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" />
+<title>myapp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body><div id=alldiv name=alldiv>
+<center>
+<h1 class="img2right">title
+	<sup>
+		<a href="#" title="export as pdf" onclick="return $epiq.onpdf(document.getElementById('alldiv'), 'myapp.pdf');">
+			<img src="img/file_pdf.png" data-toggle='tooltip' data-placement='bottom' title='Save as one single PDF'>
+		</a>
+	</sup>
+	<sup>
+		<a href="#" title="export as Excel" onclick="return $epiq.oncsv(document.getElementById('fileDownload'));">
+			<img src="img/file_excel.png" data-toggle='tooltip' data-placement='bottom' title='Export all links of this document into Excel'>
+		</a>
+	</sup>
+</h1>
+<table class="table table-bordered table-striped table-hover" style="margin:11px;width:98%;max-width:98%;">
+<tr>
+	<td>trac</td>
+	<td>httpurl-------------------------</td>
+	<td>email@email.com:Epiq123!</td>
+</tr>
+<tr>
+	<td>svn</td>
+	<td><span>httpurl-------------------------</span><br><span>httpurl-------------------------</span></td>
+	<td>(de: email@email.de)</td>
+</tr>
+<tr>
+	<td>sharepoint allg</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sharepoint devenv setup</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sharepoint booking</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>artifactory</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>email@email</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>email@email</td>
+	<td>httpurl-------------------------</td>
+	<td>yxcv:##%*X3MT	//for the time being. Another long term solution to be found</td>
+</tr>
+<tr>
+	<td>jira scrum board (not used)</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td>?</td>
+	<td>192.168.100.49</td>
+	<td></td>
+</tr>
+<tr>
+	<td>TRAC tickets assigned to me:</td>
+	<td>httpurl-------------------------</td>
+	<td></td>
+</tr>
+<tr>
+	<td class="db">E1 = node1, oracle DB:<br>used for CRs</td>
+	<td>
+		jdbc:oracle:thin:@asdf.dc4ca.asdf.de:1523:asdf<br>
+		asdf:asdf!asdfasdf!?1qa_
+	</td>
+	<td>connect locally <span class=important>ONLY</span> from node1 code base!</td>
+</tr>
+<tr>
+	<td class="db">E2 = node2, oracle DB:<br>used for BugFixing</td>
+	<td>
+		jdbc:oracle:thin:@asf.dc4ca.asdf.de:1523:asdfas
+		asdf:?asdfasdf-!~9_
+	</td>
+	<td>connect locally <span class=important>ONLY</span> from node2 code base!</td>
+</tr>
+<tr>
+	<td class="db">Q1 = node3 = preprod, oracle DB</td>
+	<td>
+		jdbc:oracle:thin:@asdf.dc4ca.asdf.de:1523:asdfas
+		asdf:Te4kjer�onro2345
+	</td>
+	<td>connect locally <span class=important>ONLY</span> from trunk code base!</td>
+</tr>
+<tr>
+	<td class="db">oracle DB PROD:</td>
+	<td>
+		jdbc:oracle:thin:@demchdc98ux.dc4ca.asdf.de:1523:ydvx
+		asdf:asdf.p1
+		<br>
+		choose Other Users --> pmtools
+	</td>
+	<td>connect <span class=important>NEVER</span> locally from <span class=important>NO</span> code base!</td>
+</tr>
+<tr>
+	<td class="nodex">email@email</td>
+	<td>httpurl-------------------------</td>
+	<td>asdf:asdf</td>
+</tr>
+<tr>
+	<td class="nodex">E1 = node1 = used for CRs</td>
+	<td>httpurl-------------------------</td>
+	<td>asdf:sadf</td>
+</tr>
+<tr>
+	<td class="nodex">E2 = node2 = used for BugFixing</td>
+	<td>httpurl-------------------------</td>
+	<td>
+		first: email@email.com<br>
+		second: asdf:asdf
+	</td>
+</tr>
+<tr>
+	<td class="nodex">Q1 = node3 = preprod<br>(SVN trunk is deployed here)</td>
+	<td>httpurl-------------------------</td>
+	<td class="alert alert-warning" role="alert"><div class=er.ror>app shows: access denied</div></td>
+</tr>
+<tr>
+	<td class="nodex">PROD</td>
+	<td>httpurl-------------------------</td>
+	<td class="alert alert-warning" role="alert"><div class=er.ror>app shows: access denied</div></td>
+</tr>
+<tr>
+	<td class="nodex">E3 = Node5 = roccit</td>
+	<td>httpurl-------------------------</td>
+	<td>Z00213ZV:AMinor_Z00213ZV</td>
+</tr>
+<tr>
+	<td colspan=3 class="alert alert-danger fullrow" role="alert"> -- further infos -- </td>
+</tr>
+
+<tr>
+	<td>keypass pass</td>
+	<td>myapp21!</td>
+	<td><button onclick="return $epiq.copyCellBefore(this);" type="button" class="btn btn-light" data-toggle='tooltip' data-placement='top' title='Copy to Clipboard'>copy</button></td>
+</tr>
+<tr>
+	<td>gid ghe</td>
+	<td>z003kn4k</td>
+	<td><button onclick="return $epiq.copyCellBefore(this);" type="button" class="btn btn-light" data-toggle='tooltip' data-placement='bottom' title='Copy to Clipboard'>copy</button></td>
+</tr>
+<tr>
+	<td>TRAC comment blueprint</td>
+	<td colspan=2>
+<pre>
+<div class="alert-info"><a name="commentask4continuation" id="commentask4continuation"></a>comment when asking for continuation approval:</div>Hallo,
+
+regasdf
+
+<div class="alert-info"><a name="commentforward2support" id="commentforward2support"></a>comment when forwarding the ticket to the .ro support team:</div>Hello,
+
+Theasdfeks.
+</pre>
+	</td>
+</tr>
+<tr>
+	<td><a name="srworkflow" id="srworkflow"></a>when working on <strong>SR</strong> TRAC ticket</td>
+	<td colspan=2>
+		<ol>
+			<li>set TRAC ticket to start (next status will be "in work")</li>
+			<li>set current iteration (see daily email, point E2)</li>
+			<li>do! max. 3 (in case of log-errors) or 8 hours and <span style="color:red;">stop</span> if you see more efforts<sup class="oi oi-bookmark sup" data-toggle="tooltip" data-placement="top" title="" data-original-title="unclear if with or without approval of the .ro support team"></sup>
+			& set ticket into infoneeded with <a href="#commentask4continuation">comment as above</a>.<br>
+				(set ticket to "stop" & infoneeded when Mr. bbb has to act!) ... after approval:
+				
+			</li>
+			<li>do! incl. comment a la //#{ticketnr} {ticket title}
+			<br> &nbsp;&nbsp;&nbsp; <span class=important>(nothing else into the comment!)</span></li>
+			<li>approval by .ro support team (email@email.com;email@email.com)</li>
+			<li><a name="srworkflowcheckinsvn">check in in SVN (node2 is for bugfixing) incl comment a la #{ticketnr} {ticket title}
+			<br> &nbsp;&nbsp;&nbsp; <span class=important>(nothing else into the comment!)</span></li>
+			<li>deploy with 2 jenkins</li>
+			<li>fill <strong>all(!)</strong> the spent efforts into the trac field <strong>“Effort for Estimation (h):”</strong><br>
+				<small>(the field “Effort for Development (h):” is never used in case of SR tickets)</small>
+			</li>
+			<li><a name="srworkflowticketforward2testteam"></name>then forward ticket to the .ro test team:
+				<ol>
+					<li><u>stop</u> trac ticket & write comment (<a href="#commentforward2support">as above</a>) [submit changes]</li>
+					<li><u>reassign</u> to trac ticket Nagarro QA Team (always Raasdfcu/Sechei) [submit changes]</li>
+					<li><u>test_supplier</u> trac ticket (next status will be qa_by_supplier) [submit changes]</li>
+				</ol>
+			</li>			
+		</ol>
+	</td>
+</tr>
+<tr>
+	<td><a name="crworkflow" id="crworkflow"></a>when working on <strong>CR</strong> TRAC ticket</td>
+	<td colspan=2>
+		<div class="alert alert-warning alert-dismissible fade show alertwarningslowdismiss" role="alert">
+			<button type="button" class="close" data-dismiss="alert" data-toggle='tooltip' data-placement='top' title='Remove Warning'>&times;</button>
+			This list is incomplete because the 'classic' way & big CRs aren't considered & because the word document handling is not described!
+		</div>
+		<ol>
+			<li>set TRAC ticket to start (next status will be "in work")</li>
+			<li>set current iteration (see daily email, point E1)</li>
+			<li>do = estimate the efforts & clarify(with Mr. bbb) open dev & test(with Ms Calescu) questions<br>
+				(set ticket to "stop" & infoneeded when Mr. bbb has to act!)<br>
+				<span class="alert-warning">Communication with other myapp team members is prohibited.
+					<sup class="oi oi-bookmark sup" data-toggle='tooltip' data-placement='top' title='Instruction from Mi 28.02.2018 14:49'></sup>
+					
+				</span>
+			</li>
+			<li>if(you see that the dev&test-estimation-efforts > 16 hours) -> <br>
+				 -> <span style="color:red;">stop</span> the work & set ticket to "stop" & infoneeded when Mr. bbb has to act!<br>
+				 Continue only after aproval<br>
+			</li>
+			<li> Estimate efforts for Effort-Estimation and <br>
+				create 2 <a href="https://asdf.shasdf.aspx?viewpath=%2Fteams%2F%2FAMS%20EPIQ%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fteams%2F%2FAMS%20EPIQ%2FShared%20Documents%2FChange%20Requests%20%28CR%29%2F___Templates">documents based on templates:</a><br>
+					1. <a href="">CRxxx - Effort-estimation.xlsx</a> has to be filled always<br>
+					&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; fill in CR Nr & Title<br>
+					&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; DELETE filled out numbers!<br>
+					&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; fill in test & dev & other efforts (columns B, G and H are important) <br>
+					&nbsp;&nbsp;&nbsp; upload into <a href="https://asdf%20EPIQ/Shared%20Documents/Forms/AllItems.aspx?viewpath=%2Fteams%2F%2FAMS%20EPIQ%2FShared%20Documents%2FForms%2FAllItems%2Easpx&id=%2Fteams%2F%2FAMS%20EPIQ%2FShared%20Documents%2FChange%20Requests%20%28CR%29%2F_I44%20-%20CRs">sharepoint {current iteration folder}</a> & and send link to Mr. Rausch & Gavrilescu<br>
+					2. <a href="">CRxxx - CR Title.docx</a> <strong>is only to be filled for non-small CRs (dev efforts > 16 hours)</strong><br>
+					&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span class="alert-warning">This section is not yet defined.</span><br>
+				Fill trac fields:<br>
+				- "Effort for Estimation (h)" (contains also the done test-estimation efforts)<br>
+				- "Effort Development (h)" (contains also the planned test & deployment efforts)<br>
+				- set to "stop"<br>
+				- set to "request info to" + Mr. Bajarke<br>
+			</li>
+			<li>wait until Mr. bbb approves and then:
+			</li>
+			<li>fill trac fields:<br>
+				<ol>
+					<li>set TRAC ticket to start (next status will be "in work")</li>
+					<li>set current iteration (see daily email, point E1)</li>
+					<li>do work! (on node1)<br>
+						<span class="alert-warning">SVN handling is not yet defined.</span>
+					</li>
+				</ol>
+			</li>
+			<li>execute steps "deploy with 2 jenkins" & ticket-handling <a href="#srworkflowticketforward2testteam">SR handling</a> list on node1 (see above)</li>
+		</ol>
+	</td>
+</tr>
+<tr>
+	<td colspan=3>
+		<div id="accordion" role="tablist" aria-multiselectable="true">
+		  <!-- header -->
+		  <div class="card">
+			<div class="card-header" role="tab" id="headingOne">
+			  <h5 class="mb-0">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+				  <sup class="oi oi-expand-down" data-toggle='tooltip' data-placement='top' title='Expand'></sup>
+				   &nbsp; TRAC Filters:
+				</a>
+			  </h5>
+			</div>
+			<!-- content -->
+			<div id="collapseOne" class="collapse hide" role="tabpanel" aria-labelledby="headingOne">
+			<div class="card-block" style="text-align:center;">
+				<table class="table table-bordered table-striped table-hover" style="margin:1px;width:100%;">
+					<tr>
+						<td>CRs to be estimated by Nagarro</td>
+						<td>httpurl-------------------------</td>
+					</tr>
+					<tr>
+						<td>CRs already estimated, waiting for approval of Siemens</td>
+						<td>httpurl-------------------------</td>
+					</tr>
+					<tr>
+						<td>Bugs and CRs to be solved for current development iteration</td>
+						<td>httpurl-------------------------</td>
+					</tr>
+					<tr>
+						<td>Bugs and CRs not marked for current iteration, but put in the pool , to be taken when there is no other CR| bug to be done by the developer</td>
+						<td>httpurl-------------------------</td>
+					</tr>
+					<tr>
+						<td>estimations and tech design documents for CRs related to I44</td>
+						<td>httpurl-------------------------</td>
+					</tr>
+				</table>
+			</div>
+			</div>
+		</div>
+	</td>
+</tr>
+<tr>
+	<td>emails always in cc</td>
+	<td>email@email.com;email@email.com</td>
+	<td>
+		<div class="only4ie">
+			<button onclick="return $epiq.copyCellBefore(this);" type="button" class="btn btn-light" data-toggle='tooltip' data-placement='top' title='Copy to Clipboard'>copy</button>
+		</div>
+		<div class="buttoninner button not4ie"><div class="buttoninner outer"><div class="buttoninner height"><div class="buttoninner inner" onclick="return $epiq.copyCellBefore(this);">copy</div></div></div></div>
+	</td>
+</tr>
+
+</table>
+</center>
+
+<textarea id=cpytextarea style="position:absolute;left:-999px;"></textarea>
+<a id=fileDownload href="data:application/xml;charset=utf-8," download="myapp-links.csv"></a>
+
+<div class="fixed-top" style="padding-top:99px;pointer-events:none;">
+<center style="display:none;" id="alerttemplate">
+	<div role="alert" class="alert alert-warning alert-dismissible fade show" style='pointer-events:initial;z-index:9;position:relative;min-width:199px;max-width:399px;text-align:center;'>
+		<button type="button" class="close" data-dismiss="alert">&times;</button><strong id="alerttxt"></strong>
+	</div>
+</center>
+</div>
+</div>
+</body>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/css/tether-theme-arrows.min.css" />
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.3/js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+<script src="js/js.js"></script>
+<script src='js/html2canvas.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js' async></script>
+</html>
