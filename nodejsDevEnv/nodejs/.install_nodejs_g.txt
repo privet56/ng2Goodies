@@ -1,0 +1,18 @@
+%NODE_DIR%\node_modules\npm\etc\npmrc
+	and
+%NODE_DIR%\node_modules\npm\npmrc
+	should have the content:
+prefix=${NODE_DIR}\node_modules\npm
+cache=${NODE_DIR}\npm-cache
+
+set modified nodevars.bat
+set modified npm.cmd
+
+then install:
+
+npm install -g npm@latest -f
+npm install -g angular-cli
+npm install -g outdated
+npm install -g npm-check-updates
+npm install -g node-sass
+npm rebuild node-sass						//execute this step also for your project!!!
