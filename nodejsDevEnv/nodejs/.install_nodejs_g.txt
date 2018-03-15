@@ -11,8 +11,10 @@ set modified npm.cmd
 then install:
 
 npm install -g npm@latest -f
-npm install -g angular-cli
 npm install -g outdated
 npm install -g npm-check-updates
-npm install -g node-sass
-npm rebuild node-sass						//execute this step also for your project!!!
+
+rem optional:
+rem npm install -g angular-cli
+rem npm install -g node-sass
+rem npm rebuild node-sass						//execute this step also for your project!!!
