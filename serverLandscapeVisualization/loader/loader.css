@@ -1,0 +1,30 @@
+#loader{
+	display:block;
+	position:relative;
+	left:50%;
+	top:50%;
+	width:150px;
+	height:150px;
+	margin:-75px 0 0 -75px;
+	border-radius:50%;
+	border:3px solid transparent;
+	border-top-color:#e31c2c;
+	-webkit-animation:spin 2s linear infinite;
+	animation:spin 2s linear infinite;
+	background-color:#f7f2d2;
+}
+#loader span,#loader:before{border-radius:50%;content:"";position:absolute}
+#loader span{top:25px;left:25px;right:25px;bottom:25px;border:3px solid transparent;border-top-color:#f0ce3f;-webkit-animation:spin 2.5s linear infinite;animation:spin 2.5s linear infinite}
+#loader:before{top:5px;left:5px;right:5px;bottom:5px;border:3px solid transparent;border-top-color:#2993c7;-webkit-animation:spin 3s linear infinite;animation:spin 3s linear infinite}
+#loader:after{content:"";position:absolute;top:15px;left:15px;right:15px;bottom:15px;border-radius:50%;border:3px solid transparent;border-top-color:#227e3d;-webkit-animation:spin 1.5s linear infinite;animation:spin 1.5s linear infinite}
+@-webkit-keyframes spin{0%{-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}
+@keyframes spin{0%{-webkit-transform:rotate(0);-ms-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}}
+
+/*only ie! */
+@media screen\0 {
+#loader{
+	background-color:#f2ddbc;
+	top:199px;
+	padding:66px;
+}	
+}
