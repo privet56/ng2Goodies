@@ -51,9 +51,9 @@ The Docker for Windows installer will enable Hyper-V for you, if needed, and res
 Docker for Windows requires a Hyper-V as well as the Hyper-V Module for Windows Powershell to be installed and enabled. The Docker for Windows installer will enable it for you
 
 ### 2. uninstall WSL distro
-uninstall wsl distro from the command line
-(more simply: app-right-mouse-button-Deinstall):
-$ lxrun /uninstall /full
+	uninstall wsl distro from the command line
+	(more simply: app-right-mouse-button-Deinstall):
+	$ lxrun /uninstall /full
 
 ### 3. recommended console setting
 Open WSL, PowerShell, or Cmd
