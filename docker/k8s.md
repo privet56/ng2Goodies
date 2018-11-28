@@ -35,7 +35,9 @@
 	install kubectl & minikube
 	$ kubectl
 	$ kubectl.exe on windows
-	download url: see in the docs ( https://kubernetes.io/docs/tasks/tools/install-kubectl/ & https://github.com/kubernetes/minikube/releases )
+	download url: see in the docs:
+		https://kubernetes.io/docs/tasks/tools/install-kubectl/
+		https://github.com/kubernetes/minikube/releases
 		(download with curl or manually)
 
 	$ kubectl version
@@ -45,13 +47,14 @@
 	$ kubectl expose deployment hello-minikube --type=NodePort
 		# service "hello-minikube" exposed
 		## creates the service
+		## type: NodePort (for one Pod) or LoadBalancer
 	$ kubectl get pod
 		# lists running pods
 	$ curl $(minikube service hello-minikube --url)
 	$ kubectl delete deployment hello-minikube
 	$ minikube stop
 
-## deployment.yaml
+## Example: deployment.yaml
 ------------
 	apiVersion: apps/v1beta2
 	kind: Deployment
@@ -93,13 +96,93 @@
 		## kubectl exec -it mypod bash
 		### whoami		# you are now inside of the container, interactively on bash
 		#### root		# output of the command, run inside of the container
-	$ kubectl label pods <pod-name> [--overwrite] <type> key1=val1 ...
+	$ kubectl label pods <pod-name> [--overwrite] <type> mykey1=myval1 ...
 	$ kubectl run <name> --image=image [--port]
 		# runs an image on the cluser
 	# see kubectl ref:
-	## http://kubernetes.io/docs/user-guide/kubectl/v1.8/
-	## http://kubernetes.io/docs/user-guide/kubectl/kubectl-cheatsheet/
+		http://kubernetes.io/docs/user-guide/kubectl/v1.8/
+		http://kubernetes.io/docs/user-guide/kubectl/kubectl-cheatsheet/
 
 ## Architecture
-	> Master, manages the nodes
-	> Node = Minion = kubelet & kube-proxy & pods & docker
+	Master, manages the nodes, contains:
+		API-Server
+		Scheduler
+		Controller Manager
+	Node = Minion = kubelet & kube-proxy & pods & docker
+		kubelet = the supervisor of a machine
+		kube-proxy = responsible for the network configuration
+
+## Scaling through replication configuration
+	replica setting in your deployment definition YAML
+		or
+	Define a ReplicaSet
+		or
+	Bare Pods
+		or
+	Define a Job
+		or
+	DaemonSet
+		or
+	$ kubectl scale --replicas=4 deployment/tomcat-deployment
+		# check with
+		$ kubectl get deployments
+			or
+		$ kubectl describe deployments	# lists new ReplicaSet
+		# but: kubectl expose --type=NodePort works only for ONE pod!
+		# solution: use
+		$ kubectl expose deployment tomcat-deployment --type=LoadBalancer --port=8080 --target-port=8080 --name tomcat-load-balancer
+			and
+		$ kubectl describe services tomcat-load-balancer
+			# see IP address of the created load-balancer service
+
+## Deployment
+	Deployment = App & Pod & ReplicaSet
+	Possible Tasks:
+		Create, Update, Apply rolling updates to Pods running on a cluster
+		Rollback to previous version
+		Pause & Resume a deployment
+
+	$ kubectl get deployments	#lists running deployments, incl. replicas
+	$ kubectl rollout status deployment <name>
+		# check status
+	$ kubectl set image <deployment> <container-name>=<name>
+	$ kubectl set image deployment/tomcat-deployment tomcat=tomcat:9.0.1
+		# sets/updates docker image of a deployment
+	$ kubectl rollout history <deployment> [--revision={\d+}]
+		# view history of a rollout, incl previous versions
+
+## Labels & Selectors
+	Label = key-value pair, you can label deployment & service & node
+	Selector = select objects based on label
+	
+	"nodeSelector" is a property on a deployment to choose nodes
+	$ kubectl label node <node-name> mykey=myvalue
+	set selector in YAML:
+
+## Example Labels & Selectors
+------------
+	apiVersion: apps/v1beta2
+	kind: Deployment
+	metadata:
+		name: tomcat-deployment
+	spec:
+		selector:
+			matchLabels:
+				app: tomcat
+		replicas: 4
+		template:
+			metadata:
+				labels:
+					app: tomcat
+			spec:
+				containers:
+				- name: tomcat
+				  image: tomcat:9.0
+				  ports:
+				  - containerPort: 8080
+				nodeSelector:
+					mykey: myvalue			# use just nodes with this label!
+------------
+	$ kubectl apply -f ./deployment.yaml	# update configuration!
+
+## Health Check
