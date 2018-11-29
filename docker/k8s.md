@@ -186,3 +186,52 @@
 	$ kubectl apply -f ./deployment.yaml	# update configuration!
 
 ## Health Check
+	Two types:
+	Readiness Probe:
+		is the Pod ready & started & loaded, the image is ready to take requests
+	Liveness Proble:
+		is the Pod healthy (after it has become ready)
+
+	You can define an HTTP/TCP/CMD in your YAML to check healthiness.
+------------
+	apiVersion: apps/v1beta2
+	kind: Deployment
+	metadata:
+		name: myapp-deployment
+	spec:
+		selector:
+			matchLabels:
+				app: myapp
+		replicas: 4
+		template:
+			metadata:
+				labels:
+					app: myapp
+			spec:
+				containers:
+				- name: myapp
+				  image: myapp:9.0
+				  ports:
+				  - containerPort: 8080
+				  livenessProbe:
+					httpGet:
+						path: /
+						port: 8080
+					initialDelaySeconds: 30
+					periodSeconds: 30
+				  readinessProbe:
+					httpGet:
+						path: /
+						port: 8080
+					initialDelaySeconds: 15
+					periodSeconds: 3
+------------
+
+## Web Interface = Dashboard UI
+	Use
+	$ kubectl proxy
+	to be able to access the dashboard from outside of the network
+	http://localhost:8001/ui	#where loalhost = k8s-master
+	Offers the same functions as kubectl, visually view/edit: eg. nodes (incl labels), deployments, pods, ...)
+	The dashboard is mostly preinstalled, sometimes needs to be installed extra:
+	$ kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
