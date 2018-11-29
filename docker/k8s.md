@@ -235,3 +235,8 @@
 	Offers the same functions as kubectl, visually view/edit: eg. nodes (incl labels), deployments, pods, ...)
 	The dashboard is mostly preinstalled, sometimes needs to be installed extra:
 	$ kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+
+## Miscellaneous
+	Third party tools:
+		Kubernetes package manager
+	
