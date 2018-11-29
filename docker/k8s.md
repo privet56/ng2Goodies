@@ -59,27 +59,27 @@
 	apiVersion: apps/v1beta2
 	kind: Deployment
 	metadata:
-		name: tomcat-deployment
+		name: myapp-deployment
 	spec:
 		selector:
 			matchLabels:
-				app: tomcat-deployment
+				app: myapp-deployment
 		replicas: 1
 		template:
 			metadata:
 				labels:
-					app: tomcat
+					app: myapp
 			spec:
 				containers:
-				- name: tomcat
-				  image: tomcat:9.0		# default url: dockerhub
+				- name: myapp
+				  image: myapp:9.0		# default url: dockerhub
 				  ports:
 				  - containerPort: 8080
 ------------
 	Use: apply & expose the pod to the external world as a service:
 	$ kubectl apply -f ./deployment.yaml
-	$ kubectl expose deployment tomcat-deployment --type=NodePort [--port] [--target-port]
-	$ minikube service tomcat-deployment --url
+	$ kubectl expose deployment myapp-deployment --type=NodePort [--port] [--target-port]
+	$ minikube service myapp-deployment --url
 		# output: http://127.0.0.1:32723 = the useable deployed service
 	$ kubectl get pod
 		# lists the running pods, incl name
@@ -123,16 +123,16 @@
 		or
 	DaemonSet
 		or
-	$ kubectl scale --replicas=4 deployment/tomcat-deployment
+	$ kubectl scale --replicas=4 deployment/myapp-deployment
 		# check with
 		$ kubectl get deployments
 			or
 		$ kubectl describe deployments	# lists new ReplicaSet
 		# but: kubectl expose --type=NodePort works only for ONE pod!
 		# solution: use
-		$ kubectl expose deployment tomcat-deployment --type=LoadBalancer --port=8080 --target-port=8080 --name tomcat-load-balancer
+		$ kubectl expose deployment myapp-deployment --type=LoadBalancer --port=8080 --target-port=8080 --name myapp-load-balancer
 			and
-		$ kubectl describe services tomcat-load-balancer
+		$ kubectl describe services myapp-load-balancer
 			# see IP address of the created load-balancer service
 
 ## Deployment
@@ -146,7 +146,7 @@
 	$ kubectl rollout status deployment <name>
 		# check status
 	$ kubectl set image <deployment> <container-name>=<name>
-	$ kubectl set image deployment/tomcat-deployment tomcat=tomcat:9.0.1
+	$ kubectl set image deployment/myapp-deployment myapp=myapp:9.0.1
 		# sets/updates docker image of a deployment
 	$ kubectl rollout history <deployment> [--revision={\d+}]
 		# view history of a rollout, incl previous versions
@@ -164,20 +164,20 @@
 	apiVersion: apps/v1beta2
 	kind: Deployment
 	metadata:
-		name: tomcat-deployment
+		name: myapp-deployment
 	spec:
 		selector:
 			matchLabels:
-				app: tomcat
+				app: myapp
 		replicas: 4
 		template:
 			metadata:
 				labels:
-					app: tomcat
+					app: myapp
 			spec:
 				containers:
-				- name: tomcat
-				  image: tomcat:9.0
+				- name: myapp
+				  image: myapp:9.0
 				  ports:
 				  - containerPort: 8080
 				nodeSelector:
