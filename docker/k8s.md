@@ -27,7 +27,11 @@
 	Deployment = collection of resources & references & exposed ports
 		Deployment-Description: in YAML
 	Pod = group of instances of a container in a deployment
+		= 1+ containers with shared IP/resources
 	Service = endpoint that exports a port to the outside world
+			= Grouping of pods (acting as one) has stable virtual IP and DNS name
+	Label = Key-Value pairs associated with k8s ojbects (eg. app=appname, env=prod, version=1)
+	Master = the k8s installation, has APi & etcd & scheduler & controllers
 
 ## kubectl & minikube
 	runs k8s locally, but does not support load balancers, persistent volumes, ingress
@@ -48,11 +52,21 @@
 		# service "hello-minikube" exposed
 		## creates the service
 		## type: NodePort (for one Pod) or LoadBalancer
-	$ kubectl get pod
-		# lists running pods
+	$ kubectl get pods --all-namespaces
+		# lists running pods (all-namespaces lists system pods too)
 	$ curl $(minikube service hello-minikube --url)
 	$ kubectl delete deployment hello-minikube
 	$ minikube stop
+	
+	$ kubectl get namespaces
+	$ kubectl get pods -n mynamespace
+	$ kubectl run myapp --image=myapp:v1 --port=8080
+	$ kubectl logs myapp-somecontainerid
+	$ kubectl expose deployment --port=8080 myapp --type=LoadBalancer
+	$ kubectl scale deployment myapp --replicas=3
+	$ kubectl set image deployment/myapp myapp=myapp:v1
+	
+	$ minikube docker-env		# prints environment
 
 ## Example: deployment.yaml
 ------------
