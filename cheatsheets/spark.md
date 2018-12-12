@@ -48,6 +48,7 @@
 	localValues.foreach(r => println(r))
 ### Shell
 	./spark-shell --master local[1]		# allocate just 1 thread, this is a scala shell, context is available as sc, session as spark
+	./spark-shell --master local[12]	# use 12 if you have 6 cores
 	> val textFile = sc.textFile("r.md")	# an RDD is created with this line
 	> textFile.count()					# this is an Action, returns the items in RDD
 	> textFile.first()					# returns the first item
@@ -135,8 +136,22 @@
 	rdd.saveToCassandra()
 	rdd = sc.cassandraTable("keyspace","table").select("col-1", "col-3").where("col-5 = ?", "blue")
 	
+### python
+	from pyspark.sql import SQLContext, Row
+	array = map(lambda x: Row(key="k_%04d" % x, value = x), range(1, 5001))
+	largeSchemaRDD = sqlContext.inferSchema(sc.parallelize(array))
+	largeSchemaRDD.registerTempTable("largeTable")
+	display(sqlContext.sql("select * from largeTable"))
+	
+## Run types
+	1. locally
+	2. standalone scheduler	# cassandra
+	3. yarn
+	4. mesos
+	
 ### Types of RDD
 	HadoopRDD, FilteredRDD, SchemaRDD, UnionRDD, JdbcRDD, JsonRDD, EdgeRDD, CassandraRDD, GeoRDD, EsSpark, ...
+	type(myrdd)
 	
 ## Lifecycle of a Spark Program:
 	1. create input RDD from external data or parallelize a collection in your driver program
