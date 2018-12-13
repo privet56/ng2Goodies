@@ -39,6 +39,7 @@
 	Approach, where I write code like single-threaded, but executed on the cluster behind the scenes
 ### Word Count in Scala & Spark
 	val conf = new SparkConf().setMaster("local[2]")
+	val conf = new SparkConf().setMaster("local[2]").setAppName("my").set("spark.executor.memory", "3g")
 	val sc = new SparkContext(conf)
 	val lines = sc.textFile(path, 2)			# Transformation, executed in the Driver
 	val words = lines.flatMap(_.split(" "))		# Transformation (split executed on workers)
@@ -47,13 +48,19 @@
 	val localValues = wordCounts.take(100)		# here is the code executed on the cluster!
 	localValues.foreach(r => println(r))
 ### Shell
-	./spark-shell --master local[1]		# allocate just 1 thread, this is a scala shell, context is available as sc, session as spark
-	./spark-shell --master local[12]	# use 12 if you have 6 cores
+	./spark-shell --master local[1]		# allocate just 1 thread(=task), this is a scala shell, context is available as sc, session as spark
+	./spark-shell --master local[12]	# use 12 threads, if you have 6 cores
+	./spark-shell --master local[*]		# start with as many threads as there are cores (not the best, most of the time you should choose twice-core-count)
+	./spark-submit --master --name "my" local[12] myapp.jar
+	./spark-submit --master spark://host1:12345,host2:12345 --name "my" myapp.jar
 	> val textFile = sc.textFile("r.md")	# an RDD is created with this line
 	> textFile.count()					# this is an Action, returns the items in RDD
 	> textFile.first()					# returns the first item
 	> l = textFile.filter(line => line.contains("Spark"))	# a new RDD is created
 	> l.count()
+
+<img src="spark-submit.png" width="550px">	
+
 ### RDD usage example in Scala
 	val rdd = sc.textFile("hdfs:/user/w.gz")	# take care: it is hard to parallelize GZIP -> you have to partition!
 	val parsedRDD = rdd.flatMap { line =>
@@ -135,6 +142,7 @@
 	rdd.collect()|.rdd.count()						# now execute the DAG!
 	rdd.saveToCassandra()
 	rdd = sc.cassandraTable("keyspace","table").select("col-1", "col-3").where("col-5 = ?", "blue")
+	rdd.persist(memORdisk)
 	
 ### python
 	from pyspark.sql import SQLContext, Row
@@ -145,13 +153,53 @@
 	
 ## Run types
 	1. locally
+		cfg: conf/spark-env.sh on each worker, with
+			-SPARK_LOCAL_DIRS(comma-separated list of SSDs to be used to persist RDDs or temporary data)
+			-SPARK_WORKER_CORES [def: ALL] # of corese to allow Spark apps to use on the machine
+			-SPARK_WORKER_INSTANCE: [default: 1] nr of worker instances to run on each machine
+			-SPARK_WORKER_MEMORY: [def: total-ram - 1 GB] memory to allow Spark apps to use on the machine
+			-SPARK_DAEMON_MEMORY [def: 512 MB]
+		 "spark.cores.max": max amount of CPU cores to request for the app from across the cluster
+		 "spark.executor.memory": memory for each executor (a worker machine can have several executors of several tasks)
+		./spark-submit --master --name "my" local[12] myapp.jar
 	2. standalone scheduler	# cassandra
-	3. yarn
+	3. yarn (yet another resource negotiation) with client or cluster mode
+		- driver = client, which starts/uses the cluster
+		- resource manager is the ~master, having scheduler and apps-master
+			can become highly-available via Zookeeper
+		- node manager is a worker node, having
+			app-master
+			container's having spark executor
+		yarn settings:
+			--num-executors
+			--executor-memory: ram for each executor
+			--executor-cores: cpu cores for each executor
+			Dynamic Allocation: live change nr of executors
+				spark.dynamicAllocation.enabled
+				spark.dynamicAllocation.minExecutors
+				spark.dynamicAllocation.maxExecutors
+				spark.dynamicAllocation.sustainedSchedulerBacklogTimeout
+				spark.dynamicAllocation.schedulerBacklogTimeout
+				spark.dynamicAllocation.executorIdleTimeout
+		UI: yarn resource manager UI: port: 8088
+		CMD: (client-mode)
+		./spark-submit --class org.apache.spark.examples.SparkPi --deploy-mode client --master yarn /opt/cloudera/parcels/jars/spark-examples.jar 10
 	4. mesos
 	
 ### Types of RDD
 	HadoopRDD, FilteredRDD, SchemaRDD, UnionRDD, JdbcRDD, JsonRDD, EdgeRDD, CassandraRDD, GeoRDD, EsSpark, ...
 	type(myrdd)
+	
+### Configuration
+	0. defaults
+	1. CMD params
+	2. spark-env.sh
+	3. in your code
+	
+### Spark  UI
+	port: 4040 / 7080 / 7081	# driver, master and worker have UIs
+	lists running workers & apps, incl details and (RDD-)Storage
+	lists worker running jobs running stages running tasks
 	
 ## Lifecycle of a Spark Program:
 	1. create input RDD from external data or parallelize a collection in your driver program
