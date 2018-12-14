@@ -166,6 +166,18 @@
 	Example:
 		how many lines of the input file were blank?
 		how many corrupt records were in the input dataset?
+	scala:
+		val accum = sc.accumulator(0)
+		sc.parallelize(Array(1,2,3)).foreach(x => accum += x)
+		accum.value
+	python:
+		accum = sc.accumulator(0)
+		rdd = sc.parallelize([1,2,3])
+		def f(x):
+			global accum
+			accum += x
+		rdd.foreach(f)
+		accum.value
 	
 ### Tachion: TODO!
 
