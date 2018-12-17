@@ -179,14 +179,35 @@
 		rdd.foreach(f)
 		accum.value
 	
-### Tachion: TODO!
+### Tachion:
+	TODO!
 
-### python
+### Python support: PySpark
+	Config:
+		"spark.python.worker.memory" = mem to use per python worker process (default: 512m)
+	PySpark is built on the Java API which is built on the Scala Core Engine
+		Uses normally the CPython implementation.
+		Alternative: pypy has JIT, so faster:
+		PYSPARK_DRIVER_PYTHON=pypy PYSPARK_PYTHON=pypy ./bin/pyspark
+		PYSPARK_DRIVER_PYTHON=pypy PYSPARK_PYTHON=pypy ./bin/spark-submit wordcount.py
+	py4j socket accommplishes the communication between PY and the Driver JVM
+	The Driver JVM commands the Worker Executor JVMs which starts and pipes to/from daemon.py which runs the (un)pickled user code
+		PythonRDD is the py-wrapper of RDD
+	.
 	from pyspark.sql import SQLContext, Row
 	array = map(lambda x: Row(key="k_%04d" % x, value = x), range(1, 5001))
 	largeSchemaRDD = sqlContext.inferSchema(sc.parallelize(array))
 	largeSchemaRDD.registerTempTable("largeTable")
 	display(sqlContext.sql("select * from largeTable"))		# IPython has display
+	.
+	rdd = sc.textFile("t")
+	def wordcount():
+		rdd.flatMap(lambda x:x.split('/'))\
+			.map(lambda x:(x,1)).reduceByKey(lambda x,y:x+y).collectAsMap()
+	def sort():
+		rdd.sortBy(lambda x:x, 1).count()
+	def stats():
+		sc.parallelize(range(1024), 20).flatMap(lambda x: xrange(5024)).stats()
 	
 ## Run types
 	1. locally
@@ -280,3 +301,76 @@
 		action functions are eg.:
 			reduce(), collect, count, first, take, takeSample, saveToCassandra, takeOrdered, saveAsTextFile,
 			countBykey, foreach()
+
+## Streaming
+	Creates an RDD stream (=DSTREAM) from the input stream and pushes it to Spark Core.
+	DSTREAM = discretized stream = RDD stream
+	There is a Spark Streaming UI (://localhost:4040/streaming/), showing stats
+	Use case: 
+		Page View Stream data analysis
+		Anomaly Detection or prediction in live weather data or smart meter reading
+	Precondition:
+		Handling (=processing) should take less time than the input intervall from the stream.
+### You can apply transformations on DSTREAM's, like
+		map(f), reduce, union, flatMap, join, filter, cogroup, repartition, reduceABykey, countByValue, count()
+			and
+		transform(f) # can be used to apply an RDD operatin that is not exposed in the DStream API
+			and
+		updateStateByKey(f)	# allows to maintain arbitrary state while continuously updating it with new info
+			(requires a checkpoint directory to be configured)
+			and
+		reduceByKeyAndWindow(f)
+			and (other window operations):
+		window(winLength, slideInterval)
+		countByWindow
+		reduceByWindow
+		reduceByKeyAndWindow
+		countByValueAndWindow
+
+	updateStateByKey function can be:
+		# maintain a running count of each word seen in a text data stream (here running count is an integer type of state):
+		def updateFunction(newValues, runningCount):
+			if runningCount is None:
+				runningCount = 0
+			return sum(newValues, runningCount)
+		runningCounts = pairs.updateStateByKey(updateFunction)
+		
+	transform(f) function can be:
+		spamInfoRDD = sc.pickleFile(...) # RDD containing spam info
+		# join data stream with spam info to do data cleaning
+		cleanedDStream = wordCounts.transform(lambda rdd: rdd.join(spamInfoRDD.filter(...))
+		
+	reduceByKeyAndWindow(f) function can be:
+		# window length: 3 time units
+		# sliding interval: 2 time units # both of these must be multiples of the batch interval of the source DStream
+		# reduce last 30 seconds of data, every 10 seconds:
+		windowedWordCounts = pairs.reduceByKeyAndWindow(lambda x, y: x + y, lambda x, y: x - y, 30, 10)
+	
+### Output operations on DStream's:
+	print, saveAsTextFile, saveAsObjectFiles, foreachRDD(f), saveAsHadoopFiles
+
+	Example:
+		TwitterUtils.createStream(...).filter(_.getText.contains("mytext")).countByWindow(Seconds(5))
+	Advanced usage:
+		You can have several input sources (=receivers) which you .union() to get one stream you can process further.
+
+### Streaming flow:
+<img src="spark-streaming.png" width="550px">
+
+### Receiver types (=data sources):
+<img src="spark-streaming.receiver.types.png" width="550px">
+	Docu for Kafka: https://spark.apache.org/latest/streaming-kafka-integration.html
+
+### Example: process socket input with PySpark:
+	from pyspark import SparkContext
+	from pyspark.streaming import StreamingContext
+	# create local StreamingContext with 2 thread and batch interval of 5 sec; name of the app: "NetworkWordCount"
+	sc = SparkContext("local[2]", "NetworkWordCount")
+	ssc = StreamingContext(sc, 5)
+	linesDStream = ssc.socketTextStream("localhost", 9999)
+	wordsDStream = linesDStream.flatMap(lambda line: line.split(" "))
+	pairsDStream = wordsDStream.map(lambda word: (word, 1))				# count each word in each batch
+	wordCountsDStream = pairsDStream.reduceByKey(lambda x, y: x + y)
+	wordCountsDStream.pprint()				# print the first 10 elements of each RDD generated in this DStream
+	ssc.start()							# start the computation
+	ssc.awaitTermination()

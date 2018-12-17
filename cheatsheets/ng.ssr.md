@@ -1,6 +1,7 @@
 # Angular SSR / Universal
 
-## create NG2+ project (with the CLI, as usual)
+## create Ng2+ project
+	with the CLI, as usual
 
 ## Use Angular Console to convert to Universal project.
 	Changed / New files:
