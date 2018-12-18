@@ -5,6 +5,9 @@
 		= has a Spark UI (web)
 	Spark = Spark-SQL & Streaming & MLlib & GraphX
 	https://spark-packages.org/	 = 3rd party libs
+	
+<img src="spark-overview.png" width="550px">
+
 ## Terms
 	RDD = Resilient Distributed Dataset
 		is Immutable in memory object
@@ -374,3 +377,67 @@
 	wordCountsDStream.pprint()				# print the first 10 elements of each RDD generated in this DStream
 	ssc.start()							# start the computation
 	ssc.awaitTermination()
+
+## Furher info
+	Open Data example:
+		https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3
+		(eg. in CSV)
+	latest docs: https://people.apache.org/~pwendell/spark-nightly/spark-master-docs/latest/
+	
+### speedup: manual schema def 
+	# automatic schema detection takes time
+	myDF = spark.read.csv('my.csv', header=True, inferSchema=True)
+	# schema declaration speeds up a lot AND you can remove spaces from col names
+	from pyspark.sql.types import StructType, StructField, IntegerType, StringType, BooleanType
+	mySchema = StructType([	StructField('callnumber', IntegerType(), True),
+							StructField('unitid', StringType(), True),
+							StructField('calltype', StringType(), True)])	# I can choose names as i like (but please without spaces)
+	myDF = spark.read.csv('my.csv', header=True, inferSchema=mySchema)
+	myDF = spark.read.csv('my.csv', header=True, inferSchema=True).withColumnRenamed('my col', 'mycol').cache()
+
+### first sight: use the DataFrame API
+	myDF.columns	# lists cols
+	myDF.count()	# calcs row count
+	myDF.select('calltype').show(5)		#select = transformation, show = action
+	myDF.select('calltype').distinct().show(5, False)
+	myDF.select('calltype').groupBy('calltype').count().orderBy("count", asceding=False)
+	myDF.printSchema()
+	display(myDF.limit(5))
+	
+### Date conversion, filter, select
+	from pyspark.sql.functions import *	# here is unix_timestamp
+	from_pattern1 = 'MM/dd/yyyy'
+	to_pattern1 = 'yyyy-MM-dd'
+	from_pattern2 = 'MM/dd/yyyy hh:mm:ss aa'
+	to_pattern2 = 'yyyy-MM-dd hh:mm:ss aa'
+	myDF = myDF.withColmn('calldatets', unix_timestamp(myDF['calldate'], from_pattern1).cast("timestamp").drop('calldate')
+	# everything before the .show() action is transformation
+	myDF.select(year('calldatets')).distinct().orderBy('year(calldatets)').show()
+	myDF.filter(year('calldatets') == '2016').filter(dayofyear('calldatets') >= 180).select(dayofyear('calldatets')).distinct().orderBy('dayofyear(calldatets)').show()
+	myDF.filter(year('calldatets') == '2016').filter(dayofyear('calldatets') >= 180).groupBy(dayofyear('calldatets')).count().orderBy('dayofyear(calldatets)').show()
+
+### Advanced DataFrame API
+	myDF.rdd.getNumPartitions() # optimal: #partitions = 2 or 3 times #slots
+	myDF.repartition(6).createOrReplaceTempView('myVIEW');
+	spark.catalog.cacheTable('myVIEW')
+	spark.table('myVIEW').count()	# call .count() to materialize the cache
+	
+	myDF = spark.table('myVIEW')
+	myDF.count()	# is fast if cached!
+	spark.catalog.isCached('myVIEW')
+	myDF.write.format('parquet').save('/tmp/myp/')	# writes [numPartitions]-count *.gz.parquet files
+	myDF = spark.read.parquet('/tmp/myp/')
+	myDF.count() # is fast as hell, because parquet is fast
+	spark.sql("select count(*) from myVIEW").show()
+	spark.sql("select `n`, count(`n`) as n_count from myDF WHERE year(`calldatets`) == '2016' GROUP BY `n` ORDER BY n_count DESC LIMIT 15").show().explain(True)
+	
+	spark.conf.get("spark.sql.shuffle.partitions")
+	spark.conf.set("spark.sql.shuffle.partitions", 6)
+	
+	joinedDF = myDF.join(myDF2, myDF.nr == myDF2.nr)
+	joinedDF.filter(year('calldatets') == '2015').filter(col('n') == 'myn').count()
+	display(joinedDF.filter(year('calldatets') == '2015').filter(col('n') == 'myn').groupBy('situ').count().orderBy(desc('count')).limit(10))
+	pandasDF = joinedDF.filter(year('calldatets') == '2015').toPandas()
+	pandasDF.dtypes
+	pandasDF.head()
+	pandasDF.describe()
