@@ -69,6 +69,7 @@
 <img src="spark-submit.png" width="550px">
 
 ### RDD usage example in Scala
+```scala
 	val rdd = sc.textFile("hdfs:/user/w.gz")	# take care: it is hard to parallelize GZIP -> you have to partition!
 	val parsedRDD = rdd.flatMap { line =>
 		line.split("""\s+""") match {
@@ -141,8 +142,9 @@
 		foreach { e =>
 			println(s"${e.pageTitle}: ${e.numR}")
 		}
-		
+```
 ## Advanced API
+```scala
 	rdd = sc.parallelize(["a","b","c"])
 	rdd = sc.textFile("/path")
 	cleanedrdd = rdd.coalesce(2)					# specify the nr. of partitions
@@ -154,7 +156,7 @@
 	rdd.unpersist()	# remove from memory
 	# this is fast, because no shuffle(no *ByKey-calls) -> this DAG has just 1 Stage!
 	sc.textFile("t.txt").map(mapFunc).flatMap(myFun).filter(fFunc).count()
-
+```
 ### Broadcast variables
 	send a large read-only lookup table to all the nodes, or send a large feature vector in a ML algorithm to all nodes
 	they let keep a read-only variable cached on each machine rather than shipping a copy of it with tasks.
@@ -172,10 +174,13 @@
 		how many lines of the input file were blank?
 		how many corrupt records were in the input dataset?
 	scala:
+```scala
 		val accum = sc.accumulator(0)
 		sc.parallelize(Array(1,2,3)).foreach(x => accum += x)
 		accum.value
+```
 	python:
+```python
 		accum = sc.accumulator(0)
 		rdd = sc.parallelize([1,2,3])
 		def f(x):
@@ -183,7 +188,7 @@
 			accum += x
 		rdd.foreach(f)
 		accum.value
-	
+```
 ### Tachion:
 	TODO!
 
@@ -367,6 +372,7 @@
 	Docu for Kafka: https://spark.apache.org/latest/streaming-kafka-integration.html
 
 ### Example: process socket input with PySpark:
+```python
 	from pyspark import SparkContext
 	from pyspark.streaming import StreamingContext
 	# create local StreamingContext with 2 thread and batch interval of 5 sec; name of the app: "NetworkWordCount"
@@ -379,7 +385,7 @@
 	wordCountsDStream.pprint()				# print the first 10 elements of each RDD generated in this DStream
 	ssc.start()							# start the computation
 	ssc.awaitTermination()
-
+```
 ## Furher info
 	Open Data example:
 		https://data.sfgov.org/Public-Safety/Fire-Department-Calls-for-Service/nuek-vuh3
@@ -387,6 +393,7 @@
 	latest docs: https://people.apache.org/~pwendell/spark-nightly/spark-master-docs/latest/
 	
 ### speedup: manual schema def 
+```python
 	# automatic schema detection takes time
 	myDF = spark.read.csv('my.csv', header=True, inferSchema=True)
 	# schema declaration speeds up a lot AND you can remove spaces from col names
@@ -396,8 +403,9 @@
 							StructField('calltype', StringType(), True)])	# I can choose names as i like (but please without spaces)
 	myDF = spark.read.csv('my.csv', header=True, inferSchema=mySchema)
 	myDF = spark.read.csv('my.csv', header=True, inferSchema=True).withColumnRenamed('my col', 'mycol').cache()
-
+```
 ### first sight: use the DataFrame API
+```python
 	myDF.columns	# lists cols
 	myDF.count()	# calcs row count
 	myDF.select('calltype').show(5)		#select = transformation, show = action
@@ -405,8 +413,9 @@
 	myDF.select('calltype').groupBy('calltype').count().orderBy("count", asceding=False)
 	myDF.printSchema()
 	display(myDF.limit(5))
-	
+```
 ### Date conversion, filter, select
+```python
 	from pyspark.sql.functions import *	# here is unix_timestamp
 	from_pattern1 = 'MM/dd/yyyy'
 	to_pattern1 = 'yyyy-MM-dd'
@@ -417,8 +426,9 @@
 	myDF.select(year('calldatets')).distinct().orderBy('year(calldatets)').show()
 	myDF.filter(year('calldatets') == '2016').filter(dayofyear('calldatets') >= 180).select(dayofyear('calldatets')).distinct().orderBy('dayofyear(calldatets)').show()
 	myDF.filter(year('calldatets') == '2016').filter(dayofyear('calldatets') >= 180).groupBy(dayofyear('calldatets')).count().orderBy('dayofyear(calldatets)').show()
-
+```
 ### Advanced DataFrame API
+```python
 	myDF.rdd.getNumPartitions() # optimal: #partitions = 2 or 3 times #slots
 	myDF.repartition(6).createOrReplaceTempView('myVIEW');
 	spark.catalog.cacheTable('myVIEW')
@@ -443,3 +453,4 @@
 	pandasDF.dtypes
 	pandasDF.head()
 	pandasDF.describe()
+```
