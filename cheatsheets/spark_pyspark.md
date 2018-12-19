@@ -76,7 +76,7 @@ print(lr_model.intercept)
 training_predictions = lr_model.evaluate(train_df)
 print(training_predictions.r2)
 
-test_predictions=lr_model.evaluate(test_df)
+test_predictions = lr_model.evaluate(test_df)
 print(test_results.r2) # [Out]: 0.87
 print(test_results.meanSquaredError) # [Out]: 0.00014
 ```
@@ -100,7 +100,7 @@ df_assembler = VectorAssembler(inputCols=['se_Vector','co_Vector','Age', 'Repeat
 df = df_assembler.transform(df)
 df.select(['features','Status']).show(10,False)
 model_df = df.select(['features','Status'])
-training_df,test_df=model_df.randomSplit([0.75,0.25])
+training_df,test_df = model_df.randomSplit([0.75,0.25])
 from pyspark.ml.classification import LogisticRegression
 log_reg = LogisticRegression(labelCol='Status').fit(training_df)
 train_results = log_reg.evaluate(training_df).predictions
@@ -125,7 +125,7 @@ df = df_assembler.transform(df)
 model_df = df.select(['features','affrs'])
 train_df,test_df=model_df.randomSplit([0.75,0.25])
 from pyspark.ml.classification import RandomForestClassifier
-rf_classifier=RandomForestClassifier(labelCol='affrs', numTrees=50).fit(train_df)
+rf_classifier = RandomForestClassifier(labelCol='affrs', numTrees=50).fit(train_df)
 rf_predictions = rf_classifier.transform(test_df)
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
@@ -141,8 +141,8 @@ df.schema["features"].metadata["ml_attr"]["attrs"]
 ```python
 from pyspark.ml.classification import RandomForestClassificationModel
 rf_classifier.save("/home/RF_model")
-rf=RandomForestClassificationModel.load("/home/RF_model")
-new_preditions=rf.transform(new_df)
+rf = RandomForestClassificationModel.load("/home/RF_model")
+new_preditions = rf.transform(new_df)
 ```
 
 # Recommender
