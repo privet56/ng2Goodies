@@ -84,8 +84,8 @@ print(test_results.meanSquaredError) # [Out]: 0.00014
 ```python
 from pyspark.ml.feature import StringIndexer
 from pyspark.ml.feature import VectorAssembler
-search_engine_indexer =StringIndexer(inputCol="se",   OutputCol="se_Num").fit(df)
-df = search_engine_indexer.transform(df)
+se_indxr = StringIndexer(inputCol="se",   OutputCol="se_Num").fit(df)
+df = se_indxr.transform(df)
 df.show(3,False)
 df.groupBy('se').count().orderBy('count', ascending=False).show(5,False)
 from pyspark.ml.feature import OneHotEncoder
@@ -99,13 +99,13 @@ df.groupBy('co_Vector').count().orderBy('count', ascending=False).show(5,False)
 df_assembler = VectorAssembler(inputCols=['se_Vector','co_Vector','Age', 'RepeatVisit', 'pagevw'], outputCol="features")
 df = df_assembler.transform(df)
 df.select(['features','Status']).show(10,False)
-model_df=df.select(['features','Status'])
+model_df = df.select(['features','Status'])
 training_df,test_df=model_df.randomSplit([0.75,0.25])
 from pyspark.ml.classification import LogisticRegression
-log_reg=LogisticRegression(labelCol='Status').fit(training_df)
-train_results=log_reg.evaluate(training_df).predictions
+log_reg = LogisticRegression(labelCol='Status').fit(training_df)
+train_results = log_reg.evaluate(training_df).predictions
 train_results.filter(train_results['Status']==1).filter(train_results['prediction']==1).select(['Status', 'prediction','probability']).show(10,False)
-results=log_reg.evaluate(test_df).predictions
+results = log_reg.evaluate(test_df).predictions
 results.select(['Status','prediction']).show(10,False)
 
 tp = results[(results.Status == 1) & (results.prediction == 1)].count()
@@ -113,27 +113,27 @@ tn = results[(results.Status == 0) & (results.prediction == 0)].count()
 fp = results[(results.Status == 0) & (results.prediction == 1)].count()
 fn = results[(results.Status == 1) & (results.prediction == 0)].count()
 
-accuracy=float((true_postives+true_negatives) /(results.count()))
-recall = float(true_postives)/(true_postives + false_negatives)
-precision = float(true_postives) / (true_postives + false_positives)
+accuracy    = float(true_postives + true_negatives) / (results.count())
+recall      = float(true_postives) / (true_postives + false_negatives)
+precision   = float(true_postives) / (true_postives + false_positives)
 ```
 # Random Forest
 ```python
 from pyspark.ml.feature import VectorAssembler
 df_assembler = VectorAssembler(inputCols=['rate_mrr', 'age', 'yrs_mrr', 'chldr', 'reli'], outputCol="features")
 df = df_assembler.transform(df)
-model_df=df.select(['features','affrs'])
+model_df = df.select(['features','affrs'])
 train_df,test_df=model_df.randomSplit([0.75,0.25])
 from pyspark.ml.classification import RandomForestClassifier
 rf_classifier=RandomForestClassifier(labelCol='affrs', numTrees=50).fit(train_df)
-rf_predictions=rf_classifier.transform(test_df)
+rf_predictions = rf_classifier.transform(test_df)
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
 rf_accuracy = MulticlassClassificationEvaluator(labelCol='affrs',metricName='accuracy').evaluate(rf_predictions)
 print('The accuracy of RF on test data is {0:.0%}'.format(rf_accuracy))
 rf_precision = MulticlassClassificationEvaluator(labelCol='affrs',metricName='weightedPrecision').evaluate(rf_predictions)
 print('The precision rate on test data is {0:.0%}'.format(rf_precision))
-rf_auc=BinaryClassificationEvaluator(labelCol='affrs').evaluate(rf_predictions)
+rf_auc = BinaryClassificationEvaluator(labelCol='affrs').evaluate(rf_predictions)
 rf_classifier.featureImportances
 df.schema["features"].metadata["ml_attr"]["attrs"]
 ```
@@ -152,7 +152,7 @@ from pyspark.ml.feature import StringIndexer, IndexToString
 stringIndexer = StringIndexer(inputCol="title", outputCol="title_new")
 model = stringIndexer.fit(df)
 indexed = model.transform(df)
-train,test=indexed.randomSplit([0.75,0.25])
+train,test = indexed.randomSplit([0.75,0.25])
 from pyspark.ml.recommendation import ALS
 rec = ALS(maxIter=10,regParam=0.01,userCol='userId', itemCol='title_new',ratingCol='rating',nonnegative=True, coldStartStrategy="drop")
 rec_model = rec.fit(train)
@@ -277,9 +277,9 @@ true_negatives  = results[(results.Label == 0) & (results.prediction == 0)].coun
 false_positives = results[(results.Label == 0) & (results.prediction == 1)].count()
 false_negatives = results[(results.Label == 1) & (results.prediction == 0)].count()
 
-recall      = float(true_postives)/(true_postives + false_negatives)
+recall      = float(true_postives) / (true_postives + false_negatives)
 precision   = float(true_postives) / (true_postives + false_positives)
-accuracy    = float((true_postives+true_negatives) /(results.count()))
+accuracy    = float(true_postives + true_negatives) / (results.count())
 ```
 ## Embedding
 ```python
