@@ -154,11 +154,11 @@ model = stringIndexer.fit(df)
 indexed = model.transform(df)
 train,test=indexed.randomSplit([0.75,0.25])
 from pyspark.ml.recommendation import ALS
-rec=ALS(maxIter=10,regParam=0.01,userCol='userId', itemCol='title_new',ratingCol='rating',nonnegative=True,
-coldStartStrategy="drop")
+rec=ALS(maxIter=10,regParam=0.01,userCol='userId', itemCol='title_new',ratingCol='rating',nonnegative=True, coldStartStrategy="drop")
 rec_model=rec.fit(train)
 predicted_ratings=rec_model.transform(test)
- from pyspark.ml.evaluation import RegressionEvaluator
+
+from pyspark.ml.evaluation import RegressionEvaluator
 evaluator=RegressionEvaluator(metricName='rmse', predictionCol='prediction',labelCol='rating')
 rmse=evaluator.evaluate(predictions)
 print(rmse) # [Out]: 1.0293
@@ -167,12 +167,12 @@ unique_movies=indexed.select('title_new').distinct()
 a = unique_movies.alias('a')
 watched_movies=indexed.filter(indexed['userId'] == user_id).select('title_new').distinct()
 b = watched_movies.alias('b')
-total_movies = a.join(b, a.title_new == b.title_new,how='left')
-remaining_movies=total_movies.where(col("b.title_new").isNull()).select(a.title_new).distinct()
-remaining_movies=remaining_movies.withColumn("userId",lit(int(user_id)))
-recommendations=rec_model.transform(remaining_movies).orderBy('prediction',ascending=False)
-movie_title = IndexToString(inputCol="title_new", outputCol="title",labels=model.labels)
-final_recommendations=movie_title.transform(recommendations)
+total_movies = a.join(b, a.title_new == b.title_new, how='left')
+remaining_movies = total_movies.where(col("b.title_new").isNull()).select(a.title_new).distinct()
+remaining_movies = remaining_movies.withColumn("userId",lit(int(user_id)))
+recommendations = rec_model.transform(remaining_movies).orderBy('prediction',ascending=False)
+movie_title = IndexToString(inputCol="title_new", outputCol="title", labels=model.labels)
+final_recommendations = movie_title.transform(recommendations)
 ```
 # Clustering
 ## KMeans
@@ -188,7 +188,7 @@ for k in range(2,10):
 kmeans = KMeans(featuresCol='features',k=3)
 model = kmeans.fit(final_data)
 model.transform(final_data).groupBy('prediction').count().show()
-predictions=model.transform(final_data)
+predictions = model.transform(final_data)
 predictions.groupBy('species','prediction').count().show()
 ```
 ### Plot
@@ -219,55 +219,55 @@ df=spark.createDataFrame([(1,'I really liked this movie'),
     ['user_id','review'])
 
 from pyspark.ml.feature import Tokenizer
-tokenization=Tokenizer(inputCol='review',outputCol='tokens')
-tokenized_df=tokenization.transform(df)
+tokenization = Tokenizer(inputCol='review',outputCol='tokens')
+tokenized_df = tokenization.transform(df)
 from pyspark.ml.feature import StopWordsRemover
-stopword_removal=StopWordsRemover(inputCol='tokens', outputCol='refined_tokens')
-refined_df=stopword_removal.transform(tokenized_df)
+stopword_removal = StopWordsRemover(inputCol='tokens', outputCol='refined_tokens')
+refined_df = stopword_removal.transform(tokenized_df)
 refined_df.select(['user_id','tokens','refined_tokens']).show(4,False)
 
 from pyspark.ml.feature import CountVectorizer
-count_vec=CountVectorizer(inputCol='refined_tokens', outputCol='features')
-cv_df=count_vec.fit(refined_df).transform(refined_df)
+count_vec = CountVectorizer(inputCol='refined_tokens', outputCol='features')
+cv_df = count_vec.fit(refined_df).transform(refined_df)
 cv_df.select(['user_id','refined_tokens','features']).show(4,False)
 
 count_vec.fit(refined_df).vocabulary
 
 # TF-IDF
 from pyspark.ml.feature import HashingTF,IDF
-hashing_vec=HashingTF(inputCol='refined_tokens', outputCol='tf_features')
-hashing_df=hashing_vec.transform(refined_df)
+hashing_vec = HashingTF(inputCol='refined_tokens', outputCol='tf_features')
+hashing_df = hashing_vec.transform(refined_df)
 hashing_df.select(['user_id','refined_tokens', 'tf_features']).show(4,False)
-tf_idf_vec=IDF(inputCol='tf_features',outputCol='tf_idf_features')
-tf_idf_df=tf_idf_vec.fit(hashing_df).transform(hashing_df)
+tf_idf_vec = IDF(inputCol='tf_features',outputCol='tf_idf_features')
+tf_idf_df = tf_idf_vec.fit(hashing_df).transform(hashing_df)
 tf_idf_df.select(['user_id','tf_idf_features']).show(4,False)
 
 # Text Classification
-text_df=text_df.withColumn("Label", text_df.Sentiment.cast('float')).drop('Sentiment')
+text_df = text_df.withColumn("Label", text_df.Sentiment.cast('float')).drop('Sentiment')
 from pyspark.sql.functions import length
-text_df=text_df.withColumn('length',length(text_df['Review']))
+text_df = text_df.withColumn('length',length(text_df['Review']))
 text_df.groupBy('Label').agg({'Length':'mean'}).show()
-tokenization=Tokenizer(inputCol='Review',outputCol='tokens')
-tokenized_df=tokenization.transform(text_df)
-stopword_removal=StopWordsRemover(inputCol='tokens',  outputCol='refined_tokens')
-refined_text_df=stopword_removal.transform(tokenized_df)
+tokenization = Tokenizer(inputCol='Review',outputCol='tokens')
+tokenized_df = tokenization.transform(text_df)
+stopword_removal = StopWordsRemover(inputCol='tokens',  outputCol='refined_tokens')
+refined_text_df = stopword_removal.transform(tokenized_df)
 from pyspark.sql.functions import udf
 from pyspark.sql.types import IntegerType
 from pyspark.sql.functions import *
 len_udf = udf(lambda s: len(s), IntegerType())
 refined_text_df = refined_text_df.withColumn("token_count", len_udf(col('refined_tokens')))
 refined_text_df.orderBy(rand()).show(10)
-count_vec=CountVectorizer(inputCol='refined_tokens', outputCol='features')
-cv_text_df=count_vec.fit(refined_text_df).transform(refined_text_df)
+count_vec = CountVectorizer(inputCol='refined_tokens', outputCol='features')
+cv_text_df = count_vec.fit(refined_text_df).transform(refined_text_df)
 cv_text_df.select(['refined_tokens','token_count','features', 'Label']).show(10)
-model_text_df=cv_text_df.select(['features', 'token_count','Label'])
+model_text_df = cv_text_df.select(['features', 'token_count','Label'])
 rom pyspark.ml.feature import VectorAssembler
 df_assembler = VectorAssembler(inputCols=['features', 'token_count'], outputCol='features_vec')
 model_text_df = df_assembler.transform(model_text_df)
 from pyspark.ml.classification import LogisticRegression
-training_df,test_df=model_text_df.randomSplit([0.75,0.25])
-log_reg=LogisticRegression(featuresCol='features_vec', labelCol='Label').fit(training_df)
-results=log_reg.evaluate(test_df).predictions
+training_df, test_df = model_text_df.randomSplit([0.75,0.25])
+log_reg = LogisticRegression(featuresCol='features_vec', labelCol='Label').fit(training_df)
+results = log_reg.evaluate(test_df).predictions
 results.show()
 
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
