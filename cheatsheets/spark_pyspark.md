@@ -17,12 +17,12 @@ spark=SparkSession.builder.getOrCreate()
 ## Data Input / Output
 ```python
 from pyspark.sql import SparkSession
-spark=SparkSession.builder.appName('data_processing').getOrCreate()
-df=spark.read.csv('sample_data.csv',inferSchema=True, header=True)
-df.columns  # [Out]: ['ratings', 'age', 'experience', 'family', 'mobile']
+spark=SparkSession.builder.appName('d').getOrCreate()
+df=spark.read.csv('d.csv',inferSchema=True, header=True)
+df.columns  # [Out]: ['r', 'age', 'exp', 'fam', 'mob']
 df.printSchema()
 df.show(3)
-df.select('age','mobile').show(5)
+df.select('age','mob').show(5)
 df.describe().show()
 print((df.count),(len(df.columns))  # [Out]: ( 33,5)
 
@@ -34,30 +34,30 @@ df.write.format('parquet').save("/tmp/m")
 df.withColumn("age_after_10_yrs",(df["age"]+10)).show(10,False)
 from pyspark.sql.types import StringType,DoubleType
 df.withColumn('age_double',df['age'].cast(DoubleType())).show(10,False)
-df.filter(df['mobile']=='Vivo').show()
-df.filter(df['mobile']=='Vivo').select('age','ratings', 'mobile').show()
-df.filter(df['mobile']=='Vivo').filter(df['experience'] > 10).show()
-df.filter((df['mobile']=='Vivo')&(df['experience'] >10)).show()
-df.select('mobile').distinct().show()
-df.select('mobile').distinct().count()
-df.groupBy('mobile').count().show(5,False)
-df.groupBy('mobile').count().orderBy('count',ascending=False).show(5,False)
-df.groupBy('mobile').mean().show(5,False)
-df.groupBy('mobile').sum().show(5,False)
-df.groupBy('mobile').max().show(5,False)
-df.groupBy('mobile').agg({'experience':'sum'}).show(5,False)
+df.filter(df['mob']=='Vi').show()
+df.filter(df['mob']=='Vi').select('age','r', 'mob').show()
+df.filter(df['mob']=='Vi').filter(df['exp'] > 10).show()
+df.filter((df['mob']=='Vi')&(df['exp'] >10)).show()
+df.select('mob').distinct().show()
+df.select('mob').distinct().count()
+df.groupBy('mob').count().show(5,False)
+df.groupBy('mob').count().orderBy('count',ascending=False).show(5,False)
+df.groupBy('mob').mean().show(5,False)
+df.groupBy('mob').sum().show(5,False)
+df.groupBy('mob').max().show(5,False)
+df.groupBy('mob').agg({'exp':'sum'}).show(5,False)
 from pyspark.sql.functions import udf   # User-Defined Functions (UDFs)
 brand_udf=udf(price_range,StringType())
-df.withColumn('price_range',brand_udf(df['mobile'])).show(10,False)
+df.withColumn('price_range',brand_udf(df['mob'])).show(10,False)
 age_udf = udf(lambda age: "young" if age <= 30 else"senior", StringType())
 df.withColumn("age_group", age_udf(df.age)).show(10,False) 
 from pyspark.sql.functions import pandas_udf
 length_udf = pandas_udf(remaining_yrs, IntegerType())
 df.withColumn("yrs_left", length_udf(df['age'])).show(10,False)
 prod_udf = pandas_udf(prod, DoubleType())
-df.withColumn("product",prod_udf(df['ratings'], df['experience'])).show(10,False)
+df.withColumn("product",prod_udf(df['r'], df['exp'])).show(10,False)
 df=df.dropDuplicates()
-df_new=df.drop('mobile')
+df_new=df.drop('mob')
 ```
 # Linear Regression
 ```python
@@ -84,19 +84,19 @@ print(test_results.meanSquaredError) # [Out]: 0.00014
 ```python
 from pyspark.ml.feature import StringIndexer
 from pyspark.ml.feature import VectorAssembler
-search_engine_indexer =StringIndexer(inputCol="Search_Engine",   OutputCol="Search_Engine_Num").fit(df)
+search_engine_indexer =StringIndexer(inputCol="se",   OutputCol="se_Num").fit(df)
 df = search_engine_indexer.transform(df)
 df.show(3,False)
-df.groupBy('Search_Engine').count().orderBy('count', ascending=False).show(5,False)
+df.groupBy('se').count().orderBy('count', ascending=False).show(5,False)
 from pyspark.ml.feature import OneHotEncoder
-search_engine_encoder=OneHotEncoder(inputCol="Search_Engine_Num", outputCol="Search_Engine_Vector")
+search_engine_encoder=OneHotEncoder(inputCol="se_Num", outputCol="se_Vector")
 df = search_engine_encoder.transform(df)
-df.groupBy('Search_Engine_Vector').count().orderBy('count', ascending=False).show(5,False)
-country_encoder = OneHotEncoder(inputCol="Country_Num", outputCol="Country_Vector")
+df.groupBy('se_Vector').count().orderBy('count', ascending=False).show(5,False)
+country_encoder = OneHotEncoder(inputCol="co_Num", outputCol="co_Vector")
 df = country_encoder.transform(df)
-df.select(['Country','Country_Num','Country_Vector']).show(3,False)
-df.groupBy('Country_Vector').count().orderBy('count', ascending=False).show(5,False)
-df_assembler = VectorAssembler(inputCols=['Search_Engine_Vector','Country_Vector','Age', 'Repeat_Visitor', 'Web_pages_viewed'], outputCol="features")
+df.select(['co','co_Num','co_Vector']).show(3,False)
+df.groupBy('co_Vector').count().orderBy('count', ascending=False).show(5,False)
+df_assembler = VectorAssembler(inputCols=['se_Vector','co_Vector','Age', 'RepeatVisit', 'pagevw'], outputCol="features")
 df = df_assembler.transform(df)
 df.select(['features','Status']).show(10,False)
 model_df=df.select(['features','Status'])
@@ -120,20 +120,20 @@ precision = float(true_postives) / (true_postives + false_positives)
 # Random Forest
 ```python
 from pyspark.ml.feature import VectorAssembler
-df_assembler = VectorAssembler(inputCols=['rate_marriage', 'age', 'yrs_married', 'children', 'religious'], outputCol="features")
+df_assembler = VectorAssembler(inputCols=['rate_mrr', 'age', 'yrs_mrr', 'chldr', 'reli'], outputCol="features")
 df = df_assembler.transform(df)
-model_df=df.select(['features','affairs'])
+model_df=df.select(['features','affrs'])
 train_df,test_df=model_df.randomSplit([0.75,0.25])
 from pyspark.ml.classification import RandomForestClassifier
-rf_classifier=RandomForestClassifier(labelCol='affairs', numTrees=50).fit(train_df)
+rf_classifier=RandomForestClassifier(labelCol='affrs', numTrees=50).fit(train_df)
 rf_predictions=rf_classifier.transform(test_df)
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator
 from pyspark.ml.evaluation import BinaryClassificationEvaluator
-rf_accuracy = MulticlassClassificationEvaluator(labelCol='affairs',metricName='accuracy').evaluate(rf_predictions)
+rf_accuracy = MulticlassClassificationEvaluator(labelCol='affrs',metricName='accuracy').evaluate(rf_predictions)
 print('The accuracy of RF on test data is {0:.0%}'.format(rf_accuracy))
-rf_precision = MulticlassClassificationEvaluator(labelCol='affairs',metricName='weightedPrecision').evaluate(rf_predictions)
+rf_precision = MulticlassClassificationEvaluator(labelCol='affrs',metricName='weightedPrecision').evaluate(rf_predictions)
 print('The precision rate on test data is {0:.0%}'.format(rf_precision))
-rf_auc=BinaryClassificationEvaluator(labelCol='affairs').evaluate(rf_predictions)
+rf_auc=BinaryClassificationEvaluator(labelCol='affrs').evaluate(rf_predictions)
 rf_classifier.featureImportances
 df.schema["features"].metadata["ml_attr"]["attrs"]
 ```
@@ -154,18 +154,18 @@ model = stringIndexer.fit(df)
 indexed = model.transform(df)
 train,test=indexed.randomSplit([0.75,0.25])
 from pyspark.ml.recommendation import ALS
-rec=ALS(maxIter=10,regParam=0.01,userCol='userId', itemCol='title_new',ratingCol='rating',nonnegative=True, coldStartStrategy="drop")
-rec_model=rec.fit(train)
-predicted_ratings=rec_model.transform(test)
+rec = ALS(maxIter=10,regParam=0.01,userCol='userId', itemCol='title_new',ratingCol='rating',nonnegative=True, coldStartStrategy="drop")
+rec_model = rec.fit(train)
+predicted_ratings = rec_model.transform(test)
 
 from pyspark.ml.evaluation import RegressionEvaluator
-evaluator=RegressionEvaluator(metricName='rmse', predictionCol='prediction',labelCol='rating')
-rmse=evaluator.evaluate(predictions)
+evaluator = RegressionEvaluator(metricName='rmse' predictionCol='prediction',labelCol='rating')
+rmse = evaluator.evaluate(predictions)
 print(rmse) # [Out]: 1.0293
 
-unique_movies=indexed.select('title_new').distinct()
+unique_movies = indexed.select('title_new').distinct()
 a = unique_movies.alias('a')
-watched_movies=indexed.filter(indexed['userId'] == user_id).select('title_new').distinct()
+watched_movies = indexed.filter(indexed['userId'] == user_id).select('title_new').distinct()
 b = watched_movies.alias('b')
 total_movies = a.join(b, a.title_new == b.title_new, how='left')
 remaining_movies = total_movies.where(col("b.title_new").isNull()).select(a.title_new).distinct()
@@ -212,10 +212,10 @@ plt.show()
 ```
 # NLP, Natural Language Processing
 ```python
-df=spark.createDataFrame([(1,'I really liked this movie'),
-    (2,'I would recommend this movie to my friends'),
-    (3,'movie was alright but acting was horrible'),
-    (4,'I am never watching that movie ever again')],
+df=spark.createDataFrame([(1,'liked a lot'),
+    (2,'liked'),
+    (3,'was alright'),
+    (4,'not good')],
     ['user_id','review'])
 
 from pyspark.ml.feature import Tokenizer
