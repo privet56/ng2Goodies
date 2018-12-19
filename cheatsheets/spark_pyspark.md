@@ -212,7 +212,8 @@ plt.show()
 ```
 # NLP, Natural Language Processing
 ```python
-df=spark.createDataFrame([(1,'liked a lot'),
+df=spark.createDataFrame([
+    (1,'liked a lot'),
     (2,'liked'),
     (3,'was alright'),
     (4,'not good')],
@@ -302,30 +303,30 @@ aggregations = []
 aggregations.append(max(col('final_page')).alias('page_emb'))
 aggregations.append(max(col('final_time_spent')).alias('time_spent_emb'))
 aggregations.append(max(col('converted')).alias('converted_emb'))
-df_embedding = df.select(['user_id','indicator_cummulative', 'final_page','final_time_spent','converted']).groupBy(['user_id','indicator_cummulative']).agg(*aggregations)
+dfEmb = df.select(['user_id','indicator_cummulative', 'final_page','final_time_spent','converted']).groupBy(['user_id','indicator_cummulative']).agg(*aggregations)
 w4 = Window.partitionBy(["user_id"]).orderBy('indicator_cummulative')
 w5 = Window.partitionBy(["user_id"]).orderBy(col('indicator_cummulative').desc())
 
-df_embedding = df_embedding.withColumn('journey_page', collect_list(col('page_emb')).over(w4))\
+dfEmb = dfEmb.withColumn('journey_page', collect_list(col('page_emb')).over(w4))\
  .withColumn('journey_time_temp', collect_list(col('time_spent_emb')).over(w4)) \
  .withColumn('journey_page_final', first('journey_page').over(w5)) \
  .withColumn('journey_time_final', first('journey_time_temp').over(w5)) \
  .select(['user_id','journey_page_final', 'journey_time_final','converted_emb'])
 
-df_embedding = df_embedding.dropDuplicates()
-df_embedding.count()
-df_embedding.select('user_id').distinct().count()
-df_embedding.select('user_id','journey_page_final','journey_time_final').show(10)
+dfEmb = dfEmb.dropDuplicates()
+dfEmb.count()
+dfEmb.select('user_id').distinct().count()
+dfEmb.select('user_id','journey_page_final','journey_time_final').show(10)
 
-pd_df_emb0 = df_embedding.toPandas()
-pd_df_embedding = pd_df_embedding.reset_index(drop=True)
+pd_df_emb0 = dfEmb.toPandas()
+pd_dfEmb = pd_dfEmb.reset_index(drop=True)
 !pip install gensim
 from gensim.models import Word2Vec
 EMBEDDING_SIZE = 100
-model = Word2Vec(pd_df_embedding['journey_page_final'], size=EMBEDDING_SIZE)
+model = Word2Vec(pd_dfEmb['journey_page_final'], size=EMBEDDING_SIZE)
 print(model) # [Out]: Word2Vec(vocab=7, size=100, alpha=0.025)
 page_categories = list(model.wv.vocab)
-print(page_categories) # [Out]: ['product info', 'homepage', 'added to cart', 'others', 'reviews', 'offers', 'buy']
+print(page_categories) # [Out]: ['pinf', 'home', 'added2crt', 'others', 'reviews', 'offers', 'buy']
 model['offers'].shape # [Out]: (100,)
 
 pca = PCA(n_components=2)
