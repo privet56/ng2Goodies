@@ -87,4 +87,14 @@
 	3. release often
 	4. regular demos to stakeholders
 
+## Scrum VS Kanban
 <img src="scrum.vs.kanban.png" width="550px">
+
+## Large companies, like SIEMENS, use Kanban
+<img src="scrum.kanban_at_siemens.png" width="550px">
+
+## Bossless-ness relies on self-organization
+<img src="scrum_is_bossless.png" width="550px">
+
+## Is Scrum the right solution for you?
+<img src="scrum_suited_or_not.png" width="550px">
