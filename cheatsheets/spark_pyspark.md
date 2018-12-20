@@ -58,6 +58,10 @@ prod_udf = pandas_udf(prod, DoubleType())
 df.withColumn("product",prod_udf(df['r'], df['exp'])).show(10,False)
 df=df.dropDuplicates()
 df_new=df.drop('mob')
+
+from pyspark.sql.functions import rand
+df.orderBy(rand()).show(10,False)
+
 ```
 # Linear Regression
 ```python
@@ -200,7 +204,7 @@ cluster_number = range(2,10)
 plt.xlabel('Number of Clusters (K)')
 plt.ylabel('SSE')
 plt.scatter(cluster_number,errors)
-plt.show()
+plt.show()  # you can see on the 'elbow' method, which cluster size is best
 
 pandas_df = predictions.toPandas()
 pandas_df.head()
@@ -235,7 +239,7 @@ cv_df.select(['user_id','refined_tokens','features']).show(4,False)
 count_vec.fit(refined_df).vocabulary
 
 # TF-IDF
-from pyspark.ml.feature import HashingTF,IDF
+from pyspark.ml.feature import HashingTF, IDF
 hashing_vec = HashingTF(inputCol='refined_tokens', outputCol='tf_features')
 hashing_df = hashing_vec.transform(refined_df)
 hashing_df.select(['user_id','refined_tokens', 'tf_features']).show(4,False)
@@ -281,7 +285,7 @@ recall      = float(true_postives) / (true_postives + false_negatives)
 precision   = float(true_postives) / (true_postives + false_positives)
 accuracy    = float(true_postives + true_negatives) / (results.count())
 ```
-## Embedding
+## Sequence Embedding
 ```python
 df.select(['user_id','page','visit_number','time_spent', 'converted']).show(10,False)
 w = Window.partitionBy("user_id").orderBy('timestamp')
@@ -329,7 +333,7 @@ page_categories = list(model.wv.vocab)
 print(page_categories) # [Out]: ['pinf', 'home', 'added2crt', 'others', 'reviews', 'offers', 'buy']
 model['offers'].shape # [Out]: (100,)
 
-pca = PCA(n_components=2)
+pca = PCA(n_components=2)   # dimensionality reduction technique (PCA)
 result = pca.fit_transform(X)
 plt.figure(figsize=(10,10))
 plt.scatter(result[:, 0], result[:, 1])
