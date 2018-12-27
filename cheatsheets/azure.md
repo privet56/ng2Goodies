@@ -5,6 +5,7 @@
 	includes Networking Services (virtual network, load balancer, application gateway, DNS, CDN, VPN Gateway)
 	includes Storage Domain
 	includes Web & Mobile Services
+	Underlying technology: HyperV (AWS uses the Xen hypervisor)
 
 <img src="azure.compute.services.png" width="550px">
 
@@ -87,3 +88,94 @@
 # Web & Mobile Services
 
 <img src="azure.web.mobile.services.png" width="550px">
+
+## Web Apps
+	build & host websites in the programming language of your choice without managing infrastructure
+## Mobile Apps
+	Mobile Apps in Azure App Service offer a highly scalable, globally available mobile app development platform for Enterprise developers and System Integrators
+## API Apps
+	API Apps in Azure App Service offer features that make it easier to develop, host and consume APIs in the cloud and on-premises
+## Logic Apps
+	Logic Apps provide a way to simplify and implement scalable integrations and workflows in the cloud
+	it provides a visual designer to model and automate your process as a series of steps known as a workflow
+## Notification Hubs
+	provieds an easy-to-use, multi-platform, scaled-out push engine
+## Event Hubs
+	is a highly scalable data streaming platform capable of ingesting millions of events per second
+	data sent to an event hub can be transformed and stored using any real-time analytics provider or batching/storage adapters
+## Azure Search
+	is a cloud search-as-a-service solution that delegates server and infrastructure management to MS
+	leaves you with a ready-to-use service that you can populate with your data and then use to add search to your web or mobile app
+
+# Aure Database Services
+
+<img src="azure.db.services.png" width="550px">
+
+## SQL Database
+	relational database service based on MS SQL Server engine
+## DocumentDB
+	fully managed NoSQL db service
+## Redis Cache
+	key-value store, can contain data structures, such as string, list, sets
+	
+# Enterprise Integration Services
+	contain Service Bus and SQL Sesrver Stretch DB
+	
+## Service Bus
+	is a reliable information delivery service with is a brokered, or third-party communication mechanism
+	The Service Relay Service supports traditional one-way messaging, request/response messaging, and peer-to-peer messaging
+## SQL Server Stretch DB
+	Stretch Database migrates your cold data transparently and securely to the Azure Cloud.
+	it targets transactional DBs with large amounts of cold data, typically stored in a small number of tables
+
+# Security and Identity Services
+
+<img src="azure.sec.services.png" width="550px">
+
+## Multi-factor Authentication
+	MFA, two-step verification
+## Key Vault
+	safeguards cryptographic keys and secrets and streamlines the key management process
+## Active Directory
+	is a multi-tenant directory and identity management service incl. multi-factor authentication, device registration
+## AD Domain Services
+	provides managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM authentication
+	is fully compatible with Windows Server Active Directory
+## Azure AD B2C
+	is a cloud identity management solution for consumer-facing web and mobile apps
+	is highly available global service
+
+# Monitoring and Management Services
+	contains Azure Portal, Traffic Manager, ARM, Automation
+## Azure Portal
+	build, manage and monitor everything in a single unified console
+	https://portal.azure.com/
+		incl. VMs, Networks, Storage, SQL Servers, Resource Groups, App Services, SQL DBs, Traffic Maanger, ...
+	Example Workflow:
+		. open Portal
+		. Choose App Services
+		. Choose new Web App (you get a Virtual Machine and FTP address too)
+		. upload your website resources via FTP
+			That's it! The website is available.
+		. Create a new Virtual Machine, choose an OS, choose disk type (HDD or SDD),
+			credentials, assign it to a resource group,
+			Choose a size(number of cores, IOPS, Disk-Size) (Basic is cheapest)
+			Adjust Network
+			Access it with RDP and public IP
+			Size can be changed.
+	Portal can open PowerShell Bash inside the browser, called Cloud Shell (like GCP)
+	
+## Traffic Manager
+	.
+## Azure Resource Manager, ARM
+	enables you to repeatedly deploy your app and have confidence your resources are deployed in a consisten state.
+	Manages and visualizes resources in your app
+	Controls who in your organization can perform actions on the resources.
+## Automation
+	automates tasks using runbooks or automate configuration management using Desired State Configuration
+	Further recherche keyword: OMS (Operations Management Suite, separate MS product)
+# Pricing
+	Pay only for what you use
+		Pay as you go model
+	Per Minute Billing
+	You can choose reserved instances (=cheaper)
