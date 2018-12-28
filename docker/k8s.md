@@ -392,7 +392,15 @@
 			requests: 2Gi
 				storage: 1Gi
 ------------	
-	
+
+## k8s Overview:
+k8s has pods, forming services, connected via Ingress to the internet:
+<img src="k8s.png" width="550px">
+
+ks ingress-selector chooses the service with the right label
+
+<img src="k8s_infrastructure_with_selector.png" width="550px">
+
 ## Gotchas
 ### Take care of JVM params within docker:
 <img src="docker.and.jvm.png" width="550px">

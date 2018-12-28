@@ -71,7 +71,7 @@ Standard CI/CD workflow: git ->[clone]-> jenkins ->[build&test&push]-> kubernete
 	}
 ```
 #### Pipeline Stages: Staging Deployment
-	(same for PROD, just with changed env variables
+	(same for PROD, just with changed env variables)
 ```json
 	stage('Staging Deployment') {
 		...
