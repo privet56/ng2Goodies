@@ -4,15 +4,19 @@ The Jenkins VM should also have docker running (check with 'sudo docker version'
 ## Build and push Docker image
 	GCP -> open shell
 	git clone your app (incl. Dockerfile)
-	$ docker build . -t myapp
-	$ docker run -d -p80:80 --name myapp myapp	# you you can test the app
-	$ docker tag myapp me/myapp
-	$ docker login -u me -p mypwd
-	$ docker push me/myapp
+```sh
+	docker build . -t myapp
+	docker run -d -p80:80 --name myapp myapp	# you you can test the app
+	docker tag myapp me/myapp
+	docker login -u me -p mypwd
+	docker push me/myapp
+```
 ## Deploy to Kubernetes
 	GCP -> open shell
-	$ kubectl create deployment myapp --image me/myapp	# better you a YML file
-	$ kubectl expose deployment/myapp --port=80 --name=myappsvc --type=LoadBalancer
+```sh
+	kubectl create deployment myapp --image me/myapp	# better you a YML file
+	kubectl expose deployment/myapp --port=80 --name=myappsvc --type=LoadBalancer
+```
 ## Configure Jenkins on the Web UI
 	Update Jenkins URL in
 		Manage Jenkins -> Configure System -> set Environment variables
@@ -40,13 +44,31 @@ The Jenkins VM should also have docker running (check with 'sudo docker version'
 ## Jenkins Build Config
 	On the Jenkins UI:
 	Add Build Step -> invoke Ant, Gradle, shell, ...etc.
-	Shell file content:
+	Put in Build Triggers -> Build -> Execute Shell -> Add build step -> Command:
+```sh
+	IMAGE_NAME="me/myapp:${BUILD_NUMBER}"					# Jenkins will generate
 	docker build . -t $IMAGE_NAME
 	docker login -u me -p ${DOCKER_HUB_PASSWORD}
 	docker push $IMAGE_NAME
+```
+	Put in Build Triggers -> Build -> Execute Shell -> Add build step -> Command:
+```sh
 	# Deploy to Kubernetes
-	IMAGE_NAME="me/myapp:${BUILD_NUMBER}"					# Jenkins will generate the env var ${BUILD_NUMBER} after each successful build
+	IMAGE_NAME="me/myapp:${BUILD_NUMBER}"					# Jenkins will generate
 	kubectl set image deployment/myapp myapp=$IMAGE_NAME
+```
+	[save]
+
+### Copy Kubernetes config file into:
+	to avoid kubectl error msg 'you must be logged in to the server'
+```sh
+	cd ~/.kube
+	cp ./config /home/jenkins/.kube/
+	sudo cp ./config /var/lib/jenkins/.kube/
+	sudo service jenkins restart
+```
+### You can check the deployment history:
+```sh
 	# Check deployment history
 	kubectl rollout history deployment/myapp
-	
+```
