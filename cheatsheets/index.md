@@ -2,6 +2,7 @@
 
 # Cheatsheets:
 #### [Azure](azure.md)
+#### [CI/CD with Jenkins and Kubernetes](ci_cd_jenkins_kubernetes.md)
 #### [Helm - basics](helm.md)
 #### [Helm - advanced](helm4k8s.md)
 #### [Angular Server Side Rendering](ng.ssr.md)
@@ -9,6 +10,7 @@
 #### [Scrum](scrum.md)
 #### [Spark](spark.md)
 #### [Spark with PySpark](spark_pyspark.md)
+#### [Interpersonal Skills](interpersonalskills.md)
 
 ### Diverse:
 
