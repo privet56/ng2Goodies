@@ -11,6 +11,9 @@
 	Check if tiller is available:
 		$ kubectl rollout status deployment -n kube-system tiller-deploy
 
+	helm = client
+	tiller = server
+
 ## Structure of a Chart:
 	myapp/
 		Chart.yaml
@@ -299,6 +302,7 @@ spec:
 	Jenkins slave pods may get re-used if long-lived
 	Lack of access control for Helm
 		Enable SSL and deploy tiller per namespace with RBAC
+			(RBAC= Role-Based Access Control via Active Directory groups)
 	Don't use latest tag with images
 		if the config doesn't change, Kubernetes won't see it as an update
 	Use AlwaysPullImages admission controller
@@ -317,3 +321,17 @@ spec:
 		Option to use a web based or local IDE
 #### Other IBM Helm Charts
 	https://github.com/IBM/charts/tree/master/stable
+
+## Examples of helm-prepared k8s yaml files:
+You can specify labels to identify & group easy:
+#### deployment.yaml
+<img src="helm.prepared.deploymentyaml.png" width="550px">
+
+#### service.yaml
+<img src="helm.prepared.serviceyaml.png" width="550px">
+
+#### ingress.yaml
+<img src="helm.prepared.ingressyaml.png" width="550px">
+
+#### values.yaml
+<img src="helm.prepared.valuesyaml.png" width="550px">
