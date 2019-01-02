@@ -31,62 +31,62 @@ Standard CI/CD workflow: git ->[clone]-> jenkins ->[build&test&push]-> kubernete
 	helm ->gRPC-> tiller ->kube-API-> kubernetes cluster
 ### call:
 ```sh
-	helm install my-app --set image.tag=${imageTag}
+helm install my-app --set image.tag=${imageTag}
 ```
 	https://kubeapps.com/ lists open-source kube apps, e.g.
 	https://kubeapps.com/charts/stable/jenkins
 	install it with
 ```sh
-	helm install stable/jenkins --version 0
+helm install stable/jenkins --version 0
 ```
 ### Config
 #### Pipeline Stages: Build
 ```json
-	environment {
-		IMAGE_NAME = 'me/myapp'
+environment {
+	IMAGE_NAME = 'me/myapp'
+}
+stage('Build') {
+	agent any
+	steps {
+		checkout scm
+		sh 'docker build -t $IMAGE_NAME:$BUILD_ID .'
 	}
-	stage('Build') {
-		agent any
-		steps {
-			checkout scm
-			sh 'docker build -t $IMAGE_NAME:$BUILD_ID .'
-		}
-	}
+}
 ```
 #### Pipeline Stages: Push
 ```json
-	stage('Image Release') {
-		agent any
-		when {
-			expession {env.BRANCH_NAME == 'master'}			# only release master builds
-		}
-		steps {
-			withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
-				sh '''
-					docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-					docker push $IMAGE_NAME:$BUILD_ID
-				'''
-			}
+stage('Image Release') {
+	agent any
+	when {
+		expession {env.BRANCH_NAME == 'master'}			# only release master builds
+	}
+	steps {
+		withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'dockerhub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD']]) {
+			sh '''
+				docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+				docker push $IMAGE_NAME:$BUILD_ID
+			'''
 		}
 	}
+}
 ```
 #### Pipeline Stages: Staging Deployment
 	(same for PROD, just with changed env variables)
 ```json
-	stage('Staging Deployment') {
-		...
-		environment {
-			RELEASE_NAME = 'me-staging'
-			SERVER_HOST = 'myurl.com'
-		}
-		steps {
-			sh '''
-				. ./helm/helm-init.sh
-				helm upgrade --install --namespace staging $RELEASE_NAME ./helm/me --set image.tag=$BUILD_ID,ingress.host=$SERVER_HOST
-			'''
-		}
+stage('Staging Deployment') {
+	...
+	environment {
+		RELEASE_NAME = 'me-staging'
+		SERVER_HOST = 'myurl.com'
 	}
+	steps {
+		sh '''
+			. ./helm/helm-init.sh
+			helm upgrade --install --namespace staging $RELEASE_NAME ./helm/me --set image.tag=$BUILD_ID,ingress.host=$SERVER_HOST
+		'''
+	}
+}
 ```
 ```sh
-	helm list
+helm list
 ```

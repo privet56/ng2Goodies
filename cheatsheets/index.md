@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="_github-markdown.css">
+
 # Cheatsheets:
 #### [Azure](azure.md)
 #### [Helm - basics](helm.md)

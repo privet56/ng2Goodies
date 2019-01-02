@@ -40,8 +40,8 @@ kind: Deployment
 metadata:
 	name: nginx
 spec:
-	replicas: 3									# this is hardcoded :-(
-	replicas: {{.Values.scale}}					# this is helm!
+	replicas: 3								# this is hardcoded :-(
+	replicas: {{.Values.scale}}					# this is helm! :-)
 	template:
 		metadata:
 			labels:
@@ -49,8 +49,8 @@ spec:
 		spec:
 			containers:
 			- name: nginx
-			  image: nginx:1.3					# this is hardcoded :-(
-			  image: nginx:{{.Values.tag}}		# this is helm!
+			  image: nginx:1.3				# this is hardcoded :-(
+			  image: nginx:{{.Values.tag}}		# this is helm!  :-)
 			  ports:
 			  - containerPort: 80
 ```
