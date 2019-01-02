@@ -322,7 +322,7 @@ spec:
 #### Other IBM Helm Charts
 	https://github.com/IBM/charts/tree/master/stable
 
-## Examples of helm-prepared k8s yaml files:
+## Examples of advanced helm-prepared k8s yaml files:
 You can specify labels to identify & group easy:
 #### deployment.yaml
 <img src="helm.prepared.deploymentyaml.png" width="550px">
@@ -335,3 +335,7 @@ You can specify labels to identify & group easy:
 
 #### values.yaml
 <img src="helm.prepared.valuesyaml.png" width="550px">
+
+#### templates/deployment.yaml
+	with advanced template code {{ - if ... }} {{- end }} and {{ include ... }}
+<img src="helm.prepared.templatesdeploymentyaml.png" width="550px">
