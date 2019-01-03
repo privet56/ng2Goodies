@@ -11,21 +11,25 @@
 	Check if tiller is available:
 		$ kubectl rollout status deployment -n kube-system tiller-deploy
 
-	helm = client
-	tiller = server
+	helm = client, on your laptop or CI/CD system
+	tiller = server in your Kubernetes cluster
 
 ## Structure of a Chart:
 	myapp/
-		Chart.yaml
+		Chart.yaml				# app name, apiVersion, appVersion, version, description etc.
 		templates/
+			NOTES.txt			# displays usage msg after 'helm install'
+			README.md
 			deployment.yaml			# manifest templates
 			service.yaml
 			ingress.yaml
 		values.yaml
+		requirements.yaml			# lists other charts, dependencies
 ### Usage:
 ```sh
 helm install myapp
 helm list				# lists deployed deployments
+helm search				# seaches on https://github.com/kubernetes/charts
 ```
 ### Chart.yaml
 ```yml
@@ -90,6 +94,20 @@ spec:
 scale: 3
 tag: "1.3"
 ```
+
+### Templates
+	helm uses the Go Templating
+#### Templates use Sprig Functions:
+	String functions: trime, wrap, plural ...
+	Math functions: add, max, mul ...
+	Date functions: now, date ...
+	Default functions: default, empty, coalesce
+	Encoding functions: b64enc, b64dec, checksum ...
+	List functions: list, first, uniq...
+	toYaml
+
+	eg: type: {{ default: "ClusterIP" .Values.serviceType }}
+
 ### fire up helm:
 mac install:
 ```sh
@@ -114,6 +132,7 @@ helm install --name cd stable/jenkins
 helm install --name cd -f override.yaml stable/jenkins
 
 helm status
+helm status istio
 # access the jenkins UI:
 minikube service cd-jenkins
 
@@ -319,10 +338,18 @@ spec:
 		Generates starter templates for Java (Spring or MicroProfile), Node and Swift containing app source, Dockerfie, Helm Chart, ...
 		Rapid iterative build/run/test in a containerized environment
 		Option to use a web based or local IDE
+### GitHub Resources:
 #### Other IBM Helm Charts
 	https://github.com/IBM/charts/tree/master/stable
+#### Basic example
+	incl. running tests, build app, push to registry, deploy image using webservice chart:
+	https://github.com/r0fls/hello-kubecon
+#### Helm Charts Repo:
+	https://github.com/kubernetes/charts
+	the centralized repo hosting community curated helm charts
+	the default repo configured in helm (eg. used by $ helm search)
 
-## Examples of advanced helm-prepared k8s yaml files:
+# Examples of advanced helm-prepared k8s yaml files:
 You can specify labels to identify & group easy:
 #### deployment.yaml
 <img src="helm.prepared.deploymentyaml.png" width="550px">
@@ -336,6 +363,124 @@ You can specify labels to identify & group easy:
 #### values.yaml
 <img src="helm.prepared.valuesyaml.png" width="550px">
 
-#### templates/deployment.yaml
-	with advanced template code {{ - if ... }} {{- end }} and {{ include ... }}
+### templates/deployment.yaml
+	incl. advanced template code {{ - if ... }} {{- end }} and {{ include ... }}
+	incl. logic: if replicaCount is 1, set rollingUpdate.maxUnavailable to 0
+	  (to avoid having no pod running during the update)
+	incl. possibility to set AWS IAM Role
+	incl. workaround for version-specific Kubernetes Bug (.Capabilities.KubeVersion.Major...)
 <img src="helm.prepared.templatesdeploymentyaml.png" width="550px">
+<img src="helm.prepared.templatesdeploymentyaml.2.png" width="550px">
+
+	Example of Pod-Affinity configuration:
+<img src="helm.prepared.templatesdeploymentyaml.3.affinity.png" width="550px">
+
+	Example of Jaeger configuration (jaeger agent added as a sidecar):
+	 incl. fluentd for log collection and forwarding
+	 incl. including custom YAML {{ toYaml .Values.tolerations | indent 8 }}
+	 	often done for .Values.nodeSelector or .Values.tolerations or .Values.sentinel
+<img src="helm.prepared.templatesdeploymentyaml.4.jaeger.png" width="550px">
+
+#### templates/service.yaml
+	incl. Prometheus settings
+	incl. {{ range ... }}
+<img src="helm.prepared.templatesserviceyaml.png" width="550px">
+
+#### templates/ingress.yaml
+	the whole content is embedded in a condition!
+	incl. health check & security group & subnets configuration for the load balancer
+	(alb = load balancer on AWS)
+<img src="helm.prepared.templatesingressyaml.png" width="550px">
+
+#### templates/hpa.yaml
+	hpa = Horizontal Pod Autoscaler
+	scale based CPU utilization & on min and max Replicas
+<img src="helm.prepared.templateshpayaml.png" width="550px">
+
+#### templates/pdb.yaml
+	pdb = Pod Disruption Budget
+	configures the max unavailable nodes during a maintenance
+	all-wrapping condition: .Release.IsInstall = it is an initial installation
+	 (because a pdb is immutable => create only on initial install)
+<img src="helm.prepared.templatespdbyaml.png" width="550px">
+
+#### requirements.yaml
+	lists dependencies of your chart
+	 (you can (de-)activate dependencies with condition setting (not displayed here)), eg:
+	 condition: minio.enabled
+<img src="helm.requirementsyaml.png" width="550px">
+
+## Tricks
+#### Starter Templates
+	use helm create with starter templates! Subdirs of
+	~/.helm/starters/
+	are the templates
+
+#### Update deployments on config change
+	every time the config file changes, it will roll out a new deployment
+	because of that annotation change
+	this is automatic config-map update
+<img src="helm.updatedeploymentoncfgchange.png" width="550px">
+
+#### Use Hooks
+	Hook Types: before or after:
+		Install, Delete, Upgrade, Rollback
+
+	metadata:
+		annotations:
+			"helm.sh/hook": post-install
+			"helm.sh/hook": test-success
+
+<img src="helm.hook.png" width="550px">
+
+	You can runs bash scripts as test:
+<img src="helm.hook.test.png" width="550px">
+
+#### Namespace your helper templates
+<img src="helm.helpersnamespaces.png" width="550px">
+
+## related Applications:
+#### Prometheus
+#### Jaeger
+	~ distributed tracing, like zipkin
+#### Istio, a microservice platform (=service mesh)
+	plugins into kubernetes natively via platform adapters
+	features: traffic management, policy enformcement, metrics, logs, traces, security
+	Istio = Pilot + Envoy + Mixer(=policy engine) + Initializer + dotviz
+	Intall:
+```sh
+helm install --name istio incubator/istio --devel --namespace istio-system --set istio.release=0.2.12,initializer.enabled=true
+
+helm upgrade istio incubator/istio --devel --namespace istio-system --set istio.release=0.2.12,initializer.enabled=true,istio.install=true
+
+# lists the created pods after install
+kubectl get pods -n istio-system
+# triggers the istiö-initializer, puts in an istio-sidecar
+kubectl apply -f myapp.yaml
+```
+	this creates a new kubernetes namespace 'istio-system' with the following pods & services:
+		egress
+		ingress
+		grafana
+		initializer
+		mixer
+		pilot
+		prometheus
+		servicegraph
+		zipkin = distributed tracing
+		dotviz = shows the dependency graph
+
+	HTTP Services (Mixer exposes these (pluggable) services):
+		/dotviz
+		/istio-dashboard 	# graphana
+		:9411/			# zipkin UI
+
+
+
+
+
+
+
+
+
+
