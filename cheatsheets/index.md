@@ -16,7 +16,7 @@
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
 #### [Qt For Android (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
 #### [Penetration Tests](pentest.md)
-#### [Scrum](srcum/scrum.md)
+#### [Scrum](scrum/scrum.md)
 #### [Spark](spark/spark.md)
 #### [Spark with PySpark](spark/spark_pyspark.md)
 #### [Interpersonal Skills](interpersonalskills.md)
