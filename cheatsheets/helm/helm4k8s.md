@@ -1,11 +1,13 @@
 <link rel="stylesheet" href="_github-markdown.css">
 
 # Helm for Kubernetes
+	Helm = Package Manager for Kubernetes
 	Kubernetes = k8s = deployments(in pods) & services & ingress
 	A Helm chart defines a group of manifest files
-	Helm = package manager for kubernetes
 	packages called charts stored in one or more repositories
 	Charts contain templatized k8s config
+		charts can be local or reachable over HTTP
+		(often, the charts-directory is bundled into the app code repo)
 	Setup client configuration and install server-side tiller:
 		$ helm init		# possibly with the wait param
 	Check if tiller is available:
@@ -13,6 +15,19 @@
 
 	helm = client, on your laptop or CI/CD system
 	tiller = server in your Kubernetes cluster
+
+### Helm's place in a CI/CD Pipeline:
+
+<img src="helms.place.png" width="550px">
+
+	Example: https://github.com/lachie83/croc-hunter & its charts/ subdir, incl. templates/test
+	A. git push -> 
+	B. jenkins job triggered (see Jenkinsfile) ->
+	C.1. jenkins job step: git checkout (or clone) into jenkins ->
+	C.2. jenkins job step: helm install & test & build & publish triggered
+
+	Example Jenkinsfile snippet, calling helm:
+<img src="helm.jenkinsfile.png" width="550px">
 
 ## Structure of a Chart:
 	myapp/
@@ -28,9 +43,15 @@
 ### Usage:
 ```sh
 helm install myapp
+helm install --values dev.yaml --kube-context=dev ./myapp
 helm list				# lists deployed deployments
 helm search				# seaches on https://github.com/kubernetes/charts
+helm test $(helm last)			# 'last' is a helm plugin
+helm delete $(helm last)
 ```
+
+	The helm command line client just calls the server-side tiller over gRPC
+
 ### Chart.yaml
 ```yml
 name: my app
@@ -122,6 +143,7 @@ brew install kubernetes-helm
 helm install myapp/						# outputs deployment-name too, use --name to set your own name
 helm delete {deployment-name}
 helm upgrade --set scale=3,tag="1.3" {deployment-name} myapp/
+helm upgrade --dry-run --install myapp --namespace=myapp
 helm rollback {deployment-name} 1
 # search kubeapps.com	# uses monocular = helm chart repository incl. UI = open source project
 helm search jenkins
