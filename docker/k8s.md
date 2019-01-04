@@ -404,3 +404,87 @@ ks ingress-selector chooses the service with the right label
 ## Gotchas
 ### Take care of JVM params within docker:
 <img src="docker.and.jvm.png" width="550px">
+
+### Tips & Tricks
+#### Generate k8x deployment & service specifications, both named myapp:
+```sh
+kubectl run myapp --image=quay.io/ryanj/metrics-k8s --expose --port=2015 --service-overrides='{"spec":{"type":""NodePort!}}' --dry-run -o yaml > myapp.yaml
+```
+	this command does:
+	1. name my app myapp &
+	2. load img &
+	3. add loadbalancer (a service) &
+	4. dry-run = write yaml onto STDOUT instead of really executing all of these
+	... and other can use this generated yaml file:
+```sh
+# now really execute generated yaml
+kubectl create -f myapp.yaml
+# open resulting service in browser by running:
+minikube service myapp	
+```
+#### Model your I/O
+
+	Do this to start fully containerized development with minikube on you local laptop!
+
+	A. Mount folder inside the VM
+		Folder is now exposed inside the VM on /var/www/html
+		Folder is now exposed to the node (=host machine inside of the minikube environment)
+```sh
+minikube mount $(pwd):/var/www/html
+```
+	B. produce a new deployment spec that includes minimal support for live
+	B.1. deployment workflows:
+```sh
+cp myapp.yaml myapp-dev.yaml
+```
+	B.2. replace myapp with myapp-dev globally
+	B.3. add a hostPort volume to access your local repo:
+		(adds a volume mount)
+		(mount a repo inside a running container)
+```yaml
+spec:
+	containers:
+	- image: quayi.io/ryanj/metrics-k8s
+	  name: myapp-dev
+	  ports:
+	  - containerPort: 2015
+	  resources: {}
++	  volumeMounts:
++	  - mountPath: /var/www/html		# into this folder inside the container
++	    name: metrics-src
++	volumes:
++	- name: metrics-src
++	  hostPath:
++	  	path: /var/www/html		# mount from this folder on the node-host
+```
+	B.4. launch this:
+```sh
+cp create -f myapp-dev.yaml
+```
+	  Result: a full container based toolchain, in which
+		I edit my repo locally
+		change is visible inside the container, so
+		my app inside of the container sees the result immediately
+		I see the change in the app in my browser
+	B.5. 
+```sh
+# run this, so that following command (=docker build) goes directly into the VM
+# and I dont have to go out to docker hub and back
+minikube docker-env
+docker build .
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

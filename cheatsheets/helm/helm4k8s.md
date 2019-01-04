@@ -21,7 +21,7 @@
 <img src="helms.place.png" width="550px">
 
 	Example: https://github.com/lachie83/croc-hunter & its charts/ subdir, incl. templates/test
-	A. git push -> 
+	A. git push (or pull-request ->[verify manually]-> merge) -> 
 	B. jenkins job triggered (see Jenkinsfile) ->
 	C.1. jenkins job step: git checkout (or clone) into jenkins ->
 	C.2. jenkins job step: helm install & test & build & publish triggered
@@ -43,9 +43,10 @@
 ### Usage:
 ```sh
 helm install myapp
+helm install stable/jenkins -f jenkins-values.yaml --namespace my-jenkins	# kubectl get pods -n my-jenkins lists the result of cmd!
 helm install --values dev.yaml --kube-context=dev ./myapp
 helm list				# lists deployed deployments
-helm search				# seaches on https://github.com/kubernetes/charts
+helm search	jenkins			# seaches on https://github.com/kubernetes/charts
 helm test $(helm last)			# 'last' is a helm plugin
 helm delete $(helm last)
 ```
@@ -463,8 +464,19 @@ You can specify labels to identify & group easy:
 
 ## related Applications:
 #### Prometheus
+#### Draft
+	Produces Dockerfile and K8s manifests
+#### minishift and oc
+	spins up openshift instead of kubernetes
+	(see more on http://learn.openshift.com/)
+#### Brigade and Kashti
+	Event-Driven System for producing workflows
 #### Jaeger
 	~ distributed tracing, like zipkin
+#### Telepresence
+	use a hosted kubernetes environment as they would run on the local minikube
+	  (customizes minikube for weak hardware)
+	  result: devs can use huge DB (as example) on their local machines for development
 #### Istio, a microservice platform (=service mesh)
 	plugins into kubernetes natively via platform adapters
 	features: traffic management, policy enformcement, metrics, logs, traces, security

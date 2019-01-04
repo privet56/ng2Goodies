@@ -30,9 +30,10 @@
     use jscrambler, with config entry "propertyKeysObfuscation" :
     install:
 ```sh
-    npm install jscrambler --save-dev 
-    npm i --save-dev jscrambler-webpack-plugin 
+npm install jscrambler --save-dev 
+npm i --save-dev jscrambler-webpack-plugin 
 
-    cfg prop: "name": "propertyKeysObfuscation"
+cfg prop: "name": "propertyKeysObfuscation"
 ```
-Disclaimer: this hint is not hacker-safe, but often ~good-enough!
+    Disclaimer: this hint is not hacker-safe, but often ~good-enough!
+
