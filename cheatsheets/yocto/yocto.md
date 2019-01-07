@@ -108,7 +108,9 @@ do_configure_prepend() {
     1. kernel config
     2. graphics drivers (eg. Xorg)
     3. additional recipes to support hardware features
+
 #### Obtaining and enabling a BSP
+
 1. search for the BSP under www.yoctoproject.org/download/
 2. download *.tar.bz2 file
 3. unpack tarball: tar xvjf *.tar.bz2

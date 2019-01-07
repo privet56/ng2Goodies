@@ -217,6 +217,7 @@ print
     4. memoize
     5. generics
     6. static analyzer recognizes null check of can-be-null variables:
+
 ```php
 function f() : string {
     ?string v = someotherfunction();
