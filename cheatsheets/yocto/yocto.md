@@ -118,6 +118,7 @@ do_configure_prepend() {
     2. check conf/layer.conf
 4. ´source oe-init-build-env´
 5. vim conf/bblayers.conf   # add the ABS PATH of the new BSP!
+
     BBLAYERS = " \
         /home/yocto/poky-edison-6.0/meta \
         /home/yocto/poky-edison-6.0/meta-yocto \
