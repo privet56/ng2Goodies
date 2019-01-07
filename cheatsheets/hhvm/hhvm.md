@@ -256,9 +256,7 @@ find ./ type f -name '*.php' -exec hack_remove_soft_types --harden '{}' ';'
 
 # Apache PHP-FPM
 
-Manage your server's
-1. Apache PHP
-2. Apache PHP-FPM for faster website load time
+Use Apache PHP-FPM for faster website load time
 
 FPM = FastCGI Process Manager
 
