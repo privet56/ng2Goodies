@@ -7,6 +7,7 @@
 #### [Docker for Windows](./../docker/docker4windows.md)
 #### [Kubernetes](./../docker/k8s.md)
 #### [CI/CD with Jenkins and Kubernetes](ci_cd_jenkins_kubernetes.md)
+#### [Local Kubernetes Environments with minikube](./../docker/k8slocal.md)
 #### [Helm - basics](helm/helm.md)
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
 #### [Angular Server Side Rendering](ngssr/ng.ssr.md)
