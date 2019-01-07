@@ -12,7 +12,7 @@
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
 #### [Angular Server Side Rendering](ngssr/ng.ssr.md)
 #### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
-#### [PHP - HHVM](hhvm/hhvm.md)
+#### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)

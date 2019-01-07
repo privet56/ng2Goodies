@@ -253,3 +253,89 @@ hack_remove_soft_types --harden FILE
 # run it over all files in a dir:
 find ./ type f -name '*.php' -exec hack_remove_soft_types --harden '{}' ';'
 ```
+
+# Apache PHP-FPM
+
+Manage your server's
+1. Apache PHP
+2. Apache PHP-FPM for faster website load time
+
+FPM = FastCGI Process Manager
+
+PHP-FPM pools are other processes that Apache creates to handle heavy loads
+
+Each domain has process pools whose sole job is to wait for a request to arrive. The PHP-FPM Master Process manages these pools.
+
+Request -> Apache -> PHP-FPM-Master-Process -> a pool process
+
+WHM|cPanel hoster has MultiPHP Interface: Web UI to dis/enable PHP-FPM (and change max children, max requests, process idle timeout)
+
+#### Nginx config for FPM:
+```js
+upstream backend {
+    server unix:/var/run/php5-fpm.sock;
+    # if I have 2 entries, nginx would loadbalance between them, incl weighting etc.
+    # server backend1.my.com:8080 weigth=3 max_fails=2 fail_timeout=30s;
+    # server backend2.my.com:8080 backup;
+}
+server {
+    listen 80 default_server;
+    root /usr/share/nginx/test.com;
+    index index.php index.html;
+    server_name test.com;
+    location / {
+        try_files $uri $uri/ =404;
+        # try_files $uri $uri/ /index.php$is_args$args;
+        # include /etc/nginx/naxsi.rules
+    }
+    location ~\.php$ {
+        # this defines a regular expression to separate the SCRIPT_FILENAME and PATH_INFO for later use
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;   
+        try_flies $uri =404; # OR Set cgi.fix_pathinfo=0 in php.ini (for security)
+        fastcgi_pass backend; # OR unix:/var/run/php5-fpm.sock OR 127.0.0.1:9000
+        fastcgi_index index.php; # appends index.php to a URI ending with a slash
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_param;
+    }
+}
+```
+install & find running FPM processes:
+```sh
+sudo apt-get install php5-fpm -y
+ps aux | grep php-fpm   # lists master & 2 children
+```
+#### PHP 5 FPM setup & config:
+```sh
+sudo vim /etc/php5/fpm/pool.d/myapp.conf
+```
+```ini
+[app]
+listen = /var/run/php5-fpm.sock
+user = www-data
+group = www-data
+listen.owner = www-data
+listen.group = www-data
+# static, ondemand, or dynamic  # dynamic would be better?
+pm = ondemand
+# pm.max_children = (MAX_MEMORY - 500MB) / 20MB # = give 20 MB for each child
+pm.max_children = 5
+pm.max_requests = 500
+# pm.start_servers = 10% * max_children
+# catch_workers_output = yes    # ...into main log
+```
+
+#### /etc/php/7.0/fpm/php.ini - tune here:
+```sh
+memory_limit = 128M
+```
+
+```sh
+# after creating myapp.conf, take care because the default .conf has to be removed!
+sudo mv /etc/php5/fpm/pool.d/www.conf www.backup
+# path is version specific, eg. for 7: /etc/php/7.0/fpm/pool.d/www.conf
+sudo service nginx restart
+sudo service php5-fpm restart   # or sudo service php7.0-fpm restart
+php5-fpm -t
+sudo vim /var/log/nginx/error.log
+vim /var/log/php5-fpm.log   # =PHP-FPM logs
+```
