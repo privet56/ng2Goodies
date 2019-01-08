@@ -15,6 +15,8 @@
 #### [Helm - basics](helm/helm.md)
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
 
+#### [Kafka](./kafka/kafka.md)
+
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
