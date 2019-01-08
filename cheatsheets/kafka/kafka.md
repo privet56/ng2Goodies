@@ -31,6 +31,10 @@ bin/kafka-server-start.sh config/server.properties
 
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 partitions 1 --topic topicname
 
+# this producer allows to write to console the msgs to be published
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic topicname
+> {"k1":"val","k2":"val"}
+
 # this consumer writes published msgs to console
 kafka-console-consumer --bootstrap-server localhost:9092 --topic topicname --from-beginning
 
@@ -98,12 +102,18 @@ flow.run()
 ### Spring-Kafka
     Spring-Boot supports Spring-Kafka:
 ```xml
-<dependency>    
+<dependency>
     <groupId>org.springframework.kafka</groupId>
     <artifactid>spring-kafka</artifactid>
+ </dependency>
+<dependency><!-- add this if you use json serialization (or avro, or protobuf...) -->
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactid>jackson-databind</artifactid>
+    <version>2.6.7</version>
+ </dependency> 
 ```
 ```java
-public class c {
+public class MyProducer {
     @Autowired
     KafkaTemplate<String, Model> kafkaTemplate; //'Model' is a POJO
     public void f()
@@ -111,8 +121,10 @@ public class c {
         kafkaTemplate.send("topicname", new Model("val")); //=publish message!
     }
 }
+@EnableKafka //only needed for Consumer
 @Configuration
 public class KafkaCfg {
+//cfg for a producer
     @Bean
     public ProducerFactory<String, Model> produerFactory() {
         Map<String, Object> cfg = new HashMap<>();
@@ -125,6 +137,52 @@ public class KafkaCfg {
     @Bean
     public Kafkatemplate<String, Model> kafkatemplate() {
         return new KafkaTemplate<String, Model>(producerFactory());
+    }
+//cfg for a consumer
+//  string value
+    @Bean
+    public ConsumerFactory<String, String> consumerFactory() {
+        Map<String, Object> cfg = new HashMap<>();
+        cfg.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        cfg.put(ProducerConfig.GROUP_ID_CONFIG, "group_id");
+        cfg.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        cfg.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
+        return new DefaultKafkaConsumerFactory<>(cfg);
+    }
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> kafkaListenerContainerFactor() {
+        ConcurrentKafkaListenerContainerFactory<String, String> factory = new ConcurrentKafkaListenerContainerFactory();
+        factory.setConsumerFactory(consumerFactory());
+        returen factory;
+    }
+//  model value
+    @Bean
+    public ConsumerFactory<String, Model> modelConsumerFactory() {
+        Map<String, Object> cfg = new HashMap<>();
+        cfg.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
+        cfg.put(ProducerConfig.GROUP_ID_CONFIG, "group_id_json");
+        cfg.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
+        cfg.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
+
+        return new DefaultKafkaConsumerFactory<>(cfg, new StringDeserializer(), new JsonDeserializer<>(Model.class));
+    }
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, Model> modelKafkaListenerContainerFactor() {
+        ConcurrentKafkaListenerContainerFactory<String, Model> factory = new ConcurrentKafkaListenerContainerFactory();
+        factory.setConsumerFactory(modelConsumerFactory());
+        returen factory;
+    }
+}
+@Service
+public class MyConsumer {
+    @KafkaListener(topics="topicname", group="group_id")
+    public void consumeStringMsg(String msg) {
+        //handle msg
+    }
+    @KafkaListener(topics="topicname", group="group_id_json", containerFactory="modelKafkaListenerFactory")
+    public void consumeJsonMsg(Model model) {
+        //handle msg
     }
 }
 ```
