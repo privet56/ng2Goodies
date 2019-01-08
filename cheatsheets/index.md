@@ -2,7 +2,11 @@
 
 # Cheatsheets:
 
+#### [Angular Server Side Rendering](ngssr/ng.ssr.md)
+#### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
+
 #### [Azure](azure/azure.md)
+
 #### [Docker (PowerPoint Presentation, 2017)](./../docker/docker.pptx)
 #### [Docker for Windows](./../docker/docker4windows.md)
 #### [Kubernetes](./../docker/k8s.md)
@@ -10,18 +14,26 @@
 #### [Local Kubernetes Environments with minikube](./../docker/k8slocal.md)
 #### [Helm - basics](helm/helm.md)
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
-#### [Angular Server Side Rendering](ngssr/ng.ssr.md)
-#### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
+
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
+
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
+
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
+
 #### [Penetration Tests](pentest.md)
+
+#### [RxJava](./rx/rxjava.md)
+
 #### [Scrum](scrum/scrum.md)
+
 #### [Spark](spark/spark.md)
 #### [Spark with PySpark](spark/spark_pyspark.md)
+
 #### [Interpersonal Skills](interpersonalskills.md)
+
 #### [Yocto](yocto/yocto.md)
 .
 
