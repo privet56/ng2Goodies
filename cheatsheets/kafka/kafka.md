@@ -254,18 +254,24 @@ sbt run
 ```
 ### Consumer in plain java
 ```java
+bool manualCommit = true/false;
 Properties p = new Properties();
 p.put("bootstrap.servers","localhost:9092,localhost:9093"/*list of brokers*/);
 p.put("group.id","groupname");  //kafka creates the group if necessary, not necessary but advisable
 p.put("key.deserializer", "org.apache.kafka.common.serialization.StringSerializer");
 p.put("value.deserializer", "org.apache.kafka.common.serialization.StringSerializer");
+//p.put("enable.auto.commit", "false");//manualCommit? if you want to commit manually!
 KafkaConsumer<String, String> c = new KafkaConsumer<>(p);
-c.subscribe(Arrays.asList(topicname));//wildcards are supported!
+ConsumerRebalanceListener rb = new MyConsumerRebalanceListener(c); //manualCommit? optional!
+c.subscribe(Arrays.asList(topicname), rb);//wildcards are supported!
 while(true) {
-    ConsumerRecords<String, String> rs = c.poll(100/*timeout*/);
-    for(ConsumerRecord<String, String> s : rs) {
-        s.value();
+    ConsumerRecords<String, String> rs = c.poll(100/*timeout*/); //handle heartbeats too
+    for(ConsumerRecord<String, String> r : rs) {
+        r.value();
+        //rb.addOffset(r.topic(, r.partition(), r.offset())); //manualCommit? special handling (not kafka)
     }
+    //c.commitAsync();//or c.commitSync();      //manualCommit?
+    //c.commitSync(rb.getCurrentOffset());      //manualCommit?
 }
 ```
 
@@ -332,6 +338,8 @@ Set these like
 ```java
 Properties p = new Properties();
 p.put("value.serializer", "MySerializer");
+//or better load .properties file from disk
+p.load(new FileInputStream("my.properties")); //in try-catch!
 ```
 Important configuration keys:
 1. "acks"
@@ -341,7 +349,51 @@ Important configuration keys:
 2. "retries" = how many times should be retried in case of error
 3. "max.in.flight.request.per.connection"
     1. Use sync send or the value max.in.flight.request.per.connection=1 if ordering is important!
+4. "enable.auto.commit" # def: true, if false, you have to commit manually the offset
+5. "auto.commit.interval.ms" # def: 5secs
 
 ## Consumer-Group
     A Consumer-Group reads a single Topic in prallel, the group will be fed by the partitions of the topic (possibly in parallel).
-    Possible problem of duplicated read?
+    Possible problem of duplicated read! (=exactyl once processing)
+
+
+## Offset
+    Current offset, Committed offset
+    Manual Commit can be sync or async:
+        consumer.commitSync() / consumer.commitAsync()
+        or
+        consumer.commitSync(rebalanceListener.getCurrentOffset());
+```java
+...
+p.put("enable.auto.commit", "false");
+c = new KafkaConsumer<>(p);
+TopicPartition p0 = new TopicPartition(topicname, 0);
+TopicPartition p1 = new TopicPartition(topicname, 0);
+c.assign(Arrays.asList(p0,p1));//c wants to read these partitions
+c.seek(p0, getoffsetFromDB(p0));//set the offset position for the partition 0
+c.seek(p1, getoffsetFromDB(p0));
+
+```
+
+### Custom Rebalance Listener:
+for manual offset-commit with custom logic
+```java
+public MyConsumerRebalanceListener implements ConsumerRebalanceListener {
+    private KafkaConsumer consumer;
+    private Map<TopicPartition, OffsetAndMetadata> currentOffsets = new HashMap();
+
+    MyConsumerRebalanceListener(KafkaConsumer c) { this.consumer = c; }
+
+    public void addOffset(String topic, int parti, long offset) {
+        currentOffsets.put(new TopicPartition(topic, parti), new OffsetAndMetadata(offset, "Commit"));
+    }
+
+    @Override
+    public void onPartitionsRevoked(Collections<TopicPartition partis) { }
+    @Override
+    public void onPartitionsAssigned(Collections<TopicPartition partis) {
+        consumer.commitSync(currentOffsets);
+        currentOffsets.clear();
+     }
+}
+```
