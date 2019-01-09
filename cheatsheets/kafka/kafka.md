@@ -19,6 +19,13 @@
 7. Connectors
 8. Cluster = sum of Brokers and a Zookeeper. Producers push, consumers pull
 9. Zookeeper is used for service discovery (=broker node discovery)
+10. Partioner: def: Round-Robin, if you dont specify in code.
+    1. Based on Key-Hash
+    2. = Utils.toPositive(Utils.nurmur2(keyBytes)) % numPartitions;
+         1. can be problematic if numPartitions changes
+         2. can be problematic, as Hashing seldomly returns same results for different key bytes
+         3. Utils = org.apache.kafka.common.utils.*;?
+
 ### Use Cases
     ETL(Extract, Transform, Load)/CDC(=Change Data Capture)
     Data Pipelines (producers feed in, consumers use it)
@@ -41,7 +48,7 @@ kafka-console-consumer --bootstrap-server localhost:9092 --topic topicname --fro
 ```
 ### Delivery Guarantees
 #### Producer
-1. Async (no guarantee)
+1. Async (no guarantee, ordering can be lost)
 2. committed to leader
 3. committed to leader and quorum(=majority of the cluster) (slowest & most secure)
 #### Consumer
@@ -139,7 +146,7 @@ public class KafkaCfg {
         return new KafkaTemplate<String, Model>(producerFactory());
     }
 //cfg for a consumer
-//  string value
+//  consume a string value
     @Bean
     public ConsumerFactory<String, String> consumerFactory() {
         Map<String, Object> cfg = new HashMap<>();
@@ -156,7 +163,7 @@ public class KafkaCfg {
         factory.setConsumerFactory(consumerFactory());
         returen factory;
     }
-//  model value
+//  consume a model value
     @Bean
     public ConsumerFactory<String, Model> modelConsumerFactory() {
         Map<String, Object> cfg = new HashMap<>();
@@ -186,3 +193,155 @@ public class MyConsumer {
     }
 }
 ```
+## Configuration
+### Broker Cfg
+Example entries:
+1. broker.id
+2. log.dirs
+3. zookeeper.connect
+4. delete.topic.enable # true/false
+5. auto.create.topics.enable # create the topic automatically, 
+6. default.replication.factor # default:1
+7. num.partitions # default:1
+8. log.retention.ms # default retention period: 7 days
+9. log.retention.bytes
+10. max.in.flight.request.per.connection # def: 5
+    1. controls how many msgs you can send without receiving a response
+    2. Use sync send or the value max.in.flight.request.per.connection=1 if ordering is important!
+
+## Scala / java
+Use sbt to build! (also possible for .java!)
+### build.sbt
+```scala
+name := "t"
+    scalaVersion := "2.11.8"
+    libraryDependencies ++= Seq(
+        "org.apache.kafka" % "kafka-clients" % "1.0.0"
+    )
+```
+### Producer in plain java
+```java
+import org.apache.kafka.clients.producer.*;
+public class SimpleProducer {
+    public static void main(String[] args) throws Exception
+    {
+        Properties p = new Properties();
+        p.put("bootstrap.servers","localhost:9092,localhost:9093"/*list of brokers*/);
+        p.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        p.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        Producer<String, String> producer = new KafkaProducer<>(p);
+        ProducerRecord<String, String> r = new ProducerRecord<>("topicname", "value");
+        //*fire-and-forget* call
+        producer.send(record);//handles batches & retries
+        //*async* call, limited by 'max.in.flight.request.per.connection'! ordering can be lost!
+        producer.send(record, new MyProducerCallback());
+        try
+        {
+            //*sync* call
+            producer.send(record).get();
+        }catch(Exception e) { }
+        finally { producer.close(); }
+    }
+    class MyProducerCallback implements Callback {
+        @Override
+        public void onCompletion(Recordmetadata r, Exception e) { }
+    }
+}
+```
+```sh
+sbt compile
+sbt run
+```
+### Consumer in plain java
+```java
+Properties p = new Properties();
+p.put("bootstrap.servers","localhost:9092,localhost:9093"/*list of brokers*/);
+p.put("group.id","groupname");  //kafka creates the group if necessary, not necessary but advisable
+p.put("key.deserializer", "org.apache.kafka.common.serialization.StringSerializer");
+p.put("value.deserializer", "org.apache.kafka.common.serialization.StringSerializer");
+KafkaConsumer<String, String> c = new KafkaConsumer<>(p);
+c.subscribe(Arrays.asList(topicname));//wildcards are supported!
+while(true) {
+    ConsumerRecords<String, String> rs = c.poll(100/*timeout*/);
+    for(ConsumerRecord<String, String> s : rs) {
+        s.value();
+    }
+}
+```
+
+### Custom partitioner
+```java
+    ...Producer sets Properties p
+    p.put("partitioner.class", "MyPartitioner");
+    p.put("speed.sensor.name", "TSS");  //custom property, not kafka!
+
+public class MyPartitioner implementes Partitioner {
+    public void configure(Map<String, ?> cfg) {
+        cfg.get("speed.sensor.name").toString();    //get custom prop!
+    }
+    public void close() { }
+    public int partition(String topicname, Object key, byte[] keyBytes, Object value, byte[] valueBytes, Cluster cluster) {
+        List<PartitionInfo> ps = cluster.partitionsForTopic(topicname);
+        ...
+        return 42;
+    }
+}
+```
+### Custom De-/Serializer
+    (not so optimal because of possible future versions, better to use Avro or similar)
+```java
+
+    in Producer/Consumer: Properties p...
+    p.put("value.serializer", "MySerializer");
+    p.put("value.deserializer", "MySerializer");
+
+public class MySerializer implements Serializer<Model> {
+    @Override
+    public void configure(Map<String, ?> cfg, boolean isKey) { }
+    @Override
+    public void close() { }
+    @Override
+    public byte[] serialize(String topicname, Model m) {
+        ByteBuffer b = ByteBuffer.allocate(4 + 4 + m.name.length + 4 + m.othermember.length);
+        b.putInt(m.getId());
+        b.putInt(m.name.length);
+        b.put(m.name.getBytes("UTF8"));
+        b.putInt(m.othermember.length);
+        b.put(m.othermember.getBytes("UTF8"));
+        return b.array();
+    }
+}
+public class MyDeSerializer implements Deserializer<Model> {
+    @Override
+    public void configure(Map<String, ?> cfg, boolean isKey) { }
+    @Override
+    public void close() { }
+    @Override
+    public Model deserialize(String topicname, byte[] m) {
+        ByteBuffer b = ByteBuffer.wrap(data);
+        int id = b.getInt();
+        int size = b.getInt();
+        byte[] bmember = new byte[size];
+        String member = new String(bmember, "UTF8");
+        return new Model(id, member);
+    }
+}
+```
+## Configuration
+Set these like
+```java
+Properties p = new Properties();
+p.put("value.serializer", "MySerializer");
+```
+Important configuration keys:
+1. "acks"
+    1. 0 = no Acknowledgement, fast, no retries
+    2. 1 = leader responds,
+    3. all = all the live replicas receive the msg, slow
+2. "retries" = how many times should be retried in case of error
+3. "max.in.flight.request.per.connection"
+    1. Use sync send or the value max.in.flight.request.per.connection=1 if ordering is important!
+
+## Consumer-Group
+    A Consumer-Group reads a single Topic in prallel, the group will be fed by the partitions of the topic (possibly in parallel).
+    Possible problem of duplicated read?

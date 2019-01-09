@@ -98,3 +98,6 @@
 
 ## Is Scrum the right solution for you?
 <img src="scrum_suited_or_not.png" width="550px">
+
+## Scrumban:
+<img src="scrumban.png" width="550px">
