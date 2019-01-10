@@ -26,6 +26,8 @@
          2. can be problematic, as Hashing seldomly returns same results for different key bytes
          3. Utils = org.apache.kafka.common.utils.*;?
 
+<img src="kafka-flow.png" width="550px">
+
 ### Use Cases
     ETL(Extract, Transform, Load)/CDC(=Change Data Capture)
     Data Pipelines (producers feed in, consumers use it)
@@ -35,8 +37,17 @@
 # these .sh files are provided in kafka download
 bin/zookeeper-server-start.sh config/zookeeper.properties
 bin/kafka-server-start.sh config/server.properties
+# start 2. broker (possibly on the same machine), unique properties must be changed:
+#  broker.id=1
+#  listener=PLAINTEXT://9093
+#  log.dirs/tmp/kafka-logs-1
+./bin/kafka-server-start ./etc/kafka/server-2.properties
 
+# if more kafka-servers -> increase replication-factor & partitions(=number-of-servers)
 bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 partitions 1 --topic topicname
+
+# describe created topic (partitions, replicationFactor):
+bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic topicname
 
 # this producer allows to write to console the msgs to be published
 bin/kafka-console-producer.sh --broker-list localhost:9092 --topic topicname
@@ -212,6 +223,7 @@ Example entries:
 ## Scala / java
 Use sbt to build! (also possible for .java!)
 ### build.sbt
+#### Basic Setup
 ```scala
 name := "t"
     scalaVersion := "2.11.8"
@@ -219,6 +231,25 @@ name := "t"
         "org.apache.kafka" % "kafka-clients" % "1.0.0"
     )
 ```
+#### Advanced Setup, with Avro
+```scala
+name := "withavro"
+val repositories = Seq(
+    "confluent" at "http://packages.confluent.io/maven/",
+    Resolver.sonatypeRepo("public")
+)
+libraryDependencies ++= Seq(
+    "org.apache.avro" % "avro" % "1.8.1",
+    "io.confluent" % "kafka-avro-serializer" % "3.1.1",
+    "org.apache.kafka" % "kafka-clients" % "0.10.1.0"
+        eclude("javax.jms", "jms")
+        eclude("com.sun.jdmk", "jmxtools")
+        eclude("com.sun.jmx", "jmxri")
+        eclude("org.slf4j", "slf4j-simple")
+)
+resolvers += "confluent" at "http://packages.confluent.io/maven/"
+```
+
 ### Producer in plain java
 ```java
 import org.apache.kafka.clients.producer.*;
@@ -294,9 +325,9 @@ public class MyPartitioner implementes Partitioner {
 }
 ```
 ### Custom De-/Serializer
-    (not so optimal because of possible future versions, better to use Avro or similar)
+    (not so optimal because of possible future versions (=Schema change),
+    better to use Avro or similar)
 ```java
-
     in Producer/Consumer: Properties p...
     p.put("value.serializer", "MySerializer");
     p.put("value.deserializer", "MySerializer");
@@ -333,6 +364,84 @@ public class MyDeSerializer implements Deserializer<Model> {
     }
 }
 ```
+### Avro
+    Avro: data serialization system, can handle Schema changes
+    you define the schema
+    Avro generates code for your schema
+    Schema definition in JSON ( https://avro.apache.org/docs/current/spec.html#Schema-Resolution ):
+```json
+{
+    "type":"record",
+    "name":"MyRecord",
+    "fields":[
+        {"name":"m1","type":"string"},
+        {"name":"m2","type":["string","null"]},
+        {"name":"m3","type":["string","null"],"default":"None"} ]
+}
+```
+#### /etc/yum.repos.d/confluent.repo
+```ini
+[Confluent.dist]
+name=confluent repo
+baseurl=http://packages.confluent.io/rpm/3.1/6
+gpgcheck=1
+gpgkey=http://packages.confluent.io/rpm/3.1/archive.key
+enabled=1
+[Confluent]
+name=confluent repo
+baseurl=http://packages.confluent.io/rpm/3.1
+gpgcheck=1
+gpgkey=http://packages.confluent.io/rpm/3.1/archive.key
+enabled=1
+```
+#### Generate java Code from Schema definition & start schem registry
+```sh
+java -jar avro-tools-1.8.1.jar compile schema my.avsc . # generates a java file: my.java
+# later, you change/evolve your schema...
+java -jar avro-tools-1.8.1.jar compile schema myV2.avsc . # generates a java file: my.java
+# install confluent schema registry
+sudo rpm --import http://packages.confluent.io/rpm/3.1/archive.key
+vi /etc/yum.repos.d/confluent.repo # write .ini file, as above
+# this is the open-source version, there is also an enterprise one
+sudo yum install confluent-platform-oss-2.11
+# start zookeeper, kafka, ...
+./bin/zookeeper-server-start ./etc/kafka/zookeeper.properties
+./bin/kafka-server-start ./etc/kafka/server.properties # start broker
+# start 2. broker (possibly on the same machine)
+./bin/kafka-server-start ./etc/kafka/server-2.properties
+
+# start confluence schema registry
+./bin/schema-registry-start ./etc/schema-registry/schema-registry.properties
+``` 
+    Use the Avro API to de-/serialize messages
+    Write KafkaAvroSerializer / KafkaAvroDeserializer
+```java
+    in Producer/Consumer: Properties p...
+    p.put("value.serializer", "io.confluent.kafka.serializers.KafkaAvroSerializer");
+    p.put("value.deserializer", "io.confluent.kafka.serializers.KafkaAvroDeserializer");
+    p.put("schema.registry.url", "http://localhost:8081");//Avro needs that
+    //Consumer needs that for the case, when you generated my.java (see above)
+    p.put("specific.avro.reader", "true");
+    p.put("group.id", "groupname");//Consumer needs that
+//Producer:
+Producer<String, MyRecord> producer = new KafkaProducer<>(p);
+MyRecord r = new MyRecord();
+producer.send(new ProducerRecord<String, MyRecord>(topicname, r.getId(), r)).get();
+//... finally { produer.close(); }
+
+//Consumer:
+KafkaConsumer<String, MyRecord> c = new KafkaConsumer<>(p);
+c.subscribe(Arrays.asList(topicname));
+try {
+    while(true) {
+        ConsumerRecords<String, MyRecord> rs = c.poll(100);
+        for(ConsumerRecord<String, MyRecord> r : rs) {
+            MyRecord myr = r.value();
+        }
+    }
+} catch(Exception e) { ... }
+finally { c.close(); }
+``` 
 ## Configuration
 Set these like
 ```java
@@ -371,8 +480,16 @@ TopicPartition p0 = new TopicPartition(topicname, 0);
 TopicPartition p1 = new TopicPartition(topicname, 0);
 c.assign(Arrays.asList(p0,p1));//c wants to read these partitions
 c.seek(p0, getoffsetFromDB(p0));//set the offset position for the partition 0
-c.seek(p1, getoffsetFromDB(p0));
-
+c.seek(p1, getoffsetFromDB(p1));//read your DB (eg. mySQL)
+do {
+    ConsumerRecords<String, String> rs = c.poll(1000);
+    rCount = rs.count();
+    for(ConsumerRecord<String, String> r : rs) {
+        //write your DB (eg. mySQL)
+        //r.key & r.value, r.offset()+1, r.topic, r.partition
+        saveAndCommit(c, r);
+    }
+}while(rcount > 0);
 ```
 
 ### Custom Rebalance Listener:
@@ -397,3 +514,10 @@ public MyConsumerRebalanceListener implements ConsumerRebalanceListener {
      }
 }
 ```
+## Advanced Stuff
+1. Integration with Spark
+2. Kafka in the Cloud
+    1. GCP (Google Cloud Platform) has  Cloud Launcher for kafka (=a VM image), single-node or cluster
+        configure VM & [Launch]
+        will be accessible in 'Compute Engine' -> SSH
+        with 'Deployment Manager', you can delete this created VM with all resources
