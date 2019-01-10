@@ -37,6 +37,9 @@
 #### [Interpersonal Skills](interpersonalskills.md)
 
 #### [Yocto](yocto/yocto.md)
+#### [ZooKeeper](zookeeper/zookeeper.md)
+#### [Hazelcast](./hazelcast/hazelcast.md)
+#### [Redis](./redis/redis.md)
 .
 
 ### Diverse:
