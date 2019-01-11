@@ -40,6 +40,7 @@
 #### [ZooKeeper](zookeeper/zookeeper.md)
 #### [Hazelcast](./hazelcast/hazelcast.md)
 #### [Redis](./redis/redis.md)
+#### [Vert.x](./vertx/vertx.md)
 .
 
 ### Diverse:

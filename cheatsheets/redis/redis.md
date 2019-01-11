@@ -90,6 +90,9 @@ app.use(methodOverride('_method'));                         //we set post param 
 app.get('/', function(req, res,next) {
     res.render("search");
 });
+app.get('/add', function(req, res,next) {
+    res.render("add");
+});
 app.post('/', function(req, res,next) {
     let id = req.body.id;
     client.hgetall(id, function(error, o) {
@@ -102,6 +105,19 @@ app.post('/', function(req, res,next) {
             details: o
         })
     });
+});
+app.post('/add', function(req, res,next) {
+    let id = req.body.id;
+    let name = req.body.name;
+    client.hmset(id, ['name',name], function(error, reply) {
+        if(error) {/*do error handling*/}
+        res.redirect('/?op=add&result=success');
+    });
+});
+app.del('/del:id', function(req, res,next) {
+    let id = req.params.id;
+    client.del(id);
+    res.redirect('/?op=del&result=success');
 });
 
 app.listen(3333, function() {
@@ -117,6 +133,26 @@ views/search.handlebars
 ```html
 {{#if error}} {{error}}{{/if}}
 <form method=post>
+    <!-- Complete with: name search, ... -->
     <input name=id>
+</form>
+```
+views/add.handlebars
+```html
+{{#if error}} {{error}}{{/if}}
+<form method=post>
+    <!-- Complete with: label, ... -->
+    <input name=id>
+    <input name=name>
+</form>
+```
+
+views/details.handlebars
+```html
+{{#if error}} {{error}}{{/if}}
+<!-- Complete with: name output, ... -->
+<div>{{o.name}}</div>
+<form method=post, action='del/{{o.id}}?_method=DELETE'>
+<input type=submit class="btn btn-danger pull-right" value="delete!">
 </form>
 ```
