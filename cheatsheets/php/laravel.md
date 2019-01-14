@@ -1,6 +1,7 @@
 # Laravel Events and Listener
-
-> $ php artisan make:auth
+```php
+php artisan make:auth
+```
 
 ...creates controller, view, ...
 ## app/Http/Controllers/Auth/RegisterController.php
@@ -41,18 +42,18 @@ class RegisterController extends Controller
 <?php
 //...
     protected $listen = [
-        'App\Events\UserRegistered' => [ 'App\Listeners\SendActiCode','App\Listeners\AssignRole' ],
+        'App\Events\UserRegisteredEvent' => [ 'App\Listeners\SendActiCodeListener','App\Listeners\AssignRoleListener' ],
     ];
 
 ```
 ### create Listener Class
-> $ php artisan event:generate
-#### Edit app/Events/UserRegistered.php:
+> $ php artisan event:generate      # generates *Event-/*Listener classes from the listen array!
+#### Edit app/Events/UserRegisteredEvent.php:
 ```php
 <?php
 namespace App\Events;
 //use...
-class UserRegistered
+class UserRegisteredEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
     public $user;
@@ -63,27 +64,28 @@ class UserRegistered
     }
 }
 ```
-#### Edit app/Listeners/SendActiCode.php:
+#### Edit app/Listeners/SendActiCodeListener.php:
 ```php
 <?php
 namespace App\Listeners;
 //use...
-class SendActiCode
+class SendActiCodeListener
 {
     public function __construct()
     {
 
     }
-    public function handle(UserRegistered $event)
+    public function handle(UserRegisteredEvent $event)
     {
-        //do it with $event->user
+        //handle event it with $event->user
+        //dd($event);   //die-and-dump
     }
 }
 ```
 #### app/Http/Controllers/Auth/RegisterController.php : fire the event!
 (instead of the explicit function call to sendActiCode)
 ```php
-event(new UserRegistered($u));
+event(new UserRegisteredEvent($u));
 ```
 
 # Form Request Validation
@@ -378,5 +380,135 @@ Route::get('sendEmail', function() {
     public function handle()
     {
         Mail::to('my@my.com')->send(new SendEmailMailable());   //takes long, but inside an async job
+    }
+```
+
+# Broadcasting with Pusher
+```sh
+composer require pusher/pusher-php-server "~2.6"        #optional online-service for broadcasting (://puhser.com/)
+npm install --save laravel-echo pusher-js
+```
+.env
+```ini
+BROADCAST_DRIVER=pusher
+```
+```php
+//app.php: add new provider:
+    App\Providers\BroadcastSesrviceProvider::class,
+
+//web.php
+Route::get('listen2broadcast', function() {
+    
+    return view("listen2broadcast");
+});
+
+//config/broadcasting.php
+'connection' => [
+        'pusher' => [
+            //...
+            'options' => [
+                'cluster' => 'eu',      //use as stated on the pusher website
+                'encrypted'=> true
+            ]
+        ]
+    ]
+// app/Events/UserRegisteredEvent.php:
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+class UserRegisteredEvent implements ShouldBroadcast
+{
+    //...
+    public function broadcastOn()
+    {
+        return new PrivateChannel('channel-name', "payload");
+    }
+//routes/channels.php
+Broadcast::channel('channel-name', function() {
+    return true;//allow to call channel
+})
+```
+app.js
+```js
+import Echo from 'laravel-echo'
+window.Pusher = require('pusher-js');
+window.Echo = new Echo({
+    broadcaster:'pusher',
+    key: 'my-pusher-key'
+    cluster:'eu',
+    encrypted:true
+});
+//...
+const app = new Vue({
+    el:'#app',
+    created() {
+        //Echo has the channel and private functions
+        Echo.(channel|private)('channel-name').listen('UserRegisteredEvent', (e) => {
+            console.log(e);
+        });
+    }
+});
+```
+listen2broadcast.blade.html
+```html
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script src='{{ asset('js/app.js') }}'></script>
+
+```
+# Gates
+Gates = Auth extension for authorization
+
+```sh
+php artisan make:policy SubsPolicy
+php artisan make:policy SubsPolicy --model=Post
+```
+```html
+//home.blade.html
+@if Route::has('login'))
+    @if(Auth::check())
+        <a href="{{ url('/home') }}">Home</a>
+        @can('subs_only', Auth::user())
+            <a href="{{ url('/subs') }}">Subscribers</a>
+        @endcan
+    @else
+        <a href="{{ url('/login') }}">Login</a>
+    @endif
+@endif
+
+//resources/views/subs.blade.html
+<div>the protected content for subs_only</div>
+
+```
+```php
+//web.php
+Route::get('/subs' function() { 
+    if(Gate::allows('subs_only', Auth::user())) {
+        return view('subs');
+    }
+    return "not allowed";
+});
+
+//Providers/AuthServiceProvider.php
+    //...
+    $policies = [
+        //...
+        User::class => SubsPolicy::class,
+    ];
+    public function boot()
+    {
+        $this->registerPolicies();
+
+//beginner version:
+        Gate::define('subs_only', function($user) {
+            return ($user->subs == 1);
+        });
+//nice version:
+        Gate::define('subs_only', 'App\Policies\SubsPolicy@subs_only');
+        //.view , .delete , .post ...
+        Gate::define('subs_only.view', 'App\Policies\SubsPolicy@subs_only');
+    }
+//SubsPolicy.php
+    //...
+    public function subs_only($user)
+    {
+        return ($user.subs == 1);
     }
 ```
