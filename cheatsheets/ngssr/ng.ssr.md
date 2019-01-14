@@ -15,8 +15,7 @@
 <img src="ng.ssr.ng.console.png" width="550px">
 ### Angular Console generates SSR code:
 <img src="ng.ssr.ng.console.ssr.generation.png" width="550px">
-	
-		
+
 ## install server-side support:
 	$ npm i @nguniversal/express-engine --save
 	$ npm i @nguniversal/module-map-ngfactory-loader --save	# lazy loading support
@@ -28,7 +27,7 @@
 ### webpack.server.config.js (with tsc (ts2js), ts-loader)
 ### server.ts with
 	ngExpressEngine				# from @nguniversal/express-engine
-	AppServerModuleNgFactory	# from ./dist/sesrver/main	created by the ng-ssr build
+	AppServerModuleNgFactory		# from ./dist/sesrver/main	created by the ng-ssr build
 	provideModuleMap			# from @nguniversal/module-map-ngfactory-loader
 	domino						# 'window' support on the server side
 	compression					# use: app.use(compression());
@@ -49,3 +48,41 @@
 
 ### build & run:
 	$ npm run start-ssr
+
+## CI/CD with Jenkins
+### Build
+1. Create a Freestyle project
+2. set Build Triggers (eg. poll SCM or GitHub hook trigger)
+	1. you possibly need to add webhook in github, set git repo URL (git@github.com:???.git)
+3. Build -> Execute Shell -> Command:
+```sh
+npm install
+npm run build:ssr
+pm2 restart all
+```
+4. [Apply]
+
+### Pipeline
+1. Create a Pipeline
+2. General: set 'Do not allow concurrent builds'
+3. set Build Triggers: Poll SCM; Schedule: H/5* * * *	//poll every 5 mins
+4. set Pipeline Definition 'Pipeline script from SCM'
+	1. SCM Git, set git repo URL (git@github.com:???.git), set Branch
+	2. Script path: Jenkinsfile, content is in git:
+```js
+node {
+	stage('checkout scm') {
+		git branch: 'master', url: 'git@github.com:myusername/myprojectname.git'
+	}
+	stage('install node modules') {
+		sh "npm install"
+	}
+	stage('build') {
+		sh "npm run build:ssr"
+	}
+	stage('deploy') {
+		sh "pm2 restart all"
+	}
+}
+```
+5. [Apply]
