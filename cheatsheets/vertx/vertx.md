@@ -34,11 +34,13 @@ mvn io.fabric8:vertx-maven-plugin:1.0.5:setup
     -DprojectArtifactId=my
     -Dverticle.io=my.My
     -Ddependencies=web
-mvn compile vertx:run
+mvn compile vertx:run -Dvertx.runArgs="-cluster -Djava.net.preferIPv4Stack=true"
 
 # Alternative: vertx CLI can run from java/js/... source!
 vertx run My.java
-vertx run My.js -cluster
+vertx run My.js -cluster -Djava.net.preferIPv4Stack=true
+# Alternative: plain java cli call:
+java -jar target/my-1.0-SNAPSHOT.jar --cluster -Djava.net.preferIPv4Stack=true
 ```
 
 ## Example 2:
