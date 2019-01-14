@@ -269,6 +269,7 @@ public class MyPeriodicVerticle extends io.vertx.core.AbstractVerticle {
 ```js
 vertx.setPeriodic(1111, function(id) {vertx.eventBus().publish("feed", "msg-from-js"); });
 ```
+
 #### html for the browser, incl. client-side JS
 ```html
 <script src="sockjs.js">
@@ -295,7 +296,186 @@ eb.onopen = function() {
 
 ## Advanced stuff
 ### ServiveDiscovery
-    TODO
+```java
+ServiceDiscovery discovery = ServiceDiscovery.create(vertx);
+HttpEndpoint.rxGetWebClient(discovery,
+        rec -> rec.getName().endsWith("my") // This method is a filter to select the service
+    )
+    .flatMap(client ->
+        // We have retrieved the WebClient, use it to call the service
+        client.get("/").as(BodyCodec.string()).rxSend()
+    )
+    .subscribe(response -> System.out.println(response.body()));
+```
+```java
+@Override
+public void start()
+{
+    Router router = Router.router(vertx);
+    router.get("/").handler(this::my);
+    // Create the service discovery instance
+    ServiceDiscovery.create(vertx, discovery -> {
+        // Look for an HTTP endpoint named "my" // you can also filter on 'label'
+        Single<WebClient> single = HttpEndpoint.rxGetWebClient(discovery, rec -> rec.getName().equals("my"), new JsonObject().put("keepAlive", false));
+        single.subscribe(client -> {
+                // the configured client to call the microservice
+                this.myClient = client;
+                vertx.createHttpServer().requestHandler(router::accept).listen(8080);
+            },
+            err -> System.out.println("Oh no, no service")
+        );
+    });
+}
+```
+```java
+//publish a service:
+ServiceDiscovery discovery = ServiceDiscovery.create(vertx);
+vertx.createHttpServer()
+    .requestHandler(req -> req.response().end("my"))
+    .rxListen(8083)
+    .flatMap(
+    // Once the HTTP server is started (we are ready to serve), we publish the service.
+    server -> {
+        // We create a record describing the service and its location (for HTTP endpoint)
+        Record record = HttpEndpoint.createRecord(
+            "my",                   // the name of the service
+            "localhost",            // the host
+            server.actualPort(),    // the port
+            "/"                     // the root of the endpoint
+        );
+        // We publish the service
+        return discovery.rxPublish(record);
+    }
+ ).subscribe(rec -> System.out.println("Service published"));
+```
+#### CI/CD pipeline can be built with
+1. jenkins
+2. fabric8.io
+
+### Circuit Breaker
+```java
+CircuitBreakerOptions options = new CircuitBreakerOptions()
+    .setMaxFailures(5)              // Number of failures before switching to the 'open' state
+    .setTimeout(5000)               // Time before attempting to reset the circuit breaker
+    .setFallbackOnFailure(true);    // Call the fallback on failures
+
+CircuitBreaker breaker = CircuitBreaker.create("my-circuit-breaker", vertx, options) .openHandler(v -> {
+        System.out.println("Circuit opened");
+    }).closeHandler(v -> {
+        System.out.println("Circuit closed");
+    });
+
+Future<String> result = breaker.executeWithFallback(future -> {
+    vertx.createHttpClient().getNow(8080, "localhost", "/",
+        response -> {
+            if (response.statusCode() != 200) {
+                future.fail("HTTP error");
+            } else {
+                response.exceptionHandler(future::fail).bodyHandler(buffer -> {
+                    future.complete(buffer.toString());
+                });
+            }
+        });
+        }, v -> {
+            // Executed when the circuit is opened
+            return "my (fallback)";
+        }
+    );
+//Alternative: Circuit Breaker with RxJava:
+breaker.rxExecuteCommandWithFallback(
+    future ->
+        client.get(path)
+            .rxSend()
+            .map(HttpResponse::bodyAsJsonObject)
+            .subscribe(future::complete, future::fail),
+        t -> new JsonObject().put("message", "D'oh! Fallback")
+    ).subscribe(
+        json -> {
+            System.out.println(json.encode());// Get the actual json or the fallback value
+        }
+    );
+//alternative: handle rxSend-errors this way, not in .subscribe(ret -> {...}, err -> {...}):
+    .onErrorReturn(t -> {
+        // Called if rxSend produces a failure, We can return a default value
+        return new JsonObject();
+    });
+
+```
+### Health check
+```java
+HealthCheckHandler hch = HealthCheckHandler.create(vertx);
+hch.register("db-connection", future -> {
+    client.rxGetConnection()
+        .subscribe(c -> {
+                future.complete();
+                c.close();
+            },
+            future::fail
+        );
+    });
+// A second (business) procedure
+hch.register("business-check", future -> {
+ // ...
+});
+// Map /health to the health check handler
+router.get("/health").handler(hch);
+```
+### Vert.x with RxJava
+```java
+private void invokeMyFirstMicroservice(RoutingContext rc)
+{
+    HttpRequest<JsonObject> request1 = client.get(8080, "localhost", "/my1").as(BodyCodec.jsonObject());
+    HttpRequest<JsonObject> request2 = client.get(8080, "localhost", "/my2").as(BodyCodec.jsonObject());
+
+    //rxSend ... simple
+    Single<JsonObject> s1 = request1.rxSend().map(HttpResponse::body);
+    Single<JsonObject> s2 = request2.rxSend().map(HttpResponse::body);
+
+    //rxSend ... advanced: with timeout & retry
+    Single<JsonObject> obs1 = bus.<JsonObject>rxSend("my", "my1")
+        //Without this subscribeON, the methods would be executed by a thread
+        //from the default RxJava thread pool, breaking the Vert.x threading model
+        .subscribeOn(RxHelper.scheduler(vertx)) 
+        .timeout(3, TimeUnit.SECONDS)
+        .retry()
+        .map(Message::body);
+
+    Single.zip(s1, s2, (my1, my2) -> {
+        // We have the results of both requests in my1 and my2
+        return new JsonObject()
+            .put("my1", my1.getString("message"))
+            .put("my2", my2.getString("message"));
+    }).subscribe(
+        result -> rc.response().end(result.encodePrettily()),
+        error -> {
+                error.printStackTrace();
+                rc.response().setStatusCode(500).end(error.getMessage());
+            }
+    );
+
+//RxJava with EventBus
+    EventBus bus = vertx.eventBus();
+    Single<JsonObject> obs1 = bus.<JsonObject>rxSend("my", "my1").map(Message::body);
+    Single<JsonObject> obs2 = bus.<JsonObject>rxSend("my", "my2").map(Message::body);
+    Single.zip(obs1, obs2, (my1, my2) ->
+        new JsonObject().put("my1", my1.getString("message")).put("my2", my2.getString("message"))
+    )
+    //.subsribe - alternative 1
+    .subscribe(
+        x -> System.out.println(x.encode()),
+        Throwable::printStackTrace);
+    //.subsribe - alternative 2
+    .subscribe(
+        x -> req.response().end(x.encodePrettily()),
+        t -> {
+            t.printStackTrace();
+            req.response().setStatusCode(500).end(t.getMessage());
+        }
+    );
+}
+
+```
+
 
 ### Types of reactive
 <img src="types.of.reactive.programing.png" width="550px">
