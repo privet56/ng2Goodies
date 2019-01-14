@@ -18,6 +18,7 @@
 #### [Kafka](./kafka/kafka.md)
 
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
+#### [PHP - Advanced Laravel](php/laravel.md)
 
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)

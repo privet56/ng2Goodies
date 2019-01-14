@@ -6,6 +6,8 @@
     Is polyglot: java, js, groovy, ruby... (everything running on the JVM)
     Is Event-Driven, has Event-Loop(using only one thread) like NodeJS
     Management and Monitoring built-in (eg. JMX)
+    Not durable (if you need, you have to use a 3rd party client (for Kafka or RabbitMQ))
+    Use on Java-8 (because you will use a lot of lambdas!)
 
 ## most basic Example:
 #### in Java
@@ -51,7 +53,7 @@ public class My extends AbstractVerticle {
         Router r = Router.router(vertx);
         //GET: use .end because we dont stream
         router.get("/api/a:param").handler(ctx -> ctx.response().end(myLongRunningFunc()));
-        //GET: if you block, you have to do that explicitely
+        //GET: if you block, you have to do that explicitely (alternative for blocking calls: use Worker vertical)
         router.get("/api/b:param").blockingHandler(this::myLongRunningBlockingFunc, false);
 
         //POST
@@ -355,10 +357,12 @@ vertx.createHttpServer()
 2. fabric8.io
 
 ### Circuit Breaker
+**NOTE** : "Failing is OK, Waiting is not!"
 ```java
 CircuitBreakerOptions options = new CircuitBreakerOptions()
     .setMaxFailures(5)              // Number of failures before switching to the 'open' state
     .setTimeout(5000)               // Time before attempting to reset the circuit breaker
+    .setResetTimeout(5555)
     .setFallbackOnFailure(true);    // Call the fallback on failures
 
 CircuitBreaker breaker = CircuitBreaker.create("my-circuit-breaker", vertx, options) .openHandler(v -> {
@@ -475,9 +479,116 @@ private void invokeMyFirstMicroservice(RoutingContext rc)
         }
     );
 }
+```
+#### use Redis in Vertx Callback:
+```java
+RedisClient redis;
+@Override
+public void start() throws Exception {
 
+    //...router
+
+    ServiceDiscovery.create(vertx, discovery -> {
+        //straight: Maven-dependency: <artifactId>vertx-redis-client
+        RedisDataSource.getRedisClient(discovery, rec -> rec.getName().equals("redis"), ar -> {
+            if(ar.failed())
+                //handle err!
+            else
+                this.redis = ar.result();
+                //...vertx.createHttpServer
+        });
+    });
+//alternative: do with RxJava
+    ServiceDiscovery.create(vertx, disovery -> {
+
+        Single<Webclient s1 = HttpEndpoint.rxWebClient(discovery, rec -> rec.getName().equals("myservice1"));
+        Single<Webclient s2 = HttpEndpoint.rxWebClient(discovery, rec -> rec.getName().equals("myservice2"));
+        Single.zip(s1, s2, (p1, p2) -> {
+            this.myService1 = p1;
+            this.myService2 = p2;
+            //...vertx.createHttpServer
+        }).subscribe();
+    });
+}
+
+private void getMy(RoutingContext rc) {
+
+    redis.hgetall(/*key*/"MY", json -> {
+        if(json.failed())
+            rc.fail(500/*statusCode*/);
+        else
+            rc.response().end(json.result().encodePrettily());
+    });
+//alternative: do it with RxJava
+    HttpServerResponse serverResponse = rc.response().setChunked(true);
+    Single<JsonObject> single = this.myService1.get("/my")
+        .rxSend()
+        .map(HttpResponse::bodyAsJsonObject);
+    single.flatMapPublisher(
+        json -> Flowable.fromIterable(json) //Flowable can backpressure
+    )
+//alternative 1: simple
+    .flatMapSingle(entry -> getMyResult(this.myService2, entry))//getMyResult just calls the service, as here above
+//alternative 2: with circuitBreaker:
+    .flatMapSingle(entry -> {
+        circuitBreaker.rxExecuteCommandWithFallback(
+            future -> {
+                getMyResult(this.myService2, entry, future)
+            },
+            err -> getMyDefaultFallbackResult(entry)
+        );
+    })
+//alternative 2 end
+    .subscribe(
+        json -> serverResponse.write(json),             //onNext
+        rc::fail,                                       //onError
+        () -> serverResponse.end();                     //onComplete
+    );
+}
+public static void getMyResult(WebClient myService, Map.Entry<String, Object> entry, Future<JsonObject> future) {
+        myService.post("/myservice")
+            .rxSendJson(new JsonObject()
+                .put("name", entry.getKey())
+                .put("quantity", entry.getValue())
+            ).subscribe(
+            resp -> future.complete(resp.bodyAsJsonObject()),
+            future::fail
+        );
+    }
+
+    public static Single<JsonObject> getMyResult(WebClient myService, Map.Entry<String, Object> entry) {
+        return myService.post("/myservice")
+            .rxSendJson(new JsonObject()
+                .put("name", entry.getKey())
+                .put("quantity", entry.getValue())
+            )
+            .map(HttpResponse::bodyAsJsonObject);
+    }
+```
+#### Dockerfile
+```sh
+FROM java:8-alpine
+EXPOSE 8080
+COPY target/*.jar /my/
+WORKDIR /my
+CMD java -jar *.jar -Dvertx.cacheDirBase=/tmp
 ```
 
+#### Tests
+1. use vert.x unit(?5)
+2. use waitability
+
+#### Vertx. Integrations
+Integrations exist with AMQP, Mongo, Camel, Kafka
+
+#### Addons:
+Maven: 
+```xml
+<artifactId>vertx-redis-client
+<artifactId>vertx-web
+<artifactId>vertx-service-discovery
+<artifactId>vertx-service-discovery-bridge-kubernetes <!-- Kubernetes integration -->
+```
 
 ### Types of reactive
 <img src="types.of.reactive.programing.png" width="550px">
