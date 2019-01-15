@@ -281,6 +281,7 @@ Default config is in app.php (locale & fallback_locale)
 ```php
 Route::get('/locale/{lang?}', function($lang=null) {
     App::setlocale($lang);
+    //return redirect()->back();
     return view('my');
 }
 ```
@@ -458,7 +459,8 @@ Gates = Auth extension for authorization
 
 ```sh
 php artisan make:policy SubsPolicy
-php artisan make:policy SubsPolicy --model=Post
+php artisan make:model Post
+php artisan make:policy SubsPolicy --model=Post # you can use view/create/del etc. functions
 ```
 ```html
 //home.blade.html
@@ -471,6 +473,10 @@ php artisan make:policy SubsPolicy --model=Post
     @else
         <a href="{{ url('/login') }}">Login</a>
     @endif
+
+    @guest
+        <a href="{{ url('/login') }}">Login</a>
+    @endguest
 @endif
 
 //resources/views/subs.blade.html
@@ -512,3 +518,59 @@ Route::get('/subs' function() {
         return ($user.subs == 1);
     }
 ```
+# Notifications
+sends notifications to user
+```sh
+php artisan make:notification TaskCompleted # app/Notifications/TaskCompleted.php
+php artisan migrate     # do it AFTER setting QUEUE_DRIVER=database
+php artisan queue:work  # do it in a separate cmd window
+```
+```php
+//app/Notifications/TaskCompleted.php
+//class TaskCompleted extends Notification {
+class TaskCompleted extends Notification implements ShouldQueue {  //ShouldQueue makes it async!
+    //...
+    public function __construct($myvar) { /*...*/ }
+    public function via($notifiable) {
+        return ['mail', 'database'];
+    }
+    public function toMail($notifiable) {
+        return (new MailMessage)->line("text")->subject("sub")->action("action", url('/'))->line("text")->error();
+        //or:
+        return (new MailMessage)->view('mytemplate', ['myvar' => $this->myvar]);
+    }
+    public function toArray($notifiable) {
+        //needed for via.database!, saved a json
+        return [
+            'data' => 'myval'
+        ];
+    }
+
+//usage:
+    User::find(1)->notify(new TaskCompleted)/*->delay($when) //:optional */;
+    //or
+    Notification::send(User::find(1), new TaskCompleted($myvar));
+    //or
+    Notification::route('mail'/*via*/,'my@my.com')->notify(new TaskCompleted($myvar));
+
+    auth()->user)->unreadNotifications->markAsRed();
+```
+.blade.html:
+```html
+//display database notifications, the User model class already has the right mixin!
+<div>you have {{ auth()->user->notifications->count() }} Notifications</div>
+@foreach (auth()->user->notifications as $noti)
+    {{ $noti->data['data'] }}                   //output: 'myval'
+@endforeach
+@foreach (auth()->user->unreadNotifications as $noti)
+    {{ ... }}
+@endforeach
+```
+.env
+```ini
+MAIL_HOST=...
+MAIL_PORT=...
+...
+QUEUE_DRIVER=database   # to be async! def: sync
+```
+

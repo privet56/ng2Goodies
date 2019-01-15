@@ -17,8 +17,11 @@
 
 #### [Kafka](./kafka/kafka.md)
 
+#### [MS Dynamics CRM](./ms_dynamics/ms_dynamics.md)
+
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 #### [PHP - Advanced Laravel](php/laravel.md)
+#### [PHP - RxPHP](php/rxphp.md)
 
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
