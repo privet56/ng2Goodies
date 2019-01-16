@@ -61,8 +61,62 @@ $disposable1 = $subject->subscribe(function($v) { echo "${v}"; });
 $disposable2 = $subject->subscribe(function($v) { echo "${v}"; });
 $filteredObs->subscribe($subject);
 
-
-//
+//retry:
+//version without retry:
 (new CURLObservable('https://my.com'))->subscribeCallback(null, function($e) { });
+//version with retry:
+(new CURLObservable('https://my.com'))->retry(3)->subscribeCallback(null, function($e) { });
+//advanced retry:
+$count = 0;
+\Rx\Observable::range(1,6)
+    ->map(function() use (&$count) {
+        if(++$count == 3) {
+            throw new \Exception('err msg');
+        }
+        return $count;
+    })
+    ->retry(3)
+    ->takeWhile(function($v) {
+        return $v <= 6;
+    })
+    ->subscribe(new MySubject());
+//advanced retry:
+Observable::defer(function() {
+    return new CurlObservable('https://my.com');
+})->retry(3)->subscribe(new MySubject());
+//better retry = retryWhen:
+(new CURLObservable('https://my.com'))
+    ->retryWhen(function(Observable $errObs) {
+        $notificationObs = $errObs->delay(1111, Scheduler::getDefault())->map(function() { /*onNext*/ return true; });
+        return $notificationObs;
+    })->subscribe(new MySubject());
+//retryWhen - version 2: here no onError will be thrown, but onCompleted (after 3 tries)
+(new CURLObservable('https://my.com'))
+    ->retryWhen(function(Observable $errObs) {
+        $i = 1;
+        $notificationObs = $errObs->delay(1111, Scheduler::getDefault())->map(fucntion(Exception $e) use (&$i) {
+            $i++;
+            return $e;
+        })->take(3);
+        return $notificationObs;
+    })->subscribe(new MySubject());
 
+//catchError
+\Rx\Observable::range(1, 6)->map(function($v) {
+    if($v == 3) { throw new \Exception(); } return $v;
+})->catchError(function(Exception $e, \Rx\Observable $sourceObs) {
+    return \Rx\Observable::just(42);
+})->subscribe(new MySubject()); //sequence: 1, 2, 42, onCompleted
+
+//testing
+
+//dOn* = doOnNext(callable), doOnError(callable), doOnCompleted(callable), onOnEach(instance)
+    //the perform side effect without subscription
+Observable::create(function(ObserverInterface $obs) {
+    $obs-onNext(1);
+    $obs-onNext(2);
+    $obs-onError(new \Exception("e"));
+}->doOnError(function \Exception $e) {
+    //...
+})->subscribe(function($v) {}, function( {});
 ```
