@@ -29,7 +29,8 @@
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
 
-#### [Penetration Tests](pentest.md)
+#### [Penetration Tests](./sectest/pentest.md)
+#### [Security Testing](./sectest/sectest.md)
 
 #### [RxJava](./rx/rxjava.md)
 
