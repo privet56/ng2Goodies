@@ -110,3 +110,27 @@ istio runs inside k8s! --> deployment is just running kubectl apply -f ...
     1. see kubectl get svc && kubectl get ingress
 
 <img src="istio.ingress.png" width="250px">
+
+## Functions of Istio
+1. Service-to-Service Communication
+2. Routing Rules
+3. Retries
+4. Circuit Breaker
+5. Performance Monitoring
+6. Tracing
+7. Security - Mutual TSL, Encryption
+
+Implementation: Istio is just a
+1. proxies on every pod between your apps. Proxy implementation: envoy (C++, based on L4/L7)
+2. istio pilot configuring the proxies
+3. istio Mixer forwards infos to grafana, zipkin etc.; also to GCP!
+
+The Service Mesh transparently intercepts **all** requests, forwards to localy proxy. The proxy has a list of destinations, load balances the request to a destination proxy.
+
+## Other Popular Open Source Cloud-Tools
+1. Eureka - Service Registry (java)
+2. Ribbon - Client Side LB
+3. Hystrix - Circuit Breaker
+4. Zipkin - Distributed Tracing
+5. Prometheus - Monitoring
+6. Grafana - Data Visualization
