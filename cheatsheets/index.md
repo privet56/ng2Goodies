@@ -14,6 +14,7 @@
 #### [Local Kubernetes Environments with minikube](./../docker/k8slocal.md)
 #### [Helm - basics](helm/helm.md)
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
+#### [Istio](helm/istio.md)
 
 #### [Kafka](./kafka/kafka.md)
 
