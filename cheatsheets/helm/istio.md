@@ -12,6 +12,8 @@
     5. Istio has prometheus for graphing (like grafana)
     6. Istio has circuit-breaker (=shuts down pods if too much errors to let it cool off)
 
+> $ helm install incubator/istio  # check for new chart after release of istio!
+
 ## Workflow on GCP:
 1. create Docker container, push into registry on GCP
 2. create k8s cluster through the GCP UI
@@ -67,6 +69,8 @@ forward 'middleware' always to 'prod':
 istio-cfg with retry policy:
 > $ istioctl replace -f ./routing-2.yaml
 
+> $ istioctl delete -f ./routing-2.yaml     # this would delete the rule
+
 <img src="istiocfg.routing2.png" width="250px">
 
 ### Istio Scripting on GCP
@@ -92,9 +96,11 @@ header-specific traffic control:
 (with header-propagation, you can control the communication in the middle of your stack)
 
 <img src="istiocfg.routing3.png" width="250px">
+<img src="istiocfg.routing-header.regex.png" width="250px">
 
 ### Example:
-    1. https://github.com/thesandlord/Istio101
+1. https://github.com/thesandlord/Istio101
+2. https://github.com/saturnism/istio-by-example-java
 
 ### Deploy istio:
 istio runs inside k8s! --> deployment is just running kubectl apply -f ...
@@ -134,3 +140,23 @@ The Service Mesh transparently intercepts **all** requests, forwards to localy p
 4. Zipkin - Distributed Tracing
 5. Prometheus - Monitoring
 6. Grafana - Data Visualization
+
+### Istio Circuit Breaker & htttpFault configuration:
+<img src="istio.circuitbreaker.png" width="250px">
+<img src="istio.circuitbreaker.2.png" width="250px">
+<img src="istio.httpfault.png" width="250px">
+
+### Prometheus UI
+<img src="istio.prometheus.png" width="550px">
+
+### Istio weighted routing:
+
+<img src="istiocfg.routing.weighted.png" width="250px">
+
+## API Management with Istio!
+Related terms:
+1. API Management &
+2. API Gateway(for crosscutting concerns: access-control,threat-protection, throttling/quotas, caching)
+3. Service Management (db, caching, etc. are services, they can be managed with Istio)
+
+Tool: apigee

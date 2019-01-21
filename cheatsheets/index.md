@@ -33,6 +33,8 @@
 #### [Penetration Tests](./sectest/pentest.md)
 #### [Security Testing](./sectest/sectest.md)
 
+#### [Solr](./solr/solr.md)
+
 #### [RxJava](./rx/rxjava.md)
 
 #### [Scrum / Kanban](scrum/scrum.md)
