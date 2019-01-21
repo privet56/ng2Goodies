@@ -6,6 +6,7 @@
 #### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
 
 #### [Azure](azure/azure.md)
+#### [Google Cloud Platform](gcp/gcp.md)
 
 #### [Docker (PowerPoint Presentation, 2017)](./../docker/docker.pptx)
 #### [Docker for Windows](./../docker/docker4windows.md)
@@ -36,6 +37,7 @@
 #### [Solr](./solr/solr.md)
 
 #### [RxJava](./rx/rxjava.md)
+#### [RxJava & ReactiveJ](./rx/reactivej.md)
 
 #### [Scrum / Kanban](scrum/scrum.md)
 
