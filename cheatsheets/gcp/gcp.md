@@ -62,8 +62,86 @@ can be PaaS or IaaS
 ## GCP Management Tools
 1. Deployment Manager
 2. Cloud Endpoints
-3. Console, Shell
-4. **StackDriver**: Monitoring, Logging, Tace(->latency reporting), Error-Reporting (some of the functions also work with AWS)
+3. Console, Dashboard, Billing
+4. **StackDriver**: Monitoring, Logging, Tace(->latency reporting), Error-Reporting (some of the functions also work with AWS -> usable in multi-cloud-environments)
+    1. works with agents installed on clients
+5. Cloud Shell(=SSH-in-Browser)
+    1. has 5 GB persistent storage
+    2. terminates when your session expires
+    3. bash, sh, emacs, vim, nano, gradle, make, maven, npm, nvm, php, git, mercurial, docker, ipython, mysql-client, gRPC preinstalled!
+    4. GAE SDK, Google Cloud SDK, gsutil for Cloud Storage preinstalled
+    5. debian system utils preinstalled
+    6. java, go, python, nodeJS(use nvm to switch versions), ruby, php, .net preinstalled
+    7. not all ports are open (20, 80, 443, 8080, among others are open)
+
+```bash
+gcloud init # setup your account
+gcloud spanner instances list
+gsutil
+```
+
+6. Cloud Mobile App (iOS, Android)
+    1. can alerts
+    2. has dashboard, incl. billing
+    3. view health
+7. Development Tools
+    1. Clould SDK & CLI
+        1. can run in local service emulator
+        2. available for several prog. langs.
+        3. gcloud to access GCP APIs
+        4. gsutil for Cloud Storage buckets & objects
+        5. Powershell cmdlets
+        6. bq for BigQuery
+        7. kubectl for k8s
+    2. Deployment Manager
+    3. Cloud Source Repositories:
+        1. Multiple private repos possible.
+        2. integrated with Cloud Diagnostic (-> so you can debug with StackDriver)
+        3. github or bitbucket or google-hosted(private)
+    4. Development Studios (Android, IntelliJ, Eclipse, Powershell) plugins
+    5. Plugins (Maven, Gradle)
+    6. Tools für Visual Studio
+    7. Firebase Test lab for Android
+
+## Big Data Solutions
+1. Google BigQuery - petabyte scale Data Warehouse. Is HA & fully-managed & serverless. Uses SQL.
+    1. has security & permissions
+2. Google Cloud Dataflow / Apache Beam ==> for Stream/Batch Processing, ETL
+    1. has horizontal auto-scaling
+    2. use Apache Beam SDK with windowing support
+    3. input (ingest) can be: pub/sub, datastore, avro, kafka
+    4. output can be: bigquery, machine-learning, bigtable
+3. Google Cloud Dataproc = Hadoop & Spark Clusters
+    1. incl. automatic cluster management
+    2. cluster is resizable
+    3. StackDriver log/monitoring can access the cluster
+4. Google Cloud Datalab = jupyter notebook based analysis & visualization of BigQuery data
+    1. languages: js, python, SQL
+    2. can access Google-Cloud-Machine-Learning
+5. Google Cloud Pub/Sub, is serverless real-time messaging service
+    1. with at-least-one delivery & exactly-once processing
+    2. input: app, (smartphone-)devices, databases
+6. Google Cloud Genomics
+
+## Machine Learning
+Accessible via **REST APIs** or through the Web UI.
+The services are integrated with other GCP services (e.g. Dataproc, Datastorage)
+1. Cloud Machine Learning (eg. for image classification)
+    1. based on TensorFlow
+    2. uses ipython notebook
+    3. models are portable & downloadable
+2. Cloud Video Intelligence API
+    1. extracts metadata from vids & identifies entities
+3. Cloud Vision API = image classification, is pretrained, can detect text, faces
+4. Cloud Speech Recognition API = Speech to Text, knows >100 languages
+    1. is context-aware
+    2. with meachine learning
+    3. is real-time
+    4. can stream
+5. Cloud Natural Language API; for text classification, recognizes infos/entities from text, incl sentiment analysis; for several languages
+6. Cloud Translation API; incl language detection; knows >100 languages
+    1. adjustable quota
+7. Cloud Job Discovery
 
 ## Services Overview:
 <img src="gcp.services.png" width="550px">
@@ -71,4 +149,6 @@ can be PaaS or IaaS
 <img src="gcp.services.3.png" width="550px">
 
 ## Datacenters:
+(connected with own fiber optic network)
+
 <img src="datacenters.png" width="550px">
