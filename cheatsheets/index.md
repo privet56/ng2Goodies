@@ -43,6 +43,7 @@
 
 #### [Spark](spark/spark.md)
 #### [Spark with PySpark](spark/spark_pyspark.md)
+#### [Spark with Scala](spark/sparkwithscala.md)
 
 #### [Interpersonal Skills](interpersonalskills.md)
 
