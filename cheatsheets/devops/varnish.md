@@ -16,6 +16,7 @@
 5. is a reverse proxy & load balancer
 6. VMOD = binary extension, ~plugin
 7. can security (httpoxy, slowloris)
+8. example varnish cfgs: http://github.com/mattiasgeniar
 
 ## Workflow
 1. client -> vcl_recv() -> is-in-cache -> vcl_deliver()
@@ -164,8 +165,17 @@ Varnish overrides TTL header
 ```python
 sub vcl_backend_response {
 
-    set beresp.ttl = 10s; # = cache lifetime
-    
+    set beresp.ttl = 10m; # = cache lifetime for all objects
+
+    # keep objects in cache for extra 20 min
+    # can be served to clients while fetching new content
+    # total time object can be in the cache: 10min + 20min = 30min
     set beresp.grace = 20m;
 }
+```
+## CLI Tools
+```sh
+varnishhist     # histogram on the command line
+varnishlog      # real-time req dump # use params to filter!
+varnishncsa     # log output like apache does
 ```

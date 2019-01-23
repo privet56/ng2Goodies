@@ -87,7 +87,7 @@
 	3. release often
 	4. regular demos to stakeholders
 
-## Scrum VS Kanban
+## Scrum vs Kanban
 <img src="scrum.vs.kanban.png" width="550px">
 
 ## Large companies, like SIEMENS, use Kanban
@@ -101,3 +101,50 @@
 
 ## Scrumban:
 <img src="scrumban.png" width="550px">
+
+# SAFe
+<img src="safe.png" width="550px">
+
+1. SAFe is based on Scrum.
+2. Scrum is for **small** teams
+3. SAFe is for the coordination of **multiple teams** & their dependencies
+4. SAFe = a set of organization and workflow patterns intended to guide enterprises in scaling lean and agile practices.
+5. Foundation: **Lean-Agile Leadership**
+6. Contains:
+	1. has **Agile Release Train (ART)**
+		1. consists of 5 - 15 teams (up to 100 individuals) that build a solution together
+		2. has **RTE = Release Train Engineer**, he coordinates & plannes the release
+	2. has PI planning: Roadmap & Product increment
+		1. a 2-day workshop for planning the next release
+	3. has Hardening/Polish Sprint: the last sprint of a quarter
+		1. ~ H.I.P. Sprint: Hardening, Innovation, Planning
+7. Configurations:
+	1. Essential SAFe - one agile release train (ART).
+		1. One Solution
+	2. Large Solution SAFe - more than one ART
+		1. One Solution
+	3. Portfolio SAFe
+		1. more than one solution
+	4. Full SAFe - both portfolio and large solution needed
+8. Ceremonies of SAFe
+	1. PI Planning: every 10. week, where all teams and management comes together
+	2. PO weekly meetings:
+		2. PO Sync: synchronization and statusupdate with RTE, Sys Architect, PM
+		3. PO Info: infos given from different projects or new info will be delivered to the teams
+		4. PO Grooming: clarifications of requirements for the next PI planning
+## Challenges in SAFe:
+<img src="safe.challenges.1.png" width="550px">
+<img src="safe.challenges.2.png" width="550px">
+<img src="safe.challenges.3.png" width="550px">
+<img src="safe.challenges.4.png" width="550px">
+<img src="safe.challenges.5.png" width="550px">
+<img src="safe.challenges.6.png" width="550px">
+
+### Solutions for SAFe challenges:
+1. Use dependency board!
+2. learn from old estimation to estimate better in the future
+3. plan the delivery of (external) dependencies
+4. use only 1 method of reporting (eg Jira), is more transparent
+5. try not to do micromanagement & try to keep the teams autonom as far as possible! (if you have mature teams!)
+6. Tag dependencies in Jira with #has2bedoneby... or #hastobeuntil...
+7. ensure that SAFe teams already know Scrum well!

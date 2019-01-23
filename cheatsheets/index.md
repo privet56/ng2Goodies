@@ -39,7 +39,7 @@
 #### [RxJava](./rx/rxjava.md)
 #### [RxJava & ReactiveJ](./rx/reactivej.md)
 
-#### [Scrum / Kanban](scrum/scrum.md)
+#### [Scrum / Kanban / SAFe](scrum/scrum.md)
 
 #### [Spark](spark/spark.md)
 #### [Spark with PySpark](spark/spark_pyspark.md)
