@@ -8,6 +8,8 @@
 #### [Azure](azure/azure.md)
 #### [Google Cloud Platform](gcp/gcp.md)
 
+#### [SmartGWT](gwt/smartgwt.md)
+
 #### [Docker (PowerPoint Presentation, 2017)](./../docker/docker.pptx)
 #### [Docker for Windows](./../docker/docker4windows.md)
 #### [Kubernetes](./../docker/k8s.md)
@@ -56,20 +58,71 @@
 ### DevOps
 #### [GitLab](./devops/gitlab.md)
 #### [Varnish](./devops/varnish.md)
+
 .
 
-### Diverse:
+## Diverse:
 
 .
 
 #### How to protect Secret Keys in JavaScript source code?
-    use jscrambler, with config entry "propertyKeysObfuscation" :
-    install:
+use jscrambler
+1. use jscrambler, with config entry "propertyKeysObfuscation"
+2. **Take care**: this hint is not hacker-safe, but often ~good-enough!
+3. cfg prop: "name": "propertyKeysObfuscation"
 ```sh
 npm install jscrambler --save-dev 
 npm i --save-dev jscrambler-webpack-plugin 
-
-cfg prop: "name": "propertyKeysObfuscation"
 ```
-    Disclaimer: this hint is not hacker-safe, but often ~good-enough!
 
+#### How to convert PSD to HTML/CSS & pics ?
+Use Avocode (desktop app, available for macOS, Win, Linux)
+1. Use Avocode (the app is not free) (can also handle Sketch designs with a plugin)
+2. After opening the project, you can edit the CSS styles.
+3. can export images
+4. often, you edit the HTML manually and use the styles & images given by Avocode
+5. app shows padding & margin of elements visually
+
+#### How to do (mobile) Cross-Browser testing? 
+Use online service of http://www.browserstack.com (not free!)
+1. Can do:
+    1. live: interactive test & debug of websites in real browsers & mobile devices
+    2. Automate
+    3. Screenshots & Responsive
+2. you can choose from a lot of browser-versions & OSs(Win, macOS, iOS, Android)
+3. Plugin for Chrome: 'Local Testing' for non-public websites, eg. from localhost
+
+#### How to speed up Apache?
+Use mod_pagespeed: it compresses JS & CSS
+```sh
+wget https://dl-ssl-google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb
+dpkg -i mod-pagespeed*.deb
+sudo service apache2 restart
+gedit /etc/apache2/mods-available/pagespeed.conf # -> ModPagespeed on|off
+gedit /etc/apache2/mods-enabled/pagespeed.conf   # -> /pagespeed_admin = Admin Area!
+sudo service apache2 reload
+```
+/etc/apache2/mods-available/pagespeed.conf
+```xml
+<IfModule pagespeed_module>
+    ModPagespeed on
+    ...
+```
+/etc/apache2/mods-enabled/pagespeed.conf
+```xml
+<Location /pagespeed_admin>
+    Order allow,deny
+    Allow from localhost
+    Allow from 127.0.0.1
+    Allow from 0.0.0.0
+    SetHandler pagespeed_admin
+</Location>
+<Location /pagespeed_global_admin>
+    Order allow,deny
+    Allow from localhost
+    Allow from 127.0.0.1
+    Allow from 0.0.0.0
+    SetHandler pagespeed_global_admin
+</Location>
+    ModPagespeedStatisticsLogging on
+```
