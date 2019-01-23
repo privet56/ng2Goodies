@@ -52,6 +52,10 @@
 #### [Hazelcast](./hazelcast/hazelcast.md)
 #### [Redis](./redis/redis.md)
 #### [Vert.x](./vertx/vertx.md)
+
+### DevOps
+#### [GitLab](./devops/gitlab.md)
+#### [Varnish](./devops/varnish.md)
 .
 
 ### Diverse:
