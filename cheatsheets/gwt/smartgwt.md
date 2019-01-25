@@ -86,18 +86,24 @@ public class My extends Composite implements ClickHandler {
 ```
 ## RPC
 is async by default
+
 <img src="rpc.png" width="550px">
+
 1. GUI: accesses client (through business specific interfaces & implementations)
 2. client
 ```java
 //my.client.service.IMyService extends RemoteService
-@RemoteServiceRelativePath("myservice") //->see web.xml
+@RemoteServiceRelativePath("myservice") //->see web.xml + EndPoint
 public interface IMyService extends RemoteService {
     String myfunc(String s);
+    MyData getData();
+    //alternative the DataEvent based communication
 }
 //my.client.service.IMyServiceAsync extends RemoteService
 public interface IMyServiceAsync {
     void myfunc(String s, AsyncCallback callback);
+    void getData(AsyncCallback callback);
+    //alternative the DataEvent based communication
 }
 public class MyService implements IMyServiceInt {
     private MyServiceAsync service;
@@ -108,13 +114,25 @@ public class MyService implements IMyServiceInt {
     }
     @Override
     String myfunc(String s) {
-        this.service.myfunc(s, callback); //server is called async, get return val in callback
+        //server is called async, get return val in callback
+        this.service.myfunc(s, new MyCallback());
+    }
+    @Override
+    void getData() {
+        this.service.getData(new MyCallback());
     }
     private class MyCallback implements AsyncCallback {
         @Override
         public void onFailure(Throwable t) { }
         @Override
-        public void onSuccess(Object r) { }
+        public void onSuccess(Object r) {   //update GUI with response 'r'
+            if(r instanceof String)
+                this.myGui.updateLabel(r);
+            else if(r instanceof MyData)
+                this.myGui.openDataPage((MyData)r);
+            else if(r instanceof DataEvent)//event contains data
+                this.myGui.handleEvent((DataEvent)r);
+        }
     }
 }
 ```
@@ -124,6 +142,9 @@ public class MyService implements IMyServiceInt {
 public class MyService extends RemoteServiceServlet implements my.client.IMyService {
     @Override
     String myfunc(String s) { return "myreturnval "+s; }
+    @Override
+    public MyData getData() { return new MyData(); }
+    //alternative the DataEvent based communication
 }
 ```
 4. web.xml
@@ -134,6 +155,19 @@ public class MyService extends RemoteServiceServlet implements my.client.IMyServ
 </servlet>
 <servlet-mapping>
     <servlet-name>myServlet</servlet-name>
-    <url-pattern>/myproject/myservice</url-pattern><!-- @RemoteServiceRelativePath -->
+    <url-pattern>/myproject/myservice</url-pattern><!-- @RemoteServiceRelativePath + EndPoint-->
 </servlet-mapping>
 ```
+5. EntryPoint
+```java
+public class MyApp implements EntryPoint {
+    public void onModuleLoad() {
+        IMyService mySErvice = new MyServiceImpl(GWT.getModuleBaseURL() + "myservice");
+        RootPanel.get().add(new MainView(mySErvice));
+    }
+```
+6. Model: my.client.model.MyData , a simple POJO, has to be **Serializable**
+7. Event: my.client.events.DataEvent has to be **Serializable** ,
+    use subclasses in the Remote calls containing the (My)Data (not (My)Data directly) , such as
+    1. DataRetrievedEvent
+    2. DataUpdatedEvent

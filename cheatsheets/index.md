@@ -15,9 +15,11 @@
 #### [Kubernetes](./../docker/k8s.md)
 #### [CI/CD with Jenkins and Kubernetes](ci_cd_jenkins_kubernetes.md)
 #### [Local Kubernetes Environments with minikube](./../docker/k8slocal.md)
+#### [Security in Kubernetes Environment](sectest/sec_k8s.md)
 #### [Helm - basics](helm/helm.md)
 #### [Helm - advanced (mentioning istio too)](helm/helm4k8s.md)
-#### [Istio](helm/istio.md)
+#### [Istio](helm/istio.md) & [Istio-CodeFresh](helm/istio_helm_canary.md)
+#### [Multicloud with k8s & Istio & Spinnaker](helm/multicloud.md)
 
 #### [Kafka](./kafka/kafka.md)
 
