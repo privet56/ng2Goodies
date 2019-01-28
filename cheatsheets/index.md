@@ -60,6 +60,7 @@
 ### DevOps
 #### [GitLab](./devops/gitlab.md)
 #### [Varnish](./devops/varnish.md)
+#### [PostgreSQL](./devops/postgres.md)
 
 .
 
