@@ -25,6 +25,7 @@
 
 #### [MS Dynamics CRM](./ms_dynamics/ms_dynamics.md)
 
+### PHP
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 #### [PHP - Advanced Laravel](php/laravel.md)
 #### [PHP - RxPHP](php/rxphp.md)
@@ -35,8 +36,10 @@
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
 
+### Security
 #### [Penetration Tests](./sectest/pentest.md)
 #### [Security Testing](./sectest/sectest.md)
+#### [OAuth / OpenID / JWT](./sectest/oauth.md)
 
 #### [Solr](./solr/solr.md)
 
