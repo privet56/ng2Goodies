@@ -6,6 +6,7 @@
     Rx has many flawors: RxJava, RxSwift, RxJs...
     Rx = Observables + LINQ + Schedulers
     RxMarbles = resource explaining Rx visually
+    Docu: http://reactivex.io/documentation/
 
 Old-Style Async Tools:
 1. AsyncTask
@@ -44,6 +45,8 @@ new MyTask().execute(params);
     Observables = put data in & get data out
 #### put data in Observable:
 ```java
+import io.reactivex.*;
+import java.util.concurrent.TimeUnit;//j9
 Observable.just("my");
 val a = Array<String> = arrayOf("","");     // this is Kotlin!
 Observable.from(a);
@@ -97,6 +100,10 @@ Observable.from([1,2])
 //output: 2
 
 Observable.merge(o1, o2)
+
+//do fire every 0.5 secs asynchronously
+Observable.intervalRange(0/*first number*/, 20/*last number*/, 500/*initial delay*/, 500, TimeUnit.MILLISECONDS)
+    .blockingSubscribe(val -> System.out.println(val));
 ```
 
 ## Schedulers
@@ -213,4 +220,46 @@ override fun getVerifiedData(code: String): Observable<Unit> {
             loadableUserState.loadFromData(data)
         }.observeOn(AndroidSchedulers.mainThread())
 }
+```
+## Reactive & Real World
+```java
+//RxFibonacci: calculates fibonacci infinitely
+static Observable<Integer> fibs() {
+    return Observable.create(subscriber -> {
+        int prev = 0;
+        int cur  = 0;
+        subscriber.onNext(0);
+        subscriber.onNext(1);
+        while(!subscriber.isDisposed()) {
+            int oldPrev = prev;
+            prev = cur;
+            cur += oldPrev;
+            subscriber.onNext(cur);
+        }
+    });
+}
+//read into Observable! - blocking!
+static Observable<String> lines(BufferedReader r) {
+    return Observable.create(subscriber -> {
+        //this is blocking!
+        while((String line = reader.readLine() != null) {
+            subscriber.onNext(line);
+            if(subscriber.isDisposed())break;
+        }
+        subscriber.onComplete();
+    });
+}
+//read into Observable! - non-blocking!
+static Observable<String> linesNonBlocking(BufferedReader r) {
+    return Observable.<String>create(subscriber -> {
+        while((String line = reader.readLine() != null) {
+            subscriber.onNext(line);
+            if(subscriber.isDisposed())break;
+        }
+        subscriber.onComplete();
+    }).subscribeOn(Schedulers.io());//run above code on the I/O thread
+}
+//use it:
+r = new BufferedReader(new InputStreamReader(System.in));
+linesNonBlocking(r).observeOn(Schedulers.trampoline()).map(...).subscribe(...);
 ```
