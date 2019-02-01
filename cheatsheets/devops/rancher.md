@@ -1,5 +1,6 @@
 # Kubernetes & Rancher
 https://rancher.com/docs/rancher/v2x/en/quick-start-guide
+Rancher does container management via Web UI
 
 <img src="k8s.support.of.cloud.providers.png" width="450px">
 

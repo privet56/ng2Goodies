@@ -34,8 +34,10 @@
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
 
+### Qt
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
+#### [QtWS18](qt/qtws18.md)
 
 ### Security
 #### [Penetration Tests](./sectest/pentest.md)
