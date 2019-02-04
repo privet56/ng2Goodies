@@ -5,8 +5,11 @@
 3. app can edit animations
 4. app only with commercial Qt license available
 ## Automotive Suite
-Parts of the Suite: App Manager, IVI, Reference UI (Neptune UI), QmlLive, GammaRay, QtCreator-Plugin.
-Neptune UI is an architecture of UI: AppShell, Store, View, Panel, Control. Helper
+1. Parts of the Suite: App Manager, IVI, Reference UI (Neptune UI), QmlLive, GammaRay, QtCreator-Plugin.
+2. Neptune UI is an architecture of UI: AppShell, Store, View, Panel, Control. Helper
+3. Neptune depends on IVI and Qt Application Manager
+4. Neptune 3 shows the capability of Qt Automotive Suite to create mulit-process UI
+
 ```qml
 import application.window 1.0
 import stores 1.0
@@ -20,7 +23,7 @@ ApplicationCCWindow {
         //...
     }
 }
-----
+//----
 import QtQuick 2.11
 import shared utils 1.0
 AbstractStore {
@@ -29,7 +32,7 @@ AbstractStore {
     property ListModel playlistModel
     //...other properties
 }
-----
+//----
 import QtQuick 2.11
 import your.media.backend 1.0
 MusicStoreInterface {
@@ -40,5 +43,89 @@ MusicStoreInterface {
     function pause() {
         player.pause()
     }
+}
+//----
+import QtQuick 2.11
+import stores 1.0
+Item {
+    id: root
+    property MusicStore store
+    WidgetPanel {
+        width: root.width
+        state: root.state
+        store: root.store
+    }
+    MaximizedPanel {
+        width: root.width
+        height: root.height - widgetContent.height
+        visibilit: root.state == 'Maximized'
+    }
+}
+```
+## MapBox Auto on Qt
+1. MapBox Qt SDK (incl QML plugins), From Finland, MapBox Automotive
+2. MapBox OEMs: lot of car companies, like VW, GM, Mercedes, BMW, Audi, Harman...
+3. can be built into IVI (=embedded linux based on Yocto/Boot2Qt)
+## Qt Creator IDE
+1. C++: offers navigation, highlighting, understand also overloaded operators
+    1. supports QSharedPointer, auto(by tooltip)
+    2. has Clang & Clazy Analyzer/Diagnostic support
+    3. has ClangFormat (AutoFormatter, Code-Beautifier)
+2. has Language Server Protocol (supports py, C++, haskell, Go, Rust)
+## WASM - Qt for WebAssembly
+1. Platform Stack: App + Qt + Emscripten + HTML/Wasm. Example: https://github.com/msorvig/QtWS18/
+2. Empscipten = a toolchain for compiling to asm.js, uses LLVM
+3. #define Q_OS_WASM
+4. no binaries from Qt company -> you have to build Qt from source for this target platform
+    1. cmd: ~Qt/5.12.0/src/configure -xplatform wasm-emscripten -nomake examples
+    2. cmd: make module-qtbase module-qtquickcontrols2
+5. supported modules: QtBase, QtDeclarative, Qt-Quick-Controls2, QtCharts, QtWebSockets, QtMqTT
+6. qmake & make will build a .wasm.js and html files, can be served from any web server:
+    1. app.html: app is embedded in a &lt;canvas&gt;, app sees that as a QScreen
+    2. qtloader.js
+    3. app.js
+    4. app.wasm
+7. file sizes:
+    1. core gui: >2MB
+    2. Core gui widgets: >3MB
+    3. Charts: >6MB
+8. memory usage: large! (but not bigger than other WASM apps)
+9. Emscripten creates an in-memory file system, accessible by QFile (no QFileDialog support)
+    1. callback-based loadFile(); QWasmFile(...
+10. Networking: QNetworkAccessManager (constraint: CORS), QWebSocket (any host!), QAbstractSocket (=websocket-protocol, Websockify forwarding host (=tunnel)); MQTT over WebSocket possible!
+11. Empscripten provides API for interop C++ with JavaScript!
+```c++
+//C++:
+#include <empscripten/bind.h>
+void setColor(int r, int g, int b);
+EMSCRIPTEN_BINDINGS(colorDebugger) {
+    empscripten::function("setColor", &setColor);
+}
+//JS:
+Module.setColor(rgb[0], rgb[1], rgb[2]);
+```
+12. not yet working in Qtv.5.12: Threading, Qt3D, nested event loops
+## KDAB Open Source Tools:
+Clazy & GammaRay & Heaptrack(https://projects.kde.org/heaptrack/) & Hotspot(GUI for linux perf)
+### Clazy
+Clazy is integrated in QtCreator
+```c++
+export CLAZY_CHECKS=level0,level1,level2
+clazy -I/usr/include/qt&/ -std=c++11 f.cpp
+export CLAZY_FIXIT="fix-string-allocations"
+```
+```c++
+//Clazy warning:
+void t(QObject *pO) {
+    int a = 1;
+    auto f = [&a]() { /*...*/ };
+    pO->connect(pO, &QObject::destroyed, [a]()  { /*...*/ });
+    pO->connect(pO, &QObject::destroyed, [&a]() { /*...*/ }); //->CRASH //warning by Clazy!
+}
+bool isF(const QString& s) {
+    return s == "f";    //warning by Clazy! better: return s == QLatin1String("f");
+}
+QString f() {
+    return QLatin1String("f");//warning by Clazy! better: return QStringLiteral("f");
 }
 ```
