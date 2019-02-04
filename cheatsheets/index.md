@@ -14,6 +14,7 @@
 #### [Docker for Windows](./../docker/docker4windows.md)
 #### [Kubernetes](./../docker/k8s.md)
 #### [CI/CD with Jenkins and Kubernetes](ci_cd_jenkins_kubernetes.md)
+#### [Kubernetes on AWS](./../docker/k8s.on.aws.md)
 #### [Local Kubernetes Environments with minikube](./../docker/k8slocal.md)
 #### [Security in Kubernetes Environment](sectest/sec_k8s.md)
 #### [Helm - basics](helm/helm.md)
