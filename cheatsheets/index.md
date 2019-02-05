@@ -22,6 +22,7 @@
 #### [Istio](helm/istio.md) & [Istio-CodeFresh](helm/istio_helm_canary.md)
 #### [Multicloud with k8s & Istio & Spinnaker](helm/multicloud.md)
 #### [k8s & Rancher](devops/rancher.md)
+#### [Spinnaker](devops/spinnaker.md)
 
 #### [Kafka](./kafka/kafka.md)
 
