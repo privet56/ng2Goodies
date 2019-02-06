@@ -9,13 +9,29 @@ Spinnaker is a CD tool from Google/Netflix
 3. A Spinnaker has a Server Group configuration (incl. container-image, load-balancers, replicas, autoscaling, probes(healthcheck)) (k8s = type deployment)
 3. supported providers: aws,azure,gce, openstack...
 3. storage: Azure Storage, Google Cloud Storage, Minio(~local S3), Redis, S3
+3. Community: https://community.spinnaker.io/
 
 ## Deployment Pipeline Configuration on the Web UI:
 <img src=spinnaker.pipeline.cfg.png width="550px">
 <img src=spinnaker.build.png width="550px">
 
-### Install:
-1. CLI: hal (Halyard, a tool for configuring, installing, and updating Spinnaker)
-or
-2. kubectl apply -f https://spinnaker.io/downloads/kubernetes/quick-install.yml
+#### Spinnaker Reference - Supported Cloud Providers
+1. Azure
+2. AWS: ECS
+3. GCP: GCE & GAE
+4. Kubernetes Legacy (old k8s version)
+5. Kubernetes Manifest based - current k8s version
 
+<img src=spinnaker.ref.cloudproviders.png width="550px">
+
+### Install:
+
+> $ kubectl apply -f https://spinnaker.io/downloads/kubernetes/quick-install.yml
+
+(or you can use helm to install)
+
+## Use / Interfaces
+1. Web UI
+2. CLI: hal (Halyard, a tool for configuring, installing, and updating Spinnaker), e.g. add provider with such a cmd:
+    > $ hal config provider kubernetes accound add ACCOUNT [parameters]
+3. Spinnaker REST API (see Reference -> API)

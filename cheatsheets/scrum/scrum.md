@@ -66,6 +66,8 @@
 	
 	Repeat this workflow for each Sprint.
 
+<img src="scrum.cheatsheet.png" width="550px">
+
 # Kanban
 	has also Backlog
 	has Kanban Board (~Agile Board)
