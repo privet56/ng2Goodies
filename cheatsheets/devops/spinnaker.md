@@ -35,3 +35,13 @@ Spinnaker is a CD tool from Google/Netflix
 2. CLI: hal (Halyard, a tool for configuring, installing, and updating Spinnaker), e.g. add provider with such a cmd:
     > $ hal config provider kubernetes accound add ACCOUNT [parameters]
 3. Spinnaker REST API (see Reference -> API)
+
+## Mutlicloud View on the Web UI:
+<img src=spinnaker.multicloud.png width="550px">
+
+### Build Error and its Configuration on the Web UI
+<img src=spinnaker.build.stage.fail.png width="550px">
+<img src=spinnaker.build.stage.fail.2.png width="550px">
+<img src=spinnaker.build.stage.fail.3.png width="550px">
+<img src=spinnaker.build.stage.fail.4.png width="550px">
+
