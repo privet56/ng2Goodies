@@ -137,3 +137,13 @@ sudo service apache2 reload
 </Location>
     ModPagespeedStatisticsLogging on
 ```
+
+#### SQL: Find book(s) with the minimum average rating
+```sql
+select avg3.title, avg3.avg_rating
+from
+
+(select b.title, avg(r.rating) as avg_rating from ratings r join books b on b.id = r.book_id group by b.title) as avg3
+
+where avg_rating = (select min(avg2.avg_rating2) from (select r2.book_id as id, avg(r2.rating) as avg_rating2 from ratings r2 group by r2.book_id) as avg2);
+```
