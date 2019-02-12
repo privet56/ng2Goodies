@@ -147,3 +147,51 @@ from
 
 where avg_rating = (select min(avg2.avg_rating2) from (select r2.book_id as id, avg(r2.rating) as avg_rating2 from ratings r2 group by r2.book_id) as avg2);
 ```
+
+#### Analyze Java Stream
+(incomplete)
+```java
+public class OrdersAnalyzer {
+
+  /**
+   * Should return at most three most popular products. Most popular product is the product that have the most occurrences
+   * in given orders (ignoring product quantity).
+   * If two products have the same popularity, then products should be ordered by name
+   *
+   * @param orders orders stream
+   * @return list with up to three most popular products
+   */
+  public List<Product> findThreeMostPopularProducts(Stream<Order> orders) {
+	  
+	  List<Product> ps = new ArrayList<Product>();
+    
+	 Stream<OrderLine> ols = orders.flatMap((order) -> order.getOrderLines().stream());
+	 Map<Product, Integer> acc = new HashMap();
+	 ols.forEach(ol -> acc.merge(ol.getProduct(), ol.getQuantity(), Math::addExact));
+	 acc.entrySet().stream().sorted(Map.Entry.comparingByValue()).limit(3).forEachOrdered(p -> ps.add(p.getKey()));
+	 
+	 return ps;
+  }
+
+  /**
+   * Should return the most valuable customer, that is the customer that has the highest value of all placed orders.
+   * If two customers have the same orders value, then any of them should be returned.
+   *
+   * @param orders orders stream
+   * @return Optional of most valuable customer
+   */
+  public Optional<Customer> findMostValuableCustomer(Stream<Order> orders) {
+
+	  List<Customer> cs = new ArrayList<Customer>();
+	  Map<Customer, Integer> acc = new HashMap();
+	  orders.forEach(order -> acc.merge(order.getCustomer(), value(order.getCustomer(), order.getOrderLines()), Math::addExact));
+	  return acc.entrySet().stream().sorted(Map.Entry.comparingByValue()).map(ac -> ac.getKey()).findFirst();
+  }
+  private Integer value(Customer c, Set<OrderLine> ols) {
+	  
+	  int i = ols.stream().mapToInt(ol -> ol.getProduct().getPrice().intValue() * ol.getQuantity()).sum();
+	  System.out.println(""+c.getFirstName()+" "+c.getLastName()+" -> val: "+i);
+	  return i;
+  }
+}
+```
