@@ -195,3 +195,21 @@ public class OrdersAnalyzer {
   }
 }
 ```
+#### implement js function for which is the call sum(2)(3)(5); is valid!
+
+```js
+//solution 1:
+function sum(n1)
+{
+	return function(n2) {
+		return function (n3) {
+			return n1 + n2 + n3;
+		}
+	}
+}
+//alert(sum(2)(3)(4)); //should be 9
+
+//solution 2: ES6
+var sum = n1 => n2 => n3 => n1 + n2 + n3;
+//alert(sum(2)(3)(4)); //should be 9
+```
