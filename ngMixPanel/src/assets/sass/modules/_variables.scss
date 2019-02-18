@@ -1,0 +1,73 @@
+// Extra small screen / phone
+$screen-xs-min: 480px !default;
+
+// Small screen / tablet
+$screen-sm-min: 768px !default;
+
+// Medium screen / desktop
+$screen-md-min: 992px !default;
+
+// Large screen / wide desktop
+$screen-lg-min: 1200px !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+/**** SIDEBAR  ****/
+$sidebar-width: 260px;
+$sidebar-condensed-width: 190px;
+$sidebar-collapsed-width: 50px;
+
+/**** TOPBAR ****/
+$topbar-height:65px;
+
+
+/**** QUICKVIEW SIDEBAR ****/
+$quickview-width: 260px;
+
+
+/*** Color variables ***/
+
+$black: #000000;
+$shark: #1b1e25;
+
+$gray-scorpion: #5b5b5b;
+$gray-nevada:#616C76;
+$gray-medium: #929292;
+$gray-chateau:#959fa9;
+$gray-french: #c8c7cc;
+$gray-alto: #dadada;
+$gray-silver: #c1c1c1;
+$gray-mystic:#E0E6EB;
+$gray-mercury: #e2e2e2;
+
+$white-sand: #f5f5f5;
+$white:#fff;
+
+$blue:#00A2D9;
+$blue-light: #DEEDF2;
+$blue-bayoux: #526a82;
+$tuna:#353940;
+$bluewood:#34495e;
+$blue-post: #BBCBDC;
+
+$boston-blue:#319DB5;
+
+$purple:#b066ff;
+
+$red:#C75757;
+$red-light: #FEE0DE;
+
+$green:#18A689;
+$green-light: #D1EDE8;
+
+$orange:#FF9122;
+$orange-light: #F3E6D1;
+
+$yellow: #EBC85E;
+
+/** Theme primary **/
+$tm-boston-blue:#319db5;
+

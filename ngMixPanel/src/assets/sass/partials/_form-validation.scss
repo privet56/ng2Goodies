@@ -1,0 +1,136 @@
+// Form Validation
+//
+// Form validation for input types, required fields etc.
+//
+// Styleguide 4.6
+
+// Input Field validation
+//
+// Styles for input fields like text, number, etc.
+//
+// .form-error - invalid content (max / min-length, input type), required field
+// .form-warning - Warning state - input is valid but there is a warning message
+// .form-error:focus - Focus state if input is invalid
+// .form-success - Input is valid
+//
+// markup:
+// <div class="form-group {$modifiers}">
+// <sg-insert>4.3</sg-insert>
+// <input type="text" class="form-control form-white" required>
+// <i class="fa fa-cog fa-spin"></i>
+// <span class="text-small block">There's a warning message</span>
+// </div>
+//
+// Styleguide 4.6.1
+
+// TODO: Update styles for form validation!
+
+.form-error {
+    .error {
+        color: $red;
+    }
+
+    label {
+        color: $gray-scorpion;
+    }
+
+    input,
+    textarea {
+        background-color: rgba($red-light, 0.5) !important;
+        border: 1px solid $red-light !important;
+        color: $red !important;
+
+        &:focus {
+            background-color: rgba($red-light, 0.5) !important;
+            border: 1px solid $red-light !important;
+            color: $red !important;
+
+        }
+    }
+
+    .form-control {
+        &.form-white {
+            border: 1px solid $red-light !important;
+            background-color: rgba($red-light, 0.5) !important;
+
+            &:focus,
+            &:hover {
+                background-color: rgba($red-light, 0.5) !important;
+            }
+        }
+    }
+}
+
+.form-success {
+    label {
+        color: $gray-scorpion;
+    }
+
+    input,
+    textarea {
+        background-color: rgba($green-light, 0.5) !important;
+        border: 1px solid $green-light !important;
+        color: $green !important;
+
+        &:focus {
+            background-color: rgba($green-light, 0.5) !important;
+            border: 1px solid $green-light !important;
+            color: $green !important;
+
+        }
+    }
+
+    .form-control {
+        &.form-white {
+            border: 1px solid $green-light !important;
+            background-color: rgba($green-light, 0.5);
+
+            &:focus,
+            &:hover {
+                background-color: rgba($green-light, 0.5);
+            }
+        }
+    }
+}
+
+.form-warning {
+    .error {
+        color: $orange;
+    }
+
+    label {
+        color: $gray-scorpion;
+    }
+
+    input,
+    textarea {
+        background-color: rgba($red-light, 0.5) !important;
+        border: 1px solid $red-light !important;
+        color: $orange !important;
+
+        &:focus {
+            background-color: rgba($red-light, 0.5) !important;
+            border: 1px solid $red-light !important;
+            color: $orange !important;
+
+        }
+    }
+
+    .form-control {
+        &.form-white {
+            border: 1px solid $red-light !important;
+            background-color: rgba($red-light, 0.5) !important;
+
+            &:focus,
+            &:hover {
+                background-color: rgba($red-light, 0.5) !important;
+            }
+        }
+    }
+}
+
+.symbol.required:before {
+    content: "*";
+    display: inline;
+    color: $red;
+}

@@ -1,0 +1,291 @@
+// Tabs & Accordions
+//
+// This section describes Tab header and accordion styles
+//
+// Styleguide 6.0
+
+// Tab Styles
+//
+// This section describes all used tab styles
+//
+// Styleguide 6.1
+
+.tabcordion {
+    .tab-content {
+        box-shadow: none;
+    }
+}
+
+.nav-tabs {
+    border-bottom: 2px solid $gray-alto;
+}
+
+.nav-tabs > li > a {
+    &::before {
+        background-color: $boston-blue;
+        content: '';
+        height: 3px;
+        left: 0;
+        position: absolute;
+        top: 40px;
+        transition: transform 0.3s;
+        width: 100%;
+        @include scale(0);
+    }
+}
+
+.nav-tabs {
+    .active a {
+        &::before {
+            width: 100%;
+            @include scale(1);
+        }
+    }
+
+    a {
+        &:hover,
+        &:focus {
+            border-color: transparent;
+            background: transparent;
+
+            &::before {
+                width: 100%;
+                @include scale(1);
+            }
+        }
+    }
+
+    /*
+    &:after {
+        bottom: 3px;
+        position: relative;
+        width: 100%;
+        z-index: 120;
+    }
+    */
+}
+
+.nav.nav-tabs > li > a {
+    border: none;
+    color: $gray-alto;
+    i {
+        padding-right: 8px;
+    }
+
+    &:hover,
+    &:focus {
+        background: transparent;
+    }
+}
+
+.nav.nav-tabs > li.active > a {
+    border-bottom: none;
+    color: $shark;
+    background: transparent;
+}
+
+.nav.nav-tabs > li > a {
+    &:hover,
+    &:focus {
+        color: $shark;
+    }
+}
+
+.tab-content {
+    background-color: $white;
+    border-top: 1px solid $gray-alto;
+    padding: 15px;
+}
+
+.tab_left > .tab-content {
+    border-left: 2px solid $gray-alto;
+    border-top: none;
+    overflow: hidden;
+}
+
+
+.nav-tabs > li {
+    margin-bottom: 0;
+    &:after {
+        background-color: $red;
+        content: '';
+        display: block;
+        height: 0;
+        transition: all .1s linear;
+        width: 100%;
+        z-index: 125;
+    }
+}
+
+.nav-tabs-primary > li {
+    &:after {
+        background-color: $boston-blue;
+    }
+}
+
+.nav-tabs-success > li {
+    &:after {
+        background-color: $green;
+    }
+}
+
+.nav-tabs-danger > li {
+    &:after {
+        background-color: $red;
+    }
+}
+
+.nav-tabs-warning > li {
+    &:after {
+        background-color: $orange;
+    }
+}
+
+.nav-tabs-info > li {
+    &:after {
+        background-color: $purple;
+    }
+}
+
+.nav-tabs > li.active > a {
+    border: none;
+    &:hover,
+    &:focus {
+        border: none;
+    }
+}
+
+
+// Modal Tab Styles
+//
+// Tab styles inside modal dialogs. IMPORTANT: You need to add the class "modal-body--tabset" to the modal-body
+//
+// markup:
+// <uib-tabset>
+// <uib-tab heading="Allgemeine Daten"></uib-tab>
+// <uib-tab heading="Allgemeine Daten"></uib-tab>
+// </uib-tabset>
+//
+// sg-angular-directive:
+// name: uibTabs
+//
+// sg-wrapper:
+// <div class="modal-body--tabset">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 6.1.2
+
+.modal-body {
+    &--tabset {
+        .nav-tabs > li {
+            &:before {
+                background-color: $boston-blue;
+            }
+
+            &:after {
+                background-color: $boston-blue;
+            }
+
+            a {
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.nav-tabs > li > a{
+    border-radius:3px 3px 0 0;
+}
+
+// Red Main Tabs
+//
+// Main tab navigation on the top of the page to show multiple patient tabs etc.
+//
+// markup:
+// <red-main-tabs></red-main-tabs>
+//
+// sg-angular-directive:
+// name: client.core.layout.tabs
+// template: /client/app/core/layout/tabs/tabs.directive.html
+//
+// Styleguide 6.1.1
+
+.red-main-tabs {
+    @media (max-width: $screen-sm-max) {
+        display: none;
+    }
+
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background: $white-sand;
+
+    ul.nav-tabs {
+        width: 100%;
+        display: flex;
+
+        // make tabs "stick under each other" on small views
+        @media (max-width: $screen-xs-max) {
+            overflow-y: hidden;
+            display: block;
+        }
+
+        li {
+            text-align: center;
+
+            // make tabs "stick under each other" on small views
+            @media (max-width: $screen-xs-max) {
+                width: 100%;
+            }
+            // and show them via flexbox on larger displays
+            @media (min-width: $screen-sm-min) {
+                width: 125px;
+                max-width: 200px;
+                flex: 1;
+                white-space: nowrap;
+            }
+
+            a > span {
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin-right: 0;
+            }
+
+            &.active {
+                a {
+                    background: transparent !important;
+                }
+            }
+
+            & > a {
+                &:hover,
+                &:focus {
+                    background: transparent;
+                }
+            }
+
+        }
+    }
+
+    .tabCloseIcon {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        height: 20px;
+        width: 20px;
+        color: $gray-mercury;
+
+        &:hover {
+            color: red;
+        }
+    }
+
+}
+

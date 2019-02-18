@@ -1,0 +1,138 @@
+// Dropdown Menus
+//
+// Style definitions for several dropdown menus like button dropdown, user dropdown etc.
+//
+// Styleguide 2.4
+
+// Dropdown Menu
+//
+// markup:
+// <div class="btn-group" uib-dropdown>
+// <button type="button" class="btn btn-primary" uib-dropdown-toggle>
+// Button dropdown <span class="caret"></span>
+// </button>
+// <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+// <li role="menuitem"><a href="#">Action</a></li>
+// </ul>
+// </div>
+//
+// sg-wrapper:
+// <div style="min-height: 100px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 2.4.1
+
+.dropdown-menu {
+    max-height: 200px; /*Provide height in pixels or in other units as per your layout*/
+    overflow-y: auto; /*Provide an auto overflow to diaply scroll*/
+    z-index: 9999;
+}
+
+.dropdown-menu{
+    border-radius:3px;padding:5px;
+    box-shadow:3px 3px 0 rgba($black,0.03)
+}
+.dropdown-menu li a{
+    white-space: normal;
+    transition:all .2s ease-out;
+}
+.dropdown-menu > li > a{
+    padding:7px;
+    color:$gray-scorpion;
+}
+
+.dropdown-menu > .active {
+    a,
+    a:focus,
+    a:hover {
+        background-color: $boston-blue;
+    }
+}
+
+.dropdown-menu > li > a:hover{
+    background-color: $white-sand;
+    color:$tuna;
+}
+.dropdown-menu li a i {
+    padding: 0 5px 0 0;
+}
+
+// Icon Dropdown Menu
+//
+// markup:
+// <div class="btn-group" uib-dropdown>
+// <button type="button" class="btn btn-primary" uib-dropdown-toggle>
+// Button dropdown <span class="caret"></span>
+// </button>
+// <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+// <li role="menuitem"><a href="#"><i class="fa fa-lock"></i> Icon Text</a></li>
+// </ul>
+// </div>
+//
+// sg-wrapper:
+// <div style="min-height: 100px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 2.4.2
+
+// User Actions Dropdown
+//
+// markup:
+// <li class="dropdown user-header" uib-dropdown>
+// <a class="dropdown-toggle" uib-dropdown-toggle>
+// <img src="https://dummyimage.com/40x40/ccc/0011ff.png&text=User" /> <span class="username">Username</span>
+// </a>
+// <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+// <li role="menuitem"><a href="#">Action</a></li>
+// </ul>
+// </li>
+//
+// sg-wrapper:
+// <div style="min-height: 100px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 2.4.3
+
+.user-header {
+    margin-right: 10px;
+    a {
+        color: $gray-scorpion;
+    }
+    img {
+        margin: 13px 5px 13px 0;
+        width: 36px;
+        height: 36px;
+
+        @include border-radius(50%);
+
+        @media screen and(min-width: $screen-md-min) {
+            float: left;
+        }
+
+    }
+
+    .dropdown-toggle {
+        padding: 8px 14px;
+
+        .username {
+            margin-top: 10px;
+        }
+    }
+
+    .username {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        @media screen and (min-width: $screen-md-min) {
+            max-width: 100px;
+        }
+    }
+}
+.user-header > a > i {
+    font-size: 19px;
+    padding-right: 5px;
+}

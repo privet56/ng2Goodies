@@ -1,0 +1,37 @@
+<nav class="sidebar-nav">
+    <span class="sidebar-nav__title">
+        Hauptnavigation
+    </span>
+
+    <ul class="sidebar-nav__menu">
+
+        <!-- First level link items -->
+        <li class="sidebar-nav__menu__item"
+            *ngFor="let item of menuItems">
+            <a [routerLink]="'/'+item.state" routerLinkActive="sidebar-nav__menu__item--active">
+                <i class="fa fa-fw fa-{{item.icon}} sidebar-nav__menu__item__icon"></i>
+                <span class="sidebar-nav__menu__item__title">
+                    {{item.title}}
+                </span>
+            </a>
+        </li>
+
+    </ul>
+
+    <!-- Action Items -->
+    <span class="sidebar-nav__title">
+        Weiterführende Informationen
+    </span>
+    <ul class="sidebar-nav__folder">
+        <li class="sidebar-nav__folder__item" *ngFor="let actionItem of actionItems">
+            <a href="{{actionItem.link}}" target="_blank">
+                <span class="fa-stack">
+                    <i class="fa fa-{{actionItem.icon1}} fa-stack-2x"></i>
+                    <i class="fa fa-{{actionItem.icon2}} fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="title"> {{actionItem.title}} </span>
+            </a>
+        </li>
+    </ul>
+
+</nav>

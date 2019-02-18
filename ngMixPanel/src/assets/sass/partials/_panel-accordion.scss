@@ -1,0 +1,106 @@
+// Accordion styles
+//
+// Styles for uib-accordion (i.e. used for working draft items)
+//
+// markup:
+// <uib-accordion>
+// <uib-accordion-group heading="I'm an accordion element">
+// Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+// </uib-accordion-group>
+// <uib-accordion-group heading="I'm another accordion element">
+// Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+// </uib-accordion-group>
+// </uib-accordion>
+//
+// sg-angular-directive:
+// name: uibAccordion
+//
+// Styleguide 6.2
+
+.panel-accordion {
+    .panel-default {
+        box-shadow: none !important;
+        margin-bottom: 5px !important;
+    }
+    h4 {
+        margin-bottom: 0;
+        margin-top: 0;
+        width: 100%;
+    }
+    .panel-default > .panel-heading {
+        background-color: $white;
+        border-color: $white;
+        padding: 0;
+        a {
+            border: 1px solid $gray-mercury;
+            display: block;
+            text-decoration: none !important;
+        }
+    }
+    .panel {
+        border: none;
+        box-shadow: none;
+        margin-bottom: 4px;
+        @include border-radius(3px);
+        h4 > a {
+            &:not(.collapsed) {
+                background-color: $gray-mercury;
+            }
+        }
+    }
+    .panel-collapse {
+        .panel-body {
+            background: $gray-mystic;
+            border: none !important;
+        }
+    }
+    a {
+        background-color: $white;
+        color: $shark;
+        display: inline-block;
+        padding: 15px;
+        width: 100%;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    a.collapsed {
+        background-color: $white;
+        color: $shark;
+    }
+    .collapse.in {
+        margin-top: -1px;
+    }
+}
+
+.panel {
+    margin-bottom: 20px;
+    box-shadow: none;
+}
+
+.panel-default {
+    border: none;
+
+    & > .panel-heading {
+        background: $white;
+        border: none;
+        padding: 10px;
+        min-height: 40px;
+        border-radius: 0;
+        color: $boston-blue;
+        border-bottom: 1px solid $gray-mystic;
+
+        & + .panel-collapse {
+            & > .panel-body {
+                border-top: none;
+            }
+        }
+    }
+}
+
+.panel-scroll {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+    padding-right: 15px !important;
+}

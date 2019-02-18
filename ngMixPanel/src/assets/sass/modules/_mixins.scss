@@ -1,0 +1,69 @@
+@mixin opacity ($opacity: 0.5) {
+  opacity:    $opacity;
+}
+
+@mixin border-radius ($radius: 5px) {
+    border-radius: $radius;
+}
+
+@mixin border-radiuses ($topleft: 5px, $topright: 5px, $bottomright: 5px, $bottomleft: 5px) {
+    border-radius: $topleft $topright $bottomright $bottomleft;
+    background-clip: padding-box;
+}
+
+@mixin box-shadow ($x: 0px, $y: 3px, $blur: 5px, $alpha: 0.5) {
+    box-shadow: $x $y $blur rgba($black, $alpha);
+}
+
+@mixin transition ($prop: all, $time: 1s, $ease: linear) {
+    transition: $prop $time $ease;
+}
+@mixin transition_ ($prop...) {
+    transition: $prop;
+}
+
+@mixin transition-duration($duration: 0.2s) {
+  transition-duration: $duration;
+}
+
+@mixin transition-delay($delay: 0.2s) {
+  transition-delay: $delay;
+}
+
+@mixin transform ($rotate: 90deg, $scale: 1, $skew: 1deg, $translate: 10px) {
+    transform: rotate($rotate) scale($scale) skew($skew) translate($translate);
+}
+
+@mixin rotation($deg:5deg){
+  transform: rotate($deg);
+}
+
+@mixin scale($ratio:1.5){
+  transform: scale($ratio);
+}
+
+@mixin translate($x:0, $y:0) {
+    @include transform(translate($x, $y));
+}
+
+
+// Scrollbars Mixin
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($foreground-color, white, 50%)] - Scrollbar's color
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+    // For Google Chrome
+    ::-webkit-scrollbar {
+        width:  $size;
+        height: $size;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $foreground-color;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $background-color;
+    }
+}

@@ -1,0 +1,134 @@
+.sidebar-nav {
+  padding: 20px 0;
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+.sidebar-nav__title {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 0;
+  padding: 20px 20px 15px 20px;
+  position: relative;
+  text-align: left;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+}
+
+.sidebar-nav__menu {
+  margin-bottom: 30px;
+
+  &__item {
+    a {
+      display: block;
+      padding: 7px 20px;
+      line-height: 24px;
+      color: $tuna;
+      opacity: 0.62;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    &--active {
+      background: $boston-blue;
+      color: $white;
+      opacity: 1;
+
+    }
+
+    &--has-children {
+      > a {
+        &:after {
+          content: "\f105";
+          font-family: "FontAwesome";
+          display: inline-block;
+          float: right;
+        }
+      }
+    }
+
+    &--open {
+      > a {
+        &:after {
+          content: "\f107";
+        }
+      }
+    }
+
+    &__icon {
+      margin-right: 10px;
+    }
+  }
+
+  &__submenu {
+    position: relative;
+    background: rgba($white-sand, 0.6);
+    height: 0;
+    overflow: hidden;
+
+    .sidebar-nav__menu__item--open & {
+      height: auto;
+    }
+
+    .sidebar-nav__menu__item__title {
+      display: none;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 15px;
+      left: 30px;
+      border-right: 1px solid $gray-alto;
+    }
+
+    &__item {
+      &:before {
+        bottom: auto;
+        content: "";
+        height: 8px;
+        left: 26px;
+        margin-top: 15px;
+        position: absolute;
+        right: auto;
+        width: 8px;
+        z-index: 1;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background-color: $gray-alto;
+        border-color: rgba(0, 0, 0, 0);
+      }
+
+      > a {
+        color: $gray-medium;
+        display: block;
+        font-size: 0.9em;
+        overflow: hidden;
+        padding: 7px 20px 7px 50px;
+        font-family: "Open Sans", Arial;
+        text-align: left;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 24px;
+      }
+
+      &--active {
+        > a {
+          opacity: 1;
+          color: $boston-blue;
+        }
+      }
+    }
+  }
+}
+
+.sidebar-nav__folder__item {
+  padding: 7px 20px;
+}

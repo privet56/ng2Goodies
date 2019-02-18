@@ -1,0 +1,120 @@
+// Colors and Typography
+//
+// This section describes base colors and typography
+//
+// Styleguide 1.0
+
+// Links
+//
+// Link styles
+//
+// .link - Main Link Class
+// :hover - Hover
+// :focus - Focus
+// :active - Active
+// .collapseLink
+//
+// markup:
+// <a href="#" class="{$modifiers}">Link text</a>
+//
+// Styleguide 1.1
+
+a {
+    color: $boston-blue;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: darken($boston-blue, 10%);
+        text-decoration: none;
+        outline: 0;
+    }
+}
+
+// Collapse Links
+//
+// Collapse link styles open and closed
+//
+// markup:
+// <a class="collapseLink" ng-click="isCollapsed = !isCollapsed">
+// <i class="fa fa-angle-right fa-fw" ng-class="{'fa-angle-down': !isCollapsed, 'fa-angle-right': isCollapsed}"></i>
+// Collapse link</a>
+//
+// Styleguide 1.1.1
+
+.collapseLink {
+    margin-bottom: 10px;
+    display: block;
+}
+
+// Headlines
+//
+// Headline styles
+//
+// .mainTitle - Main Page title
+//
+// markup:
+// <h1>First Level Headline</h1>
+// <h1 class="mainTitle">First Level Headline used in Page Header</h1>
+// <h2>Second Level Headline</h2>
+// <h3>Modal Headline</h3>
+// <h4>Fourth Level Headline</h4>
+// <h5>Sidebar Headline</h5>
+//
+// Styleguide 1.2
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+h1,
+.h1 {
+    font-size: 45px;
+    margin-top: 0;
+    font-family: 'Lato', 'Open Sans', Helvetica, sans-serif;
+}
+
+h2,
+.h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+// Paragraphs
+//
+// Main paragraph styles
+//
+// markup:
+// <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+//
+// Styleguide 1.3
+
+p {
+    line-height: 23px;
+}
+
+strong {
+    font-family: 'Lato';
+    font-weight: 600;
+}
+
+ol, ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    list-style-position: inside;
+}
+

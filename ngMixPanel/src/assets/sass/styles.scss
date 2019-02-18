@@ -1,0 +1,52 @@
+// Modules and Variables
+@import "modules/variables";
+@import "modules/mixins";
+
+// Partials
+@import "partials/layout-elements/global";
+@import "partials/typography";
+@import "partials/layout-elements/topbar";
+@import "partials/layout-elements/sidebar";
+@import "partials/layout-elements/main-content";
+
+@import "partials/search";
+@import "partials/utilities";
+@import "partials/buttons";
+@import "partials/popovers";
+@import "partials/progressbar";
+@import "partials/form";
+@import "partials/form-groups";
+@import "partials/form-validation";
+@import "partials/dropdown-menu";
+@import "partials/tabs";
+@import "partials/panel-accordion";
+@import "partials/context-menu";
+@import "partials/list-group";
+@import "partials/tooltips";
+@import "partials/pagination";
+@import "partials/error";
+
+@import "partials/sidebar_navigation";
+
+
+
+table {
+    border-collapse:separate;
+    border:solid lightgray 1px;
+    border-radius:9px;
+    -moz-border-radius:9px;
+}
+
+td, th {
+    border-left:solid beige 1px;
+    border-top:solid beige 1px;
+}
+
+th {
+    background-color: beige;
+    border-top: none;
+}
+
+td:first-child, th:first-child {
+     border-left: none;
+}

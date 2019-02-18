@@ -1,0 +1,55 @@
+// Tooltips and Popovers
+//
+// This section describes Tooltips for form input fields and popovers (i.e. help popovers)
+//
+// Styleguide 5.0
+
+// Popover Styles
+//
+// Definition of popover styles, i.e. used for help popovers. Perfect scrollbar should be used inside.
+//
+// left - Position the popover on the left side beside the trigger, used for help popovers
+// bottom-right - Position the popover on the bottom right of the trigger, used in patient header
+//
+// markup:
+// <a uib-popover="Add some content here" popover-is-open="true" popover-animation="true" popover-trigger="none" popover-placement="{$modifiers}" popover-title="Yippieh yeah! Popover Title!"></a>
+//
+// sg-wrapper:
+// <div style="min-height: 70px; margin: 45px 0 20px 250px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 5.1
+
+.popover {
+    max-height: 180px;
+
+    &-content {
+        max-height: 130px;
+        overflow-y: auto;
+    }
+
+    &.bottom-right {
+        margin-left: 10px;
+    }
+}
+
+// Popover with Icon Trigger
+//
+// Styles for popovers triggered by an icon, i.e.
+// We can use the icons fa-help-circle and fa-info-circle to trigger a popup
+//
+// left - Position the popover on the left side beside the trigger, used for help popovers
+// bottom-right - Position the popover on the bottom right of the trigger, used in patient header
+//
+// markup:
+// <a uib-popover="Add some content here" popover-is-open="true" popover-animation="true" popover-trigger="none" popover-placement="{$modifiers}" popover-title="Yippieh yeah! Popover Title!">
+// <i class="fa fa-question-circle"></i>
+// </a>
+//
+// sg-wrapper:
+// <div style="min-height: 70px; margin: 45px 0 30px 250px;">
+//   <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 5.1.1

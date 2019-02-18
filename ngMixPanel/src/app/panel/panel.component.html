@@ -1,0 +1,20 @@
+<div class="flowingpanel">
+  <h3>News Regarding <strong>{{topic}}</strong>:</h3>
+  <table class="flowingtable">
+    <thead>
+      <tr>
+        <th> Score </th>
+        <th>Title / Link</th>
+      </tr>
+    </thead>
+
+    <!-- TODO: loading-icon while loading -->
+    <!-- Alternatives: call getItem{AttrName} function or call attr directly -->
+
+    <tr *ngFor="let news of newsList" [style.backgroundColor]="'rgb(' + (255-getItemScore(news)) + ',255,255)'">
+      <td>{{ news.bScore }}</td>
+      <td><a href="{{getItemLink(news)}}" target="_new" [innerHTML]="getItemTitle(news) | trunc : 66 | safer" [title]="getItemTitle(news)"></a></td>
+    </tr>
+
+  </table>
+</div>

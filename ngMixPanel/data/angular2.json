@@ -1,0 +1,508 @@
+      {
+  "items": [
+    {
+      "tags": [
+        "angular"
+      ],
+      "owner": {
+        "reputation": 394,
+        "user_id": 8831670,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/1325bfa129b4924da8f8304ea776de61?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Revathi Vijay",
+        "link": "https://stackoverflow.com/users/8831670/revathi-vijay"
+      },
+      "is_answered": true,
+      "view_count": 63,
+      "accepted_answer_id": 50679693,
+      "answer_count": 2,
+      "score": 1,
+      "last_activity_date": 1550219952,
+      "creation_date": 1528110782,
+      "last_edit_date": 1550219952,
+      "question_id": 50679263,
+      "link": "https://stackoverflow.com/questions/50679263/disable-radio-button-based-on-text-box-value-in-angular2-using-typescript",
+      "title": "Disable radio button based on text box value in angular2 using typescript"
+    },
+    {
+      "tags": [
+        "angular",
+        "angular2-material"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 7278083,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/Dv8zy.png?s=128&amp;g=1",
+        "display_name": "Werner Wiking",
+        "link": "https://stackoverflow.com/users/7278083/werner-wiking"
+      },
+      "is_answered": true,
+      "view_count": 2921,
+      "answer_count": 3,
+      "score": 0,
+      "last_activity_date": 1550211924,
+      "creation_date": 1481408882,
+      "last_edit_date": 1481410027,
+      "question_id": 41080977,
+      "link": "https://stackoverflow.com/questions/41080977/angular2-material-2-icons-are-not-shown",
+      "title": "angular2-material 2 icons are not shown"
+    },
+    {
+      "tags": [
+        "angular"
+      ],
+      "owner": {
+        "reputation": 2087,
+        "user_id": 1997626,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://i.stack.imgur.com/1BGyo.jpg?s=128&amp;g=1",
+        "display_name": "Howard",
+        "link": "https://stackoverflow.com/users/1997626/howard"
+      },
+      "is_answered": true,
+      "view_count": 60326,
+      "accepted_answer_id": 35823885,
+      "answer_count": 3,
+      "score": 12,
+      "last_activity_date": 1550209045,
+      "creation_date": 1457243908,
+      "question_id": 35823698,
+      "link": "https://stackoverflow.com/questions/35823698/how-to-make-ngonchanges-work-in-angular2",
+      "title": "How to make `ngOnChanges` work in `angular2`"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 33,
+        "user_id": 6014633,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/fc042b143a9be31c9d59e8925f8a5a64?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "UncleRico",
+        "link": "https://stackoverflow.com/users/6014633/unclerico"
+      },
+      "is_answered": false,
+      "view_count": 771,
+      "answer_count": 1,
+      "score": 2,
+      "last_activity_date": 1550197282,
+      "creation_date": 1458141564,
+      "last_edit_date": 1550197282,
+      "question_id": 36039869,
+      "link": "https://stackoverflow.com/questions/36039869/angular2-w-typescript-client-server-app-the-right-way",
+      "title": "Angular2 w/ Typescript - Client/Server App the right way?"
+    },
+    {
+      "tags": [
+        "angular",
+        "drag-and-drop",
+        "angular-cdk",
+        "cdk"
+      ],
+      "owner": {
+        "reputation": 1455,
+        "user_id": 1633604,
+        "user_type": "registered",
+        "accept_rate": 85,
+        "profile_image": "https://www.gravatar.com/avatar/04280a6b0a8d3bfc003a89d7cb960950?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "fletchsod",
+        "link": "https://stackoverflow.com/users/1633604/fletchsod"
+      },
+      "is_answered": false,
+      "view_count": 11,
+      "answer_count": 0,
+      "score": -1,
+      "last_activity_date": 1550180255,
+      "creation_date": 1550180255,
+      "question_id": 54699445,
+      "link": "https://stackoverflow.com/questions/54699445/dropping-a-box-does-not-work-when-dragging-it-in-angular2",
+      "title": "Dropping a box does not work when dragging it in Angular2"
+    },
+    {
+      "tags": [
+        "http",
+        "angular"
+      ],
+      "owner": {
+        "reputation": 40062,
+        "user_id": 5043867,
+        "user_type": "registered",
+        "accept_rate": 42,
+        "profile_image": "https://i.stack.imgur.com/y52xK.jpg?s=128&amp;g=1",
+        "display_name": "Pardeep Jain",
+        "link": "https://stackoverflow.com/users/5043867/pardeep-jain"
+      },
+      "is_answered": true,
+      "view_count": 17873,
+      "answer_count": 7,
+      "score": 29,
+      "last_activity_date": 1550173168,
+      "creation_date": 1474281851,
+      "last_edit_date": 1495541399,
+      "question_id": 39571231,
+      "link": "https://stackoverflow.com/questions/39571231/how-to-check-whether-user-has-internet-connection-or-not-in-angular2",
+      "title": "How to check whether user has internet connection or not in Angular2?"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "angular-material"
+      ],
+      "owner": {
+        "reputation": 96,
+        "user_id": 10775755,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-j9mgu8Acn40/AAAAAAAAAAI/AAAAAAAAAAA/AGDgw-jU9bPwsrwf9LAJdP-hf_kA8C6Q5A/mo/photo.jpg?sz=128",
+        "display_name": "Just Teach Me",
+        "link": "https://stackoverflow.com/users/10775755/just-teach-me"
+      },
+      "is_answered": true,
+      "view_count": 19,
+      "accepted_answer_id": 54696884,
+      "answer_count": 1,
+      "score": -1,
+      "last_activity_date": 1550168873,
+      "creation_date": 1550168511,
+      "question_id": 54696801,
+      "link": "https://stackoverflow.com/questions/54696801/how-to-pass-get-radio-button-value-angular2-material",
+      "title": "How to pass/get radio button value? Angular2 + Material?"
+    },
+    {
+      "tags": [
+        "angular",
+        "angular-material"
+      ],
+      "owner": {
+        "reputation": 21513,
+        "user_id": 1203556,
+        "user_type": "registered",
+        "accept_rate": 57,
+        "profile_image": "https://www.gravatar.com/avatar/aca772bc8ed79a86894211c7efd920aa?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Tampa",
+        "link": "https://stackoverflow.com/users/1203556/tampa"
+      },
+      "is_answered": true,
+      "view_count": 97961,
+      "accepted_answer_id": 41519512,
+      "answer_count": 9,
+      "score": 194,
+      "last_activity_date": 1550154186,
+      "creation_date": 1483778070,
+      "last_edit_date": 1517571083,
+      "question_id": 41519481,
+      "link": "https://stackoverflow.com/questions/41519481/angular2-material-dialog-has-issues-did-you-add-it-to-ngmodule-entrycomponent",
+      "title": "Angular2 material dialog has issues - Did you add it to @NgModule.entryComponents?"
+    },
+    {
+      "tags": [
+        "angular",
+        "angular2-routing",
+        "angular-cli"
+      ],
+      "owner": {
+        "reputation": 333,
+        "user_id": 2001810,
+        "user_type": "registered",
+        "accept_rate": 50,
+        "profile_image": "https://www.gravatar.com/avatar/59f9dd76502ad74450985c58e2cc3b8a?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Tahniat Ashraf",
+        "link": "https://stackoverflow.com/users/2001810/tahniat-ashraf"
+      },
+      "is_answered": true,
+      "view_count": 12712,
+      "accepted_answer_id": 43845888,
+      "answer_count": 3,
+      "score": 9,
+      "last_activity_date": 1550151429,
+      "creation_date": 1494240654,
+      "last_edit_date": 1502098100,
+      "question_id": 43845741,
+      "link": "https://stackoverflow.com/questions/43845741/how-to-set-application-context-path-in-angular2-routing-properly",
+      "title": "How to set application context path in angular2 routing properly?"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "math-functions"
+      ],
+      "owner": {
+        "reputation": 2372,
+        "user_id": 2517418,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://i.stack.imgur.com/6hndi.jpg?s=128&amp;g=1",
+        "display_name": "Jagadeesh Govindaraj",
+        "link": "https://stackoverflow.com/users/2517418/jagadeesh-govindaraj"
+      },
+      "is_answered": true,
+      "view_count": 19816,
+      "accepted_answer_id": 40632787,
+      "answer_count": 3,
+      "score": 12,
+      "last_activity_date": 1550150995,
+      "creation_date": 1479300187,
+      "last_edit_date": 1495541857,
+      "question_id": 40632467,
+      "link": "https://stackoverflow.com/questions/40632467/math-functions-in-angular2-bindings",
+      "title": "Math functions in angular2 bindings"
+    },
+    {
+      "tags": [
+        "javascript",
+        "angular",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 2,
+        "user_id": 5279605,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/1051971764822527/picture?type=large",
+        "display_name": "Dhiraj Narayan Singh",
+        "link": "https://stackoverflow.com/users/5279605/dhiraj-narayan-singh"
+      },
+      "is_answered": true,
+      "view_count": 713,
+      "accepted_answer_id": 41813150,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1550142918,
+      "creation_date": 1485195914,
+      "last_edit_date": 1550142918,
+      "question_id": 41813102,
+      "link": "https://stackoverflow.com/questions/41813102/how-to-call-typescript-method-from-javascript-callback-method-angular2",
+      "title": "How to call Typescript method from Javascript callback method - Angular2"
+    },
+    {
+      "tags": [
+        "angular",
+        "angular-material2"
+      ],
+      "owner": {
+        "reputation": 73,
+        "user_id": 9721152,
+        "user_type": "registered",
+        "profile_image": "https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg?sz=128",
+        "display_name": "Tom Edwards",
+        "link": "https://stackoverflow.com/users/9721152/tom-edwards"
+      },
+      "is_answered": false,
+      "view_count": 16,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550142393,
+      "creation_date": 1550142393,
+      "question_id": 54688989,
+      "link": "https://stackoverflow.com/questions/54688989/how-to-use-key-in-angular2-using-material-tables",
+      "title": "how to use $key in angular2 using material tables"
+    },
+    {
+      "tags": [
+        "angular",
+        "primeng"
+      ],
+      "owner": {
+        "reputation": 722,
+        "user_id": 7616010,
+        "user_type": "registered",
+        "accept_rate": 56,
+        "profile_image": "https://www.gravatar.com/avatar/61d48d3e4a5f2bf3d44b9b9d65393e95?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Bhrungarajni",
+        "link": "https://stackoverflow.com/users/7616010/bhrungarajni"
+      },
+      "is_answered": false,
+      "view_count": 31,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1550125716,
+      "creation_date": 1550122631,
+      "last_edit_date": 1550124968,
+      "question_id": 54683844,
+      "link": "https://stackoverflow.com/questions/54683844/how-to-show-progress-bar-in-different-colors-for-the-rows-using-prime-ng-progres",
+      "title": "How to show progress bar in different colors for the rows using prime ng progress bar in angular2"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 163,
+        "user_id": 5612849,
+        "user_type": "registered",
+        "accept_rate": 28,
+        "profile_image": "https://www.gravatar.com/avatar/1840369786ab0885d0faa77cce57b79b?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Govinda raj",
+        "link": "https://stackoverflow.com/users/5612849/govinda-raj"
+      },
+      "is_answered": false,
+      "view_count": 1593,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1550113389,
+      "creation_date": 1499951344,
+      "question_id": 45081593,
+      "link": "https://stackoverflow.com/questions/45081593/convert-minutes-to-hours-in-angular2-component-or-pipe",
+      "title": "Convert minutes to hours in angular2 component or pipe"
+    },
+    {
+      "tags": [
+        "angular"
+      ],
+      "owner": {
+        "reputation": 2713,
+        "user_id": 6463558,
+        "user_type": "registered",
+        "accept_rate": 48,
+        "profile_image": "https://www.gravatar.com/avatar/48c05afd2d691c28071f9b45e5758d3a?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "slideshowp2",
+        "link": "https://stackoverflow.com/users/6463558/slideshowp2"
+      },
+      "is_answered": false,
+      "view_count": 36,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1550110126,
+      "creation_date": 1502345149,
+      "last_edit_date": 1550110126,
+      "question_id": 45605653,
+      "link": "https://stackoverflow.com/questions/45605653/angular2-assign-value-to-component-within-router-events-does-not-trigger-view-u",
+      "title": "angular2, assign value to component within router.events does not trigger view update?"
+    },
+    {
+      "tags": [
+        "angular",
+        "validation",
+        "date",
+        "datepicker"
+      ],
+      "owner": {
+        "reputation": 708,
+        "user_id": 4048814,
+        "user_type": "registered",
+        "accept_rate": 75,
+        "profile_image": "https://www.gravatar.com/avatar/71528e753c50a18de396aec60167f927?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "vijesh",
+        "link": "https://stackoverflow.com/users/4048814/vijesh"
+      },
+      "is_answered": true,
+      "view_count": 34,
+      "answer_count": 2,
+      "score": 2,
+      "last_activity_date": 1550107641,
+      "creation_date": 1550039528,
+      "question_id": 54663958,
+      "link": "https://stackoverflow.com/questions/54663958/how-to-restrict-angular2-date-picker-future-date-selection",
+      "title": "How to restrict angular2-date-picker future date selection"
+    },
+    {
+      "tags": [
+        "arrays",
+        "angular7",
+        "angular-pipe",
+        "array-filter"
+      ],
+      "owner": {
+        "reputation": 941,
+        "user_id": 3032338,
+        "user_type": "registered",
+        "accept_rate": 45,
+        "profile_image": "https://i.stack.imgur.com/NgKs1.jpg?s=128&amp;g=1",
+        "display_name": "Harsimer",
+        "link": "https://stackoverflow.com/users/3032338/harsimer"
+      },
+      "is_answered": false,
+      "view_count": 6,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550101664,
+      "creation_date": 1550101664,
+      "question_id": 54681193,
+      "link": "https://stackoverflow.com/questions/54681193/parsing-and-filter-array-object-in-template-angular2",
+      "title": "parsing and filter array object in template angular2"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "angular-material2"
+      ],
+      "owner": {
+        "reputation": 5796,
+        "user_id": 1015678,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/e12a835193e80c39b8483eb90780ff37?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Lahiru Chandima",
+        "link": "https://stackoverflow.com/users/1015678/lahiru-chandima"
+      },
+      "is_answered": true,
+      "view_count": 87700,
+      "accepted_answer_id": 43220824,
+      "answer_count": 3,
+      "score": 188,
+      "last_activity_date": 1550097789,
+      "creation_date": 1491355977,
+      "last_edit_date": 1508924600,
+      "question_id": 43220348,
+      "link": "https://stackoverflow.com/questions/43220348/cant-bind-to-formcontrol-since-it-isnt-a-known-property-of-input-angular",
+      "title": "Can&amp;#39;t bind to &amp;#39;formControl&amp;#39; since it isn&amp;#39;t a known property of &amp;#39;input&amp;#39; - angular2 material Autocomplete issue"
+    },
+    {
+      "tags": [
+        "angular"
+      ],
+      "owner": {
+        "reputation": 722,
+        "user_id": 7616010,
+        "user_type": "registered",
+        "accept_rate": 56,
+        "profile_image": "https://www.gravatar.com/avatar/61d48d3e4a5f2bf3d44b9b9d65393e95?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Bhrungarajni",
+        "link": "https://stackoverflow.com/users/7616010/bhrungarajni"
+      },
+      "is_answered": false,
+      "view_count": 28,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1550096042,
+      "creation_date": 1548677876,
+      "question_id": 54401879,
+      "link": "https://stackoverflow.com/questions/54401879/how-to-clear-the-uploaded-files-after-success-message-in-p-fileupload-using-angu",
+      "title": "How to clear the uploaded files after success message in p-fileUpload using angular2"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "google-maps-api-3"
+      ],
+      "owner": {
+        "reputation": 80,
+        "user_id": 10039240,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/234794857da4a2a68eb2d452a732960e?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "prevox",
+        "link": "https://stackoverflow.com/users/10039240/prevox"
+      },
+      "is_answered": false,
+      "view_count": 11,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550081515,
+      "creation_date": 1550081515,
+      "question_id": 54676808,
+      "link": "https://stackoverflow.com/questions/54676808/angular2-google-maps-style-only-changes-when-using-inline-styles-parameter",
+      "title": "Angular2 Google Maps style only changes when using inline &amp;quot;styles&amp;quot; parameter"
+    }
+  ],
+  "has_more": true,
+  "quota_max": 300,
+  "quota_remaining": 297
+}

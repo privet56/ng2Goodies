@@ -1,0 +1,48 @@
+/* ---------------------------------------------------------------------- */
+/*  RED Context Menu for data actions (edit, delete..)
+/* ---------------------------------------------------------------------- */
+.red-context-menu {
+    padding: 0 10px;
+
+    .dropdown-toggle {
+        color: $boston-blue;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: darken($boston-blue, 20%);
+        }
+    }
+
+    .dropdown-menu {
+        right: 10px;
+        left: auto;
+        min-width: 100px;
+        box-shadow: none;
+        margin-top: 0;
+
+        & > li {
+            & > a {
+                padding: 10px;
+
+                @media(min-width: $screen-md-min) {
+                    padding: 3px 10px;
+                }
+
+                font-size: 11px;
+                color: $boston-blue;
+
+                &:hover,
+                &:focus {
+                    background-color: transparent;
+                    color: darken($boston-blue, 20%);
+                }
+
+                .fa {
+                    font-size: 13px;
+                    padding: 0 5px 0 0;
+                }
+            }
+        }
+    }
+}

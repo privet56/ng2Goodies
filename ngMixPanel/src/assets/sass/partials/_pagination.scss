@@ -1,0 +1,119 @@
+.pagination>li>a {
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    background: none;
+    border: none;
+    color: $gray-nevada;
+}
+.pagination>li>span {
+    -moz-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    background: none;
+    border: none;
+    color: $gray-nevada;
+}
+
+.pagination>li>a:hover,.pagination>li>span:hover,.pagination>li>a:focus,.pagination>li>span:focus  {
+    background:none;
+}
+.pagination {
+    li {
+        display: inline-block;
+        float: left;
+        margin-left: 5px;
+
+        a {
+            color:$gray-medium;
+            font-size: 12px;
+        }
+    }
+}
+.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus, .pagination>.active>span:focus  {
+    background: none;
+    border:none;
+    color:$tuna;
+}
+ul.pagination>.disabled>span, ul.pagination>.disabled>a, ul.pagination>.disabled>a i, ul.pagination>.disabled>a:hover, ul.pagination>.disabled>a:focus  {
+    opacity: 0 !important;
+}
+
+// Vertical Pagination
+.pagination-vertical {
+    > li {
+        line-height: 1;
+        float: none;
+        display: block;
+        border-left: 2px solid $boston-blue;
+        margin: 0;
+        position: relative;
+
+        &:first-child {
+            margin: 0;
+        }
+
+        > a,
+        > span {
+            display: block;
+            margin: 10px;
+
+            &:first-child {
+                margin: 10px;
+            }
+        }
+
+        a {
+            padding: 3px;
+            float: none;
+
+            &:hover,
+            &:focus {
+                background: $boston-blue;
+                color: $white;
+                border-color: $boston-blue;
+            }
+        }
+
+        &.form-error {
+            border-color: $red;
+
+            &:before {
+                content: "\f06a";
+                display: block;
+                font: normal normal normal 14px/1 FontAwesome;
+                position: absolute;
+                z-index: 2;
+                left: -6px;
+                top: 5px;
+                color: $red;
+                background: white;
+            }
+
+            a {
+                background: $white;
+                color: $red;
+                border-color: $red;
+
+                &:hover,
+                &:focus {
+                    background: $red;
+                    color: $white;
+                    border-color: $red;
+                }
+            }
+        }
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-left: 2px solid $gray-alto;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+
+}

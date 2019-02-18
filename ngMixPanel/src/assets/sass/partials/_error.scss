@@ -1,0 +1,55 @@
+.error-page {
+    height: 100%;
+    background: radial-gradient(ellipse at center, rgba($gray-mystic, 1) 2%, rgba($gray-mystic, 1) 2%, rgba(darken($gray-mystic, 10%), 1) 100%);
+    background: $gray-mercury;
+    overflow: hidden;
+    padding: 0;
+    h1 {
+        font-family: 'Open Sans';
+        font-size: 120px;
+        font-weight: 600;
+        height: 132px;
+        min-width: 30px;
+        text-align: center;
+    }
+    a {
+        color: $gray-nevada;
+        &:hover {
+            color: darken($gray-mystic, 5%);
+            text-decoration: none;
+        }
+    }
+    .footer {
+        bottom: 30px;
+        position: absolute;
+        width: 100%;
+    }
+    .copyright {
+        font-size: 12px;
+        text-align: center;
+    }
+    .btn {
+        padding: 8px 50px;
+    }
+    .col-md-12 {
+        text-align: center !important;
+    }
+    .col-md-6 {
+        text-align: center !important;
+    }
+    p {
+        text-align: center !important;
+    }
+    .btn-group {
+        .btn {
+            padding: 8px 10px;
+        }
+    }
+
+    .error-main {
+        color: $gray-nevada;
+        margin-top: 20%;
+        text-align: center;
+    }
+
+}

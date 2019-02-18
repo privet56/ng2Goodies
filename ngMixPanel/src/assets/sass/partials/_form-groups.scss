@@ -1,0 +1,92 @@
+// Form Groups
+//
+// This section describes grouped form elements
+//
+// Styleguide 4.8
+
+// Input field combined with label and help popover
+//
+// Input fields with labels shoul be placed in a separate row and a column div. The elements are wrapped with a form-group div
+// Important: Use col-sm-xx class to make sure the input field gets full width on Small devices (<768px)
+//
+// markup:
+// <div class="row">
+// <div class="col-sm-6">
+// <div class="form-group">
+// <sg-insert>4.3</sg-insert>
+// <span class="pull-right"><sg-insert>5.1.1-1</sg-insert></span>
+// <sg-insert>4.1-1</sg-insert>
+// </div>
+// </div>
+// </div>
+//
+// sg-wrapper:
+// <div style="padding: 20px 0 30px 0;">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 4.8.1
+
+.form-group {
+    position: relative;
+}
+
+// Multicolumn input forms
+//
+// This section describes grouped input elements displayed in multiple columns
+//
+// markup:
+// <div class="row">
+// <div class="col-sm-6"><div class="form-group"><label>A Label!</label><input type="text" class="form-control"></div></div>
+// <div class="col-sm-6"><div class="form-group"><label>A Label!</label><input type="text" class="form-control"></div></div>
+// </div>
+//
+// Styleguide 4.8.2
+
+// Collapsable Form sections
+//
+// This section describes collapse form sections
+//
+// markup:
+// <div uib-collapse="isCollapsed">
+// <div class="collapseContent">
+// <div class="row">
+// <div class="col-sm-6"><div class="form-group"><label>A Label!</label><input type="text" class="form-control"></div></div>
+// <div class="col-sm-6"><div class="form-group"><label>A Label!</label><input type="text" class="form-control"></div></div>
+// </div>
+// </div>
+// </div>
+//
+// sg-angular-directive:
+// name: uibCollapse
+// file: /client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js
+//
+// Styleguide 4.8.3
+
+.collapseContent {
+    padding: 15px;
+    background: $white-sand;
+}
+
+// Collapsable Form section with collapse link
+//
+// This section describes collapse form sections with link toggle
+//
+// markup:
+// <sg-insert>1.1.1</sg-insert>
+// <sg-insert>4.8.3</sg-insert>
+//
+// Styleguide 4.8.4
+
+
+// TODO: Add warning message!
+
+// Collapsable Form section with checkbox to activate
+//
+// This section describes collapse form section with checkbox toggle and warning messages
+//
+// markup:
+// <sg-insert>4.5-2</sg-insert>
+// <sg-insert>4.8.3</sg-insert>
+//
+// Styleguide 4.8.5

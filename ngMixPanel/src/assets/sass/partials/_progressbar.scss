@@ -1,0 +1,41 @@
+@import "../modules/variables";
+@import "../modules/mixins";
+
+
+.progress {
+  -webkit-box-shadow:none;
+  background:$gray-mercury;
+  border-radius:32px;
+  box-shadow:none;
+  height:12px;
+}
+.progress-bar {
+  -webkit-box-shadow:none;
+  background:$boston-blue;
+  box-shadow:none;
+  line-height:12px;
+}
+.progress-bar-success {
+  background-color:$green;
+}
+.progress-bar-warning {
+  background-color:$orange;
+}
+.progress-bar-danger {
+  background-color:$red;
+}
+.progress-bar-info {
+  background-color:$purple;
+}
+.progress-bar-purple {
+  background-color:$purple;
+}
+.progress.progress-bar-thin {
+  height: 5px;
+}
+.progress.progress-bar-large {
+  height: 20px;
+  .progress-bar {
+    line-height: 20px;
+  }
+}

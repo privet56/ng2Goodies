@@ -1,0 +1,97 @@
+// Lists
+//
+// List elements, list groups...
+//
+// Styleguide 7.0
+
+// Single list element
+//
+// Describes a single list element.You can use a-tags instead of li-tags if the list item shoul be clickable
+// Following content elements can be used in a list element:
+// Headline (H4 class="list-group-item-heading") with or without an icon
+// Action Buttons (should be shown as icons, i.e. fa-trash-o)
+// List item text (p class="list-group-item-text")
+//
+// .default - Default state
+// .active - Active state
+// .list-group-item-success - Success state
+// .list-group-item-success.active - Active success state
+// .list-group-item-danger - Danger state
+//
+// markup:
+// <li class="list-group-item {$modifiers}">
+// <h4 class="list-group-item-heading"><i class="fa fa-fw fa-unlock-alt"></i> Headline</h4>
+// <p class="list-group-item-text">Some text</p>
+// </li>
+//
+// Styleguide 7.1
+
+.list-group-item {
+    @include border-radius(0);
+
+    &:first-child,
+    &:last-child {
+        @include border-radius(0);
+    }
+
+    &.active,
+    &.active:hover,
+    &.active:focus {
+        background-color: $boston-blue;
+        border-color: $boston-blue;
+        color: $gray-scorpion;
+    }
+}
+
+a.list-group-item {
+    &:hover,
+    &:focus {
+        background-color: $white;
+        border-color: $boston-blue;
+    }
+}
+
+.list-group-item-success {
+    background-color: $white;
+    border-color: darken($green, 5%);
+
+    .list-group-item-heading {
+        color: darken($green, 5%);
+    }
+
+    &.active {
+        background-color: rgba($green-light, 0.1);
+        color: darken($green, 5%);
+        border-color: darken($green, 5%);
+
+        .list-group-item-text {
+            color: darken($green, 5%);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: darken(rgba($green-light, 0.1), 5%);
+            color: darken($green, 5%);
+            border-color: darken($green, 5%);
+
+            .list-group-item-text {
+                color: darken($green, 5%);
+            }
+        }
+    }
+}
+
+.list-group-item-danger {
+    background-color: $white;
+    border-color: $red;
+    opacity: .65;
+
+    .list-group-item-heading {
+        color: $red;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $white;
+    }
+}

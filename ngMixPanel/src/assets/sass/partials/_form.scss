@@ -1,0 +1,953 @@
+// Forms
+//
+// This section describes form elements, structures etc.
+//
+// Styleguide 4.0
+
+// Text Input
+//
+// Input fields (Types: text, password, date, number, email, url, search, tel)
+//
+// :hover - Hover state
+// :focus - Focus state
+// :disabled - Disabled input field
+//
+// markup:
+// <input type="text" class="form-control {$modifiers}" placeholder="I'm a placeholder, yeah!" />
+//
+// sg-wrapper:
+// <div class="form-group"><sg-wrapper-content/></div>
+//
+// Styleguide 4.1
+
+input,select,textarea {
+    color:$gray-scorpion;
+    font-family:'Lato','Open Sans',Helvetica,sans-serif!important;
+}
+
+.form-control {
+    background-color: $gray-mercury;
+    border: 1px solid $gray-mercury;
+    box-shadow: none !important;
+    color: $gray-scorpion;
+    display: inline-block;
+    font-size: 13px;
+    height: auto;
+    line-height: normal;
+    padding: 9px 12px 8px;
+    vertical-align: middle;
+    width: 100%;
+    @include border-radius(0);
+    @include transition(all, .2s, ease-out);
+    &::-webkit-input-placeholder {
+        color: $gray-french;
+    }
+    &::-moz-placeholder {
+        color: $gray-french;
+    }
+    &:focus {
+        background-color: $white;
+        border: 1px solid $gray-french;
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.form-control[class*="bg-"] {
+    color: $shark !important;
+    &::-webkit-input-placeholder {
+        color: $white-sand;
+    }
+    &::-moz-placeholder {
+        color: $white-sand;
+    }
+}
+
+input {
+    &:-webkit-autofill {
+        box-shadow: 0 0 0 1000px white inset !important;
+    }
+}
+
+.form-control.form-white {
+    background-color: $white;
+    border-color: $gray-french;
+    color: $gray-scorpion;
+    &:hover {
+        background-color: $white;
+        color: $gray-scorpion;
+        outline: none;
+    }
+    &:focus {
+        background-color: $white;
+        border: 1px solid $gray-french;
+        color: $gray-scorpion;
+        outline: none;
+    }
+    &:visited {
+        background-color: $white;
+        border: 1px solid $gray-french;
+        color: $gray-scorpion;
+        outline: none;
+    }
+}
+
+.form-white ~ .bootstrap-tagsinput {
+    background-color: $white !important;
+    border: 1px solid $gray-mercury !important;
+}
+
+.form-control.input-lg {
+    font-size: 18px !important;
+    height: 46px !important;
+    line-height: 1.33;
+    padding: 10px 16px;
+    @include border-radius(6px);
+}
+
+.form-control.input-sm {
+    font-size: 12px !important;
+    height: 30px !important;
+    line-height: 1.5;
+    padding: 5px 10px;
+    @include border-radius(2px);
+}
+
+.editableform {
+    .form-control {
+        padding-right: 26px !important;
+    }
+    .btn.btn-sm {
+        margin-right: 0 !important;
+        padding: 7px 0 !important;
+    }
+}
+
+.div_checkbox {
+    margin-top: 0px;
+    position: relative;
+}
+
+// Input fields with icon
+//
+// Input fields with icons inside - placed on the left side
+//
+// markup:
+// <span class="input-icon"><input type="text" class="form-control" /><i class="fa fa-lock"></span>
+//
+// Styleguide 4.1.1
+
+.input-icon {
+    position: relative;
+    i {
+        color: $gray-mercury;
+        display: block;
+        font-size: 16px;
+        height: 16px;
+        margin: 10px;
+        position: absolute;
+        text-align: center;
+        width: 16px;
+    }
+    input {
+        padding-left: 34px !important;
+    }
+}
+
+.input-icon.right {
+    input {
+        padding-left: 10px !important;
+        padding-right: 34px !important;
+    }
+    i {
+        margin: 10px 0 10px;
+        right: 17px;
+    }
+    .fa-check {
+        display: block;
+    }
+    .parsley-success {
+        .fa-check {
+            display: block;
+        }
+    }
+}
+
+.selectpicker {
+    li {
+        list-style-type: none !important;
+    }
+}
+
+.switch-toggle {
+    margin-bottom: 10px;
+}
+
+.dropdown-menu > li > a.no-option {
+    height: 0;
+    padding: 0;
+}
+
+.form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+    margin-bottom: 7px;
+    margin-top: 0;
+    padding-top: 0px;
+}
+
+.form-horizontal {
+    .control-label {
+        color: $tuna;
+        text-align: left;
+        top: 10px;
+    }
+    .prepend-icon {
+        i {
+            left: 15px;
+        }
+    }
+    .append-icon {
+        & >i {
+            right: 15px;
+        }
+    }
+    .form-group {
+        text-align: left;
+    }
+    .row {
+        .col-md-12 {
+            margin-left: 15px;
+        }
+    }
+}
+
+.bg-dark {
+    .form-horizontal {
+        .control-label {
+            color: $gray-medium;
+        }
+    }
+}
+
+.file {
+    position: relative;
+}
+
+// Input fields with addon
+//
+// Input fields with addon - can be placed on the left or on the right side
+//
+// markup:
+// <div class="input-group"><input type="text" class="form-control" /><span class="input-group-addon">mm</span></div>
+//
+// Styleguide 4.1.2
+
+.input-group-addon {
+    border: none;
+}
+
+.append-icon {
+    position: relative;
+    & >input {
+        padding-right: 36px;
+    }
+    & >i {
+        color: rgba($shark, 0.3);
+        font-size: 14px;
+        height: 34px;
+        left: auto;
+        line-height: 34px;
+        position: absolute;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 36px;
+    }
+    .input-lg ~ i {
+        font-size: 20px;
+        height: 46px;
+        line-height: 46px;
+        width: 46px;
+    }
+    .form-dark ~ i {
+        color: $gray-mercury;
+    }
+}
+
+.prepend-icon {
+    position: relative;
+    input {
+        padding-left: 36px;
+    }
+    span {
+        padding-left: 36px;
+    }
+    i {
+        color: rgba($black, 0.3);
+        font-size: 14px;
+        height: 34px;
+        left: 0;
+        line-height: 34px;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 36px;
+    }
+    .form-dark ~ i {
+        color: $gray-mercury;
+    }
+}
+
+.form-inline {
+    .append-icon {
+        display: inherit !important;
+    }
+    .prepend-icon {
+        display: inherit !important;
+    }
+    .after-tooltip {
+        display: inherit !important;
+    }
+    .before-tooltip {
+        display: inherit !important;
+    }
+    .inside-tooltip {
+        display: inherit !important;
+    }
+    label {
+        margin-right: 10px;
+    }
+}
+
+.prepend-icon[class*="bg-"] ~ i {
+    color: $white-sand;
+}
+
+.append-icon[class*="bg-"] ~ i {
+    color: $white-sand;
+}
+
+.after-tooltip {
+    i {
+        color: rgba($black, 0.9);
+        display: block;
+        float: right;
+        font-size: 16px;
+        height: 34px;
+        left: auto;
+        line-height: 34px;
+        right: 0;
+        text-align: center;
+        top: 0;
+        width: 20%;
+    }
+    input {
+        float: left;
+        width: 80%;
+    }
+    .input-lg ~ i {
+        font-size: 20px;
+        height: 46px;
+        line-height: 46px;
+        width: 46px;
+    }
+    input.input-sm ~ i {
+        height: 33px;
+        line-height: 33px;
+    }
+}
+
+.before-tooltip {
+    i {
+        color: rgba($shark, 0.9);
+        font-size: 16px;
+        height: 34px;
+        left: -18px;
+        line-height: 34px;
+        position: absolute;
+        right: auto;
+        text-align: center;
+        top: 0;
+        width: 36px;
+    }
+    i.fa {
+        font-size: 20px;
+    }
+    .input-lg ~ i {
+        font-size: 20px;
+        height: 46px;
+        line-height: 46px;
+        width: 46px;
+    }
+    .input-sm ~ i {
+        font-size: 16px;
+        height: 33px;
+        line-height: 33px;
+        width: 33px;
+    }
+}
+
+.inside-tooltip {
+    position: relative;
+    i {
+        color: rgba($shark, 0.9);
+        font-size: 14px;
+        height: 34px;
+        left: 0;
+        line-height: 34px;
+        position: absolute;
+        right: auto;
+        text-align: center;
+        top: 0;
+        width: 36px;
+    }
+    i.fa {
+        font-size: 20px;
+    }
+    .form-dark ~ i {
+        color: $gray-mercury;
+    }
+    input {
+        padding-left: 36px;
+        padding-right: 0;
+    }
+    input.input-sm {
+        padding-left: 36px;
+        padding-right: 0;
+    }
+    span {
+        padding-left: 36px;
+        padding-right: 0;
+    }
+    input.input-lg {
+        padding-left: 42px;
+    }
+    input.input-lg ~ i {
+        font-size: 26px;
+        left: 22px;
+        line-height: 48px;
+    }
+    input.input-sm ~ i {
+        font-size: 15px;
+        left: 15px;
+        line-height: 33px;
+    }
+}
+
+form {
+    .custom-file {
+        bottom: 0;
+        cursor: pointer;
+        height: 100%;
+        opacity: 0;
+        padding: 8px 10px;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        z-index: 11;
+    }
+    .file-button {
+        border-bottom-right-radius: 2px;
+        border-top-right-radius: 2px;
+        float: none;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 16px;
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        z-index: 10;
+    }
+}
+
+// Form Fieldset
+//
+// markup:
+// <fieldset><legend>Here's the legend for our fieldset</legend></fieldset>
+//
+// Styleguide 4.7
+
+fieldset {
+    border: 1px solid $gray-alto;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+legend {
+    border-bottom: none;
+    font-size: 15px;
+    margin-bottom: 0;
+    padding: 0 10px;
+    width: auto;
+}
+
+.form-stripped {
+    margin: 0 -20px -10px -20px;
+    .form-group {
+        margin: 0;
+        padding: 10px 0;
+        &:nth-child(odd) {
+            background-color: $gray-alto;
+        }
+    }
+}
+
+// Form Labels
+//
+// Default form labels
+//
+// markup:
+// <label class="control-label">This is a really cool label <span class="symbol required"></span></label>
+//
+// Styleguide 4.3
+
+.form-right {
+    .control-label {
+        text-align: right;
+    }
+}
+
+.page-content.condensed {
+    padding: 1px 10px 50px;
+}
+
+.condensed {
+    .form-group {
+        margin-bottom: 5px;
+    }
+    .icheck-list > label {
+        margin-bottom: 5px;
+    }
+    fieldset {
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
+
+.main-content {
+    .page-content {
+        .panel {
+            .panel-content {
+                .input-group {
+                    i {
+                        padding-left: 0;
+                        padding-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-group {
+    input {
+        min-width: 50px;
+    }
+    .fa.fa-angle-up {
+        font-size: 12px;
+    }
+    .fa.fa-angle-down {
+        font-size: 12px;
+    }
+}
+
+.input-group-btn {
+    &:first-child > .btn.btn-white {
+        padding: 6px 24px 7px;
+    }
+    &:last-child > .btn.btn-white {
+        padding: 6px 24px 7px;
+    }
+
+    .btn {
+        height: 35px;
+    }
+}
+
+.field {
+    display: block;
+    position: relative;
+}
+
+.form-wizard {
+    .ui-radio {
+        label {
+            background: transparent !important;
+        }
+        input {
+            left: .6em;
+            margin: -17px 0 0 0;
+        }
+        .ui-btn {
+            z-index: 1;
+        }
+    }
+    .ui-checkbox {
+        input {
+            left: .6em;
+            margin: -17px 0 0 0;
+        }
+        .ui-btn {
+            z-index: 1;
+        }
+    }
+    .ui-checkbox-off {
+        &:after {
+            filter: Alpha(Opacity=0);
+            opacity: 0;
+        }
+    }
+    .ui-btn.ui-radio-off {
+        &:after {
+            filter: Alpha(Opacity=0);
+            opacity: 0;
+        }
+    }
+}
+
+.bootstrap-touchspin {
+    .input-group-btn-vertical {
+        display: table-cell;
+        position: relative;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 1%;
+        .bootstrap-touchspin-up {
+            height: 19px;
+            margin-bottom: 0 !important;
+            width: 50px;
+            @include border-radiuses(0, 4 px, 0, 0);
+        }
+        .bootstrap-touchspin-down {
+            height: 18px;
+            margin-bottom: 0 !important;
+            margin-top: -2px;
+            width: 50px;
+            @include border-radiuses(0, 0, 4 px, 0);
+        }
+        i {
+            font-size: 9px;
+            font-weight: normal;
+            left: 21px;
+            position: absolute;
+            top: 5px;
+        }
+    }
+    .input-group-btn-vertical > .btn {
+        display: block;
+        float: none;
+        margin-left: -1px;
+        max-width: 100%;
+        padding: 8px 10px;
+        position: relative;
+        width: 100%;
+    }
+}
+
+.bootstrap-touchspin-down {
+    margin-bottom: 0 !important;
+}
+
+.bootstrap-touchspin-up {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: $screen-sm-max) {
+    .form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+        margin-bottom: 15px;
+    }
+    .col-md-5.border-right .col-md-6.border-right, .col-md-7.border-right, .col-md-8.border-right, .col-md-9.border-right, .col-md-10.border-right, .col-md-11.border-right, .col-md-12.border-right {
+        border-right: none !important;
+    }
+    .form-horizontal {
+        .row {
+            .col-md-12 {
+                margin-left: 0;
+            }
+        }
+        .btn {
+            width: 100%;
+        }
+    }
+    .form-inline {
+        margin-left: 15px;
+        .form-group.margin-right-20 {
+            margin-right: 0 !important;
+        }
+    }
+}
+
+// Radio Buttons
+//
+// Only inline radio buttons
+//
+// markup:
+// <div class="radio radio--primary radio--inline"><input id="{$id}" type="radio"><label for="{$id}">I'm a label</label></div>
+// <div class="radio radio--primary radio--inline"><input id="{$anotherid}" type="radio"><label for="{$anotherid}">I'm a label</label></div>
+//
+// Styleguide 4.4
+
+.radio {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 0;
+
+    &--inline {
+        display: inline-block;
+        margin: 5px 10px 10px 0 !important;
+    }
+
+    input {
+        box-sizing: border-box;
+        cursor: pointer;
+        line-height: normal;
+
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+
+        &:focus {
+            + label:before {
+                box-shadow: none;
+                border-color: darken($gray-mercury, 5%);
+                background-color: $white-sand;
+            }
+        }
+
+        &:checked {
+            + label:before {
+                border-width: 6px;
+                background: $white-sand;
+                border-color: $white;
+            }
+        }
+
+        &:disabled {
+            + label {
+                opacity: 0.65;
+            }
+        }
+    }
+
+    &--primary {
+        input {
+            &:checked {
+                + label {
+                    &:before {
+                        background: $boston-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        margin-right: 15px;
+        padding-left: 25px !important;
+        position: relative;
+        margin-bottom: 6px;
+        line-height: 23px;
+
+        &:before {
+            background-color: $white;
+            border: 1px solid $gray-alto;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            left: 0;
+            margin-right: 10px;
+            position: absolute;
+            width: 20px;
+            border-radius: 99px;
+            bottom: 2px;
+        }
+
+        &:after {
+            border: 1px solid $gray-mercury;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            left: 0;
+            margin-right: 10px;
+            position: absolute;
+            width: 20px;
+            border-radius: 99px;
+            bottom: 2px;
+            //transition: all 0.3s cubic-bezier(0.455, 0.03, 0.215, 1.33) 0s;
+        }
+    }
+
+}
+
+
+// Checkboxes
+//
+// Checkbox styles
+//
+// .checkbox--stacked - Show stacked checkboxes
+// .checkbox--inline - Show inline checkboxes
+//
+// markup:
+// <div class="checkbox checkbox--primary {$modifiers}"><input id="{$id}" type="checkbox"><label for="{$id}">I'm a label</label></div>
+//
+// Styleguide 4.5
+
+.checkbox {
+    &--inline {
+        display: inline-block;
+        margin: 5px 10px 10px 0 !important;
+    }
+
+    &--primary {
+        input {
+            &:checked {
+                + label {
+                    &:before {
+                        border-color: $boston-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    input {
+        box-sizing: border-box;
+        cursor: pointer;
+        line-height: normal;
+        border: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+
+        &:focus,
+        &:hover {
+            + label:before {
+                box-shadow: none;
+                border-color: darken($boston-blue, 5%);
+                background-color: $white-sand;
+            }
+        }
+
+        &:checked {
+            + label {
+                &:before {
+                    border-width: 10px;
+                }
+
+                &:after {
+                    color: $white;
+                    content: "\f00c";
+                    font-family: "FontAwesome";
+                }
+            }
+        }
+
+        &:disabled {
+            + label {
+                opacity: 0.65;
+
+                &:before {
+                    background-color: $white-sand;
+                }
+            }
+        }
+    }
+
+    label {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 13px;
+        margin-right: 15px;
+        padding-left: 30px !important;
+        position: relative;
+        line-height: 23px;
+        transition: border 0.2s linear 0s, color 0.2s linear 0s;
+        white-space: nowrap;
+
+        &:before {
+            background-color: $white;
+            border: 1px solid $gray-alto;
+            content: "";
+            display: inline-block;
+            height: 20px;
+            left: 0;
+            margin-right: 10px;
+            position: absolute;
+            width: 20px;
+            border-radius: 0;
+            top: 1px;
+            //transition: border 0.2s linear 0s, color 0.2s linear 0s;
+        }
+
+        &:after {
+            display: inline-block;
+            font-size: 11px;
+            height: 19px;
+            left: 4px;
+            position: absolute;
+            top: -1px;
+            //transition: border 0.2s linear 0s, color 0.2s linear 0s;
+            width: 19px;
+        }
+    }
+}
+
+label.required:after {
+    content: '*';
+    color: $red;
+    margin-left: 2px;
+}
+
+textarea {
+    box-sizing: border-box;
+    resize: none;
+}
+
+fieldset[disabled].btn {
+    background-color:$gray-french;
+    color:rgba($white,0.75);
+    filter:alpha(opacity=75);
+    opacity:0.75;
+}
+
+
+// Selectbox
+//
+// Style definitions for selectboxes. We use nya-select instead of basic select inputs
+// see https://github.com/lordfriend/nya-bootstrap-select
+//
+// markup:
+// <ul class="nya-bs-select form-control" ng-model="model" title="Placeholder for select boxes">
+// <li class="nya-bs-option">
+// <a>Select Box Option</a>
+// </li>
+// </ul>
+//
+// sg-angular-directive:
+// name: nyaBsSelect
+// file: /client/bower_components/nya-bootstrap-select/dist/js/nya-bs-select.js
+//
+// sg-wrapper:
+// <div class="col-sm-6" style="padding: 20px 0 30px 0;">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 4.9
+
+// Upload Input
+//
+// Input fields for uploading files, selecting directories...
+//
+// markup:
+// <div class="input-group"><input type="text" class="form-control" /><span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-folder-open-o"></i></button></span></div>
+//
+// Styleguide 4.11

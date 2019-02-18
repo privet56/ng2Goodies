@@ -1,0 +1,509 @@
+{
+  "items": [
+    {
+      "tags": [
+        "typescript",
+        "webstorm"
+      ],
+      "owner": {
+        "reputation": 6271,
+        "user_id": 46942,
+        "user_type": "registered",
+        "accept_rate": 63,
+        "profile_image": "https://www.gravatar.com/avatar/795f14ea5e619167ed546f7fd8d7bae1?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Peter Kellner",
+        "link": "https://stackoverflow.com/users/46942/peter-kellner"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1550234408,
+      "creation_date": 1550173612,
+      "question_id": 54698023,
+      "link": "https://stackoverflow.com/questions/54698023/in-webstorm-with-typescript-how-to-debug-while-ts-errors",
+      "title": "In WebStorm with TypeScript, How to Debug While TS errors?"
+    },
+    {
+      "tags": [
+        "typescript",
+        "type-constraints"
+      ],
+      "owner": {
+        "reputation": 25,
+        "user_id": 5530719,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/7f648f5bc05e1c0b21f19d9b2bcadca4?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Tarhuna Em",
+        "link": "https://stackoverflow.com/users/5530719/tarhuna-em"
+      },
+      "is_answered": true,
+      "view_count": 429,
+      "closed_date": 1446801345,
+      "accepted_answer_id": 33556281,
+      "answer_count": 1,
+      "score": 3,
+      "last_activity_date": 1550234018,
+      "creation_date": 1446763191,
+      "last_edit_date": 1550234018,
+      "question_id": 33556155,
+      "link": "https://stackoverflow.com/questions/33556155/typescript-generic-constraints-on-type-parameters-class",
+      "closed_reason": "off-topic",
+      "title": "Typescript generic constraints on type parameters class"
+    },
+    {
+      "tags": [
+        "javascript",
+        "typescript",
+        "declare"
+      ],
+      "owner": {
+        "reputation": 1559,
+        "user_id": 2694123,
+        "user_type": "registered",
+        "accept_rate": 62,
+        "profile_image": "https://graph.facebook.com/1822357953/picture?type=large",
+        "display_name": "Saman Mohamadi",
+        "link": "https://stackoverflow.com/users/2694123/saman-mohamadi"
+      },
+      "is_answered": true,
+      "view_count": 5471,
+      "accepted_answer_id": 44060120,
+      "answer_count": 3,
+      "score": 7,
+      "last_activity_date": 1550233690,
+      "creation_date": 1495143128,
+      "question_id": 44058101,
+      "link": "https://stackoverflow.com/questions/44058101/typescript-declare-third-party-modules",
+      "title": "typescript declare third party modules"
+    },
+    {
+      "tags": [
+        "typescript",
+        "typescript2.0"
+      ],
+      "owner": {
+        "reputation": 1262,
+        "user_id": 1862998,
+        "user_type": "registered",
+        "accept_rate": 87,
+        "profile_image": "https://i.stack.imgur.com/x8Cr4.png?s=128&amp;g=1",
+        "display_name": "Arsenii Fomin",
+        "link": "https://stackoverflow.com/users/1862998/arsenii-fomin"
+      },
+      "is_answered": true,
+      "view_count": 54,
+      "accepted_answer_id": 50003445,
+      "answer_count": 2,
+      "score": 1,
+      "last_activity_date": 1550232947,
+      "creation_date": 1524577580,
+      "question_id": 50003316,
+      "link": "https://stackoverflow.com/questions/50003316/how-to-rewrite-typescript-for-in-loop-with-noimplicitany-check-active",
+      "title": "How to rewrite typescript for in loop with &amp;quot;noImplicitAny&amp;quot; check active?"
+    },
+    {
+      "tags": [
+        "typescript",
+        "class",
+        "async-await"
+      ],
+      "owner": {
+        "reputation": 6,
+        "user_id": 11066784,
+        "user_type": "registered",
+        "profile_image": "https://lh5.googleusercontent.com/-lxoZzWlpxpY/AAAAAAAAAAI/AAAAAAAAAAA/ACevoQNqjmqO9i63bLDppkGoKkBP_PcY0Q/mo/photo.jpg?sz=128",
+        "display_name": "Rohit",
+        "link": "https://stackoverflow.com/users/11066784/rohit"
+      },
+      "is_answered": false,
+      "view_count": 15,
+      "answer_count": 0,
+      "score": 1,
+      "last_activity_date": 1550231969,
+      "creation_date": 1550226837,
+      "last_edit_date": 1550231969,
+      "question_id": 54707423,
+      "link": "https://stackoverflow.com/questions/54707423/query-regarding-using-async-await-in-typescript-class",
+      "title": "Query regarding using async await in typescript class"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "ionic-framework",
+        "ionic2",
+        "angular2-forms"
+      ],
+      "owner": {
+        "reputation": 2129,
+        "user_id": 2439156,
+        "user_type": "registered",
+        "accept_rate": 60,
+        "profile_image": "https://i.stack.imgur.com/Mi1NN.jpg?s=128&amp;g=1",
+        "display_name": "Bug",
+        "link": "https://stackoverflow.com/users/2439156/bug"
+      },
+      "is_answered": false,
+      "view_count": 580,
+      "answer_count": 2,
+      "score": 2,
+      "last_activity_date": 1550231202,
+      "creation_date": 1492153235,
+      "question_id": 43406752,
+      "link": "https://stackoverflow.com/questions/43406752/how-to-check-device-is-rooted-or-not-in-ionic-2-typescript",
+      "title": "How to check device is rooted or not in ionic 2 typescript"
+    },
+    {
+      "tags": [
+        "javascript",
+        "node.js",
+        "typescript",
+        "ecmascript-5",
+        "type-definition"
+      ],
+      "owner": {
+        "reputation": 1,
+        "user_id": 11067000,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/cd62ce1564d3a3a812ef8a89a3dc8ac5?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "sorryiamnoob",
+        "link": "https://stackoverflow.com/users/11067000/sorryiamnoob"
+      },
+      "is_answered": false,
+      "view_count": 18,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550230480,
+      "creation_date": 1550230480,
+      "question_id": 54708468,
+      "link": "https://stackoverflow.com/questions/54708468/how-to-create-typescript-definition-file-for-external-package-which-returns-clas",
+      "title": "How to create typescript definition file for external package which returns class"
+    },
+    {
+      "tags": [
+        "typescript",
+        "enums"
+      ],
+      "owner": {
+        "reputation": 12229,
+        "user_id": 66851,
+        "user_type": "registered",
+        "accept_rate": 91,
+        "profile_image": "https://www.gravatar.com/avatar/2c3b9882e6898958b892a218b5493af9?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "mikl",
+        "link": "https://stackoverflow.com/users/66851/mikl"
+      },
+      "is_answered": true,
+      "view_count": 34,
+      "accepted_answer_id": 54694377,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1550230210,
+      "creation_date": 1550150586,
+      "question_id": 54691479,
+      "link": "https://stackoverflow.com/questions/54691479/is-there-a-more-elegant-way-of-getting-a-value-from-a-typescript-enum-if-it-exi",
+      "title": "Is there a more elegant way of getting a value from a TypeScript enum, if it exists?"
+    },
+    {
+      "tags": [
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 4978,
+        "user_id": 2608,
+        "user_type": "registered",
+        "accept_rate": 92,
+        "profile_image": "https://www.gravatar.com/avatar/1ebf1bb02141bda43caff5f8fddfc23f?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Sean Kearon",
+        "link": "https://stackoverflow.com/users/2608/sean-kearon"
+      },
+      "is_answered": true,
+      "view_count": 72003,
+      "accepted_answer_id": 23133681,
+      "answer_count": 6,
+      "score": 49,
+      "last_activity_date": 1550229299,
+      "creation_date": 1397729490,
+      "last_edit_date": 1397733772,
+      "question_id": 23130292,
+      "link": "https://stackoverflow.com/questions/23130292/test-for-array-of-string-type-in-typescript",
+      "title": "Test for array of string type in TypeScript"
+    },
+    {
+      "tags": [
+        "typescript",
+        "loops",
+        "casting"
+      ],
+      "owner": {
+        "reputation": 4999,
+        "user_id": 355567,
+        "user_type": "registered",
+        "accept_rate": 83,
+        "profile_image": "https://www.gravatar.com/avatar/6dd10772cfa5333c5db924091464ed95?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "nachocab",
+        "link": "https://stackoverflow.com/users/355567/nachocab"
+      },
+      "is_answered": true,
+      "view_count": 22,
+      "answer_count": 2,
+      "score": 0,
+      "last_activity_date": 1550229255,
+      "creation_date": 1550226243,
+      "question_id": 54707226,
+      "link": "https://stackoverflow.com/questions/54707226/how-to-cast-the-index-variable-in-a-for-in-loop-in-typescript",
+      "title": "How to cast the index variable in a for-in loop in typescript?"
+    },
+    {
+      "tags": [
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 123,
+        "user_id": 1831696,
+        "user_type": "registered",
+        "profile_image": "https://www.gravatar.com/avatar/7e083cb1c4b85447407ffb526cfc25d6?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Haddon CD.",
+        "link": "https://stackoverflow.com/users/1831696/haddon-cd"
+      },
+      "is_answered": false,
+      "view_count": 15,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550229124,
+      "creation_date": 1550229124,
+      "question_id": 54708066,
+      "link": "https://stackoverflow.com/questions/54708066/why-dont-typescript-methods-require-a-this-context-of-the-type-of-the-class",
+      "title": "Why don&amp;#39;t TypeScript methods require a &amp;quot;this&amp;quot; context of the type of the class?"
+    },
+    {
+      "tags": [
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 8,
+        "user_id": 10456036,
+        "user_type": "registered",
+        "profile_image": "https://graph.facebook.com/2081341451911120/picture?type=large",
+        "display_name": "Nick",
+        "link": "https://stackoverflow.com/users/10456036/nick"
+      },
+      "is_answered": true,
+      "view_count": 25,
+      "accepted_answer_id": 54695521,
+      "answer_count": 3,
+      "score": 1,
+      "last_activity_date": 1550227388,
+      "creation_date": 1550163214,
+      "last_edit_date": 1550227388,
+      "question_id": 54695380,
+      "link": "https://stackoverflow.com/questions/54695380/typescript-combine-two-arrays-of-objects-by-field-value",
+      "title": "Typescript - Combine two arrays of objects by field value"
+    },
+    {
+      "tags": [
+        "reactjs",
+        "typescript",
+        "jestjs",
+        "jest",
+        "parceljs"
+      ],
+      "owner": {
+        "reputation": 57,
+        "user_id": 7201446,
+        "user_type": "registered",
+        "accept_rate": 56,
+        "profile_image": "https://www.gravatar.com/avatar/d4dfed7b71d805dc0fd4a181f518ac95?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "ComCool",
+        "link": "https://stackoverflow.com/users/7201446/comcool"
+      },
+      "is_answered": false,
+      "view_count": 7,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550226806,
+      "creation_date": 1550226806,
+      "question_id": 54707411,
+      "link": "https://stackoverflow.com/questions/54707411/create-react-app-parcel-typescript-with-jest",
+      "title": "Create-react-app-parcel-typescript with Jest"
+    },
+    {
+      "tags": [
+        "angular",
+        "typescript",
+        "angular-cli",
+        "angular2-cli"
+      ],
+      "owner": {
+        "reputation": 1101,
+        "user_id": 2131039,
+        "user_type": "registered",
+        "accept_rate": 100,
+        "profile_image": "https://www.gravatar.com/avatar/b9a9460fd97bf18469dc3a7950d5655b?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Mohammad Kawsara",
+        "link": "https://stackoverflow.com/users/2131039/mohammad-kawsara"
+      },
+      "is_answered": true,
+      "view_count": 8903,
+      "accepted_answer_id": 42049997,
+      "answer_count": 5,
+      "score": 17,
+      "last_activity_date": 1550226483,
+      "creation_date": 1486281416,
+      "last_edit_date": 1529275253,
+      "question_id": 42049756,
+      "link": "https://stackoverflow.com/questions/42049756/angular-6-cli-typescript-how-to-stop-generating-spec-ts-test-files",
+      "title": "Angular 6 + CLI (TypeScript) - How to stop generating .spec.ts test files"
+    },
+    {
+      "tags": [
+        "string",
+        "angular",
+        "typescript",
+        "equality"
+      ],
+      "owner": {
+        "reputation": 43,
+        "user_id": 8650155,
+        "user_type": "registered",
+        "accept_rate": 67,
+        "profile_image": "https://www.gravatar.com/avatar/33e926747762bcd1b99aadff099399a6?s=128&amp;d=identicon&amp;r=PG&amp;f=1",
+        "display_name": "Donia Zaela",
+        "link": "https://stackoverflow.com/users/8650155/donia-zaela"
+      },
+      "is_answered": true,
+      "view_count": 9303,
+      "accepted_answer_id": 47599405,
+      "answer_count": 3,
+      "score": 0,
+      "last_activity_date": 1550225821,
+      "creation_date": 1512152667,
+      "question_id": 47599365,
+      "link": "https://stackoverflow.com/questions/47599365/what-is-the-correct-way-to-check-for-string-equality-in-typescript-for-angular",
+      "title": "What is the correct way to check for String equality in Typescript (for Angular 4)"
+    },
+    {
+      "tags": [
+        "typescript",
+        "redux"
+      ],
+      "owner": {
+        "reputation": 1433,
+        "user_id": 5561369,
+        "user_type": "registered",
+        "profile_image": "https://i.stack.imgur.com/REBAs.jpg?s=128&amp;g=1",
+        "display_name": "paibamboo",
+        "link": "https://stackoverflow.com/users/5561369/paibamboo"
+      },
+      "is_answered": false,
+      "view_count": 17,
+      "answer_count": 0,
+      "score": 0,
+      "last_activity_date": 1550223168,
+      "creation_date": 1550202321,
+      "last_edit_date": 1550223168,
+      "question_id": 54702408,
+      "link": "https://stackoverflow.com/questions/54702408/typescript-is-it-possible-for-a-function-to-return-dynamic-string-literal-type",
+      "title": "Typescript: Is it possible for a function to return dynamic string literal type?"
+    },
+    {
+      "tags": [
+        "typescript",
+        "create-react-app"
+      ],
+      "owner": {
+        "reputation": 705,
+        "user_id": 7663531,
+        "user_type": "registered",
+        "display_name": "cham",
+        "link": "https://stackoverflow.com/users/7663531/cham"
+      },
+      "is_answered": false,
+      "view_count": 17,
+      "answer_count": 1,
+      "score": 1,
+      "last_activity_date": 1550222471,
+      "creation_date": 1550105975,
+      "question_id": 54681725,
+      "link": "https://stackoverflow.com/questions/54681725/default-location-for-compiled-js-files-in-create-react-app-typescript",
+      "title": "Default location for compiled js files in create-react-app --typescript"
+    },
+    {
+      "tags": [
+        "typescript",
+        "singleton"
+      ],
+      "owner": {
+        "reputation": 1005,
+        "user_id": 4039178,
+        "user_type": "registered",
+        "accept_rate": 7,
+        "profile_image": "https://i.stack.imgur.com/kC3cT.png?s=128&amp;g=1",
+        "display_name": "Sandeep",
+        "link": "https://stackoverflow.com/users/4039178/sandeep"
+      },
+      "is_answered": true,
+      "view_count": 57,
+      "answer_count": 2,
+      "score": 1,
+      "last_activity_date": 1550222132,
+      "creation_date": 1550214166,
+      "last_edit_date": 1550222132,
+      "question_id": 54704169,
+      "link": "https://stackoverflow.com/questions/54704169/can-singleton-class-be-inherited-in-typescript",
+      "title": "Can singleton class be inherited in typescript?"
+    },
+    {
+      "tags": [
+        "typescript"
+      ],
+      "owner": {
+        "reputation": 5204,
+        "user_id": 3154,
+        "user_type": "registered",
+        "accept_rate": 80,
+        "profile_image": "https://www.gravatar.com/avatar/306569425926f1d0e7512a9f8646d553?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "David Sykes",
+        "link": "https://stackoverflow.com/users/3154/david-sykes"
+      },
+      "is_answered": false,
+      "view_count": 20,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1550222101,
+      "creation_date": 1550202511,
+      "question_id": 54702423,
+      "link": "https://stackoverflow.com/questions/54702423/how-can-get-typescript-to-correctly-type-check-call-to-a-generic-function-that-i",
+      "title": "How can get TypeScript to correctly type check call to a generic function that in turns calls a function with a generic type parameter?"
+    },
+    {
+      "tags": [
+        "typescript",
+        "typescript-typings",
+        "typescript3.0"
+      ],
+      "owner": {
+        "reputation": 191,
+        "user_id": 2025736,
+        "user_type": "registered",
+        "accept_rate": 0,
+        "profile_image": "https://www.gravatar.com/avatar/aa54abbfe99c7791e5212ca0e5504aab?s=128&amp;d=identicon&amp;r=PG",
+        "display_name": "Vikram",
+        "link": "https://stackoverflow.com/users/2025736/vikram"
+      },
+      "is_answered": false,
+      "view_count": 21,
+      "answer_count": 1,
+      "score": 0,
+      "last_activity_date": 1550220875,
+      "creation_date": 1550214876,
+      "question_id": 54704312,
+      "link": "https://stackoverflow.com/questions/54704312/typescript-use-enum-values-as-type",
+      "title": "Typescript: Use `enum` values as `type`"
+    }
+  ],
+  "has_more": true,
+  "quota_max": 300,
+  "quota_remaining": 297
+}

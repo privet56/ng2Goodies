@@ -1,0 +1,16 @@
+// Tooltip Styles
+//
+// Definition of tooltip styles used to explain text input fields by clicking on the input field
+//
+// markup:
+// <input type="text" class="form-control" uib-tooltip="Bezeichnung der Privatliquidationseinheit" tooltip-class="width-200" tooltip-trigger="focus" tooltip-placement="right"/>
+//
+// sg-angular-directive:
+// name: uibTooltip
+//
+// sg-wrapper:
+// <div class="col-sm-6">
+// <sg-wrapper-content/>
+// </div>
+//
+// Styleguide 5.2
