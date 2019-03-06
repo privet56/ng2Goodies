@@ -1,4 +1,4 @@
-# gke & k8s & istio
+# gke & k8s
 ## k8s
 1. offers (1) autohealing &  (2) (auto-)scaling &  (3) load-balancing & (4) isolation
 2. is a container-orchestrator, maintaining container-clusters
