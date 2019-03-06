@@ -40,7 +40,7 @@ apiVersion: "authentication.istio.io/v1alpha1"
 kind: "Policy"
 metadata:
     name: "permissive"
-    namespace: "mtls"
+    namespace: "mtls"       # < change here as you need
 spec:
     targets:
     - name: hostname        # < change here as you need
@@ -58,4 +58,27 @@ spec:
     trafficPolicy:
         tls:
             mode: ISTIO_MUTUAL      # disallow mtls-to-nonmtls!     #alternative:DISABLE(=allows mtls-to-nomtls)
+```
+9. Traces & latencies: check Jaeger UI (port: 16686)
+10. Advanced stuff
+    1. ***Fault injection*** (for testing purposes: 'time curl -b user=tester ...')
+    2. ***Abort injections***
+    3. ***Mirroring***
+    4. ***Circuit Breaker*** (open source istio tool: fortio)
+```yaml
+# kind: VirtaulSersvice snippet:
+    - match:
+        - headers:
+            cookie:
+                exact: user=tester
+        fault:
+            delay:                      # fault injection
+                percent: 50
+                fixedDelay: 5s
+            abort:                      # abort injection
+                percent: 50
+                httpStatus: 500
+        mirror:                         # mirror
+            host: hostname
+            subset: v2
 ```
