@@ -123,3 +123,98 @@ export class MyDlgContent {
 const dlgRef = matDialog.open(MyDlgContent, {data:{mydata:1}});
 dlgRef.afterClosed().subscribe(result => { console.log(result/* value of mat-dialog-close */); })
 ```
+# AuthGard
+```ts
+import { CanActivate } from '@angular/router';
+@Injectable()
+export class AuthGuard implements CanActivate {
+    constructor(private authServ:AuthService, private router:Router) {}
+    canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot) {
+        if(this.authServ.isAuth())return true;
+        this.router.navigate(['/login']);
+    }
+}
+//usage: app.routing.module.ts
+const routes:Routes = [
+    {path:'data', component:DataComp, canActivate:[AuthGuard]}
+    ...
+];
+//...
+@NgModule({
+    ...
+    providers: [AuthGuard]
+})
+```
+### Material - DataTable
+```html
+<mat-table #tbl [dataSource]="dSource" matSort>
+    <ng-container matColumnDef="name"><-- = a column -->
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+        <mat-cell *matCellDef="let ele">{{ele.name}}</mat-cell>
+     </ng-container>
+    <!-- ...other columns ... -->
+    <mat-header-rows *matHeaderRowDef="diplayedColumns"></mat-header-rows>
+    <mat-row *matRowDef="let row;columns:displayedColumns;"></mat-row>
+</mat-table>
+<!-- paginator -->
+<mat-paginator #pagi [pageSize]="10" [pageSizeOptions]="[5,10,20]"><mat-paginator>
+<!-- filter -->
+<div fxLayoutAlign="center center">
+<mat-form-field fxFlex="50%"><!-- center horizontally & make 50% width -->
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" 
+placeholder="Filter" />
+</mat-form-field>
+<div>
+```
+```ts
+//@NgModule: import MatTableModule, MatSortModule, MatPaginatorModule
+//component
+export class TblComp implements OnInit, AfterViewInit {
+    displayedColumns = ['name','date'];
+    dataSource = new MatTableDataSource<MyModel>();
+    @ViewChild(MatSort) sort:MatSort;
+    @ViewChild(MatPaginator) pagi:MatPaginator;
+
+    constructor(private myServ:MyService) {}
+    ngOnInit() {
+        this.dataSource.data = this.myServ.getDatas().slice(/*=copy array!*/);
+    }
+    ngAfterViewInit() {
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.pagi;
+    }
+    doFilter(val:string) {
+        this.dataSource.filter = val.trim().toLowerCase();//use 'filterPredicate' if filtering logic to be changed...
+    }
+}
+```
+## Firebase & AngularFire2 & Firestore & its Auth
+* https://github.com/angular/angularfire2 -> $ npm install angularfire2 firebase --save
+* @NgModule : import {AngularFireModule} from 'angularfire2'; -> import AngularFireModule.initalizeApp(environment.fb), AngularFirestoreModule;
+    * AngularFireAuth
+    * AngularFirestore
+    * AngularFire
+* angularFirestore.collection('mycol').valueChanges().subscribe(re => { });
+```ts
+data$: Observable<any>;
+ngOnInt() {
+    data$ = angularFirestore.collection('mycol').valueChanges();    //-> real time update! :-) ; without id :-(
+
+    //snapshotChanges() = alternative to valueChanges(), but includes
+    //type of change (added, changed, ...) & payload.doc:DocumentSnapshot with
+    //id,metadata,ref,data
+    data$ = angularFirestore.collection('mycol').snapshotChanges() //data$.payload.doc.data()
+        .map(dataArray:Array<any> => {
+            return dataArray.map(doc => {
+                id: doc.payload.doc.id,
+                ...doc.payload.doc.data()
+            })
+        });
+}
+addData(data:Data) {
+    angularFirestore.collection('mycol').add(data);
+}
+
+//html: use: data$ | async
+
+```
