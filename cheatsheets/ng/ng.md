@@ -99,6 +99,7 @@ onSubmit(f:NgForm) { }
     5. &lt;mat-sidenav-container>   &lt;mat-sidenav #sn>&lt;mat-sidenav-content>&lt;router-outlet>  //sn.toggle();
     6. &lt;mat-card> //with mat-card-content ...
     7. &lt;mat-select placeholder="..."> &lt;mat-option value="...">
+    8. MatSnackBar (like Android Toast)
 1. import { MatButtonModule, MatIconMOdule } from '@angular/material';
 2. import in your NgModule
 #### Date Picker
@@ -214,7 +215,31 @@ ngOnInt() {
 addData(data:Data) {
     angularFirestore.collection('mycol').add(data);
 }
+registerUser() {
+    //Auth Sign-in provider Email/pwd has to be activated on the firebase web ui
+    //angularFireAuth is stateless, uses Token
+    angularFireAuth.auth.createUserWithEmailAndPassword(email, pwd)
+        .then(re => {
 
+        })
+        .catch(err => {
+            //eg. email already taken
+        });
+}
+loginUser() {
+    angularFireAuth.auth.signInWithEmailAndPassword(email, pwd)
+        .then(re => {
+
+        })
+        .catch(err => {
+            //eg. invalid credentials
+        });
+}
 //html: use: data$ | async
-
 ```
+## Lazy Loaded @NgModule
+1. **Child** has an own router, but
+    * imports: [RouterModule.forChild(routes)], exports: [RouterModule]
+2. **Root** module has route to the child(=lazy-loaded) module only as string, but no import! (=app.routing.module):
+    * { path: 'child', loadChildren: './child/child.module.ts#MyChildModule' }
+3. Result: Child @NgModule will only loaded when navigated to it.
