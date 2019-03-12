@@ -124,6 +124,21 @@ export class MyDlgContent {
 const dlgRef = matDialog.open(MyDlgContent, {data:{mydata:1}});
 dlgRef.afterClosed().subscribe(result => { console.log(result/* value of mat-dialog-close */); })
 ```
+## Angular Material Theming
+create my-theme.scss (in dir of styles.css). Use the syle & color guide to choose colors.
+```css
+@import '~@angular/material/theming';
+@include mat-core();
+/*define your own colors! */
+$candy-app-primary: mat-palette($mat-indigo/*$mat-red*/);
+$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+
+@include angular-material-theme($candy-app-theme);
+```
+.angular-cli.json -> "styles": [ ..., "my-theme.scss"]
+
 # AuthGard
 ```ts
 import { CanActivate } from '@angular/router';
