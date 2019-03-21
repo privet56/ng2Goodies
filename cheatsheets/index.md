@@ -2,8 +2,12 @@
 
 # Cheatsheets:
 
-#### [Angular Server Side Rendering](ngssr/ng.ssr.md)
-#### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
+### Angular
+##### [Angular Server Side Rendering](ngssr/ng.ssr.md)
+##### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet) ,  
+##### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
+##### [RxJS & NgRx](ng/rxjs.md)
+##### [NgRx](ng/ngrx.md)
 
 #### [Azure](azure/azure.md)
 #### [Google Cloud Platform](gcp/gcp.md)
