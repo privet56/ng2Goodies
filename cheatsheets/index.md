@@ -3,17 +3,18 @@
 # Cheatsheets:
 
 ### Angular
-##### [Angular Server Side Rendering](ngssr/ng.ssr.md)
-##### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet) ,  
-##### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
-##### [RxJS & NgRx](ng/rxjs.md)
-##### [NgRx](ng/ngrx.md)
+#### [Angular Server Side Rendering](ngssr/ng.ssr.md)
+#### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
+#### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
+#### [RxJS & NgRx](ng/rxjs.md)
+#### [NgRx](ng/ngrx.md)
 
+### Cloud
 #### [Azure](azure/azure.md)
 #### [Google Cloud Platform](gcp/gcp.md)
-
+### GWT
 #### [SmartGWT](gwt/smartgwt.md)
-
+### Docker / k8s / Helm / Istio
 #### [Docker (PowerPoint Presentation, 2017)](./../docker/docker.pptx)
 #### [Docker for Windows](./../docker/docker4windows.md)
 #### [Kubernetes](./../docker/k8s.md)
@@ -37,7 +38,7 @@
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 #### [PHP - Advanced Laravel](php/laravel.md)
 #### [PHP - RxPHP](php/rxphp.md)
-
+### Python
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
 
@@ -52,12 +53,12 @@
 #### [OAuth / OpenID / JWT](./sectest/oauth.md)
 
 #### [Solr](./solr/solr.md)
-
+### Rx
 #### [RxJava](./rx/rxjava.md)
 #### [RxJava & ReactiveJ](./rx/reactivej.md)
-
+### Scrum
 #### [Scrum / Kanban / SAFe](scrum/scrum.md)
-
+### Spark
 #### [Spark](spark/spark.md)
 #### [Spark with PySpark](spark/spark_pyspark.md)
 #### [Spark with Scala](spark/sparkwithscala.md)
