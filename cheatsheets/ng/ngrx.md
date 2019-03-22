@@ -26,10 +26,11 @@ $ ng generate effect auth/Auth --module auth/auth.module.ts
     #--> modified: auth.module.ts -> EffectsModule.forFeature([AuthEffects]),
 ```        
 ## Actions
+#### Example 1: Auth Actions
 ```ts
 export enum AuthActionTypes {
-    LoginActin = '[Login] Action';
-    LogoutActin = '[Login] Action';
+    LoginActin = '[Login] Action',
+    LogoutActin = '[Login] Action'
 }
 export class Login implements Action {
     readonly type = AuthActionTypes.LoginAction;
@@ -40,11 +41,60 @@ export class Logout implements Action {
 }
 export type AuthActions = Login | Logout;
 ```
-## Reducers (app/reducers/index.ts)
+#### Example 1: Data Actions
+```ts
+export enum DataActionTypes {
+    DataRequested = "[View Data Page] Data Requested",
+    DataLoaded = "[Data API] Data Loaded",
+    AllDatasRequested = "[Data Home Page] All Datas Requested",
+    AllDatasLoaded = "[Data API] All Datas Loaded",
+    DataPageRequested = "[Data Landing Page] Data Page Requested",
+    DataPageLoaded = "[Data API] Data Page Loaded",
+    DataPageCancelled = "[Data API] Data Page Cancelled",
+}
+export class DataRequested implements Action {
+    readonly type = DataActionTypes.DataRequested;
+    constructor(public payload:{id:number}) {}
+}
+export class DataLoaded implements Action {
+    readonly type = DataActionTypes.DataLoaded;
+    constructor(public payload:{data:Data}) {}
+}
+export class AllDatasRequested implements Action {
+    readonly type = DataActionTypes.AllDatasRequested;
+}
+export class AllDatasLoaded implements Action {
+    readonly type = DataActionTypes.AllDatasLoaded;
+    constructor(public payload:{datas:Data[]}) {}
+}
+export class AllDatasCancelled implements Action {  //error case!
+    readonly type = DataActionTypes.AllDatasCancelled;
+}
+
+export interface PageQuery {
+    pageIndex: number;
+    pageSize: number;
+}
+export class DataPageRequested implements Action {
+    readonly type = DataActionTypes.DataPageRequested;
+    constructor(public payload:{id:number, page:PageQuery}) {}
+}
+export class DataPageLoaded implements Action {
+    readonly type = DataActionTypes.DataPageLoaded;
+    constructor(public payload:{datas:Data[]}) {}
+}
+export class DataPageCancelled implements Action {  //error case!
+    readonly type = DataActionTypes.DataPageCancelled;
+}
+
+export type DataActions = DataRequested | DataLoaded | AllDatasRequested | AllDatasLoaded;
+```
+## Reducers
+### Reducer (app/reducers/index.ts)
 ```ts
 export interface AppState {
     auth: AuthState,
-    //data: DataState
+    data: DataState
 }
 export const reducers: ActionReducerMap<AppState> = {
     auth: authReducer
@@ -52,7 +102,7 @@ export const reducers: ActionReducerMap<AppState> = {
 //metareducer run after(before?) 'normal' reducer (eg. storeFreeze)
 export conts metaReduers: MetaReducers: MetaReducer<AppState>[] = !environment.production ? [] : [];
 ```
-## Reducer (app/reducers/reducer.auth.ts)
+### Reducer (app/reducers/reducer.auth.ts)
 ```ts
 type AuthState = {
     loggedIn: boolean
@@ -75,6 +125,56 @@ function authReducer(state:AuthState = initialAuthState, action) : AuthState {
     }
 }
 ```
+### Reducer: Data Reducer
+> $ ng generate entity --nam Data --module data/data.module.ts  # generates a **lot**! -> maybe better to do it manually!
+```ts
+import { Data } from './model/data';
+export interface DataState {
+    //not so efficient
+        //datas: Data[];
+    //Map allows access by key! -> better see below: use Map *and* Order!
+        //datas: {[key:number]: Data};
+    //Map & Order by do-it-yourself: (better: extends EntityState<Data>, see below)
+    datasEntites: {[key:number]: Data};    //Map allows access by key!
+    datasOrder: number[];
+}
+export interface DataState extends EntityState<Data> {
+    //Nothing to do here, Map & Order is done by EntityState!
+    //datasEntites: {[key:number]: Data};
+    //datasOrder: number[];
+    loading: boolean;
+}
+
+//use NgRx Entity:
+export const adapter: EntityAdatapter<Data> = createEntityAdapter<Data>();
+export const initialDataState: DataState = adapter.getInitialState({loading:false});
+export function dataReducer(state = initialDataState, action: DataActions) : DataState {
+    switch(action.type) {
+        case DataActionTypes.AllDataRequested:
+            return {
+                ...state,
+                loading:true
+            };
+        case DataActionTypes.AllDataCancelled:  //error case! 
+            return {
+                ...state,
+                loading:false
+            };
+        case DataActionTypes.DataLoaded:
+            return adapter.addOne(action.payload.data, state);
+        case DataActionTypes.AllDataLoaded:
+            return adapter.addMany(action.payload.datas, {...state, loading: false});
+        default: {
+            return state;
+        }
+    }
+}
+
+export const {
+    selectAll, 
+    selectIds, selectTotal, selectEntities
+} = apdapter.getSelectors();
+```
 ## Selectors
 ```ts
 //selectors.auth.ts
@@ -83,13 +183,28 @@ export const selectAuthState = state => state.auth;
 //it momoizes!
 export const isLoggedInSelector = createSelector(selectAuthState, /*otherSelector,*/ (auth) => auth.loggedIn);
 
-export const selectDataState = createFeatureSelector<DataState>('data');
+export const selectDataState = createFeatureSelector<DataState>('datas');
 export const selectDataById = (id:number) => createSelector(selectDataState, dataState => dataState.entities[id]);
 export const selectAllData = createSelector(selectDataState, fromData.selectAll);
 export const selectPartialData = createSelector(selectAllData, datas => datas.filter(data => data.category === 'p'));
 
 //calculate total/length/size
 export const selectPTotal = createSElector(selectAllData, datas => datas.filter(data => data.category === 'p').length);
+```
+### Selector for **Data**
+```ts
+export const selectDataState = createFeatureSelector<DataState>("datas");
+export const selectDataById = (id:number) => createSelector(selectDataState, dataState => dataState.entities[id]);
+import * as fromCourse from '/data.reducers';
+export const selectAllData = createSelector(selectDataState, fromCourse.selectAll);
+export const selectDataLoading = createSelector(selectDataState, dataState => dataState.loading);
+
+export const selectDataPage = (parentId:number, page:PageQuery) => createSelector(selectAllData,
+    allDatas => {
+        const start = page.pageIndex * page.pageSize,
+        const end = start + page.pageSize;
+        return allDatas.filter(data => data.parentId == parentId).slice(start, end);
+    })
 ```
 ### Service (not NgRX-specific)
 ```ts
@@ -104,14 +219,20 @@ export class AuthService {
 
 ## Use in Component
 ```ts
-@Component({/*...*/})
-export class MyComp  implements OnInit{
+@Component({
+    /*... template, style, selector...*/
+    changeDetection: ChangeDectionStrategy.OnPush   //changes default-children-changeDetection too
+})
+export class MyComp  implements OnInit {
+
+    //all the members are Observable & immutable(->storeStat)? -> you can use OnPush -> speedup boost!
     isLoggedIn$ : Observable:<boolean>;
     partialData$ : Observable<Data[]>;
     pTotal$ : Observable<number>;
-    constructor(private store:Store<AppState>, private dataService:DataService) {
+    loading$ : Observable<boolean>;
 
-    }
+    constructor(private store:Store<AppState>, private dataService:DataService) {  }
+
     ngOnInit()
     {
         this.store
@@ -134,6 +255,16 @@ export class MyComp  implements OnInit{
 
         //calculate total/length/size
         this.pTotal$ = this.store.pipe(select(selectPTotal));
+
+    	this.store.dispatch(new AllDataRequested());
+        this.datas$ = this.store.pipe(select(selectAllData));
+
+        this.loading$ = this.store.pipe(select(selectDataLoading));
+
+        {
+            const initialPage: PageQuery { pageIndex: 0, pageSize: 3};
+            this.store
+        }
     }
     login() {
         this.authService.login(mail,pwd)
@@ -155,11 +286,13 @@ export class MyComp  implements OnInit{
 <a mat-list-item routerLink="/logout" *ngIf="isLoggedIn$ | async"> ... </a>
 <data-card-list [data]="partialData$ | async" />
 <p> Number of P: {{pTotal$ | async }} </p>
+<div class="spinner-container" *ngIf="loading$ | async"><mat-spinner></mat-spinner></div>
 
 ```
 ## NgModule to be extended:
 ```ts
-    StoreModule.forFeature('auth', fromAuth.reducer)
+    StoreModule.forFeature('auth', fromAuth.reducer),
+    StoreModule.forFeature('datas', dataReducer)
 ```
 
 ## Use in Router Guard
@@ -180,7 +313,7 @@ export class AuthGuard implements CanActivate {
 ## Effects
 Side effects listen to store changes and do side effects.<br>
 Example side effect: store credentials after login into cookies/localStorage, ...<br>
-Registration in an NgModule: EffectsModule.forFeature([AuthEffects]),<br>
+Registration in an NgModule: EffectsModule.forFeature([AuthEffects, DataEffects]),<br>
 Registration in the main NgModule, addionally: EffectsModule.forRoot([])
 ```ts
 @Injectable()
@@ -205,13 +338,33 @@ export class AuthEffects
             return of(new Logout());//dispatch:true -> you need to return an Observable in any case!
         }
     });
-
+}
+@Injectable()
+export class DataEffects
+{
 //loads data when requested by dispatching an action    //see also below extension with Entity/cache/withLatestFrom...
     @Effect()
     loadAllData$ = this.actions$.pipe(
-        ofType<DataRequested>(DataActionTypes.DataRequested),
-        mergeMap(action => this.dataService.findAllData()),
+        ofType<AllDataRequested>(DataActionTypes.AllDataRequested),
+        //switchMap would cancel the original request
+        //mergeMap allows multiple parallel requests
+        mergeMap(action => this.dataService.findAllData().pipe(
+            catchError(err => {
+                console.log(err);
+                this.store.dispatch(new AllDataCancelled());
+                return of([]);
+            }),
+        )),
         map(datas => new AllDataLoaded({datas}))
+    );
+
+    @Effect()
+    loadData$ = this.actions$.pipe(
+        ofType<DataRequested>(DataActionTypes.DataRequested),
+        //mergeMap allows multiple parallel requests
+        //emits a Data object
+        mergeMap(action => this.dataService.findDataById(action.payload.id)),
+        map(data => new DataLoaded({data}))
     );
 
     //actions$ fired after a store.dispatch(...)
@@ -288,4 +441,29 @@ export function dataReducer(state = iniitalDataState, action: DataAction) : Data
                 this.dialogRef.close();
             });
     }
+```
+# Resolver
+```ts
+@Injectable()
+export class DataResolver implements Resolve<Data> {
+    constructor(private dataService:DataService, private store:Store<AppState>)     {}
+    resolve(route:ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<Data> {
+        const id = route.params["id"];
+        //naive implementation rereading, because no cache
+        return this.dataService.findDataById(id);
+        //better: use EntityAdapter:
+        return this.store.pipe(
+            select(selectDataById(id)),
+            tap(data => {
+                if(!data)//not yet in store(~cache) of EntityAdapter
+                    this.store.dispatch(new DataRequested({id}));
+            }),
+            //if(no data yet) -> do not continue the router transition!
+            filter(data => !!data), 
+            // make sure that the Observable completes/terminates, so the router transition completes!
+            //otherwie the target route is never reached
+            first()
+        );
+    }
+}
 ```
