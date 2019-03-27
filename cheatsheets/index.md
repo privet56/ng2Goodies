@@ -6,7 +6,7 @@
 #### [Angular Server Side Rendering](ngssr/ng.ssr.md)
 #### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
 #### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
-#### [RxJS & NgRx](ng/rxjs.md)
+#### [RxJS & NgRx](ng/rxjs.md) & [RxJS](ng/rxjs-2.md)
 #### [NgRx](ng/ngrx.md)
 
 ### Cloud
