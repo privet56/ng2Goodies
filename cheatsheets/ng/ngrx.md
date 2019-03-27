@@ -467,3 +467,113 @@ export class DataResolver implements Resolve<Data> {
     }
 }
 ```
+## Advanced Stuff
+#### Set up Entity Default Sort Order
+```ts
+function sortByDataAndSeqNo(d1:Data, d2:Data) {
+    const compare = d1.id - d2.id;
+    if(compare != 0) return compare;
+    return d1.seqNo - d2.seqNo;
+
+}
+export const adapter: EntityAdatapter<Data> = createEntityAdapter<Data>({
+    sortComparer: sortByDataAndSeqNo
+});
+```
+#### Paginagor in Data Source
+```ts
+export class DataDataSource implements DataSource<Data> {
+    private datasSubject = new BehaviorSubject<Data[]>([]);
+    constructor(private store:Store<AppState>) { }
+    loadDatas(id:number, page: PageQuery) {
+        this.store.pipe(
+            select(selectDataPage(id, page)),
+            tap(datas => {
+                if(datas.length > 0) { //=is already in store
+                    this.datasSubject.next(datas);
+                }
+                else
+                {
+                    this.store.dispatch(new DataPageRequested({id, page}));
+                }
+            }),
+            catchErro(err => of([]))
+        )
+        .subscribe();
+    }
+    //these functions are helpers for angular-material datatable
+    connect(collectionViewer:CollectionViewer) : Observable<Data[]> {
+        return this.datasSubject.asObservable();
+    }
+    disconnect(collectionViewer:CollectionViewer) : void {
+        this.datasSubject.complete();
+    }
+}
+
+//Use in Component:
+@Component({
+    template: `<mat-table [dataSource]="dataSource"> ... <mat-header...>+<mat-row...>... </mat-table>
+                <mat paginator [length]="data?.dataCount" [pageSize]="3"></mat paginator>`,
+    ...
+})
+export class MyComponent implements OnInit, AfterViewInit {
+    data:Data;
+    dataSource:DataDataSource;
+    displayedColumns=["seqNo", "title"];
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    constructor(private route:ActivatedRoute, private store: Store<AppState>) { }
+    ngOnInit() {
+        this.data = this.route.snapshot.data["data"];
+        this.dataSource = new DataDataSource(this.store);
+        const initialPage: PageQuery = {
+            pageIndex: 0,
+            pageSize: 3
+        };
+        this.dataSource.loadDatas(this.data.id, initialPage);
+    }
+    ngAfterViewInit() {                         //=here, @ViewChild is available
+        this.paginator.page.pipe(               //subscribe to the paginator.page event
+            tap(() => this.loadDataPage())
+        ).subscribe();
+    }
+    loadDataPage() {
+        const newPage: PageQuery = {
+            pageIndex: this.paginator.pageIndex,
+            pageSize: this.paginator.pageSize
+        };
+        this.dataSource.loadData(this.data.id, newPage);
+    }
+}
+
+// The Effect for Loading the Data Page (data.effects.ts)
+...
+    @Effect()
+    loadDataPage$ = this.actions.pipe(
+        ofType<DataPageRequested>(DataActionTypes.DataPageRequested),
+        mergeMap(({payload}) =>
+            this.dataService.findData(payload.id, payload.pageIndex, payload.pageSize)),
+            map(datas => new DataPageLoaded({datas}));
+    );
+
+// Reducer(data.reducers.ts)
+...
+export functin dataReducer(state = initialDataState, action: DataActions) : DataState {
+    switch(action.type) {
+        case DataActionTypes.DataPageLoaded:
+            return adapter.addMany(action.payload.datas, state);
+        default:
+            return state;
+    }
+}
+
+//Service: http call in data.service.ts
+...
+    findData(id: number, pageNumber= 0, pageSize: 3): Observable<Data[]> {
+        return this.http.get("/api/data", {
+            params: new HttpParams()
+                .set('id', id)
+                .set('page', pageNumber)
+                .set('pageSize', pageSize)
+        }).pipe(map(res => res["payload"]));
+    }
+```

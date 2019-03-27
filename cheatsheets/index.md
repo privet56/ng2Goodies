@@ -43,7 +43,7 @@
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
 
 ### Qt
-#### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md)
+#### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md) (with a chapter for git)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
 #### [QtWS18](qt/qtws18.md)
 
@@ -75,6 +75,7 @@
 #### [GitLab](./devops/gitlab.md)
 #### [Varnish](./devops/varnish.md)
 #### [PostgreSQL](./devops/postgres.md)
+#### 
 
 .
 
