@@ -179,8 +179,14 @@ var startup =  Rx.Observable.just("https://api.github.com/users");
 var req = clicks.map(ev => {
     var randomOffset = Math.floor(Math.random()*555);
     "https://api.github.com/users?since="+randomOffset;
-});
+})
+.shareReplay(1);    // = further subscribers will share this same observable (will replay for these later subscribers)
+
 var res = req.merge(startup).flatMap(url => Rx.Observable.fromPromise(jQuery.getJSON(url))).map(listUsers => {
    listUsers[Math.floor(Math.random() * lisusers.length)] 
-}).subsribe(randomuser => alert(randomUser));
+})
+.startWith(null)                            //on startup - init with null
+.merge(clicks.map(ev => null))              //on click (before url-req returns) reinit with null
+.merge(otherStream.withLatestFrom(res, (ev, users) => getRandomUser(uers)))
+.subsribe(randomUser => alert(randomUser));
 ```
