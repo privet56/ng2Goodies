@@ -258,3 +258,24 @@ loginUser() {
 2. **Root** module has route to the child(=lazy-loaded) module only as string, but no import! (=app.routing.module):
     * { path: 'child', loadChildren: './child/child.module.ts#MyChildModule' }
 3. Result: Child @NgModule will only loaded when navigated to it.
+
+## Trick: make sure that your CoreModule will not be imported multiple times
+```ts
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { CommonModule } from '@angular/common';
+@NgModule({
+    imports: [
+        CommonModule,
+    ],
+    providers: []
+})
+export class CoreModule
+{
+    constructor(@Optional() @SkipSelf() parentModule: CoreModule)
+    {
+        if (parentModule) {
+            throw new Error(`CoreModule has already been loaded. Import Core modules in the AppModule only!`);
+        }
+    }
+}
+```
