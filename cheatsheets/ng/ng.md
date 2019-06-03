@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../_github-markdown.css">
+
 ## Reusable Angular Animation:
 **BrowserAnimationsModule**, has to be added in app.module.ts
 ```ts
@@ -279,3 +281,94 @@ export class CoreModule
     }
 }
 ```
+## Short & sweet ngIf/else & ngFor
+
+```html
+<div *ngIf="notes$ | async as notes; else notFound">
+    <app-note-card *ngFor="let note of notes" [note]="note" [loading]="isLoading$ | async"
+        [routerLink]="['/notes', note.id]">
+    </app-note-card>
+</div>
+<ng-template #notFound><!-- else -->
+    <mat-card>
+        <mat-card-title>Either you have no notes</mat-card-title>
+    </mat-card>
+</ng-template>
+```
+## Listen to DOM style changes with MutationObserver
+```ts
+ngAfterViewInit(): void {
+
+    const that = this;
+    const pel = this.el.nativeElement.parentNode;
+
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === "attributes")
+            {
+                if (mutation.attributeName === "ng-reflect-view")
+                {
+                    let computedStyle = window.getComputedStyle(pel);
+
+                    if( (that.parentDisplayAttribute !== computedStyle.display) &&
+                        (computedStyle.display === 'block'))
+                    {
+                        console.log("ele made visible:"+that.parentDisplayAttribute+" => "+computedStyle.display);
+                    }
+                    that.parentDisplayAttribute = computedStyle.display;
+                }
+            }
+        });
+    });
+
+    observer.observe(pel, {
+        //attributeFilter: ['style', 'class'],
+        attributeOldValue: true,
+        attributes: true,
+        characterData: true,
+        characterDataOldValue: true,
+        childList: true,
+        subtree: true
+    });
+}
+```
+### SSR Support:
+Use App Shell:
+```sh
+$ ng generate app-shell --client-project [my-app] --universal-project [server-app]
+$ ng run [project-name]:app-shell:production
+```
+
+### Visualize generated Webpack Bundle contents:
+```sh
+$ ng build --prod --stats-json
+$ webpack-bundle-analyzer dist/stats.json
+```
+## PWA technologies
+1. **offline** support
+    * for static data, with Service Workers (<span class=cmd>ng add @angular/pwa</span>).
+        Events, like
+        * <span class=code>self.oninstall = (event) => { };</span>
+        * <span class=code>self.onactivate = (event) => { };</span>
+    * for dynamic data, eg. with PouchDB(-browser) or firebase(<span class=cmd>npm install firebase @angular/fire –-save</span>)
+        * <span class=cmd>npm install pouchdb-browser</span> & <span class=cmd>npm install -g pouchdb-server</span>
+    * service worker generator: <span class=cmd>npm install workbox-cli --global</span>
+1. **add-to-homescreen** function (incl. events like <span class=code>@HostListener('window:beforeinstallprompt', ['$event'])</span>)
+1. **push notification**:
+    * <span class=code>navigator.serviceWorker.ready.then(sw => sw.showNotification('title', {icon:'m.png'}));</span>
+    * Ng2+ lib: SwPush
+    * Server side package: <span class=code>require('web-push')</span>
+1. Visualize connection speed:
+    * <span class=code>const { downlink, effectiveType, type } = (&lt;any&gt;navigator).connection;</span>
+1. Advanced/beta browser APIs:
+    * Credential management ((window.PasswordCredential || window.FederatedCredential)
+    * Payment: window.PaymentRequest
+    * Audio/Video Recording: window.MediaRecorder
+    * Geolocation: navigator.geolocation
+    * navigator.bluetooth
+    * navigator.usb
+
+## Control lazy loading:
+* use **canLoad** Guard (<span class=code>canLoad: [AuthGuard]</span>)
+    or
+* use preload flag: <span class=code>RouterModule.forRoot(routes, { **preloadingStrategy: PreloadAllModules** })</span>
