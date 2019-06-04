@@ -72,6 +72,7 @@
 #### [Vert.x](./vertx/vertx.md)
 
 ### DevOps
+#### [Git / Gitflow](./git/git.md)
 #### [GitLab](./devops/gitlab.md)
 #### [Varnish](./devops/varnish.md)
 #### [PostgreSQL](./devops/postgres.md)
