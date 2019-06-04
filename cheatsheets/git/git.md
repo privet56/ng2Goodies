@@ -30,7 +30,7 @@ $ git push origin feature/myfeature
 # do this when feature implementation finished,
 ## this merges the code into the develop branch
 ## this *switches* back to the develop branch
-## this deletes the feature branch
+## this deletes(=closes) the feature branch
 $ git flow feature finish [myfeature]
 # this pushes the feature-branch-code (now locally merged in develop)
 $ git push --set-upstream origin develop
@@ -49,7 +49,7 @@ $ git push origin --all --follow-tags
 ```
 ### Miscellaneous git commands:
 ```ps
-$ git branch        # lists existing branches, shows current branch
+$ git branch        # lists existing branches, marks current branch
 $ git status        # shows current branch, lists untracked files
 
 $ git remote add origin git@github.com:myusername/myproject.git
@@ -63,7 +63,7 @@ $ git flow feature  # prints current feature name
 ### What is the difference between git pull & git fetch?
 **git pull** does a **git fetch** followed by a **git merge**
 
-A **git pull** is what you do to bring a local branch up-to-date with its remote version.
+**git pull** is what you do to bring a local branch up-to-date with its remote version.
 
 
 
