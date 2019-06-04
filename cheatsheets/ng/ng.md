@@ -300,28 +300,26 @@ export class CoreModule
 ngAfterViewInit(): void {
 
     const that = this;
-    const pel = this.el.nativeElement.parentNode;
+    const pEle = this.el.nativeElement.parentNode;
 
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-            if (mutation.type === "attributes")
+            if( (mutation.type === "attributes") &&
+                (mutation.attributeName === "ng-reflect-view"))
             {
-                if (mutation.attributeName === "ng-reflect-view")
-                {
-                    let computedStyle = window.getComputedStyle(pel);
+                let computedStyle = window.getComputedStyle(pEle);
 
-                    if( (that.parentDisplayAttribute !== computedStyle.display) &&
-                        (computedStyle.display === 'block'))
-                    {
-                        console.log("ele made visible:"+that.parentDisplayAttribute+" => "+computedStyle.display);
-                    }
-                    that.parentDisplayAttribute = computedStyle.display;
+                if( (that.parentDisplayAttribute !== computedStyle.display) &&
+                    (computedStyle.display === 'block'))
+                {
+                    console.log("ele is visible:"+that.parentDisplayAttribute+" => "+computedStyle.display);
                 }
+                that.parentDisplayAttribute = computedStyle.display;
             }
         });
     });
 
-    observer.observe(pel, {
+    observer.observe(pEle, {
         //attributeFilter: ['style', 'class'],
         attributeOldValue: true,
         attributes: true,
@@ -360,6 +358,10 @@ $ webpack-bundle-analyzer dist/stats.json
     * Server side package: <span class=code>require('web-push')</span>
 1. Visualize connection speed:
     * <span class=code>const { downlink, effectiveType, type } = (&lt;any&gt;navigator).connection;</span>
+        * console.log(`Effective network connection type: ${effectiveType}`);
+        * if (/\slow-2g|2g|3g/.test((<any>navigator).connection.effectiveType)) { this.snackBar.open(`Your connection is slow!`); }
+        * console.log(`Downlink Speed/bandwidth estimate: ${downlink}Mb/s`);
+        * console.log(`${type} could be of bluetooth, cellular, ethernet, none, wifi, wimax, other, unknown`);
 1. Advanced/beta browser APIs:
     * Credential management ((window.PasswordCredential || window.FederatedCredential)
     * Payment: window.PaymentRequest
