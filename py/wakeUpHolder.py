@@ -4,8 +4,8 @@ import time
 import os, sys
 import argparse
 
-import pyautogui    # pip install pyautogui
-import win32api     # pip install pypiwin32
+import pyautogui                # pip install pyautogui
+import win32api, win32con       # pip install pypiwin32
 
 #Issue:
 # Command "python setup.py egg_info" failed with error code 1 in c:\temp\pip-install-lamdpy\pygetwindow\
@@ -37,6 +37,8 @@ class WakeUpHolder:
                     if win32Api:
                         newPos =(x + (10 if left else -10), y)
                         win32api.SetCursorPos(newPos)
+                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,x,y,0,0)
+                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,x,y,0,0)
                     else:
                         pyautogui.moveRel(10 if left else -10, 0, duration=0.25)
 
