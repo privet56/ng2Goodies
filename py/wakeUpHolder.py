@@ -5,8 +5,7 @@ import os, sys
 import argparse
 
 import pyautogui    # pip install pyautogui
-
-import win32api
+import win32api     # pip install pypiwin32
 
 #Issue:
 # Command "python setup.py egg_info" failed with error code 1 in c:\temp\pip-install-lamdpy\pygetwindow\
