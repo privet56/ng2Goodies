@@ -23,15 +23,21 @@ class WakeUpHolder:
         left = True
         win32Api = True
         loopDone = 0
+        lastUserMouseMoveAtLoop = 0
 
         try:
             while True:
                 time.sleep(sleepInterval)
 
-                positionStr = 'x:' + str(x).rjust(4) + ' y:' + str(y).rjust(4) + " loopDone:"+str(loopDone).zfill(4) + "("+str(loopDone*sleepInterval).zfill(4)+"sec), win32Api:"+str(win32Api).rjust(5)+" "
+                loopsSinceLastUserMouseMove = loopDone - lastUserMouseMoveAtLoop
+                lastUserMouseMoveSec = loopsSinceLastUserMouseMove * sleepInterval
+                lastUserMouseMove = " lastUserMouseMove:"+str(lastUserMouseMoveSec).rjust(4)+"sec" if loopDone > 0 else ""
+
+                positionStr = 'x:' + str(x).rjust(4) + ' y:' + str(y).rjust(4) + " loopDone:"+str(loopDone).rjust(4) + " ("+str(loopDone*sleepInterval).rjust(4)+"sec), win32Api:"+str(win32Api).rjust(5) + lastUserMouseMove
 
                 if (x != pyautogui.position().x) or (y != pyautogui.position().y):
                     positionStr += ' manually moved: -> nothing to do!'
+                    lastUserMouseMoveAtLoop = loopDone
                 else:
                     positionStr += ' mouse not moved -> move mouse!'
                     if win32Api:
