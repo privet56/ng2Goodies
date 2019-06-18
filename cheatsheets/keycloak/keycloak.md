@@ -14,10 +14,10 @@
         * check the signature with Realm Public Key , or
         * check via HTTP Post to keycloaks /token_introspection/endpoint
     * Token Types:
-        * **Access** token (short lived (minutes)) for accessing resources
-        * **Refresh** Token (long lived (days)) for requesting new tokens
-        * **Offline** Token (almost never expires)
-        * **ID** Token (contains info about user (openid connect))
+        * **Access**    Token (short lived (minutes)) for accessing resources
+        * **Refresh**   Token (long lived (days)) for requesting new tokens
+        * **Offline**   Token (almost never expires)
+        * **ID**        Token (contains info about user (openid connect))
 
 1. "client" = an app, to be secured, using keycloak
 

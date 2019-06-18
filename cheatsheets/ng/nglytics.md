@@ -46,3 +46,23 @@ window.addEventListener('hashchange', function() {
 });
 ```
 <img src=mtmPreviewMode.png width="550px">
+
+# PIWIK Setup on Windows
+1. download & unpack matomo.zip (a pure php web-app)
+1. download & unpack nginx-1.17.0.zip (for windows)
+1. download & unpack php-7.3.6-nts-Win32-VC15-x64.zip
+    1. create '[start-php-fcgi.bat](piwik/start-php-fcgi.bat)':
+        1. set PATH=%~dp0.\php;%PATH%
+        1. %~dp0.\php\php-cgi.exe -b 127.0.0.1:9123
+1. edit [nginx.conf](piwik/nginx.conf) (eg. based on https://github.com/matomo-org/matomo-nginx) , with fast-cgi config:
+    1. fastcgi_pass   127.0.0.1:9123;
+1. create [%PHPDIR%/php.ini](piwik/php.ini) with
+    1. extension=ext/php_mysqli.dll
+    1. extension=ext/php_pdo_mysql.dll
+    1. extension=ext/php_mbstring.dll
+    1. mbstring.language = German
+1. create MySQL database & DB-user & set the access rights
+1. start start-php-fcgi.bat & nginx.exe -> localhost/index.php -> follow setup steps...
+
+## PIWIK UI
+<img src=piwik/ui.1.png width="550px"><img src=piwik/ui.2.png width="550px"><img src=piwik/ui.3.png width="550px"><img src=piwik/ui.4.png width="550px"><img src=piwik/ui.5.png width="550px"><img src=piwik/ui.6.png width="550px">
