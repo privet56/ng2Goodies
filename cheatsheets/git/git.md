@@ -65,5 +65,15 @@ $ git flow feature  # prints current feature name
 
 **git pull** is what you do to bring a local branch up-to-date with its remote version.
 
+# git with GitLab
+1. you have to generate an ssl key with the **default** settings:
+    > $ ssh-keygen -t ed25519 -C "youremail@youremail.de"
+1. add content of the generated .pub file in the gitlab ui:
+    (c:\Users\{yourusername}\.ssh\id_ed25519.pub)
+    <img src=gitlab.add.ssh.key.png width="550px">
+1. check if key is working:
+    > $ ssh -T git@srvgitlab.de
+1. now you can checkout with SSH (**not** HTTPS) (command line or with IntelliJ):
+    > $ git clone git@srvgitlab.de:my/project.git
 
-
+    <img src=intellij.git.clone.png width="550px">
