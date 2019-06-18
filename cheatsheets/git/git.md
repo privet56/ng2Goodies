@@ -65,7 +65,7 @@ $ git flow feature  # prints current feature name
 
 **git pull** is what you do to bring a local branch up-to-date with its remote version.
 
-# git with GitLab
+# git with GitLab & IntelliJ
 1. you have to generate an ssl key with the **default** settings:
     > $ ssh-keygen -t ed25519 -C "youremail@youremail.de"
 1. add content of the generated .pub file in the gitlab ui:
@@ -77,3 +77,8 @@ $ git flow feature  # prints current feature name
     > $ git clone git@srvgitlab.de:my/project.git
 
     <img src=intellij.git.clone.png width="550px">
+1. generated personal access token (https://srvgitlab.de/profile/personal_access_tokens) and enter this in IntelliJ (Tools -> Tasks & Contexts -> Configure Servers -> + GitLab)
+    1. activate checkbox "share url" to make this setting available in all IntelliJ sessions
+    1. can also edit default commit message settings ({summary})
+        (also available in Settings -> Tools -> Tasks -> Servers)
+        
