@@ -17,7 +17,7 @@ class GitUpdater:
     def log(s):
         print(s)
 
-    #        GitLab & SSH Key prerequisite:
+    #        GitLab & SSH Key prerequisite: a key **WITHOUT** passphrase and an ssh config:
     #
     #        c:\Users\{username}\.ssh\config
     #
