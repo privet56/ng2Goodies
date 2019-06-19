@@ -3,6 +3,7 @@
 import time
 import os, sys
 import argparse
+import re
 
 # pip install gitpython
 from git import Repo
@@ -16,12 +17,50 @@ class GitUpdater:
     def log(s):
         print(s)
 
+    #        GitLab & SSH Key prerequisite:
+    #
+    #        c:\Users\{username}\.ssh\config
+    #
+    #       Host *
+    #           AddKeysToAgent yes
+    #           UseKeychain yes
+    #           IdentityFile ~/.ssh/id_ed25519
+    #
+
+    def checkPrerequisites(self, dir):
+        userName = os.getlogin()
+        sshConfigFN = os.path.join('c:\\', 'Users', userName, '.ssh','config')    # c:\Users\{username}\.ssh\config
+        if(not os.path.isfile(sshConfigFN)):
+            GitUpdater.log("checkPrerequisites WRN: fnf{}".format(sshConfigFN))
+            return False
+        sshConfigFC = ''.join(open(sshConfigFN, 'r').readlines())
+        if(not re.search(r"^Host\s", sshConfigFC, re.MULTILINE)):
+            GitUpdater.log("checkPrerequisites WRN: no Host in {}".format(sshConfigFN)+"\n--------\n"+sshConfigFC+"\n--------")
+            return False
+        if(not re.search(r"^\s+AddKeysToAgent\s+yes$", sshConfigFC, re.MULTILINE)):
+            GitUpdater.log("checkPrerequisites WRN: no AddKeysToAgent=yes in {}".format(sshConfigFN)+"\n--------\n"+sshConfigFC+"\n--------")
+            return False
+        if(not re.search(r"^\s+IdentityFile\s+", sshConfigFC, re.MULTILINE)):
+            GitUpdater.log("checkPrerequisites WRN: no IdentityFile in {}".format(sshConfigFN)+"\n--------\n"+sshConfigFC+"\n--------")
+            return False
+
+        return True
+
     def gitUpdate(self, dir):
+
+        if(not self.checkPrerequisites(dir)):
+            return False
+
+        updatedDirCount = 0
         for subdir, dirs, _ in os.walk(dir):
-            print("subdir:"+subdir)
             for aSubDir in dirs:
-                self.updateGitDir(os.path.join(subdir, aSubDir))
+                if(not self.updateGitDir(os.path.join(subdir, aSubDir))):
+                    return False
+                updatedDirCount = updatedDirCount + 1
             break   #prevent decending into subfolders
+
+        GitUpdater.log("updateGitDir INF: updated repos: {}".format(updatedDirCount)+"   in "+dir)
+        return True
 
     def updateGitDir(self, dir):
         repo = Repo(dir)
@@ -46,3 +85,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     gitUpdater = GitUpdater()
     gitUpdater.gitUpdate(args.dir)
+
