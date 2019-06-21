@@ -129,3 +129,21 @@ QString f() {
     return QLatin1String("f");//warning by Clazy! better: return QStringLiteral("f");
 }
 ```
+## WASM
+1. WASM = web assembly = stack based virtual machine
+1. in WASM, there is no DOM!
+1. in WASM, there is no Garbage Collector! (year: 2019)
+1. in WASM, there is no well-supported Thread support (but a preview-implementation is available starting from Chrome74 upwards: simd)
+1. input can be C, C++(Qt), Rust(wasm-pack), ... AssemblyScript
+1. output: .wasm, running in the browser (in sandbox!)
+1. emscripten = drop-in replacement of C compiler (./emcc)
+    1. the older version of emscripten: asm.js: converts C++ code to JS
+    1. the current version of emscripten: like an operating system running in the browser (emulating file system, opengl(->webgl))
+    1. gotcha: output js can be large
+1. use cases for WASM:
+    1. use lib of the input language (which maybe has no JS version) (eg. image encoder)
+1. WASM and JS have the **same speed** but *it is easier to stay in the fast path with WASM*
+    1. both run in the V8 engine
+        1. .js -> V8 = **ignition**(=interpreter) & **turbofan** , with optimization but sometimes needs also de-optimization (when code ~worse)
+        1. .wasm -> V8 = **liftoff**(=compiler generating machine code) & **turbofan** , with optimization (no de-optimization necessary, **no deopt**) -> speed is more pedictable
+1. AssemblyScript = TypeScript to WASM compiler
