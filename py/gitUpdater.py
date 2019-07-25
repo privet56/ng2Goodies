@@ -54,6 +54,8 @@ class GitUpdater:
         updatedDirCount = 0
         for subdir, dirs, _ in os.walk(dir):
             for aSubDir in dirs:
+                if aSubDir.startswith("."):
+                    continue    # skip dirs starting with .
                 if(not self.updateGitDir(os.path.join(subdir, aSubDir))):
                     return False
                 updatedDirCount = updatedDirCount + 1

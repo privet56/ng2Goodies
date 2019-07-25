@@ -66,3 +66,7 @@ window.addEventListener('hashchange', function() {
 
 ## PIWIK UI
 <img src=piwik/ui.1.png width="550px"><img src=piwik/ui.2.png width="550px"><img src=piwik/ui.3.png width="550px"><img src=piwik/ui.4.png width="550px"><img src=piwik/ui.5.png width="550px"><img src=piwik/ui.6.png width="550px">
+
+## Launching dockerized Matomo:
+Launching dockerized Matomo with external MariaDB database and locally mapped persistent data (for saved matomo configuration)
+<img src=dockerizedmatomo/dockerizedmatomo.png width="750px">
