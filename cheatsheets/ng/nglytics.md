@@ -70,3 +70,9 @@ window.addEventListener('hashchange', function() {
 ## Launching dockerized Matomo:
 Launching dockerized Matomo with external MariaDB database and locally mapped persistent data (for saved matomo configuration)
 <img src=dockerizedmatomo/dockerizedmatomo.png width="750px">
+
+### Would you like to access Matomo running in a VM?
+1. choose a free port in virtualmatomo.sh (instead of 8080, eg. 8765)
+2. edit ./virtualmatomo/matomo/config/config.ini : trusted host's port should be the same
+3. in VirtualBox, set up a network -> port forwarding rule (with the same port in guest and on host)
+4. from now on, you will be able to access localhost:8765 on your host!
