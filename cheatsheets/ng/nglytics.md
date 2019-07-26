@@ -76,3 +76,11 @@ Launching dockerized Matomo with external MariaDB database and locally mapped pe
 2. edit ./virtualmatomo/matomo/config/config.ini : trusted host's port should be the same
 3. in VirtualBox, set up a network -> port forwarding rule (with the same port in guest and on host)
 4. from now on, you will be able to access localhost:8765 on your host!
+5. after launched the matomo server within the VM as a docker container, look at the logs to see the activity within the running container:
+    > $ sudo docker ps
+    
+    > $ sudo docker logs -f [containerid]
+
+### Troubles getting traffic saved?
+With the default settings, browsers sends nowadays the do-not-track command and matomo (again, with default settings) won't save then the traffic from these users.
+<img src=do.not.track.png width="550px">
