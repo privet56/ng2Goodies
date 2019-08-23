@@ -60,7 +60,7 @@ GROUP BY t0.day
 ORDER BY t0.day DESC;
 ```
 ### in Java with CriteriaBuilder
-If using EclipseLink: take care, as this implementation is buggy (not threadsafe!)!
+If using EclipseLink: take care, as its CriteriaBuilder implementation is buggy (not threadsafe!)!
 ```java
 private Query createQuery()
 {
