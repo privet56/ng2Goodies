@@ -1,11 +1,11 @@
 # IFNULL
 (MySQL specific extension), allows you to find with LIKE '%' entries having null values.
 
-### in SQL
+### In SQL
 ```sql
 select * from mytable where IFNULL(firstname, '') like '%';
 ```
-### in Java with CriteriaBuilder
+### In Java with CriteriaBuilder
 ```java
 // define ifNull in java code:
 public static <Y> Expression<Y> ifNull(CriteriaBuilder b, Class<Y> type, Expression<Y> x, Expression<Y> y)
@@ -40,7 +40,7 @@ private Query createQuery()
 }
 ```
 # CASE
-### in SQL
+### In SQL
 ```sql
 SELECT t0.day, COUNT(DISTINCT
     CASE
@@ -59,7 +59,7 @@ AND (t1.id = t0.mytid))
 GROUP BY t0.day
 ORDER BY t0.day DESC;
 ```
-### in Java with CriteriaBuilder
+### In Java with CriteriaBuilder
 If using EclipseLink: take care, as its CriteriaBuilder implementation is buggy (not threadsafe!)!
 ```java
 private Query createQuery()
@@ -85,10 +85,15 @@ private Query createQuery()
 ```
 ### Use the above created Query (functional/stream API (java version >= 8)):
 ```java
+public void initialize(@Observes InitializeEvent event)
+{
+    //on startup, register SQL query
+    event.registerQuery('MYQUERY', createQuery());
+}
 private ArrayNode execQuery()
 {
 //execute SQL query
-    Query query = createQuery();
+    Query query = entityManager.createNamedQuery('MYQUERY');
     query.setParameter(Entity.ID, '6');
     List<Tuple> count = query.getResultList();
 
