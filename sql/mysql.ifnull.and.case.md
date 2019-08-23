@@ -8,9 +8,13 @@ select * from mytable where IFNULL(firstname, '') like '%';
 ### in Java with CriteriaBuilder
 ```java
 // define ifNull in java code:
-public static <Y> Expression<Y> ifNull(CriteriaBuilder builder, Class<Y> type, Expression<Y> x, Expression<Y> y)
+public static <Y> Expression<Y> ifNull(CriteriaBuilder b, Class<Y> type, Expression<Y> x, Expression<Y> y)
 {
-    return builder.function("IFNULL", type, x, y);
+    return b.function("IFNULL", type, x, y);
+}
+public static <Y> Expression<Y> ifElse(CriteriaBuilder b, Class<Y> type, Expression<?> exp , Expression<Y> x, Expression<Y> y)
+{
+    return b.function("IF", type, expression, x, y);
 }
 
 // use the ifNull Expression:
@@ -78,7 +82,7 @@ private Query createQuery()
    return entityManager.createQuery(query);
 }
 ```
-### Use the above created Query:
+### Use the above created Query (functional/stream API (java version >= 8)):
 ```java
 private ArrayNode execQuery()
 {
