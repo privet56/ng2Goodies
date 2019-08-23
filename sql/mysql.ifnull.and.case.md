@@ -96,14 +96,12 @@ private ArrayNode execQuery()
         Collectors.groupingBy((Tuple tuple) -> (Integer) tuple.get('day'),
                                 Collectors.summingLong((Tuple tuple) -> (Long) tuple.get('count'))));
 //reverse sort by day
-    Stream<Map.Entry<Integer, Long>> day2CountsSorted = day2Counts.entrySet().stream().sorted(
-        Map.Entry.comparingByKey(Comparator.reverseOrder()));
+    Stream<Map.Entry<Integer, Long>> day2CountsSorted = day2Counts.entrySet().stream().sorted(Map.Entry.comparingByKey(Comparator.reverseOrder()));
 
 //map to array of node's
     ArrayNode arrayNode = JsonNodeFactory.instance.arrayNode();
-    year2CountsSorted.map((Map.Entry<Integer, Long> entry) ->
-        JsonNodeFactory.instance.objectNode()
-                                .put('day', entry.getKey()).put('count', entry.getValue())
+    day2CountsSorted.map((Map.Entry<Integer, Long> entry) ->
+        JsonNodeFactory.instance.objectNode().put('day', entry.getKey()).put('count', entry.getValue())
     ).forEach((ObjectNode objectNode) -> arrayNode.add(objectNode));
 
     return arrayNode;
