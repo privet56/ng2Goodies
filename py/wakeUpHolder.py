@@ -7,6 +7,8 @@ import argparse
 import pyautogui                # pip install pyautogui
 import win32api, win32con       # pip install pypiwin32
 
+pyautogui.FAILSAFE = False      # disables the fail-safe
+
 #Issue:
 # Command "python setup.py egg_info" failed with error code 1 in c:\temp\pip-install-lamdpy\pygetwindow\
 #Solution:
