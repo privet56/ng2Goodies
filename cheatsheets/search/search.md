@@ -60,3 +60,12 @@ http://localhost:8983/solr/collection1/select?q=mysearchkeyword&collection=col1,
     1. by id: {"delete":"doc1"}
     1. by ids: {"delete":["doc1","doc2"]}
     1. by query: {"delete":{"query":"tag:category1"}}
+
+# SQLite & FTS5
+You need to use **virtual table** (below done with sqlite3 CLI) (virtual table creates actually several other tables):
+```sh
+create virtual table mytable using FTS5(title,body);
+insert into mytable(title,body) values('...','...');
+select * from mytable where mytable match 'mykeyword' order by rank;
+select title, highlight(mytable, 2, '<','>') as highlightdesc from mytable where mytable match 'mykeyword' order by rank;
+```
