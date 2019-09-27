@@ -30,7 +30,7 @@ The Nx CLI is built on top of the Ng CLI
 1. /apps/
     1. subdirs(or its subdirs) contain your apps (Ng, React(ng add @nrwl/react), Express or NestJs(ng add @nrwl/nest), etc.)
 1. /libs/
-    1. be be feature-, ui-, data-access-, utility- libraries
+    1. these can be feature-, ui-, data-access-, utility- libraries, in corresponding subdirs)
     1. use index.ts in the root of each lib to define public API
 1. /tools/schematics/
     1. for your specific ng schematics
@@ -59,7 +59,7 @@ The Nx CLI is built on top of the Ng CLI
     > ng generate workspace mycurrentapp --collection=@nrwl/schematics
         <br> (or)<br>
     > ng add @nrwl/schematics
-1. Nx hasa NgRx extension: import { DataPersistence } from '@nrwl/nx';
+1. Nx has a NgRx extension: import { DataPersistence } from '@nrwl/nx';
     1. for handling optimisticUpdate or pessimisticUpdate
     1. for fetching with dataPersistence.fetch(...)
     1. Data Fetching On Router Navigation: dataPersistence.navigation(...)
