@@ -4,6 +4,7 @@
 
 ### Angular
 #### [Angular Server Side Rendering](ngssr/ng.ssr.md)
+#### [Advanced Angular (eg. Message Broadcasting, usage of visibilityObserver)](ng/ng.advanced.md)
 #### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
 #### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
 #### [RxJS & NgRx](ng/rxjs.md) & [RxJS](ng/rxjs-2.md)
@@ -221,3 +222,8 @@ function sum(n1)
 var sum = n1 => n2 => n3 => n1 + n2 + n3;
 //alert(sum(2)(3)(4)); //should be 9
 ```
+
+#### How to combine html files of a directory into one single html file containing all the small file contents?
+> copy *.html all.html
+
+TODO: log without überflüssige Calls (lambda!)
