@@ -99,3 +99,26 @@ export class TooltipComponent implements AfterViewInit {
         ...content of the tooltip...
 </div>
 ```
+## 4. How to prevent a DIV from breaking to the next line?
+```html
+<div style="height:200px;width:500px;background-color:yellow;">
+	<div style="height:200px;width:50px;background-color:lightcyan;float:left;">
+		content on the left side (50px)
+	</div>
+	<!-- *has* to be before the overlong element! -->
+	<div style="height:200px;width:50px;background-color:lightgreen;float:right;">
+		content on the right side (50px)
+	</div>
+	<div style="height:30px;width:460px;background-color:lightblue;">
+		<!-- overlong content in the middle (460px) -->
+		<div style="width:100%;max-height:30px;background-color:red;overflow:hid_den;">
+			<!-- these DIVs break to a new line -->
+			<div style="height:30px;width:130px;background-color:lightgray;float:left;margin:7px;">1</div>
+			<div style="height:30px;width:130px;background-color:lightgray;float:left;margin:7px;">2</div>
+			<div style="height:30px;width:130px;background-color:lightgray;float:left;margin:7px;">3</div>
+		</div>
+	</div>
+</div>
+
+```
+... or just use a &lt;table&gt; element...
