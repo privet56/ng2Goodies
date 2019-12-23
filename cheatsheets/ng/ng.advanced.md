@@ -59,6 +59,15 @@ export class AMyComponent implements AfterViewInit, OnDestroy {
     top: 0px;
     z-index: $zindex-modal;
 }
+&.tooltiptriangle-halfsquare--morning {
+    > div {
+      background-image: linear-gradient(
+                      to top left,
+                      $pale-grey 49%,
+                      $bluish-grey 51%
+      );
+    }
+}
 /*triangle on top-middle of the tooltip*/
 .tooltip::after {
     content: "";
@@ -119,6 +128,5 @@ export class TooltipComponent implements AfterViewInit {
 		</div>
 	</div>
 </div>
-
 ```
 ... or just use a &lt;table&gt; element...

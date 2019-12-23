@@ -147,3 +147,29 @@ QString f() {
         1. .js -> V8 = **ignition**(=interpreter) & **turbofan** , with optimization but sometimes needs also de-optimization (when code ~worse)
         1. .wasm -> V8 = **liftoff**(=compiler generating machine code) & **turbofan** , with optimization (no de-optimization necessary, **no deopt**) -> speed is more pedictable
 1. AssemblyScript = TypeScript to WASM compiler
+
+# QtWS19
+## State of WebAssembly with Qt
+1. there is multithreading support
+1. MQTT support is questionable
+1. security related restrictions in a browser: I/O and port opening not allowed (yet?)
+1. compile time of a complete Qt app for WASM:
+    1. up to 30 min, to create the WASM!
+    1. up to 3 min, the compilation step of the WASM within the browser!
+1. size of the Qt-WASM package: up to 20 MB!
+
+## Snap & Ubuntu Core
+1. Snap = self-containing package for IoT devices
+1. Ubuntu Core = OS running the different snaps
+1. snapcaft = build system
+    - (configure it with YAML)
+    - (with pluings for cmake, qmake, python ...)
+    - (deployment to snap store to the target device)
+1. you can even build a content snap with libs which are used by different app-snaps (KDE does it this way)
+
+## ORM
+- they use type introspection (~reflection) through QMetaObjectModel
+- older, non LGPL libs
+    1. QxORM
+    1. ODB(not qt-specific, uses code-generation in the toolchain)
+- **QtOrm** = new modern lib for Qt, LGPL, inofficial qt module (based on Qt 5.12)
