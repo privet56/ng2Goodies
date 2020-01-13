@@ -46,7 +46,7 @@ export class AMyComponent implements AfterViewInit, OnDestroy {
     }
 }
 ```
-## 3. How to style the triangle of a tooltip component?
+## 3. How to style the triangle of a tooltip component in *nested* **scrollable** areas?
 ```css
 .tooltip {
     width: 300px;
@@ -98,24 +98,47 @@ export class TooltipComponent implements AfterViewInit {
     getTop(): string {
         //return this.mouseEvent.pageY + "px";  //this line would position the tooltip to the mouse pos
 
-        return this.onMouseOverEvent.nativeElement.getBoundingClientRect().top +
-                this.scrollOffsets(this.onMouseOverEvent.nativeElement, true) +
+        return this.absolutePosition(this.onMouseOverEvent.nativeElement).top +
                 this.onMouseOverEvent.nativeElement.offsetHeight + "px";
 
     }
     getLeft(): string {
         //return this.mouseEvent.pageX + "px";  //this line would position the tooltip to the mouse pos
-        return this.onMouseOverEvent.nativeElement.getBoundingClientRect().left +
-                this.scrollOffsets(this.onMouseOverEvent.nativeElement, false) +
-                (this.onMouseOverEvent.nativeElement.offsetWidth / 2) + "px";
+        return this.absolutePosition(this.onMouseOverEvent.nativeElement).left +
+            (this.onMouseOverEvent.nativeElement.offsetWidth / 2) + "px";
     }
-    protected scrollOffsets(e: HTMLElement, top: boolean/*top or left*/): number {
-        let scrollTops: number = 0;
-        while (e) {
-            scrollTops += top ? e.scrollTop : e.scrollLeft;
-            e = e.parentElement;
+    protected absolutePosition(el) {
+        let
+            found,
+            left = 0,
+            top = 0,
+            width = 0,
+            height = 0,
+            offsetBase = document.body/*absolutePosition.offsetBase*/;
+
+        if (!offsetBase && document.body) {
+            offsetBase /*= absolutePosition.offsetBase*/ = document.createElement('div');
+            offsetBase.style.cssText = 'position:absolute;left:0;top:0';
+            document.body.appendChild(offsetBase);
         }
-        return scrollTops;
+        if (el && el.ownerDocument === document && 'getBoundingClientRect' in el && offsetBase) {
+            let boundingRect = el.getBoundingClientRect();
+            let baseRect = offsetBase.getBoundingClientRect();
+            found = true;
+            left = boundingRect.left - baseRect.left;
+            top = boundingRect.top - baseRect.top;
+            width = boundingRect.right - boundingRect.left;
+            height = boundingRect.bottom - boundingRect.top;
+        }
+        return {
+            found: found,
+            left: left,
+            top: top,
+            width: width,
+            height: height,
+            right: left + width,
+            bottom: top + height
+        };
     }
 ```
 ```html
