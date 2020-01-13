@@ -46,7 +46,7 @@ export class AMyComponent implements AfterViewInit, OnDestroy {
     }
 }
 ```
-## 3. How to style the triangle of a tooltip component in *nested* **scrollable** areas?
+## 3. How to style the triangle of a tooltip component?
 ```css
 .tooltip {
     width: 300px;
@@ -82,7 +82,7 @@ export class AMyComponent implements AfterViewInit, OnDestroy {
     border-color: transparent transparent lightgray transparent;
 }
 ```
-### 3.1. ...and, how to position the tooltip?
+### 3.1. ...and, how to position the tooltip within *nested* **scrollable** areas?
 ```ts
 export class TooltipComponent implements AfterViewInit {
 
