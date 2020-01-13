@@ -2,7 +2,7 @@
 
 ## 1. How to broadcast messages/events?
 ### 1.1. broadcast:
-```js
+```ts
 this.elementRef.nativeElement.dispatchEvent(new CustomEvent("myCustomEvent", { bubbles: true, detail: new MyData() }));
 ```
 ### 1.2. listen:
@@ -10,9 +10,10 @@ this.elementRef.nativeElement.dispatchEvent(new CustomEvent("myCustomEvent", { b
 ```html
 <div (myCustomEvent)="onMyCustomEvent($event)">...</div>
 ```
-```js
+```ts
 onMyCustomEvent($event: CustomEvent<MyData>): void {
-    myData: MyData = $event.detail;
+    const myData: MyData = $event.detail;
+    //... work with myData...
 }
 ```
 
@@ -21,7 +22,8 @@ Answer: render the elements of the list only if they are visible!
 ```html
 <div *ngIf="visible$ | async">...the DOM of my very complicated list element...</div>
 ```
-```js
+(...or in advanced, reusable cases you should work with &lt;ng-template)
+```ts
 export class AMyComponent implements AfterViewInit, OnDestroy {
     private visibilityObserver: IntersectionObserver;
     public visible$: Observable<boolean>;
@@ -81,7 +83,7 @@ export class AMyComponent implements AfterViewInit, OnDestroy {
 }
 ```
 ### 3.1. ...and, how to position the tooltip?
-```js
+```ts
 export class TooltipComponent implements AfterViewInit {
 
     @ViewChild("tooltip", { static: false })
@@ -94,10 +96,26 @@ export class TooltipComponent implements AfterViewInit {
         document.getElementsByTagName("body")[0].appendChild(this.tooltipElement.nativeElement);
     }
     getTop(): string {
-        return this.mouseEvent.pageY + "px";
+        //return this.mouseEvent.pageY + "px";  //this line would position the tooltip to the mouse pos
+
+        return this.onMouseOverEvent.nativeElement.getBoundingClientRect().top +
+                this.scrollOffsets(this.onMouseOverEvent.nativeElement, true) +
+                this.onMouseOverEvent.nativeElement.offsetHeight + "px";
+
     }
     getLeft(): string {
-        return this.mouseEvent.pageX + "px";
+        //return this.mouseEvent.pageX + "px";  //this line would position the tooltip to the mouse pos
+        return this.onMouseOverEvent.nativeElement.getBoundingClientRect().left +
+                this.scrollOffsets(this.onMouseOverEvent.nativeElement, false) +
+                (this.onMouseOverEvent.nativeElement.offsetWidth / 2) + "px";
+    }
+    protected scrollOffsets(e: HTMLElement, top: boolean/*top or left*/): number {
+        let scrollTops: number = 0;
+        while (e) {
+            scrollTops += top ? e.scrollTop : e.scrollLeft;
+            e = e.parentElement;
+        }
+        return scrollTops;
     }
 ```
 ```html
