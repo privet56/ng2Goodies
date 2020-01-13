@@ -114,7 +114,7 @@ export class TooltipComponent implements AfterViewInit {
             top = 0,
             width = 0,
             height = 0,
-            offsetBase = document.body/*absolutePosition.offsetBase*/;
+            offsetBase = null/*absolutePosition.offsetBase*/;
 
         if (!offsetBase && document.body) {
             offsetBase /*= absolutePosition.offsetBase*/ = document.createElement('div');
