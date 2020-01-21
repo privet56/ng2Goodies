@@ -11,7 +11,7 @@
 #### [NgRx](ng/ngrx.md)
 
 ### Cloud
-#### [Azure](azure/azure.md)
+#### [Azure](azure/azure.md) & [ACI/AKS](azure/aci_acs.md)
 #### [Google Cloud Platform](gcp/gcp.md)
 ### GWT
 #### [SmartGWT](gwt/smartgwt.md)
