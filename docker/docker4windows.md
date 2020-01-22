@@ -81,6 +81,7 @@ sudo apt-get remove --purge docker-ce
 
 ### Docker for Windows without dockerhub account? Use chocolatey:
 > choco install docker-desktop
+(anyway, Docker only works with hyper-v (which breaks VirtualBox!))
 
 ### Docker for Windows with cool UI?
 * Basic UI: Docker Desktop >=v.2.2 includes an interactive Dashboard
@@ -102,3 +103,17 @@ sudo apt-get remove --purge docker-ce
 > sudo apt-get install cockpit-docker
 * Attention: kubernetes plugin ('Clusters' tab) only works on fedora distros well
 <img src="docker-cockpit.png" width="350px"><img src="docker-cockpit.2.png" width="350px">
+
+### Docker on Windows without Hyper-V?
+(so, you don't break VirtualBox)
+1. install Docker Toolbox (deprecated)
+1. install Kitematic (deprecated, if not installed above)
+1. start Kitematic
+	1. if not works, edit "docker-start.cmd" end set your directory to %git%/bin/bash.exe
+
+### kali as docker
+
+> docker run -t -i -d -p 6080:6080 jgamblin/kalibrowser-lxde
+
+1. in VirtualBox, set up the "default" VM > Settings > Network > port forwarding > TCP with ports 6080
+1. open http://localhost:6080/ -> you see the VNC output, the kali GUI!
