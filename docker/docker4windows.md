@@ -78,3 +78,27 @@ sudo apt-get remove --purge docker-ce
 
 ### Minimum Windows 10 Version
 <img src="windows.10.version.png" width="550px">
+
+### Docker for Windows without dockerhub account? Use chocolatey:
+> choco install docker-desktop
+
+### Docker for Windows with cool UI?
+* Basic UI: Docker Desktop >=v.2.2 includes an interactive Dashboard
+* Advanced UI: Use **Kitematic** on top of Docker Toolbox
+	* Kitematic creates a linux VM for the Docker Host (Boot2Docker) automatically! (prerequisite: installed VirtualBox)
+	* Kitematic UI offers available images (from DockerHub) to be [Create]d run as containers
+	* of the running container, interactively shows/allows editing the
+		* stdout/stderr
+		* logs 
+		* ip address
+		* ports
+		* volumes
+		* environment variables
+		* web preview (cool!)
+
+	<img src="kitematic.png" width="450px">
+* Web UI on Linux?
+> sudo apt-get install cockpit
+> sudo apt-get install cockpit-docker
+* Attention: kubernetes plugin ('Clusters' tab) only works on fedora distros well
+<img src="docker-cockpit.png" width="350px"><img src="docker-cockpit.2.png" width="350px">
