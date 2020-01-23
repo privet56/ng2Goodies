@@ -111,9 +111,11 @@ sudo apt-get remove --purge docker-ce
 1. start Kitematic
 	1. if not works, edit "docker-start.cmd" end set your directory to %git%/bin/bash.exe
 
-### kali as docker
+### kali (with UI!) as docker container
 
-> docker run -t -i -d -p 6080:6080 jgamblin/kalibrowser-lxde
+> docker run -t -i -d -p 6080:6080 jgamblin/kalibrowser-lxde --name kalibrowser
 
 1. in VirtualBox, set up the "default" VM > Settings > Network > port forwarding > TCP with ports 6080
 1. open http://localhost:6080/ -> you see the VNC output, the kali GUI!
+
+<img src="docker.kali.png" width="650px">
