@@ -9,6 +9,7 @@
 #### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
 #### [RxJS & NgRx](ng/rxjs.md) & [RxJS](ng/rxjs-2.md)
 #### [NgRx](ng/ngrx.md)
+#### [Angular Libraries](ng/ng.lib.md)
 
 ### Cloud
 #### [Azure](azure/azure.md) & [ACI/AKS](azure/aci_acs.md)
