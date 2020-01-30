@@ -4,13 +4,17 @@
 
 ## Create Workspace, Lib and App:
 ```sh
-# generate an empty workspace without project
+# generate an empty workspace without project (createApplication or create-application)
 ng new myworkspace --createApplication=false
 cd myworkspace
-# generates an ng lib in the subdir /projects/
-ng generate library mylib
+# generates an ng lib in the subdir /projects/  (with prefix for my component selector)
+ng generate library mylib --prefix=myl
 # generate an app
 ng generate application myapp
+# launch my app
+ng serve myapp
+# build mylib into dist/mylib
+ng build mylib
 ```
 ## Structure after generating the above projects:
 
@@ -27,6 +31,7 @@ ng generate application myapp
 
 1. add a command into myworkspace/package.json to build your lib<br>
 (can be started with 'npm run mylibbuild')<br>
+(every time you change the lib, you have to **build before your app sees** the change!)<br>
 (generates the angular lib Package into /dist/):
     ```ts
         scripts: {
@@ -40,12 +45,12 @@ ng generate application myapp
     ...
     imports [
         ...
-        MyLibModule
+        MyLibModule,
     ]
     ```
-    ...so, you can now use the lib components/services in your app components!
+    ...so, you can now use the lib in your app components!
 
-## Package the Lib
+## Package & Publish the Lib
 ```sh
 cd mylib/dist/mylib/
 # generate a tarball (mylib-0.0.1.tgz)
@@ -53,11 +58,11 @@ npm pack
 # this command adds a new entry in package.json:dependencies:
     # "mylib": "file:dist/mylib/mylib-0.0.1.tgz"
     # tsconfig.json "paths"."mylib is not needed anymore...
-npm install ./dist/mylib/mylib-0.0.1.tgz
-```
-#### Publish the Lib
-```sh
-cd dist/mylib
+npm install ./dist/mylib/mylib-0.0.1.tgz --save
+
+# now publish
+
+cd mylib/dist/mylib/
 # Verdaccio is an open source npm repo for your private libs...
 npm publish --registy http://verdaccio:4873
 #after publishing it, you can install (instead of a .tgz archive)
