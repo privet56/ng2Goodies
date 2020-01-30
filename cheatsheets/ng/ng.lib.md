@@ -69,4 +69,7 @@ npm publish --registy http://verdaccio:4873
 npm i mylib --registy http://verdaccio:4873 --save
 ```
 1.  instead of specifying --registry, you can also create a **.npmrc** file in your project root and insert the line:<br>
+```ini
+cafile=my-nexus.crt
 registry=http://verdaccio:4873
+```
