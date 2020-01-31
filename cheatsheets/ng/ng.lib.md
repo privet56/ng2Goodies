@@ -73,3 +73,14 @@ npm i mylib --registy http://verdaccio:4873 --save
 cafile=my-nexus.crt
 registry=http://verdaccio:4873
 ```
+### Naming
+mylib/package.json has a "name" element; you can add a scope prefix, like
+```ts
+{
+    "name": "@mycompany/mylib",
+    "version": "1.0.0",
+    "peerDependencies": {
+        ...
+```
+...later you can install this lib with
+> npm i @mycompany/mylib --save
