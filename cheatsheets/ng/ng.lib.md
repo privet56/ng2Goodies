@@ -34,7 +34,7 @@ ng build mylib
 (can be started with 'npm run mylibbuild')<br>
 (every time you change the lib, you have to **build before your app sees** the change!)<br>
 (generates the angular lib Package into /dist/mylib/):
-    ```ts
+    ```json
         scripts: {
             ...
             "mylibbuild": "ng build mylib",
@@ -66,17 +66,17 @@ npm install ./dist/mylib/mylib-0.0.1.tgz --save
 cd mylib/dist/mylib/
 # Verdaccio is an open source npm repo for your private libs...
 npm publish --registy http://verdaccio:4873
-#after publishing it, you can install (instead of a .tgz archive)
+# after publishing it, you can install (instead of a .tgz archive)
 npm i mylib --registy http://verdaccio:4873 --save
 ```
-Instead of specifying --registry, you can also create a **.npmrc** file in your project root and insert the line:<br>
+Instead of specifying --registry, you can also create a **.npmrc** file in your project root and insert the line:
 ```ini
 cafile=my-nexus.crt
 registry=http://verdaccio:4873
 ```
 ### Naming
-mylib/package.json has a "name" element; you can add a scope prefix, like
-```ts
+mylib/package.json has a "name" element; you can add a scope prefix '@mycompany', like
+```json
 {
     "name": "@mycompany/mylib",
     "version": "1.0.0",
