@@ -113,3 +113,16 @@ private ArrayNode execQuery()
     return arrayNode;
 }
 ```
+# MySQL - Slow Query Analysis
+```sql
+-- activate slow query logging on MySQL/MariaDB
+-- (settings will be reset when mysqld restarted!)
+SET GLOBAL slow_query_log = 'ON';
+SET GLOBAL slow_query_log_file = 'c:/temp/slowqueries.log';
+SET GLOBAL long_query_time = 0.33;	-- long queries last longer than 0.33 sec
+
+-- test (after logout/login)
+SELECT SLEEP(0.66); -- lasts longer than 0.33 sec -> will log!
+```
+### Analyze created log
+> pt-query-digest c:/temp/slowqueries.log

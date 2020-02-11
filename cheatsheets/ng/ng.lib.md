@@ -45,11 +45,21 @@ ng build mylib
     import {MyLibModule} from 'mylib';
     ...
     imports [
+        
         ...
         MyLibModule,
     ]
     ```
     ...so, you can now use the lib in your app components!
+    ```ts
+    import {MylibService} from 'mylib';
+    ...
+    @Component
+        ...
+        constructor(public mylibService: MylibService) {
+
+        }
+    ```
 
 ## Package & Publish the Lib
 ```sh
@@ -85,3 +95,10 @@ mylib/package.json has a "name" element; you can add a scope prefix '@mycompany'
 ```
 ...later you can install this lib with
 > npm i @mycompany/mylib --save
+
+## Working on a Lib
+```sh
+ng build mylib --watch
+ng serve myapp
+```
+-> so, you can edit the lib and myapp will be **autoreloaded** in the development-browser (localhost:4200)
