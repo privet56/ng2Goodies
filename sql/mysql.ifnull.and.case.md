@@ -127,3 +127,19 @@ SELECT SLEEP(0.66); -- lasts longer than 0.33 sec -> will log!
 ```
 ### Analyze created log
 > pt-query-digest.pl c:/temp/slowqueries.log
+
+# MySQL - Foreign Key
+```sql
+-- CREATE foreign key
+ALTER TABLE t1 add t2_id VARCHAR(50);
+ALTER TABLE t1 ADD CONSTRAINT t1_to_t2
+FOREIGN KEY (t2_id) REFERENCES t2 (id);
+
+-- CHANGE foreign key make it 'NOT NULL'
+ALTER TABLE t1 MODIFY COLUMN t2_id VARCHAR(50) NOT NULL;
+
+-- DELETE (first key, then column)
+ALTER TABLE t1 DROP FOREIGN KEY t1_to_t2;
+ALTER TABLE t1 DROP COLUMN t2_id;
+DELETE FROM _flyway WHERE script = 'V1__foreignKey.sql';
+```
