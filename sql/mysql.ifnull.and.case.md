@@ -17,6 +17,8 @@ public static <Y> Expression<Y> ifElse(CriteriaBuilder b, Class<Y> type, Express
     return b.function("IF", type, expression, x, y);
 }
 
+private final static Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
 // use the ifNull Expression:
 private Query createQuery()
 {
