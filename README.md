@@ -13,6 +13,15 @@
 	{
 		...
 
+## Cheatsheets
+
+Index page: [cheatsheets/index.md](cheatsheets/index.md)
+<br>
+Cheatsheets for Topics: Cloud, DevOps, GCP, Helm, Angular, Rx, and Search-Solutions
+<br>
+One of the highlights: Comparison of State Management Solutions for Angular Apps:
+[<img src=cheatsheets/ng/state.management.solutions.assessment.png width="550px">](cheatsheets/ng/state.management.solutions.assessment.xlsx)
+
 
 ## sani.ts: SanitizerPipe
 	(allows inserting HTML into the DOM)
@@ -54,7 +63,7 @@
 	public string getProcReturnAttribute(DataContext dataContext, string sAttrName)
 	{
 		string query = "EXEC [dbo].[SPO_GetData] {0}, {1}, {2}";
-		query = string.Format(query, “name”, anEmail == null ? "NULL" : "'" + anEmail + "'", anID);
+		query = string.Format(query, ï¿½nameï¿½, anEmail == null ? "NULL" : "'" + anEmail + "'", anID);
 		var datas = LinqExtensions.ExecuteQuery(dataContext, query);
 		foreach(var data in datas)
 		{
@@ -88,7 +97,7 @@
 ## Server Landscape Visualization
 	Create a dynamic server landscape visualization with data flow, graphs and plots 
 	Used technologies:
-	jQuery, AngularJS, jqPlot, Raphaël ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
+	jQuery, AngularJS, jqPlot, Raphaï¿½l ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
 	
 ![environment.overview.with.raphael.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/environment.overview.with.raphael.png)
 ![render.times.ff.ie8.diff.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/render.times.ff.ie8.diff.png)

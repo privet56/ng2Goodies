@@ -10,6 +10,7 @@
 #### [RxJS & NgRx](ng/rxjs.md) & [RxJS](ng/rxjs-2.md)
 #### [NgRx](ng/ngrx.md)
 #### [Angular Libraries](ng/ng.lib.md)
+#### [Comparison of Ng Libs for State Management](ng/state.management.solutions.assessment.xlsx)
 
 ### Cloud
 #### [Azure](azure/azure.md) & [ACI/AKS](azure/aci_acs.md)
