@@ -1,6 +1,6 @@
 # TypeScript, Perl, JS, C# & Angular 2+ Goodies:
 
-## PersistentRouterOutlet.ts for ng2 (Angular 2 version 2.2.3)
+## PersistentRouterOutlet.ts for ng2 (😎 Angular 2 version 2.2.3)
 	(allows to switch between routes without reloading already loaded routes)
 	use this way:
 	@NgModule({
@@ -15,11 +15,11 @@
 
 ## Cheatsheets
 
-Index page: [cheatsheets/index.md](cheatsheets/index.md)
+⚡️ Index page: [cheatsheets/index.md](cheatsheets/index.md)
 <br>
-Cheatsheets for Topics: Cloud, DevOps, GCP, Helm, Angular, Rx, and Search-Solutions
+📖 Cheatsheets for Topics: Cloud, DevOps, GCP, Helm, Angular, Rx, and Search-Solutions
 <br>
-One of the highlights: Comparison of State Management Solutions for Angular Apps:
+❤️ One of the highlights: Comparison of State Management Solutions for Angular Apps:
 [<img src=cheatsheets/ng/state.management.solutions.assessment.png width="550px">](cheatsheets/ng/state.management.solutions.assessment.xlsx)
 
 
@@ -38,7 +38,7 @@ One of the highlights: Comparison of State Management Solutions for Angular Apps
 ## startNgProject.bat
 	starts all necessary apps for ng2 development: node, vscode, browser and 'ng serve'
 	(see comments for setting the necessary content of npmrc)
-	necessary directory structure:
+	🔧 necessary directory structure:
 	-- devenv
 	---- git
 	---- MsVSCode
@@ -58,7 +58,7 @@ One of the highlights: Comparison of State Management Solutions for Angular Apps
 	You can use linq/LinqExtensions.cs
 	(as a simple 'dynamic' keyword does not lead to the expected result)
 	
-	Example:
+	📝 Example:
 
 	public string getProcReturnAttribute(DataContext dataContext, string sAttrName)
 	{
@@ -77,7 +77,7 @@ One of the highlights: Comparison of State Management Solutions for Angular Apps
 
 ## Docker
 	A short presentation & introduction to its application in practice.
-	docker/docker.pptx
+	📖 docker/docker.pptx
 	
 ![docker.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/docker/docker.png)
 
@@ -87,17 +87,17 @@ One of the highlights: Comparison of State Management Solutions for Angular Apps
 
 ## Outlook Email Sender
 	MFC Visual Studio project to send Email through Outlook (COM)
-	outlookEmailSender/sender.vcproj
+	📝 outlookEmailSender/sender.vcproj
 
 ## NAGIOS check implementation in Perl:
-	nagios_dyn_check_http.pl
+	📝 nagios_dyn_check_http.pl
 	Perl script to be called by NAGIOS to check if the HTTP connection is alive
-	nagios_dyn_check_http/check_http.pl
+	📝 nagios_dyn_check_http/check_http.pl
 
 ## Server Landscape Visualization
 	Create a dynamic server landscape visualization with data flow, graphs and plots 
 	Used technologies:
-	jQuery, AngularJS, jqPlot, Rapha�l ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
+	jQuery, AngularJS, jqPlot, Raphael (❤️) ( https://en.wikipedia.org/wiki/Rapha%C3%ABl_(JavaScript_library) )
 	
 ![environment.overview.with.raphael.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/environment.overview.with.raphael.png)
 ![render.times.ff.ie8.diff.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/img/render.times.ff.ie8.diff.png)
@@ -107,24 +107,24 @@ One of the highlights: Comparison of State Management Solutions for Angular Apps
 ![3dbutton.gif](https://raw.githubusercontent.com/privet56/ng2Goodies/master/serverLandscapeVisualization/dynadocu/3dbutton.gif)
 
 ## Win Manager
-	MFC Visual Studio project
+	MFC Visual Studio 6.x project
 	
 ![wins.png](https://raw.githubusercontent.com/privet56/ng2Goodies/master/wins/Release/wins.png)
 
 ## PL Lib
 	Perl library with project independent useful functions
 	(e.g. cfg, logging, trim, ...)
-	pllib/pllib.pl
+	🚀 pllib/pllib.pl
 
 ## SQL Lib
 	Oracle DB search all Tables
 	Procedure with Bulk and Cursor operation
-	sql/*.sql
+	📖 sql/*.sql
 	
 ## iOS: objC Lib
 	Objective C Library with project independent useful functions
 	(e.g. XML parser, HTML parser, ZIP, ...)
-	iIOS_objc_lib/*
+	📖 iIOS_objc_lib/*
 
 ## C++ Lib
 	HTML parser, Progress-Dialog,
