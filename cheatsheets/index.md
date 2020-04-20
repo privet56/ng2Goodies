@@ -2,17 +2,18 @@
 
 # Cheatsheets:
 
-### Angular
+### ️️️❤️ Angular
 #### [Angular Server Side Rendering](ngssr/ng.ssr.md)
 #### [Advanced Angular (eg. Message Broadcasting, usage of visibilityObserver)](ng/ng.advanced.md)
 #### [Angular / Rx](../../../../artiFlow/blob/master/README.md#rx-cheatsheet)
 #### [Angular / Animation Material Firebase LazyLoaded Modules](ng/ng.md)
 #### [RxJS & NgRx](ng/rxjs.md) & [RxJS](ng/rxjs-2.md)
 #### [NgRx](ng/ngrx.md)
+#### [NgXS](ng/ngxs/ngxs.md)
 #### [Angular Libraries](ng/ng.lib.md)
 #### [Comparison of Ng Libs for State Management](ng/state.management.solutions.assessment.xlsx)
 
-### Cloud
+### ❤️ Cloud
 #### [Azure](azure/azure.md) & [ACI/AKS](azure/aci_acs.md)
 #### [Google Cloud Platform](gcp/gcp.md)
 ### GWT
@@ -37,7 +38,7 @@
 
 #### [MS Dynamics CRM](./ms_dynamics/ms_dynamics.md)
 
-### PHP
+### ❤️ PHP
 #### [PHP - HHVM, Hacklang, PHP-FPM](hhvm/hhvm.md)
 #### [PHP - Advanced Laravel](php/laravel.md)
 #### [PHP - RxPHP](php/rxphp.md)
@@ -45,18 +46,18 @@
 #### [Python / Django](../../../../spycy/blob/master/cheatsheet/django.md)
 #### [Python / Flask](../../../../spycy/blob/master/cheatsheet/flask.md)
 
-### Qt
+### ❤️ Qt
 #### [Qt .pro/QML](../../../../qBoss/blob/master/qt_cheatsheet.md) (with a chapter for git)
 #### [Qt For Android Gotchas (PDF)](../../../../qBoss/blob/master/qt4android_hints/qt4android_hints_for_beginners.pdf)
 #### [QtWS18](qt/qtws18.md)
 
-### Security
+### ❤️ Security
 #### [Penetration Tests](./sectest/pentest.md)
 #### [Security Testing](./sectest/sectest.md)
 #### [OAuth / OpenID / JWT](./sectest/oauth.md)
 
 #### [Solr](./solr/solr.md)
-### Rx
+### ❤️ Rx
 #### [RxJava](./rx/rxjava.md)
 #### [RxJava & ReactiveJ](./rx/reactivej.md)
 ### Scrum
@@ -74,7 +75,7 @@
 #### [Redis](./redis/redis.md)
 #### [Vert.x](./vertx/vertx.md)
 
-### DevOps
+### ❤️ DevOps
 #### [Git / Gitflow](./git/git.md)
 #### [GitLab](./devops/gitlab.md)
 #### [Varnish](./devops/varnish.md)
@@ -83,7 +84,7 @@
 
 .
 
-## Diverse:
+## 🚀 Diverse:
 
 .
 
@@ -149,7 +150,7 @@ sudo service apache2 reload
     ModPagespeedStatisticsLogging on
 ```
 
-#### SQL: Find book(s) with the minimum average rating
+#### 🚀 SQL: Find book(s) with the minimum average rating
 ```sql
 select avg3.title, avg3.avg_rating
 from
@@ -206,7 +207,7 @@ public class OrdersAnalyzer {
   }
 }
 ```
-#### implement js function for which is the call sum(2)(3)(5); is valid!
+#### 🚀 implement js function for which is the call sum(2)(3)(5); is valid!
 
 ```js
 //solution 1:
