@@ -171,3 +171,8 @@ export class TooltipComponent implements AfterViewInit {
 </div>
 ```
 ... or just use a &lt;table&gt; element...
+
+## 5. How to implement an Angular Base Component?
+ How to implement an Angular Base Component and ensure that the onDestroy is called in any case, independently of the derived class implementation?<br>
+See:<br>
+[base-component.ts](base-component.ts)

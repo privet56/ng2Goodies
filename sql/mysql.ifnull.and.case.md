@@ -117,7 +117,7 @@ private ArrayNode execQuery()
 ```
 # MySQL - Slow Query Analysis
 ```sql
--- activate slow query logging on MySQL/MariaDB
+-- activate slow query logging on MySQL/MariaDB in the mysql console:
 -- (settings will be reset when mysqld restarted!)
 SET GLOBAL slow_query_log = 'ON';
 SET GLOBAL slow_query_log_file = 'c:/temp/slowqueries.log';
@@ -133,9 +133,8 @@ SELECT SLEEP(0.66); -- lasts longer than 0.33 sec -> will log!
 # MySQL - Foreign Key
 ```sql
 -- CREATE foreign key
-ALTER TABLE t1 add t2_id VARCHAR(50);
-ALTER TABLE t1 ADD CONSTRAINT t1_to_t2
-FOREIGN KEY (t2_id) REFERENCES t2 (id);
+ALTER TABLE t1 ADD t2_id VARCHAR(50);
+ALTER TABLE t1 ADD CONSTRAINT t1_to_t2 FOREIGN KEY (t2_id) REFERENCES t2 (id);
 
 -- CHANGE foreign key make it 'NOT NULL'
 ALTER TABLE t1 MODIFY COLUMN t2_id VARCHAR(50) NOT NULL;
@@ -145,3 +144,11 @@ ALTER TABLE t1 DROP FOREIGN KEY t1_to_t2;
 ALTER TABLE t1 DROP COLUMN t2_id;
 DELETE FROM _flyway WHERE script = 'V1__foreignKey.sql';
 ```
+
+# Repository base class
+DB Repository base class for java Enterprise Apps, with general functions like exist:<br>
+(Spring offers already Repo base classes with such general functionality)
+```java
+public <E extends BaseEntity> boolean exists(final Class<E> entityClass, final String id) {
+```
+[ServiceRepository.java](ServiceRepository.java)
