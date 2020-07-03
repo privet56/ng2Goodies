@@ -155,3 +155,21 @@ public <E extends BaseEntity> List<String> findAllIds(final Class<E> entityClass
 public <E extends BaseEntity> int deleteAll(final Class<E> entityClass) { ...
 ```
 [ServiceRepository.java](ServiceRepository.java)
+
+# Query by Relation Count
+```java
+private Query createFindEntityIDsWithLessSubEntityCountQuery() {
+
+    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+    CriteriaQuery query = builder.createQuery();
+    Root<MyEntity> root = query.from(MyEntity.class);
+    Path mySubEntitiesPath = root.get(MyEntity.MySubEntities);
+
+    query.select(root.get(BaseEntity.ID)).
+            having(builder.lessThan(builder.countDistinct(mySubEntities),
+                                            (builder.parameter(Long.class, 'count'))
+            ));
+
+    return entityManager.createQuery(query);
+}
+```
