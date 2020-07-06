@@ -158,18 +158,26 @@ public <E extends BaseEntity> int deleteAll(final Class<E> entityClass) { ...
 
 # Query by Relation Count
 ```java
+/**
+    SELECT t0.id, COUNT(DISTINCT(t1.id)) FROM
+    MyEntity t0 left outer join MySubEntity t1 on t1.myentity_id = t0.id
+    group by t0.id
+    HAVING (COUNT(DISTINCT(t1.id)) < ?)
+*/
 private Query createFindEntityIDsWithLessSubEntityCountQuery() {
 
-    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-    CriteriaQuery query = builder.createQuery();
-    Root<MyEntity> root = query.from(MyEntity.class);
-    Path mySubEntitiesPath = root.get(MyEntity.MySubEntities);
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery query = builder.createQuery();
+        Root<MyEntity> root = query.from(MyEntity.class);
+        Path mySubEntitiesPath = root.join(MyEntity.MySubEntities, JoinType.LEFT);
 
-    query.select(root.get(BaseEntity.ID)).
-            having(builder.lessThan(builder.countDistinct(mySubEntities),
-                                            (builder.parameter(Long.class, 'count'))
-            ));
+        query.select(root.get(BaseEntity.ID)).
+                groupBy(root.get(BaseEntity.ID)).
+                having(builder.lessThan(
+                    builder.countDistinct(mySubEntitiesPath),
+                    (builder.parameter(Long.class, 'count'))
+                ));
 
-    return entityManager.createQuery(query);
+        return entityManager.createQuery(query);
 }
 ```
