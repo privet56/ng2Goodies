@@ -157,13 +157,13 @@ public <E extends BaseEntity> int deleteAll(final Class<E> entityClass) { ...
 [ServiceRepository.java](ServiceRepository.java)
 
 # Query by Relation Count
+```sql
+SELECT t0.id, COUNT(DISTINCT(t1.id)) FROM
+MyEntity t0 left outer join MySubEntity t1 on t1.myentity_id = t0.id
+group by t0.id
+HAVING (COUNT(DISTINCT(t1.id)) < ?)
+```
 ```java
-/**
-    SELECT t0.id, COUNT(DISTINCT(t1.id)) FROM
-    MyEntity t0 left outer join MySubEntity t1 on t1.myentity_id = t0.id
-    group by t0.id
-    HAVING (COUNT(DISTINCT(t1.id)) < ?)
-*/
 private Query createFindEntityIDsWithLessSubEntityCountQuery() {
 
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
