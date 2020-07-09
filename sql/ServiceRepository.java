@@ -47,4 +47,33 @@ public class ServiceRepository {
         int affectedCount = entityManager.createQuery(cq).executeUpdate();
         return affectedCount;
     }
+
+    public <E extends BaseEntity> E findById(final Class<E> entityClass, final String id) {
+        final CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        final CriteriaQuery<E> cq = cb.createQuery(entityClass);
+        final Root<E> from = cq.from(entityClass);
+
+        cq.select(from).where(cb.equal(from.get(BaseEntity.ID), id));
+
+        final TypedQuery<E> tq = entityManager.createQuery(cq);
+        try {
+            return tq.getSingleResult();
+        }
+        catch (NoResultException e) {
+            return null;
+        }
+    }
+
+    /* usage example:
+        MyEntity myEntity = this.create(MyEntity.class, (MyEntity _myEntity) -> {
+            _myEntity.setSomeString(str);
+            _myEntity.setNumber(nr);
+        });
+    */
+    public <E extends BaseEntity> E create(final Class<E> entityClass, Consumer<E> consumer) {
+        E entity = BaseEntity.create(entityClass);
+        consumer.accept(entity);
+        entityManager.persist(entity);
+        return entity;
+    }
 }
