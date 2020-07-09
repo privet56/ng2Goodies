@@ -181,3 +181,28 @@ private Query createFindEntityIDsWithLessSubEntityCountQuery() {
         return entityManager.createQuery(query);
 }
 ```
+# Query for latest Date
+```sql
+    select d.created_at from tblm m
+        join tble e on m.id = e.m_id
+        join tbld d on d.e_id = e.id
+        where m.id = 'mid'
+        order by d.created_at desc
+        limit 1;
+```
+```java
+    private Query createFindLastDateQuery() {
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaQuery query = builder.createQuery();
+        Root<Tblm> root = query.from(Tblm.class);
+
+        Join<Tblm, Tble> tbleJoin = root.join(Tblm.E);
+        Join<Tble, Tbld> tbldJoin = tbleJoin.join(Tble.D);
+
+        query.select(tbldJoin.get(Tbld.CREATED_AT))
+            .where(builder.equal(root.get(BaseEntity.ID), builder.parameter(String.class, BaseEntity.ID)))
+            .orderBy(builder.desc(tbldJoin.get(Tbld.CREATED_AT)));
+
+        return entityManager.createQuery(query).setMaxResults(1); //LIMIT 1 = take only newest date!
+    }
+```
