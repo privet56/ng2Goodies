@@ -229,4 +229,18 @@ var sum = n1 => n2 => n3 => n1 + n2 + n3;
 #### How to combine html files of a directory into one single html file containing all the small file contents?
 > copy *.html all.html
 
-TODO: log without überflüssige Calls (lambda!)
+#### how to declare a self-made map in typescript, without using the 'Map' type?
+Advantage: automatic JSON <-> JS object conversion works<br>
+(e.g. from the return of REST calls)<br>
+(in contrast to the Map type)
+```ts
+//declare
+let mymap: {[id: string]: boolean};
+//lookup
+if (mymap[id2Look4]) { doSomething(); }
+//iterate
+Object.keys(mymap).forEach(key => ...);
+```
+
+#### TODO: log without unnecessary computation (lambda!)
+
