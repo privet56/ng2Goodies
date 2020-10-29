@@ -1,1 +1,2 @@
-python ./wakeUpHolder.py --sleep 30
+cls
+python ./wakeUpHolder.py --sleep 200

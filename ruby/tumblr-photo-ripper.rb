@@ -2,12 +2,16 @@
 #   [sudo] gem install mechanize
 #   ruby tumblr-photo-ripper.rb
 
+$stdout.sync = true	# flush after every puts
+
 require 'rubygems'
 require 'mechanize'
 
 # Your Tumblr subdomain, e.g. "jamiew" for "jamiew.tumblr.com"
-site = "pinayfarang"
+site = "rustbucket2-0"
+site = ARGV[0]
 
+puts "START ----- site: #{site}"
 
 FileUtils.mkdir_p(site)
 
@@ -22,10 +26,12 @@ def handleimgurls(image_urls, concurrency, site)
       threads << Thread.new {
         # puts "Saving photo #{url}"
         begin
-          file = Mechanize.new.get(url)
-          filename = File.basename(file.uri.to_s.split('?')[0])
-          file.save_as("#{site}/#{filename}")
-		  #puts "Saving photo #{url} > #{site}/#{filename}"
+			file = Mechanize.new.get(url)
+			filename = File.basename(file.uri.to_s.split('?')[0])
+			if !File.exist?("#{site}/#{filename}")
+				file.save_as("#{site}/#{filename}")
+				#puts "Saving photo #{url} > #{site}/#{filename}"
+			end
         rescue Mechanize::ResponseCodeError
           puts "Error getting file, #{$!}"
         end
@@ -59,8 +65,8 @@ loop do
   
   puts "#{images.count} images found (num=#{num})"
   
-  if images.count < num
-    puts "our work here is done. version2: #{didVersion2}"
+  if images.count < num || start > 100000
+    puts "END ----- (start: #{start}) version2: #{didVersion2} site: #{site}\n"
     break
   else
     start += num
