@@ -1,1 +1,2 @@
-Get-Content C:\my\server.log -tail 2000 -wait
+param ([string]$fn)    # define & get command line param
+Get-Content $fn -tail 2000 -wait
