@@ -246,16 +246,16 @@ private Query createFindGroupwiseMaxQuery() {
 	Root<MyTbl> subQueryRoot = subQuery.from(MyTbl.class);
 
 	Expression concatFun = builder.function("CONCAT", String.class,
-											root.get(MyTbl.ID1),
-											root.get(MyTbl.ID2),
-											root.get(MyTbl.ID3),
-											root.get(MyTbl.TIMESTAMP));
+                                    root.get(MyTbl.ID1),
+                                    root.get(MyTbl.ID2),
+                                    root.get(MyTbl.ID3),
+                                    root.get(MyTbl.TIMESTAMP));
 
 	Expression concatMaxFun = builder.function("CONCAT", String.class,
-											subQueryRoot.get(MyTbl.ID1),
-											subQueryRoot.get(MyTbl.ID2),
-											subQueryRoot.get(MyTbl.ID3),
-											builder.max(subQueryRoot.get(MyTbl.TIMESTAMP)));
+                                    subQueryRoot.get(MyTbl.ID1),
+                                    subQueryRoot.get(MyTbl.ID2),
+                                    subQueryRoot.get(MyTbl.ID3),
+                                    builder.max(subQueryRoot.get(MyTbl.TIMESTAMP)));
 
 	Subquery<MyTbl> subQueryFun = subQuery
 					 .select(concatMaxFun)
