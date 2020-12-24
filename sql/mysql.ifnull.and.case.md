@@ -220,3 +220,60 @@ private Query createFindEntityIDsWithLessSubEntityCountQuery() {
         return entityManager.createQuery(query).setMaxResults(1); //LIMIT 1 = take only newest date!
     }
 ```
+# Find groupwise max timestamp with SubQuery
+```sql
+SELECT mytbl.id, mytbl.id1_column, mytbl.id2_column, mytbl.id3_column, mytbl.timestamp_column
+	FROM tablename mytbl
+WHERE (mytbl.id1_column, mytbl.id2_column, mytbl.id3_column, mytbl.timestamp_column)
+IN	(
+		SELECT maxtbl.id1_column, maxtbl.id2_column, maxtbl.id3_column, max(maxtbl.timestamp_column)
+		FROM tablename maxtbl
+		GROUP BY maxtbl.id1_column, maxtbl.id2_column, maxtbl.id3_column
+	)
+-- AND mytbl.id1_column LIKE '20253%'
+-- AND mytbl.id2_column LIKE '1%'
+-- AND mytbl.id3_column LIKE '1%'
+GROUP BY mytbl.id1_column, mytbl.id2_column, mytbl.id3_column
+ORDER BY mytbl.timestamp_column DESC;
+```
+```java
+private Query createFindGroupwiseMaxQuery() {
+	CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+	CriteriaQuery query = builder.createQuery();
+	Root<MyTbl> root = query.from(MyTbl.class);
+
+	Subquery<String> subQuery = query.subquery(String.class);
+	Root<MyTbl> subQueryRoot = subQuery.from(MyTbl.class);
+
+	Expression concatFun = builder.function("CONCAT", String.class,
+											root.get(MyTbl.ID1),
+											root.get(MyTbl.ID2),
+											root.get(MyTbl.ID3),
+											root.get(MyTbl.TIMESTAMP));
+
+	Expression concatMaxFun = builder.function("CONCAT", String.class,
+											subQueryRoot.get(MyTbl.ID1),
+											subQueryRoot.get(MyTbl.ID2),
+											subQueryRoot.get(MyTbl.ID3),
+											builder.max(subQueryRoot.get(MyTbl.TIMESTAMP)));
+
+	Subquery<MyTbl> subQueryFun = subQuery
+					 .select(concatMaxFun)
+					 .where(
+						builder.like(subQueryRoot.get(MyTbl.ID1), builder.parameter(String.class, MyTbl.ID1)),
+						builder.like(subQueryRoot.get(MyTbl.ID2), builder.parameter(String.class, MyTbl.ID2)),
+						builder.like(subQueryRoot.get(MyTbl.ID3), builder.parameter(String.class, MyTbl.ID3))
+					 )
+					 .groupBy(
+						subQueryRoot.get(MyTbl.ID1),
+						subQueryRoot.get(MyTbl.ID2),
+						subQueryRoot.get(MyTbl.ID3));
+
+	query.select(root.get(MyTbl.ID)).where(
+		builder.in(concatFun).value(subQueryFun)
+	//sort hard-coded by timestamp, there is no possibility to sort dynamically by builder.parameter
+	).orderBy(builder.desc(root.get(MyTbl.TIMESTAMP)));
+
+	return entityManager.createQuery(query);
+}
+```
