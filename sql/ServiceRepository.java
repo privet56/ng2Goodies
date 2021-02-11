@@ -76,4 +76,12 @@ public class ServiceRepository {
         entityManager.persist(entity);
         return entity;
     }
+
+    public <T> Optional<T> getSingleResult(TypedQuery<T> query) {
+        try {
+            return Optional.ofNullable(query.getSingleResult());
+        } catch (NoResultException e) {
+            return Optional.empty();
+        }
+    }
 }
