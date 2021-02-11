@@ -277,3 +277,30 @@ private Query createFindGroupwiseMaxQuery() {
 	return entityManager.createQuery(query);
 }
 ```
+# Find Records where Record in another table exists:
+```sql
+SELECT * FROM tbl t WHERE
+t.owner_id = 'id'
+and
+EXISTS (SELECT id FROM anothertable l WHERE l.tbl_id = t.id);
+```
+```java
+private Query createFindAllLeadersQuery() {
+    CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+    CriteriaQuery<Tbl> query = builder.createQuery(Tbl.class);
+    Root<Tbl> root = query.from(Tbl.class);
+
+    Subquery<Integer> anotherTblSubQuery = query.subquery(Integer.class);
+    Root<AnotherTbl> anotherTblRoot = anotherTblSubQuery.from(AnotherTbl.class);
+    anotherTblSubQuery.select(builder.literal(1))
+                    .where(builder.equal(anotherTblRoot.get(AnotherTbl.Tbl).get(BaseEntity.ID), root.get(BaseEntity.ID)));
+
+    query.select(root)
+            .where(
+                    builder.equal(root.get(Tbl.OWNER).get(BaseEntity.ID), builder.parameter(String.class, Tbl.OWNER)),
+                    builder.exists(anotherTblSubQuery)
+            );
+
+    return entityManager.createQuery(query);
+}
+```
