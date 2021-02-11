@@ -285,7 +285,7 @@ and
 EXISTS (SELECT id FROM anothertable l WHERE l.tbl_id = t.id);
 ```
 ```java
-private Query createFindAllLeadersQuery() {
+private Query createFindAllWhereAnotherExistsQuery() {
     CriteriaBuilder builder = entityManager.getCriteriaBuilder();
     CriteriaQuery<Tbl> query = builder.createQuery(Tbl.class);
     Root<Tbl> root = query.from(Tbl.class);
