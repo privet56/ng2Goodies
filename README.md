@@ -3,6 +3,7 @@
 ## PersistentRouterOutlet.ts for ng2 (😎 Angular 2 version 2.2.3)
 	(allows to switch between routes without reloading already loaded routes)
 	use this way:
+```ts
 	@NgModule({
 	...
 	providers: [
@@ -12,6 +13,7 @@
 	export class MyRoutingModule
 	{
 		...
+```
 
 ## Cheatsheets
 
@@ -59,7 +61,7 @@
 	(as a simple 'dynamic' keyword does not lead to the expected result)
 	
 	📝 Example:
-
+```c
 	public string getProcReturnAttribute(DataContext dataContext, string sAttrName)
 	{
 		string query = "EXEC [dbo].[SPO_GetData] {0}, {1}, {2}";
@@ -74,6 +76,7 @@
 		}
 		return null;
 	}
+```
 
 ## Docker
 	A short presentation & introduction to its application in practice.
@@ -130,6 +133,7 @@
 	HTML parser, Progress-Dialog,
 	OLE Automation to convert HTML to RTF with Word (COM)
 	Example:
+```c
 	void ConverttoRTF()
 	{
 		COLEWordAutomation _word;
@@ -179,4 +183,18 @@
 
 		_word.CloseWord();
 	}
+```
+
+## UML Server Landscape Overview
+
+Use the PlantUML Editor
+
+### Code
+[uml/interfaces.puml](uml/interfaces.puml)
+
+### UML Editor in VS Code
+<img src=uml/plantuml.editor.intellisense.png width="550px">
+
+## Result Server Landscape
+<img src=uml/interfaces.png width="550px">
 

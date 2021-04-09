@@ -1,0 +1,138 @@
+PlantUML diagram
+result: interfaces.png
+
+@startuml
+
+skinparam Monochrome false
+skinparam componentStyle uml
+skinparam ArrowFontColor red
+skinparam ArrowFontSize 15
+skinparam ArrowFontStyle bold
+
+node "Local installed Apps" <<Interneanwendungen>> as interneanwendungen {
+
+  [APP1]
+  [APP2]
+  folder "BASE-Server" as baseserver {
+     control BackgroundService
+     control CronJob as cronJob
+  }
+}
+
+node "WEBAPP1" <<java-webapp>> {
+    [WEBAPP1/WEBAPP2 Web App] as webapp1rap
+    [My Service Functions (SSL)] as myosfs
+}
+
+node "WEBAPP1-Mobil" <<java-webapp>> {
+    folder "webapp1-mobil-frontend" {
+        [Web-UI] as webapp1mobilfrontend
+    }
+    folder "webapp1-mobil-backend" {
+        [REST interface] as webapp1mobilbackend
+    }
+}
+
+node "Motif-Service" <<java-webapp>> as motifservice {
+
+}
+
+node "MySearch-Service" <<java-webapp>> as searchservice {
+    [Solr Server]
+}
+
+
+node "Exchange" <<Email Services>> {
+
+}
+
+node "Keycloak" <<java-webapp>> as keycloak {
+    [WEBAPP1-Realm] as keycloakwebapp1realm
+}
+
+node "Matomo" <<phpwebapp>> as matomo {
+}
+
+node "myMobileApp" <<mymobileapp>> as mymobileapp {
+    [Server] as mymobileappserver
+    [Mobile App: iOS & Android] as mymobileappmobile
+}
+
+node "WEBAPP3" <<java-webapp>> {
+    folder "webapp3-frontend" {
+        [Web-UI] as webapp3frontend
+    }
+    folder "webapp3-backend" {
+        [REST interface] as webapp3backend
+    }
+    note bottom
+       JSON based REST interface
+    end note
+}
+
+node "My Data Center, PHP Apps" <<phpwebapps>> as phpwebapps {
+    [APP3] as app3
+    [MotifController] as motifcontroller
+}
+
+note bottom of app3
+   https://my.prod-webserver.de/myapp1.php
+end note
+
+note bottom of motifcontroller
+   https://my.prod-webserver.de/motif.php
+end note
+
+skinparam node {
+  BackgroundColor<<java-webapp>> lightGreen
+  BackgroundColor<<phpwebapp>> orange
+  BackgroundColor<<phpwebapps>> orange
+  BackgroundColor<<Interneanwendungen>> lightBlue
+  BackgroundColor<<mymobileapp>> lightBlue
+}
+
+note bottom of webapp1rap
+   Eclipse RAP App
+end note
+
+note bottom of baseserver
+   Sends SSL messages
+end note
+
+note bottom of interneanwendungen
+    <img:https://th.bing.com/th/id/OIP.3HdpCg53CKMS2pYUuo-RsQAAAA?pid=Api&rs=1>
+end note
+
+queue ActiveMQ
+
+node "MySQL" <<Database>> {
+	database "WEBAPP3 DB" as WEBAPP3DB
+	database "WEBAPP1 DB" as WEBAPP1DB
+}
+
+[APP1] --> baseserver
+[APP2] --> baseserver
+cronJob <--> myosfs : Encoded SSL packets sent to\nSecured Online Internal Service Functions
+myosfs <--> webapp3backend : HTTPS / SSL
+webapp3backend <-right-> webapp3frontend : JSON REST
+webapp3backend <--> WEBAPP3DB
+webapp3backend <-right-> Exchange
+WEBAPP1 <--> Exchange
+WEBAPP1 <--> WEBAPP1DB
+WEBAPP1 <--> phpwebapps
+keycloakwebapp1realm <--> WEBAPP1DB
+keycloakwebapp1realm <--> webapp1mobilbackend
+keycloakwebapp1realm <--> webapp1mobilfrontend
+keycloakwebapp1realm <--> motifcontroller
+webapp1mobilbackend <--> WEBAPP1DB
+webapp1mobilfrontend <--> matomo
+
+WEBAPP1 <--> Motifservice
+WEBAPP1 <--> [ActiveMQ]
+WEBAPP1 <--> myMobileApp
+
+webapp1mobilbackend <--> Motifservice
+webapp1mobilbackend <--> searchservice
+webapp1mobilbackend <--> [ActiveMQ]
+
+@enduml
