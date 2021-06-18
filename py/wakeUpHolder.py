@@ -53,7 +53,7 @@ class WakeUpHolder:
                 WakeUpHolder.log(positionStr)
                 x, y = pyautogui.position()
                 left = not left
-                win32Api = not win32Api
+                # win32Api = not win32Api   # keep win32Api always true
                 loopDone = loopDone + 1
 
         except KeyboardInterrupt:
