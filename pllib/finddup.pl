@@ -43,7 +43,7 @@ foreach(@files)
         
         if ($useCheckSum and (($fileKey2Names % 10) == 0))
         {
-            _log(".");
+            _log(".");  #calculating checkSum is slow > show progress to calm down user
         }
         
         if (exists($fileKey2Name{$key}))
