@@ -1,10 +1,11 @@
 #!/usr/bin/perl -w
 
 # find duplicated files in a directory by only checking the fileSize or checkSum of the file
-# call: ./finddup.pl /home/h/Downloads/tmp 0 > /home/h/Downloads/tmp/sameSizes.log  2>&1
+# call: ./finddup.pl /home/h/Downloads/tmp 1 _ > /home/h/Downloads/tmp/sameSizes.log 2>&1
 
 # 1. param: dir to check
 # 2. param: 0 or 1 = useCheckSum off/on
+# 3. param: \S+ = duplicate to be renamed, use this prefix
 
 use strict;
 use warnings;
@@ -14,17 +15,20 @@ use 5.010; # so i can use 'state'
 use Digest::MD5 qw(md5_hex);
 use IO::File;
 
-my $dir = $ARGV[0];
-my $useCheckSum = $#ARGV > 0 ? ($ARGV[1] == '1') : 0;
-my %fileKey2Name = ();
-my $sameKeys = 0;
-my $fileKey2Names = 0;
+my $dir                 = $ARGV[0];
+my $useCheckSum         = ($#ARGV > 0) ? ($ARGV[1] == '1') : 0;
+my $renameDupPrefix     = ($#ARGV > 1) ?  $ARGV[2] : 0;
+my %fileKey2Name        = ();
+my $sameKeys            = 0;
+my $fileKey2Names       = 0;
 
 opendir(DH, $dir) or die "!open $dir";
-my @files = readdir(DH);
+my @files = readdir(DH); # read in the list of the files at once, because we will change the dir content in our script
 closedir(DH);
 
 @files = sort @files;                                   # sort alphabetically
+
+_log("START. dir: $dir , useCheckSum: $useCheckSum , renameDupPrefix: $renameDupPrefix");
 
 foreach(@files)
 {
@@ -43,13 +47,19 @@ foreach(@files)
         
         if ($useCheckSum and (($fileKey2Names % 10) == 0))
         {
-            _log(".");  #calculating checkSum is slow > show progress to calm down user
+            _log(".");
         }
         
         if (exists($fileKey2Name{$key}))
         {
             _log("$fn <sameKey $key> $fileKey2Name{$key}");
             $sameKeys++;
+            
+            if ($renameDupPrefix) {
+                my $newFn = $dir . '/' . $renameDupPrefix . $fn;
+                _log("renamed to: ".$newFn);
+                rename $absFn, $newFn;
+            }
         }
         else
         {
