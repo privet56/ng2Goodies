@@ -1,4 +1,4 @@
-SET @targetSchemaName = 'prod';
+SET @targetSchemaName = 'bunnies_db';
 SET @targetCollation = 'utf8_general_ci';
 SET @oldCollation = 'latin1_swedish_ci';
 

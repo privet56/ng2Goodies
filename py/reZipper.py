@@ -53,7 +53,7 @@ class ReZipper:
         zipFNs = self.getZipsInDir(dir)
         tmpDir = self.unzipFiles(dir, zipFNs)
         self.zip(tmpDir, dir)
-        self.removeTempDir(tmpDir)      //TODO: # shutil.rmtree(dirpath)
+        self.removeTempDir(tmpDir)      //TODO: impl # shutil.rmtree(dirpath)
 
 
 if __name__ == '__main__':
