@@ -4,7 +4,7 @@ SET @oldCollation = 'latin1_swedish_ci';
 
 -- 1. set DB collation
 -- variables aren't supported here, eg. error 1295 'this command is not supported in the prepared statement protocol yet'
-ALTER DATABASE personal_portal_prod COLLATE utf8_general_ci;
+ALTER DATABASE bunnies_db COLLATE utf8_general_ci;
 
 -- 2. set TABLE collations
 DELIMITER //
