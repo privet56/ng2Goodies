@@ -102,9 +102,17 @@ END; //
 
 DELIMITER ;
 
+-- Error 1062 Duplicate entry <something with ss and the same with ß> for key 'seclogin_mail_index' > fix 'wei%web.cn'
+-- put a postfix '_' onto emails with ß which have the same entry with ss, but was never logged in with ß
+UPDATE seclogin l1 SET l1.mail = CONCAT(l1.mail, '_')
+	WHERE 	-- has ß in email
+	l1.mail LIKE '%ß%'
+	AND		-- there is the same email with ss
+	EXISTS (SELECT l2.mail from seclogin l2 WHERE l2.mail = REPLACE(l1.mail, 'ß','ss'))
+	AND		-- user never logged in
+	NOT EXISTS (SELECT lh.login_id from secloginhist lh WHERE lh.login_id = l1.id);
+
 -- otherwise Error 1833 'cannot change column, used in a foreign key constraint'
--- doesn't prevent 1062 Duplicate entry <something with ss and the same with ß> for key 'my_mail_index' > fix 'wei%web.de' first manually!
---		SELECT * FROM my WHERE mail_column LIKE 'wei%web.de';
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- will take several minutes!
