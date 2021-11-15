@@ -22,10 +22,10 @@ def _checkWorkingTime(workingTime, employmentIds, path):
         if weeklyHours > 99:
             print("ERROR: weeklyHours: " + str(weeklyHours))
 
-def _checkJobTenureUpdates(jobTenureUpdates, employmentIds, path):
-    hasEmployment = jobTenureUpdates in employmentIds
+def _checkJobTenureUpdates(jobTenureUpdatesId, employmentIds, path):
+    hasEmployment = jobTenureUpdatesId in employmentIds
     if not hasEmployment:
-        print("ERROR: " + str(hasEmployment))
+        print("ERROR: " + jobTenureUpdatesId + " !hasEmployment" + str(hasEmployment))
 
 ######## CHECK FUNCTIONS END   ########
 
