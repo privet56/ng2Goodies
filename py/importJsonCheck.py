@@ -12,7 +12,8 @@ def _checkEmployment(employment, employmentIds, path):
     sentry = employment['entry']
     entry = int(sentry)
     entry /= 1000 #  the timestamp may be in milliseconds
-    dentry = datetime.fromtimestamp(entry)  # or dentry = datetime.utcfromtimestamp(entry)
+    # or dentry = datetime.utcfromtimestamp(entry)  
+    _ = datetime.fromtimestamp(entry) # _ = dentry
     # print("employmentId: " + employment['id'] + " entry: " + str(dentry))
     employmentIds[employment['id']] = employment
 
