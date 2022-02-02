@@ -22,6 +22,33 @@ def _checkWorkingTime(workingTime, employmentIds, path):
         if weeklyHours > 99:
             print("ERROR: weeklyHours: " + str(weeklyHours))
 
+def _checkEmployeeCalendarUpdates(employeeCalendar, employmentIds, calendarCharacteristicIds, path):
+    scope = employeeCalendar['scope']
+    if not scope or len(scope) < 1 or scope.isspace():
+        print("ERROR: scope: " + str(employeeCalendar))
+
+    calendarCharacteristicId = employeeCalendar['calendarCharacteristic']['id']
+    hasCalendarCharacteristic = calendarCharacteristicId in calendarCharacteristicIds
+    if not hasCalendarCharacteristic:
+        print("ERROR: calendarCharacteristicId: " + calendarCharacteristicId + " !hasCalendarCharacteristic" + str(hasCalendarCharacteristic) + " employeeCalendar: " + str(employeeCalendar))
+
+def _checkVacationRequestUpdates(employeeCalendar, employmentIds, calendarCharacteristicIds, path):
+    scope = employeeCalendar['scope']
+    if not scope or len(scope) < 1 or scope.isspace():
+        print("ERROR: scope: " + str(employeeCalendar))
+
+    calendarCharacteristicId = employeeCalendar['calendarCharacteristic']['id']
+    hasCalendarCharacteristic = calendarCharacteristicId in calendarCharacteristicIds
+    if not hasCalendarCharacteristic:
+        print("ERROR: calendarCharacteristicId: " + calendarCharacteristicId + " !hasCalendarCharacteristic" + str(hasCalendarCharacteristic) + " employeeCalendar: " + str(employeeCalendar))
+
+def _checkCalendarCharacteristicUpdates(calendarCharacteristic, employmentIds, calendarCharacteristicIds, path):
+    scope = calendarCharacteristic['scope']
+    if not scope or len(scope) < 1 or scope.isspace():
+        print("ERROR: scope: " + str(calendarCharacteristic))
+
+    calendarCharacteristicIds[calendarCharacteristic['id']] = calendarCharacteristic
+
 def _checkJobTenureUpdates(jobTenureUpdatesId, employmentIds, path):
     hasEmployment = jobTenureUpdatesId in employmentIds
     if not hasEmployment:
@@ -38,12 +65,20 @@ def isJsonObject(i):
     else:
         return True
 
-def checkJsonObject(o, employmentIds, path):
+def checkJsonObject(o, employmentIds, calendarCharacteristicIds, path):
 
     if not isJsonObject(o):                 # = o is no iterable object (can be array, int, string, ...)
         if isinstance(o, list):             # = o is a list
             for ele in o:
-                checkJsonObject(ele, employmentIds, path)
+
+                if path.find(".result.payload.employee.calendar.EmployeeCalendar.updates") == 0:
+                    _checkEmployeeCalendarUpdates(ele, employmentIds, calendarCharacteristicIds, path)
+                if path.find(".result.payload.employee.calendar.VacationRequest.updates") == 0:
+                    _checkVacationRequestUpdates(ele, employmentIds, calendarCharacteristicIds, path)
+                if path.find(".result.payload.organization.CalendarCharacteristic.updates") == 0:
+                    _checkCalendarCharacteristicUpdates(ele, employmentIds, calendarCharacteristicIds, path)
+
+                checkJsonObject(ele, employmentIds, calendarCharacteristicIds, path)
         return
 
     for key, val in o.items():
@@ -55,10 +90,11 @@ def checkJsonObject(o, employmentIds, path):
         if path.find(".result.payload.employment.JobTenure.updates") == 0 and key == "id":
             _checkJobTenureUpdates(val, employmentIds, path)
 
-        checkJsonObject(val, employmentIds, path + "." + key)
+        checkJsonObject(val, employmentIds, calendarCharacteristicIds, path + "." + key)
 
 with open(sys.argv[1]) as f:
     data = json.load(f)
     employmentIds = {}
-    checkJsonObject(data, employmentIds, "")
+    calendarCharacteristicIds = {}
+    checkJsonObject(data, employmentIds, calendarCharacteristicIds, "")
     print("FINISHED. employmentIds# = " + str(len(employmentIds)))
