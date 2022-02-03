@@ -13,7 +13,7 @@ def _checkEmployment(employment, employmentIds, path):
     entry = int(sentry)
     entry /= 1000 #  the timestamp may be in milliseconds
     # or dentry = datetime.utcfromtimestamp(entry)  
-    _ = datetime.fromtimestamp(entry) # _ = dentry
+    _ = datetime.fromtimestamp(entry) # _ = dentry # use _ to avoid unused variable warning
     # print("employmentId: " + employment['id'] + " entry: " + str(dentry))
     employmentIds[employment['id']] = employment
 
