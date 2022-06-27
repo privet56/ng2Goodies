@@ -84,4 +84,40 @@ public class ServiceRepository {
             return Optional.empty();
         }
     }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public <E> boolean deleteById(Class<E> entityClass, String id) {
+
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaDelete<E> delete = builder.createCriteriaDelete(entityClass);
+        Root<E> root = delete.from(entityClass);
+        delete.where(builder.equal(root.get(BaseEntity.ID), id));
+        return entityManager.createQuery(delete).executeUpdate() == 1;
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public <E> int removeIfUnchanged(Class<E> entityClass, String id, int optLock /* =version */) {
+
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaDelete<E> delete = builder.createCriteriaDelete(entityClass);
+        Root<E> root = delete.from(entityClass);
+        delete.where(builder.and(
+                builder.equal(root.get(BaseEntity.ID), id),
+                builder.equal(root.get(BaseEntity.OPTLOCK), optLock)));
+        return entityManager.createQuery(delete).executeUpdate();
+    }
+
+    @TransactionAttribute(TransactionAttributeType.REQUIRED)
+    public int updateIfUnchanged(BaseEntity entity, String fieldName, Object fieldValue) {
+
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+        CriteriaUpdate update = builder.createCriteriaUpdate(entity.getClass());
+        Root root = update.from(entity.getClass());
+        update.set(fieldName, fieldValue)
+              .where(builder.and(
+                      builder.equal(root.get(BaseEntity.ID), entity.getId()),
+                      builder.equal(root.get(BaseEntity.OPTLOCK), entity.getOptlock())));
+
+        return entityManager.createQuery(update).executeUpdate();
+    }
 }
