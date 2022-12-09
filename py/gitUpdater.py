@@ -19,7 +19,11 @@ class GitUpdater:
 
     #        GitLab & SSH Key prerequisite: a key **WITHOUT** passphrase and an ssh config:
     #
-    #        c:\Users\{username}\.ssh\config
+    #        Append your target GIT server to the list of authorized hosts:
+    #        into c:\Users\{username}\.ssh\known_hosts (otherwise 'Host key verification failed')
+    #
+    #       and fill
+    #        c:\Users\{username}\.ssh\config  ->
     #
     #       Host *
     #           AddKeysToAgent yes
