@@ -34,6 +34,7 @@ export class MyEntityViewComponent implements AfterViewInit {
 ```
 
 ## How to simplify repeated html structures in a template?
+(eg. when you can't use *ngFor)
 
 ```html
 <!-- 1. define template -->
@@ -46,6 +47,7 @@ export class MyEntityViewComponent implements AfterViewInit {
 <ng-container [ngTemplateOutlet]="sortHeader"
               [ngTemplateOutletContext]="{text: 'Mandant Name', showFilter: true}">
 </ng-container>
+<div> ...some other content... </div>
 <ng-container [ngTemplateOutlet]="sortHeader"
               [ngTemplateOutletContext]="{text: 'Mandant Adresse', showFilter: false}">
 </ng-container>
