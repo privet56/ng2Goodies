@@ -32,3 +32,22 @@ export class MyEntityViewComponent implements AfterViewInit {
 <!-- your editor will show an error, as MyEntity.anUnknownAttr is invalid: -->
 <span [ngClass]="{'foo' : sort === MyEntityNameOf('anUnknownAttr') }"></span>
 ```
+
+## How to simplify repeated html structures in a template?
+
+```html
+<!-- 1. define template -->
+<ng-template #sortHeader let-text='text' let-showFilter='showFilter'>
+    {{text}}
+    <div class="my-class" *ngIf="showFilter">Filter!</div>
+</ng-template>
+
+<!-- 2. use template as often as needed -->
+<ng-container [ngTemplateOutlet]="sortHeader"
+              [ngTemplateOutletContext]="{text: 'Mandant Name', showFilter: true}">
+</ng-container>
+<ng-container [ngTemplateOutlet]="sortHeader"
+              [ngTemplateOutletContext]="{text: 'Mandant Adresse', showFilter: false}">
+</ng-container>
+
+```
