@@ -58,24 +58,32 @@ export class MyEntityViewComponent implements AfterViewInit {
 
 ```html
 <!-- 1. define template, use SortCfg.as(cfg) to cast variable to the correct type -->
-<ng-template #sortHeader let-cfg='cfg'>
+<ng-template #sortHeader let-cfg='cfg'><!-- cfg = [wrapped] -->
     {{SortCfg.as(cfg).attri}}
     <div class="my-class" *ngIf="SortCfg.as(cfg).showFilter">Filter!</div>
 </ng-template>
 
 <!-- 2. use template as often as needed -->
 <ng-container [ngTemplateOutlet]="sortHeader"
-              [ngTemplateOutletContext]="{cfg: new SortCfg('MandantName', true)}">
+              [ngTemplateOutletContext]="SortHeaderCfg.createAndWrap('MandantName', true)">
 </ng-container>
 <div> ...some other content... </div>
 <ng-container [ngTemplateOutlet]="sortHeader"
-              [ngTemplateOutletContext]="{cfg: new SortCfg('MandantAddress', false}">
+              [ngTemplateOutletContext]="SortHeaderCfg.createAndWrap(('MandantAddress', false)">
 </ng-container>
 ```
 ```ts
 // 3. define SortCfg (not needed to be exported, as used only in my template):
+
+const wrapped: string = 'cfg';
+interface SortCfgWrapper {[wrapped: string]: SortCfg; }
+
 class SortCfg {
     constructor(public attri: keyof MyEntity, public showFilter: boolean) {
+    }
+
+    static createAndWrap(attri: keyof MyEntity, showFilter: boolean): SortCfgWrapper {
+        return {[wrapped]: new SortCfg(attri, showFilter)};
     }
 
     static create(attri: keyof MyEntity, showFilter: boolean): SortCfg {
@@ -94,6 +102,7 @@ export class MyViewComponent {
 
     MyEntityNameOf: (name: keyof MyEntity) => keyof MyEntity = MyEntity.nameOf;
     SortCfg = SortCfg;
+    wrapped = wrapped;
     // ...
 }
 ```
