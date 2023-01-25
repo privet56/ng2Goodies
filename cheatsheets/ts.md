@@ -51,5 +51,49 @@ export class MyEntityViewComponent implements AfterViewInit {
 <ng-container [ngTemplateOutlet]="sortHeader"
               [ngTemplateOutletContext]="{text: 'Mandant Adresse', showFilter: false}">
 </ng-container>
+```
 
+## ng-template type safe?
+(same issue as above, but this time with type safe parameters)
+
+```html
+<!-- 1. define template, use SortCfg.as(cfg) to cast variable to the correct type -->
+<ng-template #sortHeader let-cfg='cfg'>
+    {{SortCfg.as(cfg).attri}}
+    <div class="my-class" *ngIf="SortCfg.as(cfg).showFilter">Filter!</div>
+</ng-template>
+
+<!-- 2. use template as often as needed -->
+<ng-container [ngTemplateOutlet]="sortHeader"
+              [ngTemplateOutletContext]="{cfg: new SortCfg('MandantName', true)}">
+</ng-container>
+<div> ...some other content... </div>
+<ng-container [ngTemplateOutlet]="sortHeader"
+              [ngTemplateOutletContext]="{cfg: new SortCfg('MandantAddress', false}">
+</ng-container>
+```
+```ts
+// 3. define SortCfg (not needed to be exported, as used only in my template):
+class SortCfg {
+    constructor(public attri: keyof MyEntity, public showFilter: boolean) {
+    }
+
+    static create(attri: keyof MyEntity, showFilter: boolean): SortCfg {
+        return new SortCfg(attri, showFilter);
+    }
+
+    static as(sortHeaderCfg: any): SortHeaderCfg {
+        return sortHeaderCfg as SortHeaderCfg;
+    }
+}
+
+@Component({
+               selector: '...',
+           })
+export class MyViewComponent {
+
+    MyEntityNameOf: (name: keyof MyEntity) => keyof MyEntity = MyEntity.nameOf;
+    SortCfg = SortCfg;
+    // ...
+}
 ```
