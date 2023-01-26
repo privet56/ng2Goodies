@@ -1,0 +1,84 @@
+#!/usr/bin/env python3
+
+import urllib.request
+import urllib.error
+import re
+import sys
+import time
+import os
+import argparse
+import time
+import json
+
+# from pytube import YouTube # pip install pytube + set PATH to pytube.exe
+
+def exitWithError(msg):
+    print(msg)
+    system.exit(1)
+
+def getFC(fn):
+    with open(fn) as f:
+        return f.read()
+
+def existsIn(vid, playlist):
+    for idx, vidOfPlaylist in enumerate(playlist):
+        if vid["id"] == vidOfPlaylist["id"]:
+            return True
+    return False
+
+def getNotExistingEntries(playlist, oldPlaylist):
+    notExistingEntries = []
+    for idx, vid in enumerate(oldPlaylist):
+        if not existsIn(vid, playlist):
+            notExistingEntries.append(vid)
+    return notExistingEntries
+
+def generateHtml(playlistFC, oldPlaylistFC):
+    html = "<html><head></head><body><table style='width:100%;'>"
+    
+    playlist = json.loads(playlistFC)["entries"]
+    if (oldPlaylistFC != ""):
+        oldPlaylist = json.loads(oldPlaylistFC)["entries"]
+        notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
+        for idx, vid in enumerate(notExistingEntries):
+            print("deleted: " + vid["title"] + " (author: " + vid["uploader"] + ")")
+            html += ("<tr>"
+                        "<td title=deleted>X</td>"
+                        "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
+                        "<td>(DELETED) Author: " + vid["uploader"] + "</td>"
+                    "</tr>")
+
+    for idx, vid in enumerate(playlist):
+        html += ("<tr>"
+                    "<td>" + str(idx) + "</td>"
+                    "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
+                    "<td>uploader: " + vid["uploader"] + "</td>"
+                "</tr>")
+
+    with open('playlist.html', 'w', encoding="utf-8") as f:
+        f.write(html)
+
+def downloadPlaylistAndGetFC(playlist):
+    fn = time.strftime(playlist + ".playlist-%Y.%m.%d.json")
+    if os.path.isfile(fn):
+        return getFC(fn)
+    # args: see https://github.com/ytdl-org/youtube-dl
+    e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist  https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
+    if os.path.isfile(fn):
+        return getFC(fn)
+    else:
+        exitWithError("fnf '" + fn + "' ... " + e)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--playlist' , type=str, default='',  help='playlist', required=True)
+    parser.add_argument('--oldplaylist' , type=str, default='',  help='compare the downloaded playlist with THIS older playlist JSON and find missing entries?', required=False)
+
+    playlist = parser.parse_args().playlist
+    playlistFC = downloadPlaylistAndGetFC(playlist)
+    oldplaylist = parser.parse_args().oldplaylist
+    oldPlaylistFC = ""
+    if (oldplaylist != ""):
+        oldPlaylistFC = getFC(oldplaylist)
+
+    generateHtml(playlistFC, oldPlaylistFC)
