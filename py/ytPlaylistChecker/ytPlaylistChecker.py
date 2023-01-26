@@ -41,11 +41,11 @@ def generateHtml(playlistFC, oldPlaylistFC):
         oldPlaylist = json.loads(oldPlaylistFC)["entries"]
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
         for idx, vid in enumerate(notExistingEntries):
-            print("deleted: " + vid["title"] + " (author: " + vid["uploader"] + ")")
+            print("deleted: https://www.youtube.com/watch?v=" + vid["url"] + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
             html += ("<tr>"
                         "<td title=deleted>X</td>"
                         "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
-                        "<td>(DELETED) Author: " + vid["uploader"] + "</td>"
+                        "<td>(DELETED): " + vid["uploader"] + "</td>"
                     "</tr>")
 
     for idx, vid in enumerate(playlist):
