@@ -86,7 +86,8 @@ if __name__ == '__main__':
     elementsCount = generateHtml(playlistFC, latestPlaylistFC, playlist)
 
     if newlyDownloaded:
+        playlistFCFormatted = json.dumps(json.loads(playlistFC), indent=2)
         with open(latestPlaylist, 'w', encoding="utf-8") as f:
-            f.write(playlistFC)
+            f.write(playlistFCFormatted)
 
     print("Finished checking " + str(elementsCount) + " elements.")
