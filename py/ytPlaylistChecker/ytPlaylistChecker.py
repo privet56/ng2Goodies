@@ -45,7 +45,7 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
             print("deleted: https://www.youtube.com/watch?v=" + vid["url"] + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
             html += ("<tr>"
                         "<td title=deleted>X</td>"
-                        "<td><img src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
+                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
                         "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
                         "<td>(DELETED): " + vid["uploader"] + "</td>"
                     "</tr>")
@@ -53,10 +53,18 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
     for idx, vid in enumerate(playlist):
         html += ("<tr>"
                     "<td>" + str(idx) + "</td>"
-                    "<td><img src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
+                    "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
                     "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
                     "<td>uploader: " + vid["uploader"] + "</td>"
                 "</tr>")
+
+    html += (   "</table>"
+                "<link rel=stylesheet href=css.css>"
+                "<script src=https://code.jquery.com/jquery-3.3.1.slim.min.js></script>"
+                "<script src=https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js></script>"
+                "<script src=https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js></script>"
+                "<script src=js.js></script>"
+                "</body></html>")
 
     with open(playlistName + '.playlist.html', 'w', encoding="utf-8") as f:
         f.write(html)
