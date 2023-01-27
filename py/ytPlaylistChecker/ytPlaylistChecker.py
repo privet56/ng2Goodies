@@ -45,6 +45,7 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
             print("deleted: https://www.youtube.com/watch?v=" + vid["url"] + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
             html += ("<tr>"
                         "<td title=deleted>X</td>"
+                        "<td><img src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
                         "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
                         "<td>(DELETED): " + vid["uploader"] + "</td>"
                     "</tr>")
@@ -52,6 +53,7 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
     for idx, vid in enumerate(playlist):
         html += ("<tr>"
                     "<td>" + str(idx) + "</td>"
+                    "<td><img src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
                     "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
                     "<td>uploader: " + vid["uploader"] + "</td>"
                 "</tr>")
@@ -66,7 +68,7 @@ def downloadPlaylistAndGetFC(playlist):
     if os.path.isfile(fn):
         return getFC(fn), False
     # args: see https://github.com/ytdl-org/youtube-dl
-    e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist  https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
+    e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
     if os.path.isfile(fn):
         return getFC(fn), True
     else:
