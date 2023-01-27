@@ -33,10 +33,11 @@ def getNotExistingEntries(playlist, oldPlaylist):
             notExistingEntries.append(vid)
     return notExistingEntries
 
-def generateHtml(playlistFC, oldPlaylistFC):
+def generateHtml(playlistFC, oldPlaylistFC, playlistName):
     html = "<html><head></head><body><table style='width:100%;'>"
     
     playlist = json.loads(playlistFC)["entries"]
+    oldPlaylist = []
     if (oldPlaylistFC != ""):
         oldPlaylist = json.loads(oldPlaylistFC)["entries"]
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
@@ -55,30 +56,35 @@ def generateHtml(playlistFC, oldPlaylistFC):
                     "<td>uploader: " + vid["uploader"] + "</td>"
                 "</tr>")
 
-    with open('playlist.html', 'w', encoding="utf-8") as f:
+    with open(playlistName + '.playlist.html', 'w', encoding="utf-8") as f:
         f.write(html)
+
+    return len(playlist) if len(playlist) > len(oldPlaylist) else len(oldPlaylist)
 
 def downloadPlaylistAndGetFC(playlist):
     fn = time.strftime(playlist + ".playlist-%Y.%m.%d.json")
     if os.path.isfile(fn):
-        return getFC(fn)
+        return getFC(fn), False
     # args: see https://github.com/ytdl-org/youtube-dl
     e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist  https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
     if os.path.isfile(fn):
-        return getFC(fn)
+        return getFC(fn), True
     else:
         exitWithError("fnf '" + fn + "' ... " + e)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--playlist' , type=str, default='',  help='playlist', required=True)
-    parser.add_argument('--oldplaylist' , type=str, default='',  help='compare the downloaded playlist with THIS older playlist JSON and find missing entries?', required=False)
 
     playlist = parser.parse_args().playlist
-    playlistFC = downloadPlaylistAndGetFC(playlist)
-    oldplaylist = parser.parse_args().oldplaylist
-    oldPlaylistFC = ""
-    if (oldplaylist != ""):
-        oldPlaylistFC = getFC(oldplaylist)
+    playlistFC, newlyDownloaded = downloadPlaylistAndGetFC(playlist)
+    latestPlaylist = playlist + '.playlist-latest.json' # older playlist to compare with current and find missing entries
+    latestPlaylistFC = "" if not os.path.isfile(latestPlaylist) else getFC(latestPlaylist)
 
-    generateHtml(playlistFC, oldPlaylistFC)
+    elementsCount = generateHtml(playlistFC, latestPlaylistFC, playlist)
+
+    if newlyDownloaded:
+        with open(latestPlaylist, 'w', encoding="utf-8") as f:
+            f.write(playlistFC)
+
+    print("Finished checking " + str(elementsCount) + " elements.")
