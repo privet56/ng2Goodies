@@ -95,7 +95,7 @@ if __name__ == '__main__':
     elementsCount = generateHtml(playlistFC, latestPlaylistFC, playlist)
 
     if newlyDownloaded:
-        playlistFCFormatted = json.dumps(json.loads(playlistFC), indent=2, sort_keys=True)
+        playlistFCFormatted = json.dumps(json.loads(playlistFC), indent=2, sort_keys=True) # nice formatted + sorted -> diff can easily find changes!
         with open(latestPlaylist, 'w', encoding="utf-8") as f:
             f.write(playlistFCFormatted)
 
