@@ -9,6 +9,7 @@ import os
 import argparse
 import time
 import json
+from collections import OrderedDict
 
 # from pytube import YouTube # pip install pytube + set PATH to pytube.exe
 
@@ -34,7 +35,7 @@ def getNotExistingEntries(playlist, oldPlaylist):
     return notExistingEntries
 
 def generateHtml(playlistFC, oldPlaylistFC, playlistName):
-    html = "<html><head></head><body><table style='width:100%;'>"
+    html = "<html><head></head><body><table style='width:100%;'>\n"
     
     playlist = json.loads(playlistFC)["entries"]
     oldPlaylist = []
@@ -43,20 +44,20 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
         for idx, vid in enumerate(notExistingEntries):
             print("deleted: https://www.youtube.com/watch?v=" + vid["url"] + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
-            html += ("<tr>"
-                        "<td title=deleted>X</td>"
-                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
-                        "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
-                        "<td>(DELETED): " + vid["uploader"] + "</td>"
-                    "</tr>")
+            html += ("<tr>\n"
+                        "<td title=deleted>X</td>\n"
+                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
+                        "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>\n"
+                        "<td>(DELETED): " + vid["uploader"] + "</td>\n"
+                    "</tr>\n")
 
     for idx, vid in enumerate(playlist):
-        html += ("<tr>"
-                    "<td>" + str(idx) + "</td>"
-                    "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>"
-                    "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>"
-                    "<td>uploader: " + vid["uploader"] + "</td>"
-                "</tr>")
+        html += ("<tr>\n"
+                    "<td>" + str(idx) + "</td>\n"
+                    "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
+                    "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>\n"
+                    "<td>uploader: " + vid["uploader"] + "</td>\n"
+                "</tr>\n")
 
     html += (   "</table>"
                 "<link rel=stylesheet href=css.css>"
@@ -94,7 +95,7 @@ if __name__ == '__main__':
     elementsCount = generateHtml(playlistFC, latestPlaylistFC, playlist)
 
     if newlyDownloaded:
-        playlistFCFormatted = json.dumps(json.loads(playlistFC), indent=2)
+        playlistFCFormatted = json.dumps(json.loads(playlistFC), indent=2, sort_keys=True)
         with open(latestPlaylist, 'w', encoding="utf-8") as f:
             f.write(playlistFCFormatted)
 
