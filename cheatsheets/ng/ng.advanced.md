@@ -176,3 +176,10 @@ export class TooltipComponent implements AfterViewInit {
  How to implement an Angular Base Component and ensure that the onDestroy is called in any case, independently of the derived class implementation?<br>
 See:<br>
 [base-component.ts](base-component.ts)
+
+## How to check Angular Version in a built & deployed ng web app?
+Write in the developer console:
+```bash
+> getAllAngularRootElements()[0].attributes["ng-version"];
+> ng-version="12.2.15" // a possible output
+```
