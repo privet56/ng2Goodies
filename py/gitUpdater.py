@@ -63,6 +63,13 @@ class GitUpdater:
                 if(not self.updateGitDir(os.path.join(subdir, aSubDir))):
                     return False
                 updatedDirCount = updatedDirCount + 1
+
+                if (updatedDirCount % 10) == 0:
+                    # bitbucket tries to prevent DDOS -> we have to wait
+                    GitUpdater.log("updateGitDir INF: waiting a little bit... " + time.strftime("%H:%M:%S"))
+                    time.sleep(11) # Sleep for 11 seconds
+                    GitUpdater.log("updateGitDir INF: waited a little bit " + time.strftime("%H:%M:%S"))
+
             break   #prevent decending into subfolders
 
         GitUpdater.log("updateGitDir INF: updated repos: {}".format(updatedDirCount)+"   in "+dir)
