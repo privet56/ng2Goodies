@@ -2395,7 +2395,7 @@
       "id": "pIgZ7gMze7A",
       "ie_key": "Youtube",
       "title": "Wham! - Wake Me Up Before You Go-Go (Official Video)",
-      "uploader": "Wham!",
+      "uploader": "WHAM!",
       "url": "pIgZ7gMze7A",
       "view_count": null
     },
@@ -4529,7 +4529,7 @@
       "id": "BsyHQgiem8c",
       "ie_key": "Youtube",
       "title": "Wham! - Wham Rap! (Enjoy What You Do?) (Official Video)",
-      "uploader": "Wham!",
+      "uploader": "WHAM!",
       "url": "BsyHQgiem8c",
       "view_count": null
     },
@@ -4542,6 +4542,17 @@
       "title": "Scorpions - Wind Of Change (Official Music Video)",
       "uploader": "Scorpions",
       "url": "n4RjJKxsamQ",
+      "view_count": null
+    },
+    {
+      "_type": "url",
+      "description": null,
+      "duration": 218.0,
+      "id": "t1TcDHrkQYg",
+      "ie_key": "Youtube",
+      "title": "Alphaville - Forever Young ~Official Video",
+      "uploader": "cappew22",
+      "url": "t1TcDHrkQYg",
       "view_count": null
     },
     {
@@ -6538,17 +6549,6 @@
     {
       "_type": "url",
       "description": null,
-      "duration": 292.0,
-      "id": "vafP34pktN0",
-      "ie_key": "Youtube",
-      "title": "T\u00e1trai Band - Titkos Szerelem (Original)",
-      "uploader": "KlippArenaMusic",
-      "url": "vafP34pktN0",
-      "view_count": null
-    },
-    {
-      "_type": "url",
-      "description": null,
       "duration": 188.0,
       "id": "VLB3ma7DjkY",
       "ie_key": "Youtube",
@@ -6720,17 +6720,6 @@
       "title": "HQ SeeYa , Davichi & Ji Yeon (T-ara) - Woman Generation  \uc5ec\uc131\uc2dc\ub300 [MV]",
       "uploader": "KAIIIYO",
       "url": "k20RVR2Xb2Y",
-      "view_count": null
-    },
-    {
-      "_type": "url",
-      "description": null,
-      "duration": 218.0,
-      "id": "qCPFK61Yu3M",
-      "ie_key": "Youtube",
-      "title": "[Crayon Pop] \ud06c\ub808\uc6a9\ud31d \uafb8\ub9ac\uc2a4\ub9c8\uc2a4(Lonely Christmas) M/V",
-      "uploader": "CROAYON POP",
-      "url": "qCPFK61Yu3M",
       "view_count": null
     },
     {
@@ -9607,17 +9596,6 @@
     {
       "_type": "url",
       "description": null,
-      "duration": 199.0,
-      "id": "KR0YWYipG7E",
-      "ie_key": "Youtube",
-      "title": "Dj. P\u00e1z - R\u00f3lunk sz\u00f3lt",
-      "uploader": "Youtubermusic",
-      "url": "KR0YWYipG7E",
-      "view_count": null
-    },
-    {
-      "_type": "url",
-      "description": null,
       "duration": 210.0,
       "id": "6X3ZJh762-I",
       "ie_key": "Youtube",
@@ -10744,7 +10722,7 @@
       "id": "ELflyACZXQQ",
       "ie_key": "Youtube",
       "title": "Wham! - Wake Me Up Before You Go Go (Official HD Video)",
-      "uploader": "Wham!",
+      "uploader": "WHAM!",
       "url": "ELflyACZXQQ",
       "view_count": null
     },

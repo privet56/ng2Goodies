@@ -66,9 +66,10 @@ class GitUpdater:
 
                 if (updatedDirCount % 10) == 0:
                     # bitbucket tries to prevent DDOS -> we have to wait
-                    GitUpdater.log("updateGitDir INF: waiting a little bit... " + time.strftime("%H:%M:%S"))
-                    time.sleep(11) # Sleep for 11 seconds
-                    GitUpdater.log("updateGitDir INF: waited a little bit " + time.strftime("%H:%M:%S"))
+                    time2wait = 33
+                    GitUpdater.log("updateGitDir INF: waiting a " + str(time2wait) + "secs... " + time.strftime("%H:%M:%S") + " updatedDirCount:" + str(updatedDirCount))
+                    time.sleep(time2wait) # Sleep for time2wait seconds
+                    GitUpdater.log("updateGitDir INF: waited until " + time.strftime("%H:%M:%S"))
 
             break   #prevent decending into subfolders
 
