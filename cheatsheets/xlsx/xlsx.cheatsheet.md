@@ -29,7 +29,7 @@ https://excelhero.de/excel-funktionen-deutsch-englisch/
 > =VERGLEICH(B16;'KW30'!B$16:B33;0)
 
 ### Find value of a string-based cell address
-> find value in "KW30!D" + (value ofC16 +15)<br>
+> find value in "KW30!D" + (value-of-C16 + 15)<br>
 > =INDIREKT("KW30!D" & (WERT(C16) + 15))
 
 ### add values or set 0 (if error)
