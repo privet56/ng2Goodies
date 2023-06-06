@@ -1,6 +1,9 @@
 # Excel formulas in German
 
-### Excel formula translations:
+### Docs
+#### Excel formulas list:
+https://support.microsoft.com/en-us/office/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188
+#### Excel formula translations:
 https://excelhero.de/excel-funktionen-deutsch-englisch/
 
 ### common calculations
