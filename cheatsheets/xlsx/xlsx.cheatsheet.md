@@ -10,10 +10,10 @@ https://excelhero.de/excel-funktionen-deutsch-englisch/
 >=(ZÄHLENWENN(B:B;"<55")/ANZAHL(B:B))*100 # calc ratio in percent<br>
 
 ### Link to a value in another excel file:
-> =[Musterfrau1.xlsx]KW29!$A$2
+> =[BehandlungenProWoche.xlsx]KW29!$A$2
 
 ### Link to a value in another sheet of the same file:
-> ='Musterfrau2-Sheet2'!A2
+> ='Sheet2'!A2
 
 ### Sum of values
 > =SUMME(A6:G6)
