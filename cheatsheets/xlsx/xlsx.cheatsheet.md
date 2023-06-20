@@ -27,6 +27,8 @@ https://excelhero.de/excel-funktionen-deutsch-englisch/
 ### List non-empty unique values in an area (several columns!):
 > =SORTIERENNACH(EINDEUTIG(FILTER(ZUSPALTE(C4:I21); ZUSPALTE(C4:I21)<>"")); ZÄHLENWENN(C4:I21; EINDEUTIG(FILTER(ZUSPALTE(C4:I21); ZUSPALTE(C4:I21)<>""))); -1)
 
+**ATTENTION:** Excel 2016 doesn't understand FILTER
+
 ### Find value in an area
 > find value in B16 in the area 'KW30'!B$16:B33<br>
 > =VERGLEICH(B16;'KW30'!B$16:B33;0)
@@ -37,3 +39,14 @@ https://excelhero.de/excel-funktionen-deutsch-englisch/
 
 ### add values or set 0 (if error)
 > =WENNFEHLER(SUMME(D16;E16); 0)
+
+## Open Office Calc (*.ods)
+https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_Functions_listed_alphabetically
+
+Calc has a slightly different syntax for formulas. Here the most important differences:
+1. Sheet/Cell separator is not '!' but '.' Example:
+    1. Excel: =INDIREKT("KW24!F16")
+    1. Calc: =INDIREKT("KW24.F16")
+1. Excel: IFERROR(...) is in Calc a combination of IF(ISERROR(...))<br>
+    in German Calc: WENN(ISTFEHLER(...))
+1. The Excel-function call VALUE(...) (ger: WERT(...)) is not needed in Calc
