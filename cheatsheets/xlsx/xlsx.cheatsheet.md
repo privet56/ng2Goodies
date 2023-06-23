@@ -40,7 +40,7 @@ https://excelhero.de/excel-funktionen-deutsch-englisch/
 ## Add values or set 0 (if error)
 > =WENNFEHLER(SUMME(D16;E16); 0)
 
-## Get first day (=monday) based don calendar week
+## Get first day (=monday) of a calendar week
 $D$13 = year (eg. 2023)<br>
 $C$13 = calendar week (eg. 32)<br>
 put in B1:
