@@ -53,7 +53,7 @@ https://wiki.openoffice.org/wiki/Documentation/How_Tos/Calc:_Functions_listed_al
 Calc has a slightly different syntax for formulas. Here the most important differences:
 1. Sheet/Cell separator is not '!' but '.' Example:
     1. Excel: =INDIREKT("KW24!F16")
-    1. Calc: =INDIREKT("KW24.F16")
+    1. Calc : =INDIREKT("KW24.F16")
 1. Excel: IFERROR(...) is in Calc a combination of IF(ISERROR(...))<br>
     in German Calc: WENN(ISTFEHLER(...))
 1. The Excel-function call VALUE(...) (ger: WERT(...)) is not needed in Calc
