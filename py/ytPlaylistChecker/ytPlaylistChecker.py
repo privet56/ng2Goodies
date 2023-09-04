@@ -90,7 +90,11 @@ def downloadPlaylistAndGetFC(playlist):
     # TODO: remove non-JSON lines at the start of the output file!
     e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
     if os.path.isfile(fn):
-        return getFC(fn), True
+        fc = getFC(fn)
+        fc = fc[fc.find('{'):] # yt-dlp.exe writes some info (ID Width Height URL) before the actual JSON -> remove everything before {
+        with open(fn, 'w', encoding="utf-8") as f: # write fixed fc back to fn
+            f.write(fc)
+        return fc, True
     else:
         exitWithError("fnf '" + fn + "' ... " + e)
 
