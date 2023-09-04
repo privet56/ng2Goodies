@@ -87,7 +87,6 @@ def downloadPlaylistAndGetFC(playlist):
         return getFC(fn), False
     # args: see https://github.com/ytdl-org/youtube-dl
     # exe actually is yt-dlp.exe
-    # TODO: remove non-JSON lines at the start of the output file!
     e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
     if os.path.isfile(fn):
         fc = getFC(fn)
