@@ -34,6 +34,12 @@ def getNotExistingEntries(playlist, oldPlaylist):
             notExistingEntries.append(vid)
     return notExistingEntries
 
+def getVidUrl(url):
+    if url.startswith('http'):
+        return url
+    return "https://www.youtube.com/watch?v=" + url
+
+
 def generateHtml(playlistFC, oldPlaylistFC, playlistName):
     html = "<html><head></head><body><table style='width:100%;'>\n"
     
@@ -43,21 +49,24 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
         oldPlaylist = json.loads(oldPlaylistFC)["entries"]
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
         for idx, vid in enumerate(notExistingEntries):
-            print("deleted: https://www.youtube.com/watch?v=" + vid["url"] + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
+            print("deleted: " + getVidUrl(vid["url"]) + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
             html += ("<tr>\n"
                         "<td title=deleted>X</td>\n"
                         "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
-                        "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>\n"
+                        "<td><a href=" + getVidUrl(vid["url"]) + ">" + vid["title"] + "</a></td>\n"
                         "<td>(DELETED): " + vid["uploader"] + "</td>\n"
                     "</tr>\n")
 
     for idx, vid in enumerate(playlist):
-        html += ("<tr>\n"
-                    "<td>" + str(idx) + "</td>\n"
-                    "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
-                    "<td><a href=https://www.youtube.com/watch?v=" + vid["url"] + ">" + vid["title"] + "</a></td>\n"
-                    "<td>uploader: " + vid["uploader"] + "</td>\n"
-                "</tr>\n")
+
+        if not vid["uploader"] is None: # title: "[Private video]" & "[Deleted video]" have no uploader, data incomplete!
+
+            html += ("<tr>\n"
+                        "<td>" + str(idx) + "</td>\n"
+                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
+                        "<td><a href=" + getVidUrl(vid["url"]) + ">" + vid["title"] + "</a></td>\n"
+                        "<td>uploader: " + vid["uploader"] + "</td>\n"
+                    "</tr>\n")
 
     html += (   "</table>"
                 "<link rel=stylesheet href=css.css>"
@@ -77,6 +86,8 @@ def downloadPlaylistAndGetFC(playlist):
     if os.path.isfile(fn):
         return getFC(fn), False
     # args: see https://github.com/ytdl-org/youtube-dl
+    # exe actually is yt-dlp.exe
+    # TODO: remove non-JSON lines at the start of the output file!
     e = os.system('youtube-dl.exe --ignore-errors --dump-single-json --list-thumbnails --get-thumbnail --flat-playlist https://www.youtube.com/playlist?list=' + playlist + ' > ' + fn)
     if os.path.isfile(fn):
         return getFC(fn), True
