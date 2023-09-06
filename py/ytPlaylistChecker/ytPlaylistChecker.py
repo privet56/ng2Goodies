@@ -65,7 +65,7 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
                         "<td>" + str(idx) + "</td>\n"
                         "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
                         "<td><a href=" + getVidUrl(vid["url"]) + ">" + vid["title"] + "</a></td>\n"
-                        "<td>uploader: " + vid["uploader"] + "</td>\n"
+                        "<td>" + vid["uploader"] + "</td>\n"
                     "</tr>\n")
 
     html += (   "</table>"
