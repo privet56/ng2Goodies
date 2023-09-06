@@ -57,12 +57,15 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
                         "<td>(DELETED): " + vid["uploader"] + "</td>\n"
                     "</tr>\n")
 
+    validVids = 0
     for idx, vid in enumerate(playlist):
 
         if not vid["uploader"] is None: # title: "[Private video]" & "[Deleted video]" have no uploader, data incomplete!
 
+            validVids = validVids + 1
+
             html += ("<tr>\n"
-                        "<td>" + str(idx) + "</td>\n"
+                        "<td>" + str(validVids) + "</td>\n"
                         "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
                         "<td><a href=" + getVidUrl(vid["url"]) + ">" + vid["title"] + "</a></td>\n"
                         "<td>" + vid["uploader"] + "</td>\n"
