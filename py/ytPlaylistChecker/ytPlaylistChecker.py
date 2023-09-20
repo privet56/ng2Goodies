@@ -21,9 +21,12 @@ def getFC(fn):
     with open(fn) as f:
         return f.read()
 
+def isValidVid(vid): # title: "[Private video]" & "[Deleted video]" have no uploader, data incomplete!
+    return False if vid["uploader"] is None else True
+
 def existsIn(vid, playlist):
     for idx, vidOfPlaylist in enumerate(playlist):
-        if vid["id"] == vidOfPlaylist["id"]:
+        if vid["id"] == vidOfPlaylist["id"] and isValidVid(vidOfPlaylist):
             return True
     return False
 
@@ -39,28 +42,40 @@ def getVidUrl(url):
         return url
     return "https://www.youtube.com/watch?v=" + url
 
+def get(value, defaultValue):
+    return value if value else defaultValue
+
+def getVid(id, playlist):
+    for idx, vid in enumerate(playlist):
+        if vid['id'] == id:
+            return vid
+
+    exitWithError("vnf '" + id + "'")
 
 def generateHtml(playlistFC, oldPlaylistFC, playlistName):
     html = "<html><head></head><body><table style='width:100%;'>\n"
     
     playlist = json.loads(playlistFC)["entries"]
     oldPlaylist = []
+    invalidVids = 0
     if (oldPlaylistFC != ""):
         oldPlaylist = json.loads(oldPlaylistFC)["entries"]
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
         for idx, vid in enumerate(notExistingEntries):
-            print("deleted: " + getVidUrl(vid["url"]) + " = "+ vid["title"] + " (author: " + vid["uploader"] + ")")
+            invalidVids = invalidVids + 1
+            oldVid = getVid(vid['id'], oldPlaylist)
+            print("deleted(" + str(invalidVids) + "): " + getVidUrl(oldVid["url"]) + " = "+ get(oldVid["title"], '-') + " (author: " + get(oldVid["uploader"], '-') + ")")
             html += ("<tr>\n"
                         "<td title=deleted>X</td>\n"
-                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + vid["id"] + "/1.jpg></td>\n"
-                        "<td><a href=" + getVidUrl(vid["url"]) + ">" + vid["title"] + "</a></td>\n"
-                        "<td>(DELETED): " + vid["uploader"] + "</td>\n"
+                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + oldVid["id"] + "/1.jpg></td>\n"
+                        "<td><a href=" + getVidUrl(oldVid["url"]) + ">" + get(oldVid["title"],'-') + "</a></td>\n"
+                        "<td>(DELETED): " + get(oldVid["uploader"],'-') + "</td>\n"
                     "</tr>\n")
 
     validVids = 0
     for idx, vid in enumerate(playlist):
 
-        if not vid["uploader"] is None: # title: "[Private video]" & "[Deleted video]" have no uploader, data incomplete!
+        if isValidVid(vid):
 
             validVids = validVids + 1
 
