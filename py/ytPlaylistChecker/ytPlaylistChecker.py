@@ -62,15 +62,16 @@ def generateHtml(playlistFC, oldPlaylistFC, playlistName):
         oldPlaylist = json.loads(oldPlaylistFC)["entries"]
         notExistingEntries = getNotExistingEntries(playlist, oldPlaylist)
         for idx, vid in enumerate(notExistingEntries):
-            invalidVids = invalidVids + 1
-            oldVid = getVid(vid['id'], oldPlaylist)
-            print("deleted(" + str(invalidVids) + "): " + getVidUrl(oldVid["url"]) + " = "+ get(oldVid["title"], '-') + " (author: " + get(oldVid["uploader"], '-') + ")")
-            html += ("<tr>\n"
-                        "<td title=deleted>X</td>\n"
-                        "<td><img loading=lazy src=http://img.youtube.com/vi/" + oldVid["id"] + "/1.jpg></td>\n"
-                        "<td><a href=" + getVidUrl(oldVid["url"]) + ">" + get(oldVid["title"],'-') + "</a></td>\n"
-                        "<td>(DELETED): " + get(oldVid["uploader"],'-') + "</td>\n"
-                    "</tr>\n")
+            if isValidVid(vid):
+                invalidVids = invalidVids + 1
+                oldVid = getVid(vid['id'], oldPlaylist)
+                print("deleted(" + str(invalidVids) + "): " + getVidUrl(oldVid["url"]) + " = "+ get(oldVid["title"], '-') + " (author: " + get(oldVid["uploader"], '-') + ")")
+                html += ("<tr>\n"
+                            "<td title=deleted>X</td>\n"
+                            "<td><img loading=lazy src=http://img.youtube.com/vi/" + oldVid["id"] + "/1.jpg></td>\n"
+                            "<td><a href=" + getVidUrl(oldVid["url"]) + ">" + get(oldVid["title"],'-') + "</a></td>\n"
+                            "<td>(DELETED): " + get(oldVid["uploader"],'-') + "</td>\n"
+                        "</tr>\n")
 
     validVids = 0
     for idx, vid in enumerate(playlist):
