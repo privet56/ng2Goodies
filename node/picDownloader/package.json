@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "^1.5.1",
-    "image-downloader": "^4.3.0"
+    "image-downloader": "^4.3.0",
+    "image-to-pdf": "^2.0.0"
   }
 }
