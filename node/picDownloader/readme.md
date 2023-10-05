@@ -14,5 +14,3 @@ npm install image-to-pdf --save  // docu: see https://www.npmjs.com/package/imag
 
 # start command
 npm run start:dev
-
-TODO: https://github.com/stemmlerjs/simple-typescript-starter
