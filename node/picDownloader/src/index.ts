@@ -57,6 +57,7 @@ function downloadNextImageSet(imageSetNr: number): Promise<any> {
 function doDownloadAllmageSet(imageSetNr: number) {
   downloadNextImageSet(imageSetNr).then((opts: any) => {
     if (imageSetNr < 99) { // i don't expect more than 99 imageSets within one theme
+      // TODO: wait a little bit, otherwise i overload the weak web server!
       doDownloadAllmageSet(imageSetNr + 1);
     }
   })
