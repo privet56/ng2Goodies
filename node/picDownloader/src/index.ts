@@ -1,8 +1,6 @@
 import * as picDLib from "./picDLib";
 
-// TODO: theme: get as script params
-//const theme:string = "rejto";
-const theme:string = "rahan";
+const theme:string = "rahan"; // TODO: theme: get as script params // "rejto";
 const max = 99; // TODO: break if folder not found!
 
 const folderNamePDF: string = "hu." + theme + ".kepregeny";
@@ -42,7 +40,7 @@ function downloadNextImageSet(imageSetNr: number): Promise<any> {
   // TODO: use async/await
   const p: Promise<any> = new Promise((resolve: (value: any) => void, reject: (reason?: any) => void) => {
 
-    const onEnd = (fn: string) : void => {
+    const onEnd = (fn: string) : void => { // TODO: better with 2 params, where first param is the error object (null if everything went well)
       if (fn) {
         resolve(fn);
       }
@@ -56,16 +54,16 @@ function downloadNextImageSet(imageSetNr: number): Promise<any> {
   return p;
 }
 
-function doDownload(imageSetNr: number) {
+function doDownloadAllmageSet(imageSetNr: number) {
   downloadNextImageSet(imageSetNr).then((opts: any) => {
     if (imageSetNr < max) {
-      doDownload(imageSetNr + 1);
+      doDownloadAllmageSet(imageSetNr + 1);
     }
   })
   .catch((err: any) => {
-      console.error("error in doDownload " + imageSetNr + ". Possibly sequence ended.", err);
+      console.error("error in doDownloadAllmageSet " + imageSetNr + ". Possibly sequence ended.", err);
   });
 }
 
 picDLib.mkdir(folderNamePDF);
-doDownload(1);
+doDownloadAllmageSet(1);
