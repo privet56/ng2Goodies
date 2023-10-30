@@ -3,7 +3,7 @@ import * as picDLib from "./picDLib";
 // TODO: theme: get as script params
 //const theme:string = "rejto";
 const theme:string = "rahan";
-const max = 26; // TODO: break if folder not found!
+const max = 99; // TODO: break if folder not found!
 
 const folderNamePDF: string = "hu." + theme + ".kepregeny";
 
@@ -43,7 +43,12 @@ function downloadNextImageSet(imageSetNr: number): Promise<any> {
   const p: Promise<any> = new Promise((resolve: (value: any) => void, reject: (reason?: any) => void) => {
 
     const onEnd = (fn: string) : void => {
-      resolve(fn);
+      if (fn) {
+        resolve(fn);
+      }
+      else {
+        reject(fn);
+      }
     }
     downloadNextImage(1, folderName, absFNs, onEnd);
   });
@@ -58,7 +63,7 @@ function doDownload(imageSetNr: number) {
     }
   })
   .catch((err: any) => {
-      console.error("error in doDownload", err);
+      console.error("error in doDownload " + imageSetNr + ". Possibly sequence ended.", err);
   });
 }
 
