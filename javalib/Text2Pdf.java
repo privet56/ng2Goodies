@@ -1,4 +1,4 @@
-package de.agendasoft.personalportal.backend.utils;
+package de.gnd;
 
 import java.io.ByteArrayOutputStream;
 import javax.servlet.ServletOutputStream;
@@ -15,8 +15,10 @@ public class Text2Pdf {
     public final float LINE_HEIGHT = 14.5F;
     public final int FONT_SIZE = 11;
     public final int MARGIN = 15;
-    public final PDType1Font FONT = PDType1Font.COURIER; // we need fixed width chars to calc max. maxCharacterPerPdfLine
 
+    // we need fixed width chars to calc max. maxCharacterPerPdfLine (otherwise we would have to use FONT.getStringWidth(s)):
+    // eg. float myStringWidthInPdf = FONT_SIZE * FONT.getStringWidth(myString) / 1000;
+    public final PDType1Font FONT = PDType1Font.COURIER;
 
     public static class PdfPage {
 
@@ -35,6 +37,9 @@ public class Text2Pdf {
 
     }
 
+    /**
+     * stream JSON string as PDF into Response, as fast as possible
+     */
     public void renderJson2Pdf(String sJson, HttpServletResponse response) throws Exception {
 
         /* performance for a 40MB json string (with newlines 106MB): ca.
@@ -46,10 +51,12 @@ public class Text2Pdf {
          in sum finished in ca.     9 seconds
          */
 
+        // 1. format JSON to pretty
         ObjectMapper mapper = new ObjectMapper(); // format the json string nicely & pretty with indentation
         Object json = mapper.readValue(sJson, Object.class);
         String fc = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
 
+        // 2. split text into lines (these will build the text lines in the PDF
         String[] lines = fc.split("\\r?\\n");
 
         int curLine = 0;
@@ -66,9 +73,11 @@ public class Text2Pdf {
         int maxCharacterPerPdfLine = (int) (pageWidth / fontWidth); // ca. pageWith: 612, fontWidth: 8.1 -> maxCharPerPdfLine 75.3
 
         int maxLinesPerPage = (int) ((page.pdPage.getMediaBox().getHeight() - MARGIN) / LINE_HEIGHT) - 1; // ca 50 for A4
+
+        // 3. build pages of the PDF
         while (curLine < lines.length - 1) {
 
-            // what if lines[curLine] doesn't fit in one line? A line in the PDF can be max. 90 characters long!
+            // what if lines[curLine] doesn't fit in one line? A line in the PDF can be max. 80 characters long!
             String[] sCurLines = this.splitInParts(lines[curLine++], maxCharacterPerPdfLine);
 
             for (String sCurLine : sCurLines) {
@@ -90,13 +99,14 @@ public class Text2Pdf {
         page.isLastPage = true;
         setupPage(pdDocument, page);
 
+        // 4. stream finished PDF into response
         @SuppressWarnings("SpellCheckingInspection")
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         pdDocument.save(baos);
         response.setContentType("application/pdf");
         response.setContentLength(baos.size());
         ServletOutputStream out = response.getOutputStream();
-        // improvement possibility: stream while creating the PDF, if possible!
+        // improvement possibility: stream while creating the PDF, if possible!?
         baos.writeTo(out);
 
         out.flush();
@@ -135,6 +145,9 @@ public class Text2Pdf {
         }
     }
 
+    /**
+     * split a long string into a string[] with max. string length per array element
+     */
     public String[] splitInParts(String s, int partLength) {
         int len = s.length();
 
