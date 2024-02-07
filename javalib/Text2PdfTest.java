@@ -32,7 +32,12 @@ public class Text2PdfTest {
         @Override
         public void write(int b) throws IOException {
             baos.write(b);
-            ;
+        }
+
+        @Override
+        public void close() throws IOException {
+            this.baos.close();
+            super.close();
         }
     }
 
@@ -76,7 +81,7 @@ public class Text2PdfTest {
 
                 String[] lines = content.split("\\r?\\n");
 
-                Assert.assertTrue(lines.length == 4); // { and } and 2 lines for "my_json_variable"
+                Assert.assertTrue(lines.length == 4); // '{' + '}' + 2 lines for "my_json_variable"
                 Assert.assertTrue(lines[0].equals("{"));
                 Assert.assertTrue(lines[lines.length - 1].equals("}"));
             }

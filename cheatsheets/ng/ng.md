@@ -374,3 +374,32 @@ $ webpack-bundle-analyzer dist/stats.json
 * use **canLoad** Guard (<span class=code>canLoad: [AuthGuard]</span>)
     or
 * use preload flag: <span class=code>RouterModule.forRoot(routes, { **preloadingStrategy: PreloadAllModules** })</span>
+
+## Load PDF with Ajax
+(eg. because of restrictive X-Frame-Options)
+
+HTML:
+```html
+<embed #domElement width="375" height="375" type="application/pdf" class="embed">
+```
+TS Code:
+```ts
+ngAfterViewInit() { // i will access this.domElement.nativeElement, so i need DOM when beginning!
+    const startTime: Date = new Date();
+    this.loadingImport = true;
+    const pdfUrl: string = 'https://my.server.org/my-cors-pdf.pdf';
+    fetch(pdfUrl).then((response: Response) => response.blob()).then((blob: Blob) => {
+        const url: string = window.URL.createObjectURL(blob);
+        this.domElement.nativeElement.src = url;
+        this.loadingImport = false;
+        const loaded = 'Loaded in ' + DateUtil.getShortTimeDiffAsReadable((startTime), new Date());
+
+        this.domElement.nativeElement.parentElement.title =
+            this.domElement.nativeElement.parentElement.title = loaded;
+
+    }).catch((error) => {
+        this.loadingImport = false;
+        this.onError('Error occured:', error);
+    });
+}
+```
