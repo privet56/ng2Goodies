@@ -386,19 +386,19 @@ TS Code:
 ```ts
 ngAfterViewInit() { // i will access this.domElement.nativeElement, so i need DOM when beginning!
     const startTime: Date = new Date();
-    this.loadingImport = true;
+    this.loadingPdf = true;
     const pdfUrl: string = 'https://my.server.org/my-cors-pdf.pdf';
     fetch(pdfUrl).then((response: Response) => response.blob()).then((blob: Blob) => {
         const url: string = window.URL.createObjectURL(blob);
         this.domElement.nativeElement.src = url;
-        this.loadingImport = false;
-        const loaded = 'Loaded in ' + DateUtil.getShortTimeDiffAsReadable((startTime), new Date());
+        this.loadingPdf = false;
+        const loaded = 'Loaded in ' + DateUtil.getShortTimeDiffAsReadable(startTime, new Date());
 
         this.domElement.nativeElement.parentElement.title =
             this.domElement.nativeElement.parentElement.title = loaded;
 
     }).catch((error) => {
-        this.loadingImport = false;
+        this.loadingPdf = false;
         this.onError('Error occured:', error);
     });
 }
