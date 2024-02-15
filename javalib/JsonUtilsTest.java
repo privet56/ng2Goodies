@@ -61,6 +61,9 @@ public class JsonUtilsTest {
         Assert.assertTrue(result.indexOf("rapunzel") < 0); // replaced!
         Assert.assertTrue(logger.entries.isEmpty());
 
+        jsonObject = Json.createReader(new StringReader(result)).readObject();
+        Assert.assertTrue(StringUtils.isNotBlank(jsonObject.getString(Name.Property.PASSWORD)));
+
         URL url = TestHelper.class.getResource("my.json");                         // check 4
         InputStream stream = url.openStream();
         JsonNode jsonNode = JsonUtils.parse(new InputStreamReader(stream, StandardCharsets.UTF_8));
