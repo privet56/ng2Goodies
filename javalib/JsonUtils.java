@@ -46,6 +46,10 @@ public final class JsonUtils {
         }
     }
 
+    public static Stream<JsonNode> stream(JsonNode node) {
+        return StreamSupport.stream(node.spliterator(), false);
+    }
+
     public static String stringify(@NotNull JsonObject object, boolean maskPassword, @NotNull Logger logger) {
         String sJson = object.toString();
         if (maskPassword) {
