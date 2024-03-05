@@ -1,0 +1,225 @@
+// !$*UTF8*$!
+{
+	1D3623250D0F684500981E51 /* iPadVIEWERAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1965, 1001}}";
+			sepNavSelRange = "{245, 0}";
+			sepNavVisRange = "{778, 1211}";
+		};
+	};
+	1D6058900D05DD3D006BFB54 /* com.shi.iPadVIEWER */ = {
+		activeExec = 0;
+		executables = (
+			4D07B30E11F093510040BF5D /* com.shi.iPadVIEWER */,
+		);
+	};
+	28042008108E984D000629CD /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1048, 2197}}";
+			sepNavSelRange = "{548, 0}";
+			sepNavVisRange = "{0, 907}";
+		};
+	};
+	2804200A108E984D000629CD /* DetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1510, 1885}}";
+			sepNavSelRange = "{1151, 0}";
+			sepNavVisRange = "{0, 1038}";
+		};
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = 4D07B30E11F093510040BF5D /* com.shi.iPadVIEWER */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* com.shi.iPadVIEWER */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* com.shi.iPadVIEWER */,
+		);
+		codeSenseManager = 4D07B31F11F093710040BF5D /* Code sense */;
+		executables = (
+			4D07B30E11F093510040BF5D /* com.shi.iPadVIEWER */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					802,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 300979025;
+			PBXWorkspaceStateSaveDate = 300979025;
+		};
+		perUserProjectItems = {
+			4D07B39411F0BBDB0040BF5D /* PBXBookmark */ = 4D07B39411F0BBDB0040BF5D /* PBXBookmark */;
+			4D07B39511F0BBDB0040BF5D /* PBXBookmark */ = 4D07B39511F0BBDB0040BF5D /* PBXBookmark */;
+			4D07B39611F0BBDB0040BF5D /* PBXBookmark */ = 4D07B39611F0BBDB0040BF5D /* PBXBookmark */;
+			4D07B39711F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39711F0BBDB0040BF5D /* PBXTextBookmark */;
+			4D07B39811F0BBDB0040BF5D /* PlistBookmark */ = 4D07B39811F0BBDB0040BF5D /* PlistBookmark */;
+			4D07B39911F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39911F0BBDB0040BF5D /* PBXTextBookmark */;
+			4D07B39A11F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39A11F0BBDB0040BF5D /* PBXTextBookmark */;
+			4D07B39B11F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39B11F0BBDB0040BF5D /* PBXTextBookmark */;
+			4D07B39C11F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39C11F0BBDB0040BF5D /* PBXTextBookmark */;
+			4D07B39D11F0BBDB0040BF5D /* PBXTextBookmark */ = 4D07B39D11F0BBDB0040BF5D /* PBXTextBookmark */;
+		};
+		sourceControlManager = 4D07B31E11F093710040BF5D /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	4D07B30E11F093510040BF5D /* com.shi.iPadVIEWER */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = com.shi.iPadVIEWER;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	4D07B31E11F093710040BF5D /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	4D07B31F11F093710040BF5D /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	4D07B35C11F0A4D10040BF5D /* shiUIWebView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1014, 574}}";
+			sepNavSelRange = "{249, 0}";
+			sepNavVisRange = "{0, 256}";
+		};
+	};
+	4D07B35D11F0A4D10040BF5D /* shiUIWebView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {980, 574}}";
+			sepNavSelRange = "{227, 0}";
+			sepNavVisRange = "{0, 415}";
+		};
+	};
+	4D07B39411F0BBDB0040BF5D /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4D07B34911F0A0530040BF5D /* navi.png */;
+	};
+	4D07B39511F0BBDB0040BF5D /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4D07B34811F0A0530040BF5D /* Icon.png */;
+	};
+	4D07B39611F0BBDB0040BF5D /* PBXBookmark */ = {
+		isa = PBXBookmark;
+		fRef = 4D07B34711F0A0530040BF5D /* Default.png */;
+	};
+	4D07B39711F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 2804200A108E984D000629CD /* DetailViewController.m */;
+		name = "DetailViewController.m: 52";
+		rLen = 0;
+		rLoc = 1151;
+		rType = 0;
+		vrLen = 1038;
+		vrLoc = 0;
+	};
+	4D07B39811F0BBDB0040BF5D /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* iPadVIEWER-Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+			CFBundleExecutable,
+		);
+		name = "/_Projekt.lfd/shi/iphone/iPadVIEWER/iPadVIEWER-Info.plist";
+		rLen = 0;
+		rLoc = 9223372036854775807;
+	};
+	4D07B39911F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D07B35C11F0A4D10040BF5D /* shiUIWebView.h */;
+		name = "shiUIWebView.h: 16";
+		rLen = 0;
+		rLoc = 249;
+		rType = 0;
+		vrLen = 256;
+		vrLoc = 0;
+	};
+	4D07B39A11F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D07B35D11F0A4D10040BF5D /* shiUIWebView.m */;
+		name = "shiUIWebView.m: 14";
+		rLen = 0;
+		rLoc = 227;
+		rType = 0;
+		vrLen = 415;
+		vrLoc = 0;
+	};
+	4D07B39B11F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* iPadVIEWERAppDelegate.m */;
+		name = "iPadVIEWERAppDelegate.m: 15";
+		rLen = 0;
+		rLoc = 245;
+		rType = 0;
+		vrLen = 1211;
+		vrLoc = 778;
+	};
+	4D07B39C11F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28042008108E984D000629CD /* RootViewController.m */;
+		name = "RootViewController.m: 30";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 867;
+		vrLoc = 0;
+	};
+	4D07B39D11F0BBDB0040BF5D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28042008108E984D000629CD /* RootViewController.m */;
+		name = "RootViewController.m: 28";
+		rLen = 0;
+		rLoc = 548;
+		rType = 0;
+		vrLen = 907;
+		vrLoc = 0;
+	};
+}
