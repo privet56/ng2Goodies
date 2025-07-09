@@ -4,17 +4,17 @@ import java.util.function.Supplier;
 
 /**
  * example usage:
- * Supplier<List<MyEntity>> myEntities = new CashingLazySupplier<>(() -> myService.findAllMyEntities(myId));
+ * Supplier<List<MyEntity>> myEntities = new CachingLazySupplier<>(() -> myService.findAllMyEntities(myId));
  * myEntities.get();
  * myEntities.get();
  *
  * @param <T>
  */
-public class CashingLazySupplier<T> implements Supplier<T> {
+public class CachingLazySupplier<T> implements Supplier<T> {
     private T value;
     private final Supplier<T> supplier;
 
-    public CashingLazySupplier(Supplier<T> supplier) {
+    public CachingLazySupplier(Supplier<T> supplier) {
         this.supplier = supplier;
     }
 
