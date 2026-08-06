@@ -52,7 +52,7 @@ public class LoggedExecutor {
     }
 
     /**
-     * manual implementation of something like org.eclipse.microprofile.faulttolerance.Retry // @Retry(delay = 5, delayUnit = ChronoUnit.SECONDS)
+     * manual implementation of something like ~org.eclipse.microprofile.faulttolerance.Retry // @Retry(delay = 5, delayUnit = ChronoUnit.SECONDS)
      *
      * @param delaySeconds between executions
      * @param retryCount   try x times to execute function, try again if throws
